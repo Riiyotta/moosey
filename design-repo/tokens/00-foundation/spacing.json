@@ -158,12 +158,25 @@
           ],
           "anchor": "- JS uses the same scale."
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            56,
+            56
+          ],
+          "anchor": "return w / (b === 'Desktop' ?",
+          "mode": "regex",
+          "regex": "'Desktop' \\? (\\d+) : b === 'Tablet' \\? (\\d+) : (\\d+)",
+          "scale": 1
+        }
       ]
     },
     "space.fixed-px-exceptions": {
       "$type": "rule",
       "$value": "banner, burger spans 12x2px, 1px hairlines, pricing-card borders, progress fill 3px, footer pt 48px, platform flyout, Tailwind-UI blocks (for-hr cards/resources, HubSpot form, inline CTA, related grids, legacy Template A)",
-      "basis": "measured",
+      "basis": "spec-only-rule",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -180,6 +193,20 @@
             9
           ],
           "anchor": "**Two unit systems on these pages.**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "**Elements that do NOT scale (fixed px):**",
+          "mode": "format",
+          "expect": [
+            "burger line spans (12×2px)"
+          ]
         }
       ]
     }

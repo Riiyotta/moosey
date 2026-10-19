@@ -8,19 +8,28 @@
   5  allowlist parity: sections/components/primitives files <-> allowlist; contentFields <-> contracts; nodeProperties <-> schema
   6  schema parity: template/section/assetRole/motion enums and per-section content definitions match the contracts
   7  templates: node sections have contracts; concrete routes assigned exactly once and match their own patterns;
-     route patterns == src/routes.js (+ '/' + '*'); collection sizes == src/data/** (when src/ is present)
+     route patterns == src/routes.js (+ '/' + '*'); collection sizes == src/data/** incl. the 1,736 resource leaves
+     re-derived from resourceSlugs.js + states.js (when src/ is present)
   8  graph recomputed from templates + contracts (limits, predecessors, consecutive, same-category exceptions, budgets, kinds)
   9  citations: every {path, lines, anchor} object anywhere in the repo resolves (file exists, range in bounds, anchor inside
      the range). Evidence root = the package root (folder containing design-repo/). Missing evidence tree -> warnings.
  10  tokens: references resolve; theme == recomputed resolution; catalog ids exist; policy categories == catalog keys;
-     foundation <-> code parity against tailwind.config.cjs, CSS variables (index.css, blocks.css, misc.css) and
-     src/motion/core.js, in both directions (a code value with no token is an orphan)
- 11  assets: closed role vocabulary; PINNED policies (kept here, independent of the registry); protected/generic lists;
+     foundation <-> code VALUE parity against tailwind.config.cjs (colors, type table, fontFamily, spacing rule, screens,
+     WGHT, borderRadius, boxShadow, backgroundImage, transitionDuration, transitionTimingFunction), CSS variables
+     (index.css --u, blocks.css, misc.css), src/motion/core.js (CustomEases, constants, f()) and carousel.js, in both
+     directions for colours, type, CSS vars, eases, radius, shadows, gradients, durations, timing functions (a code value
+     with no token is an orphan); every foundation token without a code mapping carries a valueCheck whose CURRENT
+     value must be found in its cited source range (spec-only tokens are checked against the spec text); component and
+     layout tokens with a valueCheck are checked the same way
+ 11  assets: closed role vocabulary; PINNED policies (kept here, independent of the registry); protected roles also pinned
+     by FOLDER (PATH_PINS) and cross-checked against public/assets/art/ART_MANIFEST.md; protected/generic lists;
+     section top-level assetRoles == union of its image fields' roles, and every image field declares roles;
      every public/ file registered with matching bytes and vice versa; observed counts recomputed
  12  implementation: implementedBy / implementedByAll / template implementedBy files exist (when src/ is present)
  13  granularity: stored capacities == recomputed; thresholds unless a named policy exception; labels unique; no generic ids;
      retired ids have no contract
- 14  motion: section patterns/fallbacks == motion contract; observed counts; eases == foundation; hero intervals == code
+ 14  motion: section patterns/fallbacks == motion contract; observed counts; eases == foundation; hero intervals (desktop
+     and tablet/mobile) == src/motion/visuals.js
  15  no absolute machine paths in any file
  16  schema is valid draft-07; example validates with zero errors; adversarial suite passes (jsonschema AND stdlib engines)
  17  ledger: measured-values sections/templates keys == contracts
@@ -212,6 +221,8 @@ def main():
         for tid, letter in [("template.partner-legacy", "A"), ("template.partner-static", "B"), ("template.partner-platform", "C")]:
             n = len(re.findall(rf"template: '{letter}',", parts))
             if tby[tid]["routeCount"] != n: errs.append(f"templates: {tid} routeCount {tby[tid]['routeCount']} != {n} partner records with template {letter}")
+        n = resource_leaf_count()
+        if tby["template.resource-guide"]["routeCount"] != n: errs.append(f"templates: resource-guide routeCount {tby['template.resource-guide']['routeCount']} != {n} leaves derived from src/data/content/resourceSlugs.js")
         legal = re.findall(r"^  '?([a-z-]+)'?: \{", P("src/data/misc/legal.js"), re.M)
         if tby["template.legal-prose"]["routeCount"] != len(legal): errs.append(f"templates: legal-prose routeCount != {len(legal)} docs in src/data/misc/legal.js")
     if any("has no contract" in e for e in errs):
@@ -283,12 +294,20 @@ def main():
         sink = errs if EVIDENCE else warns
         if ".." in c["path"].split("/") or c["path"].startswith("/"): errs.append(f"citation {rel}{p}: path {c['path']} must be package-relative"); continue
         if not os.path.isfile(fp):
-            if EVIDENCE or nbad < 3: sink.append(f"citation {rel}{p}: {c['path']} not found")
+            if EVIDENCE: errs.append(f"citation {rel}{p}: {c['path']} not found")
             nbad += 1; continue
         lines = open(fp, encoding="utf-8").read().split("\n")
         a, b = c["lines"]
         if not (1 <= a <= b <= len(lines)): errs.append(f"citation {rel}{p}: {c['path']}:{a}-{b} out of range (file has {len(lines)} lines)"); continue
         if not any(c["anchor"] in lines[i - 1] for i in range(a, b + 1)): errs.append(f"citation {rel}{p}: anchor {c['anchor']!r} not within {c['path']}:{a}-{b}")
+    if EVIDENCE:
+        m = re.search(r"https?://(?:www\.)?([a-z0-9-]+)\.", open(os.path.join(PKG, "CLONE_SPEC.md"), encoding="utf-8").readline())
+        brand = m.group(1).lower() if m else None
+        for rel, p, c in cites:
+            if brand and brand in c["anchor"].lower(): errs.append(f"citation {rel}{p}: anchor quotes the measured site's name; use a neutral anchor")
+    if nbad and not EVIDENCE:
+        missing_files = sorted({c["path"] for _, _, c in cites if not os.path.isfile(os.path.join(PKG, c["path"]))})
+        warns.append(f"citations: {nbad} of {len(cites)} citations unresolved (evidence tree absent; {len(missing_files)} distinct source files, e.g. {', '.join(missing_files[:4])})")
     for sid, c in secs.items():
         if not c.get("evidence", {}).get("spec") or not c["evidence"].get("code"): errs.append(f"sections/{sid}: needs spec and code citations")
     # ------------------------------------------------------------ 10
@@ -326,8 +345,18 @@ def main():
             if i not in S and i not in L and i not in comp_ids: errs.append(f"catalog: {c_} lists unknown token {i}")
     if sorted(pol.get("rawValueRestrictions", {})) != sorted(cat_): errs.append(f"policy: rawValueRestrictions categories {sorted(pol.get('rawValueRestrictions', {}))} != catalog {sorted(cat_)}")
     if pol.get("rawValuesAllowed") is not False: errs.append("policy: rawValuesAllowed must be false")
+    for k, t in F.items():
+        if "code" not in t and "valueCheck" not in t: errs.append(f"tokens: foundation {k} has neither a code parity mapping nor a valueCheck (unchecked value)")
     if SRC:
         code_parity(F)
+    if True:  # frames checks need no evidence tree; file-based checks return early when their source is absent
+        vtokens = dict(F)
+        for f_, dd in C.items():
+            vtokens.update({f"{dd['component']}.{k}": v for k, v in dd["tokens"].items()})
+        vtokens.update(L)
+        for k, t in vtokens.items():
+            for chk in t.get("valueCheck", []):
+                value_check(k, t, chk)
     # ------------------------------------------------------------ 11
     roles = reg["roles"]
     for r, pol_ in PINNED.items():
@@ -357,7 +386,16 @@ def main():
             if disk[pth] != regp[pth]["bytes"]: errs.append(f"assets: {pth} bytes {regp[pth]['bytes']} != {disk[pth]} on disk")
     else:
         warns.append("assets: public/ not present beside design-repo/; file existence not checked")
+    if os.path.isdir(pub):
+        asset_pins(reg)
+        if SRC:
+            asset_refs(reg)
     for sid, c in secs.items():
+        img_fields = {k: v for k, v in c["content"]["fields"].items() if v["type"] == "image[]"}
+        declared = sorted({r for v in img_fields.values() for r in v.get("assetRoles", [])})
+        if sorted(c.get("assetRoles", [])) != declared: errs.append(f"sections/{sid}: top-level assetRoles {sorted(c.get('assetRoles', []))} != image field roles {declared}")
+        for k, v in img_fields.items():
+            if not v.get("assetRoles"): errs.append(f"sections/{sid}: image field '{k}' declares no assetRoles")
         for r in c.get("assetRoles", []):
             if r not in roles: errs.append(f"sections/{sid}: assetRole '{r}' not in the vocabulary")
         prot = [r for r in c.get("assetRoles", []) if r in PROTECTED]
@@ -423,6 +461,13 @@ def main():
             if got != want: errs.append(f"motion: hero intervals {want} != code {got}")
         else:
             errs.append("motion: could not read heroDesktop durations from src/motion/visuals.js")
+        m = re.search(r"heroMobile: \[(\d+) / (\d+), (\d+) / (\d+), (\d+) / (\d+)\]", vis)
+        if m:
+            got = [round(int(m.group(i)) / int(m.group(i + 1)), 3) for i in (1, 3, 5)]
+            want = [round(x, 3) for x in motion["autoAdvance"]["intervalsSeconds"]["tabletMobile"]]
+            if got != want: errs.append(f"motion: hero tabletMobile intervals {want} != code {got}")
+        else:
+            errs.append("motion: could not read heroMobile durations from src/motion/visuals.js")
     # ------------------------------------------------------------ 15
     for root, _, fs in os.walk(REPO):
         for f in fs:
@@ -459,20 +504,43 @@ def main():
     return finish()
 
 
+def tw_block(tw, name):
+    """Text of the `name: { ... }` object in tailwind.config.cjs (brace-matched)."""
+    i = tw.index(name + ": {")
+    j = tw.index("{", i)
+    depth = 0
+    for k in range(j, len(tw)):
+        depth += {"{": 1, "}": -1}.get(tw[k], 0)
+        if depth == 0:
+            return tw[j:k + 1]
+    raise ValueError(name)
+
+
+def floats(s):
+    return [float(x) for x in re.findall(r"-?\d*\.?\d+", s)]
+
+
 def code_parity(F):
-    """Foundation tokens vs code, both directions."""
+    """Foundation tokens vs code VALUES, both directions (a code value with no token is an orphan)."""
     tw = P("tailwind.config.cjs")
-    colors_block = tw[tw.index("colors: {"): tw.index("},", tw.index("colors: {"))]
-    tw_colors = {k: v.upper() for k, v in re.findall(r"'?([\w-]+)'?:\s*'(#[0-9A-Fa-f]{3,8})'", colors_block)}
+    tw_colors = {k: v.upper() for k, v in re.findall(r"'?([\w-]+)'?:\s*'(#[0-9A-Fa-f]{3,8})'", tw_block(tw, "colors"))}
     tw_type = {}
     for line in tw.split("\n"):
         m = re.match(r"\s*'?([\w-]+)'?: \{ (m|d): \[", line)
         if m:
             for bp, vals in re.findall(r"([mtd]): \[([^\]]+)\]", line):
                 tw_type[(m.group(1), bp)] = [float(x) for x in vals.split(",")]
-    tw_radius = set(re.findall(r"'(\d+u)': u\(\d+\)", tw[tw.index("borderRadius"):]))
+    tw_radius = {k: n for k, n in re.findall(r"'(\d+u)': u\((\d+)\)", tw_block(tw, "borderRadius"))}
+    tw_shadow = {k: v for k, v in re.findall(r"(\w+):\s*'([^']+)'", tw_block(tw, "boxShadow"))}
+    tw_bg = {k: v for k, v in re.findall(r"'([\w-]+)':\s*'([^']+)'", tw_block(tw, "backgroundImage"))}
+    tw_dur = {k: v for k, v in re.findall(r"(\d+): '(\d+ms)'", tw_block(tw, "transitionDuration"))}
+    tw_ease = {k: floats(v) for k, v in re.findall(r"(\w+): '(cubic-bezier\([^)]*\))'", tw_block(tw, "transitionTimingFunction"))}
+    tw_font = re.findall(r"'([^']+)'", re.search(r"sans: \[([^\]]*)\]", tw).group(1))
     screens = dict(re.findall(r"(md|lg): '(\d+px)'", re.search(r"screens: \{[^}]*\}", tw).group(0)))
-    wght = dict(re.findall(r"(\d+): (\d+)", re.search(r"const WGHT = \{[^}]*\}", tw).group(0)))
+    wght = {int(k): int(v) for k, v in re.findall(r"(\d+): (\d+)", re.search(r"const WGHT = \{[^}]*\}", tw).group(0))}
+    m = re.search(r"for \(let i = 0; i <= (\d+); i\+\+\)", tw)
+    spacing = {"integers": [0, int(m.group(1))] if m else None,
+               "extra": sorted(floats(re.search(r";\[([^\]]*)\]\.forEach", tw).group(1)) + [float(x) for x in re.findall(r"uSpacing\['(\d+)u'\]", tw)])}
     css_vars = {}
     for rel in ("src/styles/blocks.css", "src/styles/misc.css"):
         for k, v in re.findall(r"--((?:nw|lg)-[\w-]+):\s*([^;]+);", P(rel)):
@@ -480,51 +548,186 @@ def code_parity(F):
     idx = P("src/index.css")
     u = {"mobile": re.search(r"--u: (0\.3125vw);", idx), "tablet": re.search(r"--u: (calc\(100vw / 768\));", idx), "desktop": re.search(r"--u: (calc\(100vw / 1440\));", idx)}
     core = P("src/motion/core.js")
-    eases = {k: [float(x) for x in v.split(",")] for k, v in re.findall(r"(\w+): CustomEase\.create\('\w+', '([^']+)'\)", core)}
+    eases = {k: floats(v) for k, v in re.findall(r"(\w+): CustomEase\.create\('\w+', '([^']+)'\)", core)}
     consts = {k: float(v) for k, v in re.findall(r"(duration550|duration567|delay60|delay66): ([\d.]+)", core)}
-    num = lambda s: float(str(s).rstrip("u")) if not str(s).endswith("em") else s
-    seen = {"tw-color": set(), "tw-type": set(), "css-var": set(), "gsap-ease": set()}
+    fdiv = re.search(r"export const f = \(n\) => n / (\d+)", core)
+    splide = re.search(r"SPLIDE_TRANSITION = '[^']*(cubic-bezier\([^)]*\))'", P("src/motion/carousel.js"))
+    num = lambda s: float(str(s).rstrip("u"))
+    seen = {x: set() for x in ("tw-color", "tw-type", "css-var", "gsap-ease", "tw-radius", "tw-shadow", "tw-bgimage", "tw-duration", "tw-ease")}
     for tid, t in F.items():
         code = t.get("code")
-        if not code: continue
+        if not code:
+            continue
         k, key, v = code["kind"], code["key"], t["$value"]
         bad = None
+        if k in seen:
+            seen[k].add((key, code.get("bp")) if k == "tw-type" else key)
         if k == "tw-color":
-            seen[k].add(key)
             if tw_colors.get(key) != str(v).upper(): bad = tw_colors.get(key)
         elif k == "tw-type":
-            seen[k].add((key, code["bp"]))
             got = tw_type.get((key, code["bp"]))
-            want = [num(v["fontSize"]), num(v["lineHeight"]), num(v["letterSpacing"]), float(v["fontWeight"])]
-            if got != want: bad = got
+            if got != [num(v["fontSize"]), num(v["lineHeight"]), num(v["letterSpacing"]), float(v["fontWeight"])]: bad = got
         elif k == "tw-radius":
-            if key not in tw_radius: bad = "absent"
+            if tw_radius.get(key) is None or f"{tw_radius[key]}u" != v: bad = tw_radius.get(key)
+        elif k == "tw-shadow":
+            if tw_shadow.get(key) != v: bad = tw_shadow.get(key)
+        elif k == "tw-bgimage":
+            if tw_bg.get(key) != v: bad = tw_bg.get(key)
+        elif k == "tw-duration":
+            if tw_dur.get(key) != v: bad = tw_dur.get(key)
+        elif k == "tw-ease":
+            if tw_ease.get(key) != [float(x) for x in v]: bad = tw_ease.get(key)
+        elif k == "tw-font":
+            if tw_font != v: bad = tw_font
+        elif k == "tw-spacing":
+            if spacing["integers"] != v.get("integers") or spacing["extra"] != sorted(float(x) for x in v.get("extra", [])): bad = spacing
         elif k == "tw-screen":
             if screens.get(key) != v: bad = screens.get(key)
         elif k == "tw-wght":
-            if int(wght.get(key, -1)) != t.get("axis") or int(key) != v and key != "400": bad = wght.get(key)
+            if wght.get(int(key)) != t.get("axis") or (key != "400" and int(key) != v) or (key == "400" and v != 400): bad = wght.get(int(key))
         elif k == "css-var":
-            seen[k].add(key)
             got = css_vars.get(key)
-            if got is None or (got.upper() != str(v).upper() and not (got.startswith("cubic") and [float(x) for x in re.findall(r"[\d.]+", got)] == v)): bad = got
+            if got is None: bad = None if False else "absent"
+            elif got.startswith("cubic"):
+                if floats(got) != [float(x) for x in v]: bad = got
+            elif got.upper() != str(v).upper(): bad = got
         elif k == "css-u":
             mm = u.get(key)
             if not mm or mm.group(1) != v: bad = mm.group(1) if mm else None
         elif k == "gsap-ease":
-            seen[k].add(key)
-            if eases.get(key) != v: bad = eases.get(key)
+            if eases.get(key) != [float(x) for x in v]: bad = eases.get(key)
         elif k == "gsap-const":
             if consts.get(key) is None or f"{consts[key]}s" != v: bad = consts.get(key)
-        elif k in ("tw-bgimage", "tw-shadow", "tw-font", "tw-ease", "tw-duration", "tw-spacing", "js-const"):
-            needle = {"tw-bgimage": v if isinstance(v, str) else "", "tw-shadow": v if isinstance(v, str) else "", "tw-font": "'Figtree'", "tw-ease": "cubic-bezier(.17,.17,.43,1)",
-                      "tw-duration": f"{key}: '{key}ms'", "tw-spacing": "i <= 2200", "js-const": key}[k]
-            src = core if k == "js-const" and key == "f" else (P("src/motion/carousel.js") if k == "js-const" else tw)
-            if needle not in src: bad = "not found in code"
-        if bad is not None: errs.append(f"parity: {tid} = {v!r} but code ({code['file']}:{key}) has {bad!r}")
-    for key in sorted(set(tw_colors) - seen["tw-color"]): errs.append(f"parity: orphan tailwind colour '{key}' has no foundation token")
-    for key in sorted(set(tw_type) - seen["tw-type"]): errs.append(f"parity: orphan type entry {key} has no foundation token")
-    for key in sorted({k for k, v in css_vars.items() if not v.startswith("cubic")} - seen["css-var"]): errs.append(f"parity: orphan CSS variable --{key} has no foundation token")
-    for key in sorted(set(eases) - seen["gsap-ease"]): errs.append(f"parity: orphan CustomEase '{key}' has no foundation token")
+        elif k == "js-const" and key == "f":
+            if not fdiv or [float(fdiv.group(1))] != floats(v.split("=")[1]): bad = fdiv.group(1) if fdiv else None
+        elif k == "js-const" and key == "SPLIDE_TRANSITION":
+            if not splide or floats(splide.group(1)) != [float(x) for x in v]: bad = splide.group(1) if splide else None
+        else:
+            bad = f"unknown parity kind {k}"
+        if bad is not None:
+            errs.append(f"parity: {tid} = {v!r} but code ({code['file']}:{key}) has {bad!r}")
+    for name, codeset, label in [("tw-color", set(tw_colors), "tailwind colour"), ("tw-type", set(tw_type), "type entry"),
+                                 ("css-var", set(css_vars), "CSS variable"), ("gsap-ease", set(eases), "CustomEase"),
+                                 ("tw-radius", set(tw_radius), "tailwind borderRadius"), ("tw-shadow", set(tw_shadow), "tailwind boxShadow"),
+                                 ("tw-bgimage", set(tw_bg), "tailwind backgroundImage"), ("tw-duration", set(tw_dur), "tailwind transitionDuration"),
+                                 ("tw-ease", set(tw_ease), "tailwind transitionTimingFunction")]:
+        for key in sorted(codeset - seen[name], key=str):
+            errs.append(f"parity: orphan {label} '{key}' has no foundation token")
+
+
+def value_check(tid, t, chk):
+    """A token value must be FOUND in its cited source range (the range itself is validated as a citation)."""
+    v = t["$value"]
+    if chk.get("mode") == "frames":
+        if round(t["frames"] / 60, 3) != float(str(v).rstrip("s")):
+            errs.append(f"valueCheck: {tid} = {v!r} != f({t['frames']}) = {round(t['frames'] / 60, 3)}s")
+        return
+    fp = os.path.join(PKG, chk["path"])
+    if not os.path.isfile(fp):
+        return
+    lines = open(fp, encoding="utf-8").read().split("\n")
+    a, b = chk["lines"]
+    text = "\n".join(lines[a - 1:b])
+    v = t["$value"]
+    raw = v if isinstance(v, str) else json.dumps(v)
+    ns = re.findall(r"-?\d+(?:\.\d+)?", raw) if not isinstance(v, list) else [("%g" % x) for x in v]
+    mode = chk.get("mode")
+    if mode == "format":
+        for e in chk["expect"]:
+            want = e.replace("{v}", str(v))
+            for i, n in enumerate(ns):
+                want = want.replace("{n%d}" % i, n)
+            if re.search(r"\{n\d+\}", want):
+                errs.append(f"valueCheck: {tid} expects more numbers than its value has ({e!r})")
+            elif not re.search(r"(?<![\w.])" + re.escape(want) if want[:1].isalnum() else re.escape(want), text):
+                errs.append(f"valueCheck: {tid} = {v!r} not found in {chk['path']}:{a}-{b} (expected {want!r})")
+    elif mode == "regex":
+        m = re.search(chk["regex"], text)
+        got = [round(x * chk.get("scale", 1), 6) for g in (m.groups() if m else []) for x in floats(g)]
+        want = [round(float(x), 6) for x in ns]
+        if not m or got != want:
+            errs.append(f"valueCheck: {tid} = {v!r} but {chk['path']}:{a}-{b} gives {got}")
+    elif mode == "numbers":
+        for n in ns:
+            if n.lstrip("-") not in text:
+                errs.append(f"valueCheck: {tid} number {n} not in {chk['path']}:{a}-{b}")
+    elif mode == "frames":
+        if round(t["frames"] / 60, 3) != float(str(v).rstrip("s")):
+            errs.append(f"valueCheck: {tid} = {v!r} != f({t['frames']}) = {round(t['frames'] / 60, 3)}s")
+    else:
+        errs.append(f"valueCheck: {tid} has unknown mode {mode!r}")
+
+
+# Protected roles pinned by FOLDER, independent of the registry and of the ART_MANIFEST.
+PATH_PINS = [("assets/art/logos/", {"customer-logo"}), ("assets/art/misc/logos/", {"customer-logo", "partner-logo"}), ("assets/art/avatars/", {"avatar"}),
+             ("assets/art/brand/", {"logo"}), ("favicon.svg", {"logo"}), ("assets/art/hero/", {"product-screenshot"}), ("assets/art/compliance/", {"product-screenshot"}),
+             ("assets/art/misc/screens/", {"product-screenshot"}), ("assets/art/marketing/partner-", {"partner-logo"}), ("assets/art/marketing-b/about", {"team-photo"}),
+             ("assets/art/marketing/scrolltab-", {"product-screenshot"}), ("assets/art/marketing/platform-", {"product-screenshot"}), ("assets/art/marketing/feature-", {"product-screenshot"}),
+             ("assets/art/marketing/engine-", {"product-screenshot"}), ("assets/art/marketing/hero-visual", {"product-screenshot"}), ("fonts/", {"font"})]
+ART_SECTIONS = {"Brand": {"logo"}, "Logo marquee": {"customer-logo"}, "Testimonial avatars": {"avatar"}, "Hero": {"product-screenshot"}, "Compliance by role": {"product-screenshot"}}
+
+
+def asset_pins(reg):
+    by = {a["path"]: a for a in reg["assets"]}
+    for a in reg["assets"]:
+        for prefix, allowed in PATH_PINS:
+            if a["path"].startswith(prefix) and a["role"] not in allowed:
+                errs.append(f"assets: path pin: {a['path']} must be {'|'.join(sorted(allowed))} (folder {prefix}), registry says {a['role']}")
+    for prefix, _ in PATH_PINS:
+        if not any(p.startswith(prefix) for p in by):
+            errs.append(f"assets: path pin {prefix} matches no registered asset (pin list is stale)")
+    man = os.path.join(PKG, "public/assets/art/ART_MANIFEST.md")
+    if not os.path.isfile(man):
+        warns.append("assets: public/assets/art/ART_MANIFEST.md absent; manifest cross-check skipped")
+        return
+    head, n, heads = None, 0, set()
+    for line in open(man, encoding="utf-8"):
+        if line.startswith("## "):
+            head = line[3:].strip()
+            continue
+        for f in re.findall(r"\| `([a-z0-9/_.-]+\.svg)` \|", line):
+            want = next((v for k, v in ART_SECTIONS.items() if head and head.startswith(k)), None)
+            if not want:
+                continue
+            n += 1
+            heads.add(next(k for k in ART_SECTIONS if head.startswith(k)))
+            a = by.get("assets/art/" + f)
+            if not a:
+                errs.append(f"assets: ART_MANIFEST ({head}) lists {f}, which is not registered")
+            elif a["role"] not in want:
+                errs.append(f"assets: ART_MANIFEST ({head}) says {f} is {'|'.join(sorted(want))}, registry says {a['role']}")
+    if heads != set(ART_SECTIONS):
+        errs.append(f"assets: ART_MANIFEST cross-check found no rows for {sorted(set(ART_SECTIONS) - heads)}")
+
+
+def asset_refs(reg):
+    """referencedBy evidence is recomputed: listed files must exist and mention the asset; an asset recorded as
+    unreferenced must not be referenced by src/ or index.html."""
+    texts = {"index.html": P("index.html")}
+    for root, _, fs in os.walk(os.path.join(PKG, "src")):
+        for f in fs:
+            if f.endswith((".js", ".jsx", ".css")):
+                texts[os.path.relpath(os.path.join(root, f), PKG)] = open(os.path.join(root, f), encoding="utf-8").read()
+    for a in reg["assets"]:
+        refs = a.get("evidence", {}).get("referencedBy", [])
+        url = "/" + a["path"]
+        for r in refs:
+            if r not in texts: errs.append(f"assets: {a['path']} referencedBy {r}, which does not exist")
+        if not refs:
+            hit = sorted(k for k, t in texts.items() if f'"{url}"' in t or f"'{url}'" in t or (a["path"].startswith("assets/art/") and a["path"][len("assets/art/"):] in t))
+            if hit: errs.append(f"assets: {a['path']} is recorded as unreferenced but is referenced by {', '.join(hit[:3])}")
+
+
+def resource_leaf_count():
+    """Leaf total re-derived with stdlib from src/data/content/resourceSlugs.js + states.js (mirrors resourceLeaves.js LEAVES)."""
+    s = P("src/data/content/resourceSlugs.js")
+    def vals(name):
+        m = re.search(r"export const " + name + r" = (\{.*?\n\}|'[^']*')", s, re.S).group(1)
+        if m.startswith("'"):
+            return [x for x in m.strip("'").split("|") if x]
+        return [x for v in re.findall(r":\s*'([^']*)'", m) for x in v.split("|") if x]
+    states = len(re.findall(r"\['[a-z-]+', '", P("src/data/content/states.js")))
+    return 4 * states + (states - len(vals("SALES_TAX_EXCLUDED"))) + sum(len(vals(n)) for n in ("AGENCIES_PREFIXED", "AGENCIES_INFERRED", "AGENCIES_UNPLACED", "LOCAL"))
 
 
 def finish():

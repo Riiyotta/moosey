@@ -16,13 +16,65 @@
       "$value": {
         "mobile": "5u",
         "desktop": "6u"
-      }
+      },
+      "valueCheck": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            79,
+            87
+          ],
+          "anchor": ".btn {",
+          "mode": "format",
+          "expect": [
+            "padding: calc(var(--u) * {n0}) calc"
+          ]
+        },
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": ".btn { padding:",
+          "mode": "format",
+          "expect": [
+            "padding: calc(var(--u) * {n1}) calc"
+          ]
+        }
+      ]
     },
     "paddingX": {
       "$value": {
         "mobile": "9u",
         "desktop": "16u"
-      }
+      },
+      "valueCheck": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            79,
+            87
+          ],
+          "anchor": ".btn {",
+          "mode": "format",
+          "expect": [
+            "calc(var(--u) * {n0});"
+          ]
+        },
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": ".btn { padding:",
+          "mode": "format",
+          "expect": [
+            "calc(var(--u) * {n1}); }"
+          ]
+        }
+      ]
     },
     "typography": {
       "$value": "{typography.button}"

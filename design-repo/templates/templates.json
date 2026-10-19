@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "note": "One template per page shape. Nodes are ordered; `required:false` nodes may be omitted, `repeatable` nodes may repeat up to maxCount. Every concrete route appears in exactly one template.",
   "templates": [
     {
@@ -110,10 +110,10 @@
           {
             "path": "CLONE_SPEC.md",
             "lines": [
-              3,
-              3
+              11,
+              144
             ],
-            "anchor": "# Mosey homepage: clone build spec"
+            "anchor": "## 0. Global system (read first)"
           }
         ],
         "code": [

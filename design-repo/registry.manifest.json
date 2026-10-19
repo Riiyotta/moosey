@@ -3,8 +3,8 @@
   "site": "mosey (Northwind clone)",
   "status": "design-review-pending",
   "productionApproved": false,
-  "repositoryVersion": "0.1.0",
-  "pageSpecVersion": "0.1.0",
+  "repositoryVersion": "0.1.1",
+  "pageSpecVersion": "0.1.1",
   "allowlistVersion": "1",
   "versionFieldNote": "allowlistVersion is machine-checked (verify_all.py fails if it differs from tokens/llm/component-allowlist.json). pageSpecVersion is pinned as a const in the schema and checked against it. repositoryVersion is a documentation-only marker.",
   "defaultTheme": "light",
@@ -31,7 +31,7 @@
     "components": 22,
     "assets": 154,
     "tokens": {
-      "foundation": 215,
+      "foundation": 216,
       "semantic": 55,
       "component": 68,
       "layout": 13

@@ -17,6 +17,20 @@
           ],
           "anchor": ".medium-container {"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/index.css",
+          "lines": [
+            70,
+            72
+          ],
+          "anchor": ".medium-container {",
+          "mode": "format",
+          "expect": [
+            "w-{n0}u md:w-{n1}u lg:w-{n2}u"
+          ]
+        }
       ]
     },
     "layout.container.base": {
@@ -35,6 +49,22 @@
           ],
           "anchor": ".base-container { position"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            53,
+            59
+          ],
+          "anchor": ".base-container { position",
+          "mode": "format",
+          "expect": [
+            "calc(var(--u) * {n0})",
+            "calc(var(--u) * {n1})",
+            "calc(var(--u) * {n2})"
+          ]
+        }
       ]
     },
     "layout.container.small": {
@@ -52,6 +82,22 @@
             51
           ],
           "anchor": ".small-container { position"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            51,
+            58
+          ],
+          "anchor": ".small-container { position",
+          "mode": "format",
+          "expect": [
+            "calc(var(--u) * {n0})",
+            "calc(var(--u) * {n1})",
+            "calc(var(--u) * {n2})"
+          ]
         }
       ]
     },
@@ -124,6 +170,20 @@
             167
           ],
           "anchor": "| Width | 304u | 704u | 1302u |"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            167,
+            167
+          ],
+          "anchor": "| Width | 304u | 704u | 1302u |",
+          "mode": "format",
+          "expect": [
+            "| {n0}u | {n1}u | {n2}u |"
+          ]
         }
       ]
     },

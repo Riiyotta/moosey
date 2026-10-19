@@ -14,6 +14,32 @@
           ],
           "anchor": "- Check icon: SVG 17×17"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            208,
+            208
+          ],
+          "anchor": "- Check icon: SVG 17×17",
+          "mode": "format",
+          "expect": [
+            "SVG {n0}×{n0}"
+          ]
+        },
+        {
+          "path": "src/components/blocks/primitives.jsx",
+          "lines": [
+            4,
+            4
+          ],
+          "anchor": "export function CheckIcon(",
+          "mode": "format",
+          "expect": [
+            "h-{n0}u w-{n0}u"
+          ]
+        }
       ]
     },
     "icon.compliance-list": {
@@ -28,6 +54,32 @@
             339
           ],
           "anchor": "    - Title row (gap 8u): 26u icon"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            339,
+            339
+          ],
+          "anchor": "    - Title row (gap 8u): 26u icon",
+          "mode": "format",
+          "expect": [
+            "{n0}u icon"
+          ]
+        },
+        {
+          "path": "src/components/RoleTabs.jsx",
+          "lines": [
+            146,
+            146
+          ],
+          "anchor": "lg:h-26u lg:w-26u",
+          "mode": "format",
+          "expect": [
+            "lg:h-{n0}u lg:w-{n0}u"
+          ]
         }
       ]
     },
@@ -44,6 +96,32 @@
           ],
           "anchor": "column 3 has the social icons (24u each"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            584,
+            584
+          ],
+          "anchor": "column 3 has the social icons (24u each",
+          "mode": "format",
+          "expect": [
+            "({n0}u each"
+          ]
+        },
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            97,
+            97
+          ],
+          "anchor": "social-icon",
+          "mode": "format",
+          "expect": [
+            "h-{n0}u w-{n0}u"
+          ]
+        }
       ]
     },
     "icon.footer-arrow": {
@@ -59,6 +137,32 @@
           ],
           "anchor": "each with a 16u arrow icon at right"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            593,
+            593
+          ],
+          "anchor": "each with a 16u arrow icon at right",
+          "mode": "format",
+          "expect": [
+            "{n0}u arrow"
+          ]
+        },
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            54,
+            54
+          ],
+          "anchor": "arrow pointer-events-none",
+          "mode": "format",
+          "expect": [
+            "h-{n0}u w-{n0}u"
+          ]
+        }
       ]
     },
     "icon.timer-ring": {
@@ -73,6 +177,32 @@
             247
           ],
           "anchor": "  - Each link has a **timer ring** SVG after the label: 12u"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            247,
+            247
+          ],
+          "anchor": "  - Each link has a **timer ring** SVG after the label: 12u",
+          "mode": "format",
+          "expect": [
+            "label: {n0}u"
+          ]
+        },
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            63,
+            63
+          ],
+          "anchor": "timer-svg ml-5u",
+          "mode": "format",
+          "expect": [
+            "h-{n0}u w-{n0}u"
+          ]
         }
       ]
     },
@@ -92,6 +222,33 @@
           ],
           "anchor": "  - Arrows: 46u desktop / 32u otherwise"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            142,
+            142
+          ],
+          "anchor": "  - Arrows: 46u desktop / 32u otherwise",
+          "mode": "format",
+          "expect": [
+            "Arrows: {n0}u desktop / {n1}u otherwise"
+          ]
+        },
+        {
+          "path": "src/components/shared.jsx",
+          "lines": [
+            177,
+            177
+          ],
+          "anchor": "lg:h-46u lg:w-46u",
+          "mode": "format",
+          "expect": [
+            "h-{n1}u w-{n1}u",
+            "lg:h-{n0}u lg:w-{n0}u"
+          ]
+        }
       ]
     },
     "icon.pricing-check": {
@@ -107,6 +264,32 @@
           ],
           "anchor": "a 20u check icon"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            530,
+            530
+          ],
+          "anchor": "a 20u check icon",
+          "mode": "format",
+          "expect": [
+            "a {n0}u check icon"
+          ]
+        },
+        {
+          "path": "src/components/Pricing.jsx",
+          "lines": [
+            212,
+            212
+          ],
+          "anchor": "relative h-20u w-20u",
+          "mode": "format",
+          "expect": [
+            "h-{n0}u w-{n0}u"
+          ]
+        }
       ]
     },
     "icon.chevron": {
@@ -116,7 +299,7 @@
         "faq-desktop": "24u",
         "faq-other": "16u"
       },
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -126,12 +309,38 @@
           ],
           "anchor": "  - Chevron: 24u (desktop) / 16u"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            553,
+            553
+          ],
+          "anchor": "  - Chevron: 24u (desktop) / 16u",
+          "mode": "format",
+          "expect": [
+            "Chevron: {n1}u (desktop) / {n2}u"
+          ]
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            526,
+            526
+          ],
+          "anchor": "Chevron icon 16u",
+          "mode": "format",
+          "expect": [
+            "Chevron icon {n0}u"
+          ]
+        }
       ]
     },
     "icon.btn-arrow": {
       "$type": "dimension",
       "$value": "16x14px",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -141,12 +350,27 @@
           ],
           "anchor": "- Icon: inline SVG, viewBox 0 0 16 14"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            86,
+            86
+          ],
+          "anchor": "- Icon: inline SVG, viewBox 0 0 16 14",
+          "mode": "format",
+          "expect": [
+            "viewBox 0 0 {n0} {n1}",
+            "**{n0}x{n1}px fixed**"
+          ]
+        }
       ]
     },
     "icon.legacy-tile": {
       "$type": "dimension",
       "$value": "48px (24px glyph)",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/misc.md",
@@ -155,6 +379,21 @@
             180
           ],
           "anchor": "    - **Icon tile**: absolute at 0,0, 48×48"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            180,
+            180
+          ],
+          "anchor": "    - **Icon tile**: absolute at 0,0, 48×48",
+          "mode": "format",
+          "expect": [
+            "{n0}×{n0}",
+            "{n1}×{n1}"
+          ]
         }
       ]
     }

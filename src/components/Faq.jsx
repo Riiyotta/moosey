@@ -7,7 +7,7 @@ const FAQS = [
     a: 'Registrations, tax accounts, annual reports and official notices.',
   },
   {
-    q: 'How long does it take to get set up and running?',
+    q: 'What happens during my first week as a customer?',
     a: 'Most teams are fully set up within a single afternoon. You start by connecting your payroll provider and adding basic details about each entity, such as where it was formed and where you currently have employees. Northwind uses that information to build a complete list of the registrations, accounts and recurring filings that apply to you, then highlights anything that looks overdue or missing. A specialist reviews the plan with you on a short call, answers questions and confirms priorities. From there, open items are worked through in order of urgency, and you can follow progress on each one from your dashboard. Most new customers see their first completed registrations within a few business days, depending on the state.',
   },
   {

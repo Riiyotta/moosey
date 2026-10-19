@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "sourceProject": {
     "name": "mosey (Northwind clone)",
     "framework": "React 18 + Vite + Tailwind CSS v3 + GSAP 3",
@@ -1869,10 +1869,10 @@
         {
           "path": "CLONE_SPEC.md",
           "lines": [
-            3,
-            3
+            11,
+            144
           ],
-          "anchor": "# Mosey homepage: clone build spec"
+          "anchor": "## 0. Global system (read first)"
         }
       ],
       "code": [

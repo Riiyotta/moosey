@@ -102,21 +102,21 @@ export const forHr = {
         title: 'The multi-state hiring guide for HR leads', // 39c
         desc: 'A step-by-step plan for hiring in a new state, covering registrations, withholding, required notices and the right timing of each task before the first payroll runs.', // 153c
         cta: 'Read the hiring guide', // 19c
-        href: '/p/hiring-guide',
+        href: '/p/multi-state-hiring-guide',
         cover: artUrl('marketing-b/guide-cover-1.svg'),
       },
       {
         title: 'Choosing an employment model',
         desc: 'Compare running your own payroll, working with an employer of record and using a professional employer organization, with the trade-offs of each one.', // 160c
         cta: 'Read the model guide',
-        href: '/p/employment-model-guide',
+        href: '/p/remote-team-handbook-guide',
         cover: artUrl('marketing-b/guide-cover-2.svg'),
       },
       {
         title: 'The fifty-state payroll compliance guide', // 41c
         desc: 'State-by-state notes on withholding accounts, unemployment insurance, local taxes and filing frequencies, kept current by our compliance team.', // 153c
         cta: 'Read the payroll handbook', // 26c
-        href: '/p/payroll-handbook',
+        href: '/p/payroll-setup-playbook',
         cover: artUrl('marketing-b/guide-cover-3.svg'),
       },
     ],

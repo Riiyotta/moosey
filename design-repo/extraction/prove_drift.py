@@ -169,6 +169,69 @@ def i_validator(r):  # sabotage: the validator stops enforcing observed predeces
 def i_status(r):
     edit(r, "registry.manifest.json", lambda d: d.__setitem__("productionApproved", True))
 
+def _reclass(r, path, role):
+    def f(d):
+        a = next(x for x in d["assets"] if x["path"] == path)
+        old = a["role"]; a["role"] = role; a["generationPolicy"] = d["roles"][role]["generationPolicy"]; a["source"] = "placeholder"
+        d["roles"][old]["observed"] -= 1; d["roles"][role]["observed"] += 1
+    edit(r, "assets/asset-roles.json", f)
+def i_reclass_unused_logo(r):  # bookkeeping fully consistent: only the folder pin can catch it
+    _reclass(r, "assets/art/misc/logos/arcwell.svg", "illustration")
+def i_reclass_marquee_logo(r):
+    _reclass(r, "assets/art/logos/halcyon.svg", "illustration")
+def i_section_roles(r):
+    edit(r, "sections/proof.logo-marquee.json", lambda d: d["assetRoles"].append("illustration"))
+def i_empty_roles(r):
+    def f(d):
+        d["content"]["fields"]["images"]["assetRoles"] = []; d["assetRoles"] = []
+    edit(r, "sections/proof.logo-marquee.json", f)
+def i_validator_any_role(r):
+    text(r, "schema/semantic_validate.py", lambda s: s.replace("            if not roles:\n", "            if False:\n"))
+def _tok(r, rel, tid, fn):
+    edit(r, rel, lambda d: fn(d["tokens"], tid))
+def i_ease_accordion(r):
+    _tok(r, "tokens/00-foundation/motion.json", "ease.accordion", lambda t, k: t[k].__setitem__("$value", [0.2, 0.2, 0.5, 1]))
+def i_ease_splide(r):
+    _tok(r, "tokens/00-foundation/motion.json", "ease.splide", lambda t, k: t[k].__setitem__("$value", [0.25, 1, 0.6, 1]))
+def i_dur500(r):
+    _tok(r, "tokens/00-foundation/motion.json", "duration.transition-500", lambda t, k: t[k].__setitem__("$value", "550ms"))
+def i_orphan_menu(r):
+    _tok(r, "tokens/00-foundation/motion.json", "ease.menu-css", lambda t, k: t.pop(k))
+def i_orphan_radius(r):
+    _tok(r, "tokens/00-foundation/radius.json", "radius.14u", lambda t, k: t.pop(k))
+def i_orphan_shadow(r):
+    _tok(r, "tokens/00-foundation/elevation.json", "elevation.flyout", lambda t, k: t.pop(k))
+def i_orphan_duration(r):
+    _tok(r, "tokens/00-foundation/motion.json", "duration.transition-667", lambda t, k: t.pop(k))
+def i_orphan_bg(r):
+    _tok(r, "tokens/00-foundation/color.json", "gradient.price", lambda t, k: t.pop(k))
+def i_font(r):
+    _tok(r, "tokens/00-foundation/typography.json", "font.family.sans", lambda t, k: t[k].__setitem__("$value", ["DM Sans", "sans-serif"]))
+def i_spacing(r):
+    _tok(r, "tokens/00-foundation/spacing.json", "space.scale", lambda t, k: t[k]["$value"].__setitem__("integers", [0, 2000]))
+def i_no_valuecheck(r):
+    _tok(r, "tokens/00-foundation/icon-size.json", "icon.check", lambda t, k: t[k].pop("valueCheck"))
+def i_icon_value(r):
+    _tok(r, "tokens/00-foundation/icon-size.json", "icon.check", lambda t, k: t[k].__setitem__("$value", "18u"))
+def i_spec_only_value(r):
+    _tok(r, "tokens/00-foundation/radius.json", "radius.pill", lambda t, k: t[k].__setitem__("$value", "999px"))
+def i_frame_value(r):
+    _tok(r, "tokens/00-foundation/motion.json", "duration.f20", lambda t, k: t[k].__setitem__("$value", "0.4s"))
+def i_button_padding(r):
+    edit(r, "tokens/20-component/button.json", lambda d: d["tokens"]["paddingY"]["$value"].__setitem__("desktop", "7u"))
+def i_layout_base(r):
+    _tok(r, "tokens/30-layout/layout.json", "layout.container.base", lambda t, k: t[k]["$value"].__setitem__("desktop", "1240u"))
+def i_tablet_intervals(r):
+    edit(r, "motion/motion-contract.json", lambda d: d["autoAdvance"]["intervalsSeconds"].__setitem__("tabletMobile", [16.4, 13.967, 2.833]))
+def i_leaf_count(r):
+    edit(r, "templates/templates.json", lambda d: next(t for t in d["templates"] if t["id"] == "template.resource-guide").__setitem__("routeCount", 1737))
+def i_favicon_unref(r):
+    def f(d):
+        a = next(x for x in d["assets"] if x["path"] == "assets/art/brand/favicon.svg"); a["evidence"] = {"referencedBy": [], "note": "no reference found"}
+    edit(r, "assets/asset-roles.json", f)
+def i_brand_anchor(r):
+    edit(r, "templates/templates.json", lambda d: d["templates"][0]["evidence"]["spec"].__setitem__(0, {"path": "CLONE_SPEC.md", "lines": [3, 3], "anchor": "# " + "Mos" + "ey homepage: clone build spec"}))
+
 CASES = [  # (label, injector, expected needle, needs evidence tree, full suite)
     ("citation range past end of file", i_cite_range, "out of range", True, False),
     ("citation anchor not on the cited lines", i_cite_anchor, "not within", True, False),
@@ -198,7 +261,7 @@ CASES = [  # (label, injector, expected needle, needs evidence tree, full suite)
     ("tailwind colour with no token", i_parity_orphan, "orphan tailwind colour 'plan3'", True, False),
     ("type token != tailwind type table", i_parity_type, "parity: type.h3.desktop", True, False),
     ("ease token != core.js CustomEase", i_parity_ease, "parity: ease.Eas17", True, False),
-    ("CSS variable with no token", i_parity_var, "orphan CSS variable --nw-check-green", True, False),
+    ("CSS variable with no token", i_parity_var, "orphan CSS variable 'nw-check-green'", True, False),
     ("unit token != index.css --u", i_parity_unit, "parity: space.unit.desktop", True, False),
     ("asset bytes drift", i_asset_bytes, "bytes", True, False),
     ("asset file unregistered", i_asset_unreg, "is not registered", True, False),
@@ -230,8 +293,32 @@ CASES = [  # (label, injector, expected needle, needs evidence tree, full suite)
     ("productionApproved flipped", i_status, "productionApproved", False, False),
     ("example PageSpec breaks a budget", i_example, "example (jsonschema)", False, True),
     ("validator stops enforcing a rule", i_validator, "adversarial (", False, True),
+    ("unused customer logo reclassified to illustration (bookkeeping consistent)", i_reclass_unused_logo, "path pin: assets/art/misc/logos/arcwell.svg", True, False),
+    ("marquee logo reclassified (ART_MANIFEST disagrees)", i_reclass_marquee_logo, "ART_MANIFEST (Logo marquee + testimonial logos) says logos/halcyon.svg", True, False),
+    ("section top-level assetRoles != image field roles", i_section_roles, "top-level assetRoles", False, False),
+    ("image field declares no assetRoles", i_empty_roles, "declares no assetRoles", False, False),
+    ("validator accepts any role when none declared", i_validator_any_role, "adversarial (", False, True),
+    ("ease.accordion != tailwind transitionTimingFunction", i_ease_accordion, "parity: ease.accordion", True, False),
+    ("ease.splide != carousel.js SPLIDE_TRANSITION", i_ease_splide, "parity: ease.splide", True, False),
+    ("duration.transition-500 -> 550ms", i_dur500, "parity: duration.transition-500", True, False),
+    ("tailwind timing function 'menu' with no token", i_orphan_menu, "orphan tailwind transitionTimingFunction 'menu'", True, False),
+    ("tailwind radius with no token", i_orphan_radius, "orphan tailwind borderRadius '14u'", True, False),
+    ("tailwind boxShadow with no token", i_orphan_shadow, "orphan tailwind boxShadow 'flyout'", True, False),
+    ("tailwind transitionDuration with no token", i_orphan_duration, "orphan tailwind transitionDuration '667'", True, False),
+    ("tailwind backgroundImage with no token", i_orphan_bg, "orphan tailwind backgroundImage 'price-gradient'", True, False),
+    ("font family != tailwind fontFamily", i_font, "parity: font.family.sans", True, False),
+    ("spacing rule != tailwind uSpacing loop", i_spacing, "parity: space.scale", True, False),
+    ("foundation token with no code mapping and no valueCheck", i_no_valuecheck, "neither a code parity mapping nor a valueCheck", False, False),
+    ("icon size != primitives.jsx / spec", i_icon_value, "valueCheck: icon.check", True, False),
+    ("spec-only token != spec text", i_spec_only_value, "valueCheck: radius.pill", True, False),
+    ("frame duration != f(n)", i_frame_value, "valueCheck: duration.f20", False, False),
+    ("component token != blocks.css .btn", i_button_padding, "valueCheck: button.paddingY", True, False),
+    ("layout token != blocks.css .base-container", i_layout_base, "valueCheck: layout.container.base", True, False),
+    ("hero tablet/mobile intervals != visuals.js heroMobile", i_tablet_intervals, "tabletMobile intervals", True, False),
+    ("resource-guide routeCount != resourceSlugs.js", i_leaf_count, "leaves derived from src/data/content/resourceSlugs.js", True, False),
+    ("favicon recorded as unreferenced (index.html uses it)", i_favicon_unref, "recorded as unreferenced", True, False),
+    ("citation anchor quotes the measured site's name", i_brand_anchor, "anchor quotes the measured site's name", True, False),
 ]
-
 
 def scratch(tmp):
     pkg = os.path.join(tmp, "pkg")
@@ -262,6 +349,13 @@ def main():
             print("FAIL: the unmodified scratch copy is not admitted:\n" + out[-2000:])
             sys.exit(1)
         print("  ok    control: unmodified copy admitted (full suite)")
+        alone = os.path.join(tmp, "alone")
+        shutil.copytree(REPO, os.path.join(alone, "design-repo"), ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store"))
+        code, out = run(os.path.join(alone, "design-repo"), False)
+        if code == 0 and "citations unresolved (evidence tree absent" in out:
+            print("  ok    caught: standalone copy reports the total of unresolved citations"); ok += 1
+        else:
+            print(f"  FAIL  standalone copy: exit {code}, no unresolved-citation total\n{out[-600:]}"); fail += 1
         for i, (label, fn, needle, needs_ev, full) in enumerate(CASES):
             if needs_ev and not EVIDENCE:
                 print(f"  SKIP  {label}: evidence tree not beside design-repo/"); skip += 1; continue

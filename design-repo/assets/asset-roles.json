@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "sourceIsLiveSite": false,
   "measuredFromThirdPartySite": true,
   "defaultPolicy": "Every file in public/ is ORIGINAL placeholder art for the fictional 'Northwind' brand (public/assets/art/ART_MANIFEST.md). Logo, people and screenshot roles are still protected: the measured third-party site's real logos, photos, Lottie art and UI must never be reproduced, and a generator may not fabricate identity assets.",
@@ -305,8 +305,9 @@
       "source": "placeholder",
       "generationPolicy": "must-reuse-exact",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "index.html"
+        ]
       }
     },
     {
@@ -316,8 +317,13 @@
       "source": "placeholder",
       "generationPolicy": "must-reuse-exact",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Footer.jsx",
+          "src/components/InlineSvg.jsx",
+          "src/components/Navbar.jsx",
+          "src/components/misc/legacy/LegacyKit.jsx"
+        ],
+        "note": "dynamic path (template literal on 'brand/northwind-logo')"
       }
     },
     {
@@ -341,10 +347,7 @@
       "generationPolicy": "must-reuse-exact",
       "evidence": {
         "referencedBy": [
-          "src/components/Footer.jsx",
-          "src/components/InlineSvg.jsx",
-          "src/components/Navbar.jsx",
-          "src/components/misc/legacy/LegacyKit.jsx"
+          "src/components/Navbar.jsx"
         ]
       }
     },
@@ -410,7 +413,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -423,7 +426,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -436,7 +439,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -449,7 +452,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -462,7 +465,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -475,7 +478,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -488,7 +491,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -501,7 +504,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -514,7 +517,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -527,7 +530,7 @@
         "referencedBy": [
           "src/data/content/blogPosts.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/blog/post')"
       }
     },
     {
@@ -576,7 +579,7 @@
         "referencedBy": [
           "src/data/content/guides.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/guide/hero-cover')"
       }
     },
     {
@@ -589,7 +592,7 @@
         "referencedBy": [
           "src/data/content/guides.js"
         ],
-        "note": "dynamic path (template literal)"
+        "note": "dynamic path (template literal on 'content/guide/hero-cover')"
       }
     },
     {
@@ -713,8 +716,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Navbar.jsx"
+        ],
+        "note": "dynamic path (template literal on 'header/flyout')"
       }
     },
     {
@@ -724,8 +729,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Navbar.jsx"
+        ],
+        "note": "dynamic path (template literal on 'header/flyout')"
       }
     },
     {
@@ -735,8 +742,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Navbar.jsx"
+        ],
+        "note": "dynamic path (template literal on 'header/flyout')"
       }
     },
     {
@@ -746,8 +755,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Navbar.jsx"
+        ],
+        "note": "dynamic path (template literal on 'header/flyout')"
       }
     },
     {
@@ -769,8 +780,10 @@
       "source": "placeholder",
       "generationPolicy": "must-not-fabricate",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ],
+        "note": "dynamic path (template literal on 'hero/hero-tab')"
       }
     },
     {
@@ -780,8 +793,10 @@
       "source": "placeholder",
       "generationPolicy": "must-not-fabricate",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ],
+        "note": "dynamic path (template literal on 'hero/hero-tab')"
       }
     },
     {
@@ -791,8 +806,10 @@
       "source": "placeholder",
       "generationPolicy": "must-not-fabricate",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ],
+        "note": "dynamic path (template literal on 'hero/hero-tab')"
       }
     },
     {
@@ -802,8 +819,10 @@
       "source": "placeholder",
       "generationPolicy": "must-not-fabricate",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ],
+        "note": "dynamic path (template literal on 'hero/hero-tab')"
       }
     },
     {
@@ -813,8 +832,10 @@
       "source": "placeholder",
       "generationPolicy": "must-not-fabricate",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ],
+        "note": "dynamic path (template literal on 'hero/hero-tab')"
       }
     },
     {
@@ -824,8 +845,10 @@
       "source": "placeholder",
       "generationPolicy": "must-not-fabricate",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ],
+        "note": "dynamic path (template literal on 'hero/hero-tab')"
       }
     },
     {
@@ -837,9 +860,7 @@
       "evidence": {
         "referencedBy": [
           "src/components/RoleTabs.jsx",
-          "src/data/content/guides.js",
-          "src/data/marketing/products.js",
-          "src/data/misc/legacyContent.js"
+          "src/data/marketing/products.js"
         ]
       }
     },
@@ -851,10 +872,7 @@
       "generationPolicy": "may-generate-new",
       "evidence": {
         "referencedBy": [
-          "src/components/RoleTabs.jsx",
-          "src/data/content/blogPosts.js",
-          "src/data/marketing-b/security.js",
-          "src/data/misc/legacyContent.js"
+          "src/components/RoleTabs.jsx"
         ]
       }
     },
@@ -866,12 +884,11 @@
       "generationPolicy": "may-generate-new",
       "evidence": {
         "referencedBy": [
-          "src/components/Hero.jsx",
-          "src/components/InlineSvg.jsx",
-          "src/components/Navbar.jsx",
-          "src/components/Pricing.jsx",
           "src/components/RoleTabs.jsx",
-          "src/components/Testimonials.jsx"
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js",
+          "src/data/misc/partners.js",
+          "src/motion/blocks.js"
         ]
       }
     },
@@ -884,9 +901,7 @@
       "evidence": {
         "referencedBy": [
           "src/components/RoleTabs.jsx",
-          "src/data/marketing/platform.js",
-          "src/data/marketing/products.js",
-          "src/data/misc/staticPartnerContent.js"
+          "src/data/marketing/products.js"
         ]
       }
     },
@@ -911,8 +926,7 @@
       "generationPolicy": "may-generate-new",
       "evidence": {
         "referencedBy": [
-          "src/components/RoleTabs.jsx",
-          "src/data/misc/legacyContent.js"
+          "src/components/RoleTabs.jsx"
         ]
       }
     },
@@ -938,11 +952,7 @@
       "evidence": {
         "referencedBy": [
           "src/components/RoleTabs.jsx",
-          "src/components/content/GuideFormSection.jsx",
-          "src/components/content/ResourceLinkGrid.jsx",
-          "src/components/marketing/InnerPost.jsx",
-          "src/data/content/blogPosts.js",
-          "src/data/content/guides.js"
+          "src/data/marketing/products.js"
         ]
       }
     },
@@ -967,12 +977,9 @@
       "generationPolicy": "may-generate-new",
       "evidence": {
         "referencedBy": [
-          "src/components/Roadmap.jsx",
           "src/components/RoleTabs.jsx",
-          "src/components/misc/legacy/icons.jsx",
-          "src/data/content/guides.js",
-          "src/data/marketing/platform.js",
-          "src/data/marketing/products.js"
+          "src/data/marketing/products.js",
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -1226,7 +1233,6 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/marketing/about/AboutHero.jsx",
           "src/data/marketing-b/about.js",
           "src/motion/marketing.js"
         ]
@@ -1416,8 +1422,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ],
+        "note": "dynamic path (template literal on 'marketing/handbook-pictogram')"
       }
     },
     {
@@ -1427,8 +1435,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ],
+        "note": "dynamic path (template literal on 'marketing/handbook-pictogram')"
       }
     },
     {
@@ -1438,8 +1448,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ],
+        "note": "dynamic path (template literal on 'marketing/handbook-pictogram')"
       }
     },
     {
@@ -1512,12 +1524,9 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/Hero.jsx",
-          "src/components/blocks/PageHero.jsx",
           "src/data/marketing-b/solutionDetails.js",
           "src/data/marketing/platform.js",
-          "src/data/marketing/products.js",
-          "src/motion/blocks.js"
+          "src/data/marketing/products.js"
         ]
       }
     },
@@ -1932,12 +1941,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/Faq.jsx",
-          "src/components/Navbar.jsx",
-          "src/components/Pricing.jsx",
-          "src/components/Roadmap.jsx",
-          "src/components/RoleTabs.jsx",
-          "src/components/Testimonials.jsx"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -1949,9 +1953,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/data/marketing-b/for-hr.js",
-          "src/data/misc/legacyContent.js",
-          "src/data/misc/staticPartnerContent.js"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -1963,12 +1965,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/data/content/blogPosts.js",
-          "src/data/content/resourceLeaves.js",
-          "src/data/marketing-b/for-hr.js",
-          "src/data/marketing-b/for-telehealth.js",
-          "src/data/misc/legacyContent.js",
-          "src/data/misc/platformPartnerContent.js"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -1980,12 +1977,8 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/Banner.jsx",
-          "src/components/Benefits.jsx",
-          "src/components/RoleTabs.jsx",
-          "src/components/Testimonials.jsx",
-          "src/components/marketing/icons.jsx",
-          "src/components/misc/legacy/icons.jsx"
+          "src/data/marketing-b/for-hr.js",
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -1997,12 +1990,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/Pricing.jsx",
-          "src/components/RoleTabs.jsx",
-          "src/components/Testimonials.jsx",
-          "src/components/content/HubspotForm.jsx",
-          "src/components/misc/legacy/icons.jsx",
-          "src/data/content/blogPosts.js"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -2014,9 +2002,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/misc/legacy/LegacyKit.jsx",
-          "src/data/misc/legacyContent.js",
-          "src/data/misc/salesTaxBeta.js"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -2040,12 +2026,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/Faq.jsx",
-          "src/components/Navbar.jsx",
-          "src/components/RoleTabs.jsx",
-          "src/components/Testimonials.jsx",
-          "src/components/misc/LegacyPartnerPage.jsx",
-          "src/data/content/blogPosts.js"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -2057,8 +2038,6 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/data/content/guides.js",
-          "src/data/content/resources.js",
           "src/data/misc/legacyContent.js"
         ]
       }
@@ -2083,12 +2062,7 @@
       "generationPolicy": "must-not-fabricate",
       "evidence": {
         "referencedBy": [
-          "src/components/Benefits.jsx",
-          "src/components/Faq.jsx",
-          "src/components/Footer.jsx",
-          "src/components/Navbar.jsx",
-          "src/components/PeaceOfMind.jsx",
-          "src/components/Pricing.jsx"
+          "src/data/misc/legacyContent.js"
         ]
       }
     },
@@ -2150,8 +2124,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Roadmap.jsx"
+        ],
+        "note": "dynamic path (template literal on 'roadmap/roadmap-step')"
       }
     },
     {
@@ -2161,8 +2137,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Roadmap.jsx"
+        ],
+        "note": "dynamic path (template literal on 'roadmap/roadmap-step')"
       }
     },
     {
@@ -2172,8 +2150,10 @@
       "source": "placeholder",
       "generationPolicy": "may-generate-new",
       "evidence": {
-        "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "referencedBy": [
+          "src/components/Roadmap.jsx"
+        ],
+        "note": "dynamic path (template literal on 'roadmap/roadmap-step')"
       }
     },
     {
@@ -2184,7 +2164,7 @@
       "generationPolicy": "must-reuse-exact",
       "evidence": {
         "referencedBy": [],
-        "note": "no reference found in src/ (kept as spare art)"
+        "note": "no reference found in src/ or index.html (kept as spare art)"
       }
     },
     {
@@ -2219,6 +2199,7 @@
       "generationPolicy": "must-reuse-exact",
       "evidence": {
         "referencedBy": [
+          "index.html",
           "src/index.css"
         ]
       }

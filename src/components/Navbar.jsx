@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { linkFor } from '../links'
 import InlineSvg, { art, artUrl } from './InlineSvg'
 import { LinkArrow } from './shared'
@@ -33,6 +34,13 @@ export default function Navbar() {
     document.addEventListener('mousedown', onDown)
     return () => document.removeEventListener('mousedown', onDown)
   }, [flyoutOpen])
+
+  // navigating (menu link, logo, browser back) closes the menu and flyout
+  const { pathname } = useLocation()
+  useEffect(() => {
+    setMenuOpen(false)
+    setFlyoutOpen(false)
+  }, [pathname])
 
   // body overflow lock while the mobile menu is open
   useEffect(() => {

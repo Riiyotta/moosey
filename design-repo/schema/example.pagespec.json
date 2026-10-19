@@ -1,5 +1,5 @@
 {
-  "pageSpecVersion": "0.1.0",
+  "pageSpecVersion": "0.1.1",
   "template": "template.home",
   "route": "/",
   "nodes": [

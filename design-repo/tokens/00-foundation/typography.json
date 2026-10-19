@@ -1969,6 +1969,21 @@
           ],
           "anchor": "Excerpt p (`text-p1-b`, **new token**)"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            14,
+            19
+          ],
+          "anchor": ".text-p1-b {",
+          "mode": "format",
+          "expect": [
+            "font-size: calc(var(--u) * {n0});",
+            "line-height: calc(var(--u) * {n1});"
+          ]
+        }
       ]
     },
     "type.p1-b.tablet": {
@@ -1996,6 +2011,21 @@
             77
           ],
           "anchor": "Excerpt p (`text-p1-b`, **new token**)"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            30,
+            33
+          ],
+          "anchor": ".text-p1-b {",
+          "mode": "format",
+          "expect": [
+            "font-size: calc(var(--u) * {n0});",
+            "line-height: calc(var(--u) * {n1});"
+          ]
         }
       ]
     },
@@ -2025,6 +2055,21 @@
           ],
           "anchor": "Excerpt p (`text-p1-b`, **new token**)"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            40,
+            44
+          ],
+          "anchor": ".text-p1-b {",
+          "mode": "format",
+          "expect": [
+            "font-size: calc(var(--u) * {n0});",
+            "line-height: calc(var(--u) * {n1});"
+          ]
+        }
       ]
     },
     "type.button-large.mobile": {
@@ -2052,6 +2097,22 @@
             46
           ],
           "anchor": "| `button-large` |"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            22,
+            27
+          ],
+          "anchor": ".text-button-large {",
+          "mode": "format",
+          "expect": [
+            "font-size: calc(var(--u) * {n0});",
+            "line-height: calc(var(--u) * {n1});",
+            "letter-spacing: calc(var(--u) * {n2});"
+          ]
         }
       ]
     },
@@ -2081,6 +2142,21 @@
           ],
           "anchor": "| `button-large` |"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            34,
+            37
+          ],
+          "anchor": ".text-button-large {",
+          "mode": "format",
+          "expect": [
+            "font-size: calc(var(--u) * {n0});",
+            "line-height: calc(var(--u) * {n1});"
+          ]
+        }
       ]
     },
     "type.button-large.desktop": {
@@ -2109,12 +2185,28 @@
           ],
           "anchor": "| `button-large` |"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            44,
+            48
+          ],
+          "anchor": ".text-button-large {",
+          "mode": "format",
+          "expect": [
+            "font-size: calc(var(--u) * {n0});",
+            "line-height: calc(var(--u) * {n1});",
+            "letter-spacing: calc(var(--u) * {n2});"
+          ]
+        }
       ]
     },
     "type.prose.p": {
       "$type": "typographyRule",
       "$value": "13/20.8 · 14/22.4 · 17/27.2u, ls -0.01em, 450, #203435B3, mt 24u",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2124,12 +2216,23 @@
           ],
           "anchor": "| `p` | 13/20.8"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            142,
+            142
+          ],
+          "anchor": "| `p` | 13/20.8",
+          "mode": "numbers"
+        }
       ]
     },
     "type.prose.h2": {
       "$type": "typographyRule",
       "$value": "17/22.1 · 17/22.1 · 24/31.2u, ls -0.68/-0.96u, 500, mt 40u",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2139,12 +2242,23 @@
           ],
           "anchor": "| `h2` | 17/22.1"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            143,
+            143
+          ],
+          "anchor": "| `h2` | 17/22.1",
+          "mode": "numbers"
+        }
       ]
     },
     "type.prose.h3": {
       "$type": "typographyRule",
       "$value": "13/20.8 · 13/20.8 · 18/28.8u, ls -0.26/-0.36u, 500, mt 24u",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2154,12 +2268,23 @@
           ],
           "anchor": "| `h3` | 13/20.8"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            144,
+            144
+          ],
+          "anchor": "| `h3` | 13/20.8",
+          "mode": "numbers"
+        }
       ]
     },
     "type.prose.em": {
       "$type": "typographyRule",
       "$value": "12/19.2 · 12/19.2 · 15/24u italic 450 (smaller than body: a quirk)",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2169,12 +2294,23 @@
           ],
           "anchor": "| `em`, `i` |"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            153,
+            153
+          ],
+          "anchor": "| `em`, `i` |",
+          "mode": "numbers"
+        }
       ]
     },
     "type.prose.blockquote": {
       "$type": "typographyRule",
       "$value": "18/28.8 · 20/32 · 22/35.2u italic 450",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2184,12 +2320,23 @@
           ],
           "anchor": "| `blockquote` |"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            154,
+            154
+          ],
+          "anchor": "| `blockquote` |",
+          "mode": "numbers"
+        }
       ]
     },
     "type.prose.th": {
       "$type": "typographyRule",
       "$value": "13/20.8u, ls -0.26u, 500, #F3F1EC on #203435, padding 10u 15u",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2199,12 +2346,23 @@
           ],
           "anchor": "- `th`: 13/20.8"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            163,
+            164
+          ],
+          "anchor": "- `thead`: bg `#203435`.",
+          "mode": "numbers"
+        }
       ]
     },
     "type.prose.td": {
       "$type": "typographyRule",
       "$value": "12/19.2u, ls -0.12u, 450, #203435B3, padding 5u",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -2213,6 +2371,17 @@
             165
           ],
           "anchor": "- `td`: 12/19.2"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            165,
+            165
+          ],
+          "anchor": "- `td`: 12/19.2",
+          "mode": "numbers"
         }
       ]
     }

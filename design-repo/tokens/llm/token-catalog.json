@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "note": "Curated, referenceable token ids: semantic, component and layout. Foundation tokens are not exposed.",
   "categories": {
     "color": [

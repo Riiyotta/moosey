@@ -507,6 +507,19 @@
           ],
           "anchor": "const CSS_EASE = CustomEase.create('nwCssEase', '.25,.1,.25,1')"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/motion/misc.js",
+          "lines": [
+            18,
+            18
+          ],
+          "anchor": "const CSS_EASE = CustomEase.create('nwCssEase'",
+          "mode": "regex",
+          "regex": "'nwCssEase', '([^']+)'",
+          "scale": 1
+        }
       ]
     },
     "ease.tab-indicator": {
@@ -529,6 +542,32 @@
             134
           ],
           "anchor": "  - **Indicator motion:**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/motion/tabs.js",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "duration: 0.5, ease: 'power2.out'",
+          "mode": "format",
+          "expect": [
+            "ease: '{v}'"
+          ]
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            134,
+            134
+          ],
+          "anchor": "  - **Indicator motion:**",
+          "mode": "format",
+          "expect": [
+            "\"{v}\""
+          ]
         }
       ]
     },
@@ -687,6 +726,17 @@
           ],
           "anchor": "**Frame-based durations:**"
         }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
       ]
     },
     "duration.f8": {
@@ -697,6 +747,17 @@
       "derivation": "f(8) = 8/60",
       "citations": [
         {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
           "path": "CLONE_SPEC.md",
           "lines": [
             615,
@@ -721,6 +782,17 @@
           ],
           "anchor": "**Frame-based durations:**"
         }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
       ]
     },
     "duration.f15": {
@@ -731,6 +803,17 @@
       "derivation": "f(15) = 15/60",
       "citations": [
         {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
           "path": "CLONE_SPEC.md",
           "lines": [
             615,
@@ -755,6 +838,17 @@
           ],
           "anchor": "**Frame-based durations:**"
         }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
       ]
     },
     "duration.f28": {
@@ -765,6 +859,17 @@
       "derivation": "f(28) = 28/60",
       "citations": [
         {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
           "path": "CLONE_SPEC.md",
           "lines": [
             615,
@@ -789,6 +894,17 @@
           ],
           "anchor": "**Frame-based durations:**"
         }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
       ]
     },
     "duration.f32": {
@@ -799,6 +915,17 @@
       "derivation": "f(32) = 32/60",
       "citations": [
         {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
           "path": "CLONE_SPEC.md",
           "lines": [
             615,
@@ -823,6 +950,17 @@
           ],
           "anchor": "**Frame-based durations:**"
         }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
       ]
     },
     "duration.f40": {
@@ -840,6 +978,17 @@
           ],
           "anchor": "**Frame-based durations:**"
         }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
       ]
     },
     "duration.f90": {
@@ -850,6 +999,17 @@
       "derivation": "f(90) = 90/60",
       "citations": [
         {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "mode": "frames",
           "path": "CLONE_SPEC.md",
           "lines": [
             615,
@@ -984,6 +1144,20 @@
           ],
           "anchor": "export const SPLIDE_TRANSITION"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/motion/carousel.js",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "export const SPLIDE_TRANSITION",
+          "mode": "format",
+          "expect": [
+            "transform {n0}ms"
+          ]
+        }
       ]
     },
     "duration.swiper-move": {
@@ -1007,12 +1181,37 @@
           ],
           "anchor": "Default Swiper speed 300ms"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/motion/misc.js",
+          "lines": [
+            19,
+            19
+          ],
+          "anchor": "const SPEED = 0.3",
+          "mode": "regex",
+          "regex": "SPEED = ([\\d.]+)",
+          "scale": 1000
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            295,
+            295
+          ],
+          "anchor": "Default Swiper speed 300ms",
+          "mode": "format",
+          "expect": [
+            "speed {n0}ms"
+          ]
+        }
       ]
     },
     "duration.tailwind-150": {
       "$type": "duration",
       "$value": "150ms",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -1021,6 +1220,20 @@
             641
           ],
           "anchor": "- 150ms Tailwind default: footer links."
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            641,
+            641
+          ],
+          "anchor": "- 150ms Tailwind default: footer links.",
+          "mode": "format",
+          "expect": [
+            "{n0}ms Tailwind default"
+          ]
         }
       ]
     },
@@ -1036,6 +1249,64 @@
             151
           ],
           "anchor": "`transition: all .2s cubic-bezier(.4,0,.2,1)` |"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            190,
+            190
+          ],
+          "anchor": "transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);",
+          "mode": "regex",
+          "regex": "all ([\\d.]+)s cubic",
+          "scale": 1000
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            151,
+            151
+          ],
+          "anchor": "`transition: all .2s cubic-bezier(.4,0,.2,1)` |",
+          "mode": "regex",
+          "regex": "all (\\.\\d+)s",
+          "scale": 1000
+        }
+      ]
+    },
+    "ease.menu-css": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.57,
+        0,
+        0.43,
+        1
+      ],
+      "basis": "measured",
+      "note": "CSS twin of ease.menu (Tailwind transitionTimingFunction 'menu')",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-ease",
+        "key": "menu"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            157,
+            157
+          ],
+          "anchor": "menu: 'cubic-bezier(.57,0,.43,1)'"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            634,
+            634
+          ],
+          "anchor": "| menu | (.57, 0, .43, 1)"
         }
       ]
     }

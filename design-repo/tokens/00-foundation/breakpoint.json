@@ -60,7 +60,7 @@
     "breakpoint.sm-inert": {
       "$type": "rule",
       "$value": "No `sm`/`xl` screen exists: every sm:/xl: class in the original markup is dead and must not be implemented.",
-      "basis": "measured",
+      "basis": "spec-only-rule",
       "citations": [
         {
           "path": "specs/marketing.md",
@@ -77,6 +77,20 @@
             11
           ],
           "anchor": "**Breakpoint quirk that matters.**"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            25,
+            25
+          ],
+          "anchor": "5. **`sm:` Tailwind variants are inert.**",
+          "mode": "format",
+          "expect": [
+            "`sm:`"
+          ]
         }
       ]
     },
@@ -101,6 +115,32 @@
             576
           ],
           "anchor": "multiQuery: '(min-width: 1260px)'"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            576,
+            576
+          ],
+          "anchor": "multiQuery: '(min-width: 1260px)'",
+          "mode": "format",
+          "expect": [
+            "(min-width: {n0}px)"
+          ]
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            245,
+            245
+          ],
+          "anchor": "- **≥1260px viewport**",
+          "mode": "format",
+          "expect": [
+            "≥{n0}px"
+          ]
         }
       ]
     }

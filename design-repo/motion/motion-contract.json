@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "libraries": {
     "gsap": "GSAP 3 + CustomEase + ScrollTrigger (ScrollTrigger.config({ignoreMobileResize:true}))",
     "lottie": "replaced by inline SVG stand-ins animated with GSAP timelines (src/motion/visuals.js)",
@@ -178,7 +178,13 @@
       0.25,
       1
     ],
-    "tab-indicator": "power2.out"
+    "tab-indicator": "power2.out",
+    "menu-css": [
+      0.57,
+      0,
+      0.43,
+      1
+    ]
   },
   "durations": {
     "frameRule": "f(n) = n/60 s",

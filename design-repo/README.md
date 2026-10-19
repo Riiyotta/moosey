@@ -17,7 +17,7 @@ nothing from the measured site (its logos, photos, Lottie art, UI or copy) may b
 - Primitives: 16
 - Components: 22
 - Assets: 154
-- Foundation tokens: 215
+- Foundation tokens: 216
 - Semantic tokens: 55
 - Component tokens: 68
 - Layout tokens: 13

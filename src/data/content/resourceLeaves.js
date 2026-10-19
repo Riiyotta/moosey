@@ -75,7 +75,7 @@ const payrollBody = (st, seed) => [
   },
   { cta: true },
   {
-    html: `<h2>How ${st} Payroll Registration Works</h2>
+    html: `<h2>Opening ${st} payroll accounts, step by step</h2>
 <p>${pick(seed, [
       `There are usually two accounts to open in ${st}: one for income tax withholding and one for unemployment insurance. You can register directly with each agency using the steps below, or let Northwind handle the filings for you.`,
       `Most employers in ${st} deal with two agencies during setup, one for withholding and one for unemployment insurance. Each issues its own account number and runs its own online portal.`,
@@ -254,7 +254,7 @@ const agencyBody = (name, slug, st, seed) => {
 /* ------------------------------------------------------------------ record builders */
 
 const PAYROLL_CTA = {
-  title: 'Zero payroll penalties, zero distractions.',
+  title: 'Payroll accounts opened for you, start to finish.',
   desc: 'Northwind registers new payroll accounts automatically and tracks every filing from start to finish.',
 }
 const SOS_CTA = {

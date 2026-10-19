@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "derivedFrom": "templates/templates.json and sections/*.json (recomputed by verify_all.py)",
   "rules": [
     {

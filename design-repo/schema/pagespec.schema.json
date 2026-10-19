@@ -13,7 +13,7 @@
   "properties": {
     "pageSpecVersion": {
       "type": "string",
-      "const": "0.1.0"
+      "const": "0.1.1"
     },
     "template": {
       "type": "string",

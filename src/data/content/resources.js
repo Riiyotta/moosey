@@ -112,7 +112,7 @@ export const categoryBySlug = (slug) => CATEGORIES.find((c) => c.slug === slug)
 
 export const INDEX = {
   eyebrow: 'Resources',
-  title: 'State Compliance Guides and Registration Tools',
+  title: 'Guides for Every State, Agency and Filing',
   groups: [
     {
       title: 'Weekly compliance newsletter',

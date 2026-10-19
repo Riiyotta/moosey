@@ -278,7 +278,9 @@ def check(spec):
             if not isinstance(im, dict):
                 continue
             r = im.get("assetRole")
-            if roles and r not in roles:
+            if not roles:
+                errors.append(f"assetRole: {where}.images[{j}] role '{r}' rejected: this section's image field declares no assetRoles")
+            elif r not in roles:
                 errors.append(f"assetRole: {where}.images[{j}] role '{r}' not used by this section (allowed: {', '.join(roles)})")
             if r in protected and im.get("source") not in ("placeholder", "supplied"):
                 errors.append(f"assetRole: {where}.images[{j}] role '{r}' is protected (must-not-fabricate): it needs source 'placeholder' or 'supplied'")

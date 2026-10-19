@@ -1784,13 +1784,39 @@
           ],
           "anchor": "- **Outer:** bg `#FBFCFC` (`bg-sage-50`)"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            218,
+            218
+          ],
+          "anchor": "- **Outer:** bg `#FBFCFC` (`bg-sage-50`)",
+          "mode": "format",
+          "expect": [
+            "`{v}`"
+          ]
+        },
+        {
+          "path": "src/pages/AuthorDetail.jsx",
+          "lines": [
+            17,
+            17
+          ],
+          "anchor": "bg-[#FBFCFC]",
+          "mode": "format",
+          "expect": [
+            "bg-[{v}]"
+          ]
+        }
       ]
     },
     "color.footer-border": {
       "$type": "color",
       "$value": "rgba(252,251,250,.2)",
       "role": "Footer borders",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -1799,6 +1825,20 @@
             98
           ],
           "anchor": "Alpha usages:"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:",
+          "mode": "format",
+          "expect": [
+            "`{v}`"
+          ]
         }
       ]
     },
@@ -1910,6 +1950,20 @@
             39
           ],
           "anchor": "| `bg-mask-gradient-orange` |"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            47,
+            47
+          ],
+          "anchor": ".bg-mask-gradient-orange {",
+          "mode": "format",
+          "expect": [
+            "{v}"
+          ]
         }
       ]
     }

@@ -85,7 +85,7 @@ def main():
     tmpl = TBY[ex["template"]]
     tseq = [n["section"] for n in tmpl["nodes"]]
     types = [n["type"] for n in ex["nodes"]]
-    cases, skipped = [], []
+    cases, skipped, direct = [], [], []
     cases.append(("control: bundled example", ex, "pass", None))
     for t in TEMPLATES:
         cases.append((f"control: minimal {t['id']}", control_for(t), "pass", None))
@@ -141,6 +141,20 @@ def main():
     alt("partner logo on ecosystem filed as icon", "template.platform-overview", lambda s: next(n for n in s["nodes"] if n["type"] == "proof.ecosystem")["content"].__setitem__("images", [{"assetRole": "icon"}]), "not used by this section")
     alt("author photo filed as editorial illustration on the post header", "template.blog-post",
         lambda s: s["nodes"][1]["content"].__setitem__("images", [{"assetRole": "editorial-illustration"}]), "not used by this section")
+
+    # a contract whose image field declares NO roles must not accept any role (protected or generic)
+    def no_roles_case():
+        c = SECS["proof.logo-marquee"]
+        saved = copy.deepcopy(c)
+        c["content"]["fields"]["images"]["assetRoles"] = []
+        try:
+            s = copy.deepcopy(ex)
+            s["nodes"][mi]["content"]["images"] = [{"assetRole": "customer-logo", "source": "placeholder"}]
+            errors, _ = sv.check(s)
+        finally:
+            SECS["proof.logo-marquee"].clear(); SECS["proof.logo-marquee"].update(saved)
+        return any("declares no assetRoles" in e for e in errors)
+    direct.append(("image field with no declared roles rejects every role", no_roles_case))
 
     # ---- retired / decomposition layer
     mut("retired composite section id", lambda s: s["nodes"][idx("pricing.plan-cards")].__setitem__("type", "pricing.section"), "retired:")
@@ -217,6 +231,13 @@ def main():
         else:
             fail += 1
             print(f"FAIL: {label}: expected {expect}" + (f" containing '{needle}'" if needle else "") + f"; errors={errors[:3]} warnings={warnings[:3]}")
+    for label, fn in direct:
+        if fn():
+            ok += 1
+        else:
+            fail += 1
+            print(f"FAIL: {label}")
+    cases.extend((label, None, "error", None) for label, _ in direct)
     for s_ in skipped:
         print("SKIPPED:", s_)
     n_ctrl = sum(1 for c in cases if c[2] == "pass")

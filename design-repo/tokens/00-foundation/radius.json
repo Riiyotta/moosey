@@ -200,7 +200,7 @@
     "radius.progress": {
       "$type": "dimension",
       "$value": "3px",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -209,6 +209,20 @@
             108
           ],
           "anchor": "14u: mobile menu panel. 2u: tab indicator. 3px: progress fill."
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            108,
+            108
+          ],
+          "anchor": "3px: progress fill.",
+          "mode": "format",
+          "expect": [
+            "{n0}px: progress fill"
+          ]
         }
       ]
     },
@@ -225,6 +239,20 @@
           ],
           "anchor": "  - Flyout uses fixed px: 24px panel, 8px items."
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            110,
+            110
+          ],
+          "anchor": "  - Flyout uses fixed px: 24px panel, 8px items.",
+          "mode": "format",
+          "expect": [
+            "{n0}px panel"
+          ]
+        }
       ]
     },
     "radius.flyout-item": {
@@ -240,12 +268,26 @@
           ],
           "anchor": "  - Flyout uses fixed px: 24px panel, 8px items."
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            110,
+            110
+          ],
+          "anchor": "  - Flyout uses fixed px: 24px panel, 8px items.",
+          "mode": "format",
+          "expect": [
+            "{n0}px items"
+          ]
+        }
       ]
     },
     "radius.circle": {
       "$type": "dimension",
       "$value": "50%",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -255,12 +297,26 @@
           ],
           "anchor": "50%: slider arrows and pagination dots."
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            109,
+            109
+          ],
+          "anchor": "50%: slider arrows and pagination dots.",
+          "mode": "format",
+          "expect": [
+            "{n0}%: slider arrows"
+          ]
+        }
       ]
     },
     "radius.pill": {
       "$type": "dimension",
       "$value": "9999px",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "CLONE_SPEC.md",
@@ -270,12 +326,26 @@
           ],
           "anchor": "9999px: \"New\" pills."
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            109,
+            109
+          ],
+          "anchor": "9999px: \"New\" pills.",
+          "mode": "format",
+          "expect": [
+            "{n0}px: \"New\" pills"
+          ]
+        }
       ]
     },
     "radius.form-input": {
       "$type": "dimension",
       "$value": "8px",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/content.md",
@@ -285,12 +355,26 @@
           ],
           "anchor": "- Width 100%, block, radius 8px"
         }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            488,
+            488
+          ],
+          "anchor": "- Width 100%, block, radius 8px",
+          "mode": "format",
+          "expect": [
+            "radius {n0}px"
+          ]
+        }
       ]
     },
     "radius.legacy-tile": {
       "$type": "dimension",
       "$value": "6px",
-      "basis": "measured",
+      "basis": "spec-only",
       "citations": [
         {
           "path": "specs/misc.md",
@@ -299,6 +383,20 @@
             180
           ],
           "anchor": "48×48, radius 6px"
+        }
+      ],
+      "valueCheck": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            180,
+            180
+          ],
+          "anchor": "48×48, radius 6px",
+          "mode": "format",
+          "expect": [
+            "radius {n0}px"
+          ]
         }
       ]
     }

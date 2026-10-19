@@ -452,8 +452,8 @@
         "/"
       ],
       "sections": [
-        "shell.header",
         "shell.announcement-banner",
+        "shell.header",
         "hero.home-tabs",
         "proof.logo-ticker-home",
         "features.statement",

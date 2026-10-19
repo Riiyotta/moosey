@@ -145,8 +145,8 @@ until a second caller actually appears.
 
 | # | category | section | |
 |---:|---|---|---|
-| 1 | SHELL | `shell.header` | shared ×34 |
-| 2 | SHELL | `shell.announcement-banner` | page-local |
+| 1 | SHELL | `shell.announcement-banner` | page-local |
+| 2 | SHELL | `shell.header` | shared ×34 |
 | 3 | HERO | `hero.home-tabs` | page-local |
 | 4 | PROOF | `proof.logo-ticker-home` | page-local |
 | 5 | FEATURES | `features.statement` | page-local |

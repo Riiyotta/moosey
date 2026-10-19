@@ -80,7 +80,7 @@ export const PRODUCTS = {
             },
             {
               title: 'Wrap up your payroll setup',
-              desc: 'Spot remaining compliance gaps, take action and close them out automatically.',
+              desc: 'Finish the last open items on your checklist and watch each one move to done.',
               image: { src: `${A}/peace/peace-step-3.svg` },
             },
           ],
@@ -90,7 +90,7 @@ export const PRODUCTS = {
         type: 'cta',
         props: {
           title: 'Want to see how registration works in Northwind?',
-          desc: 'Talk with a compliance specialist about state and local tax registration across all fifty states.',
+          desc: 'Book a short walkthrough and we will map every tax account your team needs before your next payroll run.',
         },
       },
       {
@@ -434,7 +434,7 @@ export const PRODUCTS = {
         type: 'cta',
         props: {
           title: 'Want to learn more about entity compliance?',
-          desc: 'Talk with a compliance specialist about Secretary of State filings and good standing in all 50 states.',
+          desc: 'Book a short walkthrough and we will chart every annual filing your entities owe over the next twelve months.',
         },
       },
       {
