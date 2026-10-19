@@ -1,0 +1,38 @@
+{
+  "$description": "Component tokens for benefit-card.",
+  "component": "benefit-card",
+  "selector": "#homepage-benefits .card",
+  "tokens": {
+    "background": {
+      "$value": "{surface.hero} @ .4 (1 on hover)"
+    },
+    "radius": {
+      "$value": "{radius.card}"
+    },
+    "size": {
+      "$value": {
+        "desktop": "332x407.6u",
+        "tablet": "215x314u"
+      }
+    },
+    "valueTypography": {
+      "$value": "{typography.stat}"
+    },
+    "descTypography": {
+      "$value": "{typography.body-small}"
+    },
+    "hoverTransition": {
+      "$value": "{motion.hover}"
+    }
+  },
+  "citations": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": [
+        373,
+        382
+      ],
+      "anchor": "- Cards (3), desktop and tablet:"
+    }
+  ]
+}

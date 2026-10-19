@@ -1,0 +1,18 @@
+{
+  "id": "rich-text",
+  "purpose": "String or segments with {g:'green run'} and '\\n' breaks.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/blocks/primitives.jsx",
+        "lines": [
+          51,
+          51
+        ],
+        "anchor": "export function Rich("
+      }
+    ]
+  }
+}

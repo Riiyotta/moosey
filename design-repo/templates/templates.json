@@ -1,0 +1,2580 @@
+{
+  "version": "0.1.0",
+  "note": "One template per page shape. Nodes are ordered; `required:false` nodes may be omitted, `repeatable` nodes may repeat up to maxCount. Every concrete route appears in exactly one template.",
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home",
+      "pageFamily": "home",
+      "routePatterns": [
+        "/"
+      ],
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "flow": "banner → hero tabs → proof → story sections → pricing → FAQ → CTA",
+      "familyNote": "The only page with the announcement banner. Four scroll-linked set pieces: hero auto-advance, roadmap pin, peace pin, pricing pin.",
+      "nodes": [
+        {
+          "section": "banner.announcement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.home-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "intro.statement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.everything-network",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.role-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false,
+          "note": "inline after the role tabs"
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.roadmap",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.peace-of-mind",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.testimonials",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.plan-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.comparison-table",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Home.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "CLONE_SPEC.md",
+            "lines": [
+              3,
+              3
+            ],
+            "anchor": "# Mosey homepage: clone build spec"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Home.jsx",
+            "lines": [
+              15,
+              34
+            ],
+            "anchor": "export default function"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.platform-overview",
+      "name": "Platform overview",
+      "pageFamily": "platform",
+      "routePatterns": [
+        "/platform"
+      ],
+      "routes": [
+        "/platform"
+      ],
+      "routeCount": 1,
+      "flow": "hero → 3 pinned accordion cards → feature rows → benefits → ecosystem → engine → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page",
+          "required": true,
+          "repeatable": false,
+          "note": "variant platform"
+        },
+        {
+          "section": "feature.accordion-story",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 3,
+          "note": "3 cards (#mail-service)"
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 3,
+          "note": "variant A, 3 items"
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.ecosystem",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.numbered-intro",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.numbered-row",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 3
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Platform.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              599,
+              609
+            ],
+            "anchor": "### 2.1 `/platform/`"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Platform.jsx",
+            "lines": [
+              8,
+              22
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              7,
+              7
+            ],
+            "anchor": "{ path: 'platform', page: 'Platform' }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.platform-product",
+      "name": "Platform product",
+      "pageFamily": "platform",
+      "routePatterns": [
+        "/platform/:product"
+      ],
+      "routes": [
+        "/platform/payroll-compliance",
+        "/platform/tax-compliance"
+      ],
+      "routeCount": 2,
+      "flow": "hero → trusted → benefits → (get started) → CTA card → accordion story → feature row → (FAQ) → CTA",
+      "familyNote": "payroll-compliance is the base; tax-compliance drops get-started and FAQ (optional nodes).",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page",
+          "required": true,
+          "repeatable": false,
+          "note": "variant landing"
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.get-started",
+          "required": false,
+          "repeatable": false,
+          "note": "absent on tax-compliance"
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.accordion-story",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": false,
+          "note": "variant B"
+        },
+        {
+          "section": "faq.accordion",
+          "required": false,
+          "repeatable": false,
+          "note": "absent on tax-compliance"
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/PlatformProduct.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              611,
+              630
+            ],
+            "anchor": "### 2.2 PlatformProduct template"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/PlatformProduct.jsx",
+            "lines": [
+              42,
+              56
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              8,
+              8
+            ],
+            "anchor": "{ path: 'platform/:product'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.platform-product-handbooks",
+      "name": "Platform product: handbooks",
+      "pageFamily": "platform",
+      "routePatterns": [
+        "/platform/:product"
+      ],
+      "routes": [
+        "/platform/handbooks"
+      ],
+      "routeCount": 1,
+      "flow": "hero → feature pairs → benefits → role tabs + card → get started → FAQ → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page",
+          "required": true,
+          "repeatable": false,
+          "note": "variant landing, <br> in h1"
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": false,
+          "note": "variant A, 1 item, title/desc pairs"
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.role-tabs",
+          "required": true,
+          "repeatable": false,
+          "note": "BenefitGroup: 3 tabs, no gradient"
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false,
+          "note": "inline in BenefitGroup"
+        },
+        {
+          "section": "steps.get-started",
+          "required": true,
+          "repeatable": false,
+          "note": "4 steps"
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false,
+          "note": "8 items, plain title"
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/PlatformProduct.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              631,
+              635
+            ],
+            "anchor": "- **`/platform/handbooks/`**"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/PlatformProduct.jsx",
+            "lines": [
+              42,
+              56
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              8,
+              8
+            ],
+            "anchor": "{ path: 'platform/:product'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.platform-product-entity",
+      "name": "Platform product: entity compliance",
+      "pageFamily": "platform",
+      "routePatterns": [
+        "/platform/:product"
+      ],
+      "routes": [
+        "/platform/entity-compliance"
+      ],
+      "routeCount": 1,
+      "flow": "static hero → trusted → scroll tabs → CTA card → get started → feature row → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.static",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.scroll-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.get-started",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": false,
+          "note": "variant B"
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/PlatformProduct.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              636,
+              638
+            ],
+            "anchor": "- **`/platform/entity-compliance/`**"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/PlatformProduct.jsx",
+            "lines": [
+              42,
+              56
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              8,
+              8
+            ],
+            "anchor": "{ path: 'platform/:product'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.solutions-overview",
+      "name": "Solutions overview",
+      "pageFamily": "solutions",
+      "routePatterns": [
+        "/solutions",
+        "/solutions/:solution"
+      ],
+      "routes": [
+        "/solutions",
+        "/solutions/smb"
+      ],
+      "routeCount": 2,
+      "flow": "static hero → scroll tabs + card → ecosystem → roadmap → benefits → testimonials → get started → pricing → FAQ → CTA",
+      "familyNote": "/solutions/smb renders the identical page (byte-identical main on the original).",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.static",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.scroll-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false,
+          "note": "inline inside ScrollTabs"
+        },
+        {
+          "section": "proof.ecosystem",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "showcase.roadmap",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.testimonials",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.get-started",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.plan-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.comparison-table",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Solutions.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              640,
+              653
+            ],
+            "anchor": "### 2.3 `/solutions/`"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Solutions.jsx",
+            "lines": [
+              16,
+              33
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              9,
+              9
+            ],
+            "anchor": "{ path: 'solutions', page: 'Solutions' }"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.solution-detail",
+      "name": "Solution detail",
+      "pageFamily": "solutions",
+      "routePatterns": [
+        "/solutions/:solution"
+      ],
+      "routes": [
+        "/solutions/for-hr"
+      ],
+      "routeCount": 1,
+      "flow": "hero → trusted → problems → card grid → benefits → story → CTA card → guides → get started → FAQ → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page",
+          "required": true,
+          "repeatable": false,
+          "note": "variant landing"
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.problem-list",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.card-grid",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.accordion-story",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "related.guide-list",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.get-started",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false,
+          "note": "bg #F3F1EC, 4 items, plain title"
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/SolutionDetail.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              655,
+              669
+            ],
+            "anchor": "### 2.4 SolutionDetail template"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/SolutionDetail.jsx",
+            "lines": [
+              45,
+              60
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              10,
+              10
+            ],
+            "anchor": "{ path: 'solutions/:solution'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.solution-detail-telehealth",
+      "name": "Solution detail: telehealth",
+      "pageFamily": "solutions",
+      "routePatterns": [
+        "/solutions/:solution"
+      ],
+      "routes": [
+        "/solutions/for-telehealth"
+      ],
+      "routeCount": 1,
+      "flow": "hero → lead form → trusted → benefits → CTA card → feature row → testimonials lite → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page",
+          "required": true,
+          "repeatable": false,
+          "note": "variant landing, <br> in h1"
+        },
+        {
+          "section": "conversion.lead-form",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": true,
+          "repeatable": false,
+          "note": "single ticker row"
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": false,
+          "note": "variant B with red button"
+        },
+        {
+          "section": "proof.testimonials-lite",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/SolutionDetail.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              673,
+              675
+            ],
+            "anchor": "- **`/solutions/for-telehealth/`**: a **variant**."
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/SolutionDetail.jsx",
+            "lines": [
+              45,
+              60
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              10,
+              10
+            ],
+            "anchor": "{ path: 'solutions/:solution'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.pricing",
+      "name": "Pricing",
+      "pageFamily": "pricing",
+      "routePatterns": [
+        "/pricing"
+      ],
+      "routes": [
+        "/pricing"
+      ],
+      "routeCount": 1,
+      "flow": "pricing (first block clears the header with 170u) → FAQ → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.plan-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.comparison-table",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/PricingPage.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              677,
+              695
+            ],
+            "anchor": "### 2.5 `/pricing/`"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/PricingPage.jsx",
+            "lines": [
+              10,
+              19
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              11,
+              11
+            ],
+            "anchor": "{ path: 'pricing'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.about",
+      "name": "About",
+      "pageFamily": "company",
+      "routePatterns": [
+        "/about"
+      ],
+      "routes": [
+        "/about"
+      ],
+      "routeCount": 1,
+      "flow": "hero image → title row → story → trusted → careers → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.about",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "intro.title-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "editorial.story-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": true,
+          "repeatable": false,
+          "note": "orange fades, homepage padding"
+        },
+        {
+          "section": "careers.job-list",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/About.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              697,
+              699
+            ],
+            "anchor": "### 2.6 `/about/`"
+          },
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              510,
+              569
+            ],
+            "anchor": "### 1.17 About blocks"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/About.jsx",
+            "lines": [
+              15,
+              36
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              12,
+              12
+            ],
+            "anchor": "{ path: 'about'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.security",
+      "name": "Security",
+      "pageFamily": "prose",
+      "routePatterns": [
+        "/security"
+      ],
+      "routes": [
+        "/security"
+      ],
+      "routeCount": 1,
+      "flow": "prose; no CTA",
+      "familyNote": "Same shape as legal-prose and not-found; differs by route and by implementing component (InnerPost).",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "editorial.prose-article",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Security.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/marketing.md",
+            "lines": [
+              701,
+              703
+            ],
+            "anchor": "### 2.7 `/security/`"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Security.jsx",
+            "lines": [
+              5,
+              7
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              13,
+              13
+            ],
+            "anchor": "{ path: 'security'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.blog-index",
+      "name": "Blog index",
+      "pageFamily": "blog",
+      "routePatterns": [
+        "/blog",
+        "/blog/page/:page"
+      ],
+      "routes": [
+        "/blog",
+        "/blog/page/2",
+        "/blog/page/3"
+      ],
+      "routeCount": 3,
+      "flow": "title band → 10 rows → pagination → CTA",
+      "familyNote": "30 sample posts at 10 per page -> 3 pages (original: 43).",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.title-band",
+          "required": true,
+          "repeatable": false,
+          "note": "eyebrow only, no h1"
+        },
+        {
+          "section": "listing.post-rows",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "listing.pagination",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/BlogIndex.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              57,
+              103
+            ],
+            "anchor": "## 1. Blog index"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/BlogIndex.jsx",
+            "lines": [
+              19,
+              56
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              16,
+              16
+            ],
+            "anchor": "{ path: 'blog/page/:page'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.blog-post",
+      "name": "Blog post",
+      "pageFamily": "blog",
+      "routePatterns": [
+        "/blog/:slug"
+      ],
+      "routes": [
+        "/blog/first-payroll-in-a-new-state",
+        "/blog/remote-hiring-across-state-lines",
+        "/blog/withholding-vs-unemployment-accounts",
+        "/blog/annual-report-deadlines-explained",
+        "/blog/registration-readiness-scorecard",
+        "/blog/what-is-a-registered-agent",
+        "/blog/onboarding-remote-employees-checklist",
+        "/blog/unemployment-insurance-rates-for-new-employers",
+        "/blog/marketplace-sellers-and-sales-tax",
+        "/blog/foreign-qualification-basics",
+        "/blog/payroll-records-retention-basics",
+        "/blog/employee-handbook-state-addenda",
+        "/blog/new-hire-reporting-explained",
+        "/blog/sales-tax-nexus-in-plain-terms",
+        "/blog/moving-an-employee-to-another-state",
+        "/blog/closing-a-state-payroll-account",
+        "/blog/good-standing-certificates",
+        "/blog/local-payroll-taxes-overview",
+        "/blog/workers-compensation-for-small-teams",
+        "/blog/compliance-calendar-for-small-teams",
+        "/blog/reinstating-a-dissolved-entity",
+        "/blog/responding-to-agency-notices",
+        "/blog/contractors-vs-employees-across-states",
+        "/blog/choosing-an-entity-type",
+        "/blog/agency-portal-access-for-teams",
+        "/blog/quarterly-filing-rhythm",
+        "/blog/paid-leave-policies-by-state",
+        "/blog/registered-agent-changes",
+        "/blog/year-end-compliance-review",
+        "/blog/opening-an-office-in-a-new-state"
+      ],
+      "routeCount": 30,
+      "flow": "header + byline → prose → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "editorial.post-header",
+          "required": true,
+          "repeatable": false,
+          "note": "variant author"
+        },
+        {
+          "section": "editorial.post-body",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/BlogPost.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              105,
+              203
+            ],
+            "anchor": "## 2. Blog post"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/BlogPost.jsx",
+            "lines": [
+              14,
+              34
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              17,
+              17
+            ],
+            "anchor": "{ path: 'blog/:slug'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.authors-index",
+      "name": "Authors index",
+      "pageFamily": "blog",
+      "routePatterns": [
+        "/authors"
+      ],
+      "routes": [
+        "/authors"
+      ],
+      "routeCount": 1,
+      "flow": "h1 + list; no CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "listing.author-list",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Authors.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              205,
+              214
+            ],
+            "anchor": "## 3. Authors index"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Authors.jsx",
+            "lines": [
+              9,
+              27
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              18,
+              18
+            ],
+            "anchor": "{ path: 'authors', page"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.author-detail",
+      "name": "Author detail",
+      "pageFamily": "blog",
+      "routePatterns": [
+        "/authors/:author"
+      ],
+      "routes": [
+        "/authors/juno-thistlewood",
+        "/authors/pell-ambergast",
+        "/authors/odessa-marrowfield",
+        "/authors/tobin-quayle",
+        "/authors/rhea-castellane",
+        "/authors/northwind-editorial"
+      ],
+      "routeCount": 6,
+      "flow": "title band → photo, bio, articles; no CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.title-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "profile.author-bio",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/AuthorDetail.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              216,
+              229
+            ],
+            "anchor": "## 4. Author detail"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/AuthorDetail.jsx",
+            "lines": [
+              9,
+              46
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              19,
+              19
+            ],
+            "anchor": "{ path: 'authors/:author'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.resources-index",
+      "name": "Resources index",
+      "pageFamily": "resources",
+      "routePatterns": [
+        "/resources"
+      ],
+      "routes": [
+        "/resources"
+      ],
+      "routeCount": 1,
+      "flow": "title band → 9 link groups → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.title-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "listing.resource-group",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 9
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Resources.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              233,
+              245
+            ],
+            "anchor": "## 5. Resources index"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Resources.jsx",
+            "lines": [
+              8,
+              18
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              20,
+              20
+            ],
+            "anchor": "{ path: 'resources', page"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.resource-category",
+      "name": "Resource category hub",
+      "pageFamily": "resources",
+      "routePatterns": [
+        "/resources/us/:category"
+      ],
+      "routes": [
+        "/resources/us/payroll",
+        "/resources/us/employee-handbook",
+        "/resources/us/secretary-of-state",
+        "/resources/us/sales-tax",
+        "/resources/us/agencies",
+        "/resources/us/local-payroll"
+      ],
+      "routeCount": 6,
+      "flow": "title band → 1-2 link groups → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.title-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "listing.resource-group",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 2
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/ResourceCategory.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              247,
+              258
+            ],
+            "anchor": "## 6. Resource category hub"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/ResourceCategory.jsx",
+            "lines": [
+              10,
+              24
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              21,
+              21
+            ],
+            "anchor": "{ path: 'resources/us/:category', page"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.resource-guide",
+      "name": "Resource guide leaf",
+      "pageFamily": "resources",
+      "routePatterns": [
+        "/resources/us/:category/:leaf"
+      ],
+      "routes": [
+        "/resources/us/payroll/california-payroll-tax-registration",
+        "/resources/us/employee-handbook/california-employee-handbook",
+        "/resources/us/agencies/california-franchise-tax-board"
+      ],
+      "routeCount": 1736,
+      "flow": "header (date only) → prose → related grids → blog teasers → CTA",
+      "familyNote": "~1,736 generated leaves (payroll 51, employee-handbook 51, secretary-of-state 102, sales-tax 46, agencies 671, local-payroll 815); routes listed are a measured sample.",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "editorial.post-header",
+          "required": true,
+          "repeatable": false,
+          "note": "variant date-only, narrow title"
+        },
+        {
+          "section": "editorial.post-body",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "related.resource-link-grid",
+          "required": false,
+          "repeatable": true,
+          "maxCount": 2,
+          "note": "per category; empty grids are dropped"
+        },
+        {
+          "section": "related.blog-teasers",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/ResourceGuide.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              262,
+              280
+            ],
+            "anchor": "## 7. Resource guide article"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/ResourceGuide.jsx",
+            "lines": [
+              19,
+              107
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              22,
+              22
+            ],
+            "anchor": "{ path: 'resources/us/:category/:leaf'"
+          }
+        ]
+      },
+      "routesAreSample": true
+    },
+    {
+      "id": "template.guide-landing",
+      "name": "Gated guide landing",
+      "pageFamily": "guides",
+      "routePatterns": [
+        "/p/:guide"
+      ],
+      "routes": [
+        "/p/multi-state-hiring-guide",
+        "/p/compliance-newsletter",
+        "/p/payroll-setup-playbook",
+        "/p/remote-team-handbook-guide",
+        "/p/entity-upkeep-guide",
+        "/p/state-compliance-outlook",
+        "/p/registration-health-check",
+        "/p/switching-payroll-providers-guide"
+      ],
+      "routeCount": 8,
+      "flow": "composable: hero → benefits → form → trusted → feature story → FAQ → CTA (each guide a subsequence)",
+      "familyNote": "Variants by data: full stack (4 guides), hero+form(main-white)+trusted+faq+cta, hero+form+trusted, hero+form, form-only centered newsletter.",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.guide",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": false,
+          "repeatable": false,
+          "note": "no title row"
+        },
+        {
+          "section": "conversion.guide-form",
+          "required": true,
+          "repeatable": false,
+          "note": "the only node every guide has"
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "feature.accordion-story",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/GuideLanding.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              342,
+              355
+            ],
+            "anchor": "## 8. Gated guide landing"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/GuideLanding.jsx",
+            "lines": [
+              26,
+              41
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              23,
+              23
+            ],
+            "anchor": "{ path: 'p/:guide'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.subscribe",
+      "name": "Subscribe thanks",
+      "pageFamily": "utility",
+      "routePatterns": [
+        "/subscribe"
+      ],
+      "routes": [
+        "/subscribe"
+      ],
+      "routeCount": 1,
+      "flow": "thanks message; no CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "confirmation.thanks",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Subscribe.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/content.md",
+            "lines": [
+              466,
+              474
+            ],
+            "anchor": "## 9. `/subscribe/`"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Subscribe.jsx",
+            "lines": [
+              5,
+              18
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              24,
+              24
+            ],
+            "anchor": "{ path: 'subscribe'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.partner-legacy",
+      "name": "Partner landing A (legacy)",
+      "pageFamily": "partners",
+      "routePatterns": [
+        "/partners/:partner"
+      ],
+      "routes": [
+        "/partners/brightpath-payroll",
+        "/partners/tidewater-hr",
+        "/partners/kitebird-people"
+      ],
+      "routeCount": 3,
+      "flow": "co-brand hero → intro → feature bands → checklist → pricing → logos + testimonials",
+      "familyNote": "Fixed-px Tailwind UI page, no GSAP; variants A1/A2/A3 differ in lockup and minor backgrounds.",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.hero",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.band-title",
+          "required": true,
+          "repeatable": false,
+          "note": "intro strip"
+        },
+        {
+          "section": "legacy.feature-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.workflow-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.feature-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.inset-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.feature-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.band-title",
+          "required": true,
+          "repeatable": false,
+          "note": "band 4"
+        },
+        {
+          "section": "legacy.inset-row",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 3
+        },
+        {
+          "section": "legacy.band-title",
+          "required": true,
+          "repeatable": false,
+          "note": "band 5"
+        },
+        {
+          "section": "legacy.image-card-pair",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.feature-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.everything-checklist",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.pricing-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.customer-logos",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.testimonial-swiper",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/components/misc/LegacyPartnerPage.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              126,
+              142
+            ],
+            "anchor": "### 2.1 Page skeleton"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/components/misc/LegacyPartnerPage.jsx",
+            "lines": [
+              16,
+              37
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              26,
+              26
+            ],
+            "anchor": "{ path: 'partners/:partner'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.sales-tax-beta",
+      "name": "Sales tax beta (A′)",
+      "pageFamily": "partners",
+      "routePatterns": [
+        "/sales-tax-beta"
+      ],
+      "routes": [
+        "/sales-tax-beta"
+      ],
+      "routeCount": 1,
+      "flow": "cut-down legacy page + request-invite modal",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.hero",
+          "required": true,
+          "repeatable": false,
+          "note": "no lockup; button opens modal"
+        },
+        {
+          "section": "legacy.band-title",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.feature-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.inset-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.feature-row",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "legacy.everything-checklist",
+          "required": true,
+          "repeatable": false,
+          "note": "no eyebrow"
+        },
+        {
+          "section": "conversion.request-invite-modal",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/SalesTaxBeta.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              263,
+              286
+            ],
+            "anchor": "### 2.10 A′"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/SalesTaxBeta.jsx",
+            "lines": [
+              11,
+              31
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              30,
+              30
+            ],
+            "anchor": "{ path: 'sales-tax-beta'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.partner-static",
+      "name": "Partner landing B (static)",
+      "pageFamily": "partners",
+      "routePatterns": [
+        "/partners/:partner"
+      ],
+      "routes": [
+        "/partners/halcyon-hr",
+        "/partners/larkspur-legal",
+        "/partners/ashgrove-equity",
+        "/partners/meadowbrook-fractional",
+        "/partners/thistle-learning",
+        "/partners/copperleaf-benefits"
+      ],
+      "routeCount": 6,
+      "flow": "static hero → feature rows → get started → testimonials → pricing → CTA",
+      "familyNote": "Six identical pages; only hero copy differs. No partner logo.",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.static",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 3,
+          "note": "variant A"
+        },
+        {
+          "section": "steps.get-started",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.testimonials",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.plan-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.comparison-table",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/components/misc/StaticPartnerPage.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              321,
+              340
+            ],
+            "anchor": "## 3. Template B"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/components/misc/StaticPartnerPage.jsx",
+            "lines": [
+              23,
+              37
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              26,
+              26
+            ],
+            "anchor": "{ path: 'partners/:partner'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.partner-platform",
+      "name": "Partner landing C (platform partner)",
+      "pageFamily": "partners",
+      "routePatterns": [
+        "/partners/:partner"
+      ],
+      "routes": [
+        "/partners/juniper-launch",
+        "/partners/juniper-startups"
+      ],
+      "routeCount": 2,
+      "flow": "hero + button → (C1 intro | C2 trusted + form) → story → get started → FAQ → CTA card → pricing → CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.static",
+          "required": true,
+          "repeatable": false,
+          "note": "with red button"
+        },
+        {
+          "section": "intro.title-row",
+          "required": false,
+          "repeatable": false,
+          "note": "C1 only"
+        },
+        {
+          "section": "proof.logo-marquee",
+          "required": false,
+          "repeatable": false,
+          "note": "C2 only"
+        },
+        {
+          "section": "conversion.lead-form",
+          "required": false,
+          "repeatable": false,
+          "note": "C2 only"
+        },
+        {
+          "section": "feature.accordion-story",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.get-started",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.plan-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "pricing.comparison-table",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.bottom-cta",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/components/misc/PlatformPartnerPage.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              426,
+              445
+            ],
+            "anchor": "## 4. Template C"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/components/misc/PlatformPartnerPage.jsx",
+            "lines": [
+              30,
+              66
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              26,
+              26
+            ],
+            "anchor": "{ path: 'partners/:partner'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.reinstatement",
+      "name": "Reinstatement (D)",
+      "pageFamily": "partners",
+      "routePatterns": [
+        "/reinstatement"
+      ],
+      "routes": [
+        "/reinstatement"
+      ],
+      "routeCount": 1,
+      "flow": "static hero → benefits → feature → CTA card → peace steps; no bottom CTA",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.static",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.benefit-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "feature.checklist-row",
+          "required": true,
+          "repeatable": false,
+          "note": "1 item, pairs"
+        },
+        {
+          "section": "conversion.compliance-cta-card",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "steps.peace-of-mind",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Reinstatement.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              554,
+              564
+            ],
+            "anchor": "## 5. Template D"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Reinstatement.jsx",
+            "lines": [
+              12,
+              29
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              29,
+              29
+            ],
+            "anchor": "{ path: 'reinstatement'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.mail",
+      "name": "Agency mail checkout (E)",
+      "pageFamily": "utility",
+      "routePatterns": [
+        "/mail"
+      ],
+      "routes": [
+        "/mail"
+      ],
+      "routeCount": 1,
+      "flow": "badge + h1 + info panel + form",
+      "familyNote": "",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.checkout-form",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/MailPage.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              595,
+              610
+            ],
+            "anchor": "## 6. Template E"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/MailPage.jsx",
+            "lines": [
+              22,
+              114
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              31,
+              31
+            ],
+            "anchor": "{ path: 'mail'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.legal-prose",
+      "name": "Legal / status prose (F)",
+      "pageFamily": "prose",
+      "routePatterns": [
+        "/legal/:doc",
+        "/status"
+      ],
+      "routes": [
+        "/status",
+        "/legal/gdpr-subprocessors",
+        "/legal/privacy-policy",
+        "/legal/terms-of-service",
+        "/legal/data-processing-agreement"
+      ],
+      "routeCount": 5,
+      "flow": "h1 + prose; no CTA",
+      "familyNote": "The original legal routes redirect to PDFs (Template G); per the spec recommendation they reuse Template F here.",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "editorial.prose-article",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/Legal.jsx",
+      "evidence": {
+        "level": "measured",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              614,
+              646
+            ],
+            "anchor": "## 7. Template F"
+          },
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              648,
+              655
+            ],
+            "anchor": "## 8. Template G"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/Legal.jsx",
+            "lines": [
+              77,
+              101
+            ],
+            "anchor": "export default function"
+          },
+          {
+            "path": "src/routes.js",
+            "lines": [
+              27,
+              27
+            ],
+            "anchor": "{ path: 'legal/:doc'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "template.not-found",
+      "name": "Not found (404)",
+      "pageFamily": "utility",
+      "routePatterns": [
+        "*"
+      ],
+      "routes": [
+        "*"
+      ],
+      "routeCount": 1,
+      "flow": "title + one paragraph",
+      "familyNote": "No spec covers a real 404 (the original's /404/ is a broken stub); built from Template F's shell.",
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "editorial.prose-article",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "implementedBy": "src/pages/NotFound.jsx",
+      "evidence": {
+        "level": "inferred",
+        "spec": [
+          {
+            "path": "specs/misc.md",
+            "lines": [
+              657,
+              666
+            ],
+            "anchor": "## 9. Skipped and broken routes"
+          }
+        ],
+        "code": [
+          {
+            "path": "src/pages/NotFound.jsx",
+            "lines": [
+              8,
+              26
+            ],
+            "anchor": "export default function"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "button-circle",
+  "purpose": "`.btn-circle` 46u/32u round prev/next button.",
+  "tokens": "tokens/20-component/button-circle.json",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/styles/content.css",
+        "lines": [
+          93,
+          93
+        ],
+        "anchor": ".ct-btn-circle {"
+      }
+    ]
+  }
+}

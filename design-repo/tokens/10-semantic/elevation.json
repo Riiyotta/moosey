@@ -1,0 +1,18 @@
+{
+  "$description": "Semantic roles. Values are references to foundation tokens; role NAMES are an inferred vocabulary (basis: inferred).",
+  "inferred": true,
+  "tokens": {
+    "elevation.overlay": {
+      "$type": "shadow",
+      "$value": "{elevation.flyout}",
+      "basis": "the only u-system shadow (platform flyout)",
+      "inferredName": true
+    },
+    "elevation.card-raised": {
+      "$type": "shadow",
+      "$value": "{elevation.inline-cta}",
+      "basis": "inline CTA card / legacy pricing card",
+      "inferredName": true
+    }
+  }
+}

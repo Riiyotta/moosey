@@ -1,0 +1,1917 @@
+{
+  "$description": "Foundation color tokens: measured values with code-parity references (`code`) and citations. Generators never reference these directly.",
+  "tokens": {
+    "color.black": {
+      "$type": "color",
+      "$value": "#000000",
+      "role": "Pill dark text; h1 of the platform hero variant; resource-list link text",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "black"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            96,
+            96
+          ],
+          "anchor": "| pill dark text | `#000`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            110,
+            110
+          ],
+          "anchor": "black: '"
+        }
+      ]
+    },
+    "color.main-green": {
+      "$type": "color",
+      "$value": "#203435",
+      "role": "Primary text, banner bg, pricing check circle (CLONE_SPEC §0.5)",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "main-green"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            83,
+            83
+          ],
+          "anchor": "| `main_green` | `#203435`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            111,
+            111
+          ],
+          "anchor": "'main-green': '"
+        }
+      ]
+    },
+    "color.green": {
+      "$type": "color",
+      "$value": "#285D60",
+      "role": "Accent words in headings, CTA/roadmap/footer bg, tab indicator, logo fill, pills, arrow strokes",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "green"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            84,
+            84
+          ],
+          "anchor": "| `green` | `#285D60`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            112,
+            112
+          ],
+          "anchor": "green: '"
+        }
+      ]
+    },
+    "color.green2": {
+      "$type": "color",
+      "$value": "#516B66",
+      "role": "Decorative line-art strokes",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "green2"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            85,
+            85
+          ],
+          "anchor": "| `green2` | `#516B66`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            113,
+            113
+          ],
+          "anchor": "green2: '"
+        }
+      ]
+    },
+    "color.green4": {
+      "$type": "color",
+      "$value": "#AEBFBD",
+      "role": "Hero desc left border, roadmap line art",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "green4"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            86,
+            86
+          ],
+          "anchor": "| `green4` | `#AEBFBD`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            114,
+            114
+          ],
+          "anchor": "green4: '"
+        }
+      ]
+    },
+    "color.green5": {
+      "$type": "color",
+      "$value": "#CFD7D4",
+      "role": "Hero popup CTA card, slider arrow bg (op .4), Ecosystem bg",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "green5"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            87,
+            87
+          ],
+          "anchor": "| `green5` | `#CFD7D4`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            115,
+            115
+          ],
+          "anchor": "green5: '"
+        }
+      ]
+    },
+    "color.white": {
+      "$type": "color",
+      "$value": "#F3F1EC",
+      "role": "Overridden Tailwind white: hero/header/pricing bg and all 'white' text on dark",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "white"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            88,
+            88
+          ],
+          "anchor": "| `white` (overridden) | `#F3F1EC`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            116,
+            116
+          ],
+          "anchor": "white: '"
+        }
+      ]
+    },
+    "color.main-white": {
+      "$type": "color",
+      "$value": "#FCFBFA",
+      "role": "Default section bg, pricing cards, flyout panel",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "main-white"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            89,
+            89
+          ],
+          "anchor": "| `main_white` | `#FCFBFA`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            117,
+            117
+          ],
+          "anchor": "'main-white': '"
+        }
+      ]
+    },
+    "color.beige": {
+      "$type": "color",
+      "$value": "#E4E4DC",
+      "role": "Nav-link hover bg, burger bg, compliance dividers, image backplate (a.k.a. orange1)",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "beige"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": "| `beige` / `orange1` | `#E4E4DC`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            118,
+            118
+          ],
+          "anchor": "beige: '"
+        }
+      ]
+    },
+    "color.pricing-hover": {
+      "$type": "color",
+      "$value": "#E9E6DB",
+      "role": ".pricing-point:hover row",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "pricing-hover"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            91,
+            91
+          ],
+          "anchor": "| pricing-row hover | `#E9E6DB`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            119,
+            119
+          ],
+          "anchor": "'pricing-hover': '"
+        }
+      ]
+    },
+    "color.nav-grey": {
+      "$type": "color",
+      "$value": "#9FA5A3",
+      "role": "Header nav link colour and nav dividers",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "nav-grey"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            92,
+            92
+          ],
+          "anchor": "| nav grey | `#9FA5A3`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            120,
+            120
+          ],
+          "anchor": "'nav-grey': '"
+        }
+      ]
+    },
+    "color.menu-dark": {
+      "$type": "color",
+      "$value": "#2E2F2F",
+      "role": "Mobile menu panel, header when menu open, burger lines",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "menu-dark"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            93,
+            93
+          ],
+          "anchor": "| menu dark | `#2E2F2F`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            121,
+            121
+          ],
+          "anchor": "'menu-dark': '"
+        }
+      ]
+    },
+    "color.menu-logo": {
+      "$type": "color",
+      "$value": "#EFEFEF",
+      "role": "Logo paths when menu open",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "menu-logo"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            94,
+            94
+          ],
+          "anchor": "| menu logo | `#EFEFEF`"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            122,
+            122
+          ],
+          "anchor": "'menu-logo': '"
+        }
+      ]
+    },
+    "color.plan1": {
+      "$type": "color",
+      "$value": "#A5B287",
+      "role": "Pricing plan 1 border/label/top line",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "plan1"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            95,
+            95
+          ],
+          "anchor": "| plan 1 / 2 / 3 |"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            123,
+            123
+          ],
+          "anchor": "plan1: '"
+        }
+      ]
+    },
+    "color.plan2": {
+      "$type": "color",
+      "$value": "#C1BA95",
+      "role": "Pricing plan 2 border/label/top line",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "plan2"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            95,
+            95
+          ],
+          "anchor": "| plan 1 / 2 / 3 |"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            124,
+            124
+          ],
+          "anchor": "plan2: '"
+        }
+      ]
+    },
+    "color.plan3": {
+      "$type": "color",
+      "$value": "#889C98",
+      "role": "Pricing plan 3 border/label/top line",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-color",
+        "key": "plan3"
+      },
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            95,
+            95
+          ],
+          "anchor": "| plan 1 / 2 / 3 |"
+        },
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            125,
+            125
+          ],
+          "anchor": "plan3: '"
+        }
+      ]
+    },
+    "color.nw-btn-red": {
+      "$type": "color",
+      "$value": "#C74E5C",
+      "role": "`.btn-red` bg, HubSpot submit, required asterisk (marketing §0.1)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-btn-red"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            10,
+            10
+          ],
+          "anchor": "--nw-btn-red:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-btn-red-hover": {
+      "$type": "color",
+      "$value": "#B5444F",
+      "role": "CLONE ADDITION: btn-red hover (the original's hover rule is broken CSS)",
+      "basis": "clone-addition",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-btn-red-hover"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "--nw-btn-red-hover:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-check-green": {
+      "$type": "color",
+      "$value": "#55B559",
+      "role": "for-hr ProblemList check icons (lime-500 override)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-check-green"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            13,
+            13
+          ],
+          "anchor": "--nw-check-green:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-icon-tile": {
+      "$type": "color",
+      "$value": "#285D6010",
+      "role": "FeatureCardGrid icon tile tint",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-icon-tile"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            14,
+            14
+          ],
+          "anchor": "--nw-icon-tile:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-accent-1": {
+      "$type": "color",
+      "$value": "#285D60",
+      "role": "FeatureCardGrid icon accent 1",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-accent-1"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            15,
+            15
+          ],
+          "anchor": "--nw-accent-1:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-accent-2": {
+      "$type": "color",
+      "$value": "#A5B287",
+      "role": "icon accent 2",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-accent-2"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            16,
+            16
+          ],
+          "anchor": "--nw-accent-2:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-accent-3": {
+      "$type": "color",
+      "$value": "#C1BA95",
+      "role": "icon accent 3",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-accent-3"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            17,
+            17
+          ],
+          "anchor": "--nw-accent-3:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-accent-4": {
+      "$type": "color",
+      "$value": "#889C98",
+      "role": "icon accent 4",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-accent-4"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            18,
+            18
+          ],
+          "anchor": "--nw-accent-4:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-accent-5": {
+      "$type": "color",
+      "$value": "#D1D9D6",
+      "role": "icon accent 5",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-accent-5"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            19,
+            19
+          ],
+          "anchor": "--nw-accent-5:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-gray-100": {
+      "$type": "color",
+      "$value": "#F3F4F6",
+      "role": "card border (Tailwind gray-100)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-gray-100"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "--nw-gray-100:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-gray-200": {
+      "$type": "color",
+      "$value": "#E5E7EB",
+      "role": "icon ring (Tailwind gray-200)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-gray-200"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            21,
+            21
+          ],
+          "anchor": "--nw-gray-200:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-input-bg": {
+      "$type": "color",
+      "$value": "#F9FAFB",
+      "role": "HubSpot input bg",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-input-bg"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": "--nw-input-bg:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-input-border": {
+      "$type": "color",
+      "$value": "#D1D5DB",
+      "role": "HubSpot input border",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-input-border"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            23,
+            23
+          ],
+          "anchor": "--nw-input-border:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-input-focus": {
+      "$type": "color",
+      "$value": "rgb(220, 88, 104)",
+      "role": "HubSpot input focus border",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-input-focus"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            24,
+            24
+          ],
+          "anchor": "--nw-input-focus:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-card-glass": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.5)",
+      "role": "FeatureCardGrid card glass",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-card-glass"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            25,
+            25
+          ],
+          "anchor": "--nw-card-glass:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.nw-line-art": {
+      "$type": "color",
+      "$value": "#516B66",
+      "role": "platform/hero-static/engine line art (= green2)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/blocks.css",
+        "kind": "css-var",
+        "key": "nw-line-art"
+      },
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "--nw-line-art:"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            29,
+            40
+          ],
+          "anchor": "### 0.1 New tokens"
+        }
+      ]
+    },
+    "color.lg-teal-800": {
+      "$type": "color",
+      "$value": "#006265",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-800"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "--lg-teal-800:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-100": {
+      "$type": "color",
+      "$value": "#F7FBFB",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-100"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            9,
+            9
+          ],
+          "anchor": "--lg-teal-100:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-300": {
+      "$type": "color",
+      "$value": "#EFF7F7",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-300"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            10,
+            10
+          ],
+          "anchor": "--lg-teal-300:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-500": {
+      "$type": "color",
+      "$value": "#B0D3D4",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-500"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            11,
+            11
+          ],
+          "anchor": "--lg-teal-500:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-600": {
+      "$type": "color",
+      "$value": "#20BCC2",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-600"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "--lg-teal-600:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-700": {
+      "$type": "color",
+      "$value": "#008489",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-700"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            13,
+            13
+          ],
+          "anchor": "--lg-teal-700:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-400": {
+      "$type": "color",
+      "$value": "#CAEAEA",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-400"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            14,
+            14
+          ],
+          "anchor": "--lg-teal-400:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-teal-200": {
+      "$type": "color",
+      "$value": "#F4FBF9",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-teal-200"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            15,
+            15
+          ],
+          "anchor": "--lg-teal-200:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-rose-700": {
+      "$type": "color",
+      "$value": "#DC5868",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-rose-700"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            16,
+            16
+          ],
+          "anchor": "--lg-rose-700:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-rose-800": {
+      "$type": "color",
+      "$value": "#DA4052",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-rose-800"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            17,
+            17
+          ],
+          "anchor": "--lg-rose-800:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-rose-500": {
+      "$type": "color",
+      "$value": "#DC918F",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-rose-500"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            18,
+            18
+          ],
+          "anchor": "--lg-rose-500:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-lime-500": {
+      "$type": "color",
+      "$value": "#55B559",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-lime-500"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            19,
+            19
+          ],
+          "anchor": "--lg-lime-500:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-white": {
+      "$type": "color",
+      "$value": "#F3F1EC",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-white"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "--lg-white:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-zinc-800": {
+      "$type": "color",
+      "$value": "#292A2D",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-zinc-800"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            21,
+            21
+          ],
+          "anchor": "--lg-zinc-800:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-zinc-600": {
+      "$type": "color",
+      "$value": "#787986",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-zinc-600"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": "--lg-zinc-600:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-zinc-900": {
+      "$type": "color",
+      "$value": "#18181B",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-zinc-900"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            23,
+            23
+          ],
+          "anchor": "--lg-zinc-900:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-900": {
+      "$type": "color",
+      "$value": "#111827",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-900"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            24,
+            24
+          ],
+          "anchor": "--lg-gray-900:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-800": {
+      "$type": "color",
+      "$value": "#1F2937",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-800"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            25,
+            25
+          ],
+          "anchor": "--lg-gray-800:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-600": {
+      "$type": "color",
+      "$value": "#4B5563",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-600"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "--lg-gray-600:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-500": {
+      "$type": "color",
+      "$value": "#6B7280",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-500"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            27,
+            27
+          ],
+          "anchor": "--lg-gray-500:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-400": {
+      "$type": "color",
+      "$value": "#9CA3AF",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-400"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            28,
+            28
+          ],
+          "anchor": "--lg-gray-400:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-300": {
+      "$type": "color",
+      "$value": "#D1D5DB",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-300"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "--lg-gray-300:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-200": {
+      "$type": "color",
+      "$value": "#E5E7EB",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-200"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            30,
+            30
+          ],
+          "anchor": "--lg-gray-200:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-100": {
+      "$type": "color",
+      "$value": "#F3F4F6",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-100"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            31,
+            31
+          ],
+          "anchor": "--lg-gray-100:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-gray-50": {
+      "$type": "color",
+      "$value": "#F9FAFB",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-gray-50"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            32,
+            32
+          ],
+          "anchor": "--lg-gray-50:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-red-100": {
+      "$type": "color",
+      "$value": "#FEE2E2",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-red-100"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "--lg-red-100:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-red-200": {
+      "$type": "color",
+      "$value": "#FECACA",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-red-200"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            34,
+            34
+          ],
+          "anchor": "--lg-red-200:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-red-700": {
+      "$type": "color",
+      "$value": "#B91C1C",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-red-700"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            35,
+            35
+          ],
+          "anchor": "--lg-red-700:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.lg-swiper-blue": {
+      "$type": "color",
+      "$value": "#007AFF",
+      "role": "Template A legacy palette (overridden Tailwind colour)",
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-swiper-blue"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "--lg-swiper-blue:"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            96,
+            115
+          ],
+          "anchor": "**Legacy palette.**"
+        }
+      ]
+    },
+    "color.sage-50": {
+      "$type": "color",
+      "$value": "#FBFCFC",
+      "role": "Author-detail page background (`bg-sage-50`)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            218,
+            218
+          ],
+          "anchor": "- **Outer:** bg `#FBFCFC` (`bg-sage-50`)"
+        }
+      ]
+    },
+    "color.footer-border": {
+      "$type": "color",
+      "$value": "rgba(252,251,250,.2)",
+      "role": "Footer borders",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:"
+        }
+      ]
+    },
+    "gradient.mask": {
+      "$type": "gradient",
+      "$value": "linear-gradient(90deg, #FCFBFA, #FCFBFA00)",
+      "role": "Ticker edge fades",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-bgimage",
+        "key": "mask-gradient"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            149,
+            149
+          ],
+          "anchor": "'mask-gradient':"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            118,
+            121
+          ],
+          "anchor": "- **Gradients:**"
+        }
+      ]
+    },
+    "gradient.orange": {
+      "$type": "gradient",
+      "$value": "linear-gradient(180deg, #F3F1EC 44.87%, #F3F1EC00)",
+      "role": "Compliance section backdrop",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-bgimage",
+        "key": "orange-gradient"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            150,
+            150
+          ],
+          "anchor": "'orange-gradient':"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            118,
+            121
+          ],
+          "anchor": "- **Gradients:**"
+        }
+      ]
+    },
+    "gradient.price": {
+      "$type": "gradient",
+      "$value": "linear-gradient(0deg, transparent 0%, #F3F1EC 7%, #F3F1EC 14%, #F3F1EC 100%)",
+      "role": "Behind the pinned pricing cards",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-bgimage",
+        "key": "price-gradient"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            151,
+            151
+          ],
+          "anchor": "'price-gradient':"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            118,
+            121
+          ],
+          "anchor": "- **Gradients:**"
+        }
+      ]
+    },
+    "gradient.mask-orange": {
+      "$type": "gradient",
+      "$value": "linear-gradient(90deg, #f3f1ec, #f3f1ec00)",
+      "role": "Ticker edge fades on #F3F1EC pages (/about)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            47,
+            47
+          ],
+          "anchor": ".bg-mask-gradient-orange {"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            39,
+            39
+          ],
+          "anchor": "| `bg-mask-gradient-orange` |"
+        }
+      ]
+    }
+  }
+}

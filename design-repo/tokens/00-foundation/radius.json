@@ -1,0 +1,306 @@
+{
+  "$description": "Foundation radius tokens: measured values with code-parity references (`code`) and citations. Generators never reference these directly.",
+  "tokens": {
+    "radius.2u": {
+      "$type": "dimension",
+      "$value": "2u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "2u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            135,
+            135
+          ],
+          "anchor": "'2u': u(2),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.5u": {
+      "$type": "dimension",
+      "$value": "5u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "5u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            136,
+            136
+          ],
+          "anchor": "'5u': u(5),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.6u": {
+      "$type": "dimension",
+      "$value": "6u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "6u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            137,
+            137
+          ],
+          "anchor": "'6u': u(6),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.8u": {
+      "$type": "dimension",
+      "$value": "8u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "8u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            138,
+            138
+          ],
+          "anchor": "'8u': u(8),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.9u": {
+      "$type": "dimension",
+      "$value": "9u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "9u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            139,
+            139
+          ],
+          "anchor": "'9u': u(9),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.12u": {
+      "$type": "dimension",
+      "$value": "12u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "12u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            140,
+            140
+          ],
+          "anchor": "'12u': u(12),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.14u": {
+      "$type": "dimension",
+      "$value": "14u",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-radius",
+        "key": "14u"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            141,
+            141
+          ],
+          "anchor": "'14u': u(14),"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            104,
+            110
+          ],
+          "anchor": "- **Radii:**"
+        }
+      ]
+    },
+    "radius.progress": {
+      "$type": "dimension",
+      "$value": "3px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            108,
+            108
+          ],
+          "anchor": "14u: mobile menu panel. 2u: tab indicator. 3px: progress fill."
+        }
+      ]
+    },
+    "radius.flyout-panel": {
+      "$type": "dimension",
+      "$value": "24px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            110,
+            110
+          ],
+          "anchor": "  - Flyout uses fixed px: 24px panel, 8px items."
+        }
+      ]
+    },
+    "radius.flyout-item": {
+      "$type": "dimension",
+      "$value": "8px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            110,
+            110
+          ],
+          "anchor": "  - Flyout uses fixed px: 24px panel, 8px items."
+        }
+      ]
+    },
+    "radius.circle": {
+      "$type": "dimension",
+      "$value": "50%",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            109,
+            109
+          ],
+          "anchor": "50%: slider arrows and pagination dots."
+        }
+      ]
+    },
+    "radius.pill": {
+      "$type": "dimension",
+      "$value": "9999px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            109,
+            109
+          ],
+          "anchor": "9999px: \"New\" pills."
+        }
+      ]
+    },
+    "radius.form-input": {
+      "$type": "dimension",
+      "$value": "8px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            488,
+            488
+          ],
+          "anchor": "- Width 100%, block, radius 8px"
+        }
+      ]
+    },
+    "radius.legacy-tile": {
+      "$type": "dimension",
+      "$value": "6px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            180,
+            180
+          ],
+          "anchor": "48×48, radius 6px"
+        }
+      ]
+    }
+  }
+}

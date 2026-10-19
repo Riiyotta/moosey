@@ -1,0 +1,142 @@
+{
+  "id": "conversion.guide-form",
+  "category": "CONVERSION",
+  "label": "Guide download form",
+  "purpose": "Form section for /p/ guides: anchor target, h3 + 4 bullets + static form (two-column), or centered single-column newsletter variant.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "layout": {
+        "type": "enum",
+        "required": true,
+        "enum": [
+          "two-column",
+          "centered"
+        ]
+      },
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 19,
+        "budgetBasis": "spec ~68c -> ceil(68*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 33,
+        "budgetBasis": "spec ~118c -> ceil(118*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": false,
+        "maxItems": 4,
+        "titleMaxWords": 12,
+        "budgetBasis": "spec ~40c -> ceil(40*1.25/4.5)"
+      },
+      "fields": {
+        "type": "field[]",
+        "required": true,
+        "maxItems": 5,
+        "labelMaxWords": 5,
+        "budgetBasis": "form labels (lengths not transcribed in spec): inferred 5 words"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 4,
+        "budgetBasis": "spec ~14c -> ceil(14*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          392,
+          422
+        ],
+        "anchor": "### 8.3 Form section"
+      },
+      {
+        "path": "specs/content.md",
+        "lines": [
+          478,
+          504
+        ],
+        "anchor": "## 10. HubSpot form styling"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/content/GuideFormSection.jsx",
+        "lines": [
+          8,
+          47
+        ],
+        "anchor": "export default function GuideFormSection"
+      },
+      {
+        "path": "src/components/content/HubspotForm.jsx",
+        "lines": [
+          12,
+          97
+        ],
+        "anchor": "export default function HubspotForm"
+      }
+    ]
+  },
+  "implementedBy": "src/components/content/GuideFormSection.jsx",
+  "implementedByAll": [
+    "src/components/content/GuideFormSection.jsx",
+    "src/components/content/HubspotForm.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "conversion/guide-form",
+    "kind": "form",
+    "summary": "Form section for /p/ guides: anchor target, h3 + 4 bullets + static form (two-column), or centered single-column newsletter variant.",
+    "keywords": [
+      "download",
+      "form",
+      "guide"
+    ],
+    "pageFamilies": [
+      "template.guide-landing"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Guide download form",
+    "contentFields": 6,
+    "copyCapacityWords": 129,
+    "imageCapacity": 0,
+    "itemCapacity": 4
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "feature.benefit-cards",
+      "hero.guide",
+      "shell.header"
+    ]
+  }
+}

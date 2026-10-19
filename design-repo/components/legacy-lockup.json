@@ -1,0 +1,20 @@
+{
+  "id": "legacy-lockup",
+  "purpose": "Co-brand lockup (own wordmark + separator + partner logo).",
+  "composedOf": [
+    "image"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          15,
+          15
+        ],
+        "anchor": "function Lockup("
+      }
+    ]
+  }
+}

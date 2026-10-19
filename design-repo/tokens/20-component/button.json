@@ -1,0 +1,50 @@
+{
+  "$description": "Component tokens for button.",
+  "component": "button",
+  "selector": ".btn / .btn-red",
+  "tokens": {
+    "background": {
+      "$value": "{action.primary.bg}"
+    },
+    "color": {
+      "$value": "{action.primary.text}"
+    },
+    "radius": {
+      "$value": "{radius.control}"
+    },
+    "paddingY": {
+      "$value": {
+        "mobile": "5u",
+        "desktop": "6u"
+      }
+    },
+    "paddingX": {
+      "$value": {
+        "mobile": "9u",
+        "desktop": "16u"
+      }
+    },
+    "typography": {
+      "$value": "{typography.button}"
+    },
+    "borderWidth": {
+      "$value": "1px"
+    },
+    "transition": {
+      "$value": ".4s"
+    },
+    "hover": {
+      "$value": "none on the original (broken CSS); clone adds #B5444F"
+    }
+  },
+  "citations": [
+    {
+      "path": "specs/marketing.md",
+      "lines": [
+        52,
+        58
+      ],
+      "anchor": "**Button `.btn`.**"
+    }
+  ]
+}

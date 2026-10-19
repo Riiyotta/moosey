@@ -1,0 +1,917 @@
+{
+  "pageSpecVersion": "0.1.0",
+  "template": "template.home",
+  "route": "/",
+  "nodes": [
+    {
+      "type": "banner.announcement",
+      "content": {
+        "body": [
+          "Northwind 2.0 is live — See the new filing calendar and smarter deadline reminders!"
+        ],
+        "ctas": [
+          {
+            "label": "Northwind 2.0 is live",
+            "href": "#"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "none-needed"
+      }
+    },
+    {
+      "type": "shell.header",
+      "content": {
+        "ctas": [
+          {
+            "label": "Platform",
+            "href": "/platform"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Resources",
+            "href": "/resources"
+          },
+          {
+            "label": "About",
+            "href": "/about"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Templates",
+            "href": "#"
+          }
+        ],
+        "heading": "One workspace for all compliance obligations",
+        "subheading": "Northwind keeps registrations, filings, payroll accounts and deadlines organized for every location, so your team always knows what is due, what is done and what needs attention.",
+        "items": [
+          {
+            "title": "Entity Management",
+            "body": "Keep every registration and filing date in sync."
+          },
+          {
+            "title": "Policy Templates",
+            "body": "Draft, review and publish policies for each state."
+          },
+          {
+            "title": "Payroll Accounts",
+            "body": "Open and maintain tax accounts without the busywork."
+          },
+          {
+            "title": "Mail Handling",
+            "body": "Receive, scan and route official notices to the right owner on your team."
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "logo",
+            "alt": "Northwind",
+            "asset": "assets/art/brand/northwind-logo.svg",
+            "source": "placeholder"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-transition",
+        "reducedMotionFallback": "none-implemented"
+      }
+    },
+    {
+      "type": "hero.home-tabs",
+      "content": {
+        "heading": "Entity compliance made simple.",
+        "subheading": "Track filings and deadlines for every entity you own from a single, calm dashboard.",
+        "items": [
+          {
+            "title": "Company Setup"
+          },
+          {
+            "title": "Monthly"
+          },
+          {
+            "title": "Quarterly"
+          }
+        ],
+        "body": [
+          "Put Every Filing on Autopilot Today"
+        ],
+        "images": [
+          {
+            "assetRole": "product-screenshot",
+            "alt": "Product view, tab 1",
+            "asset": "assets/art/hero/hero-tab-1.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "product-screenshot",
+            "alt": "Product view, tab 2",
+            "asset": "assets/art/hero/hero-tab-2.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "product-screenshot",
+            "alt": "Product view, tab 3",
+            "asset": "assets/art/hero/hero-tab-3.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "product-screenshot",
+            "alt": "Filing overview",
+            "asset": "assets/art/hero/hero-popup-visual.svg",
+            "source": "placeholder"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "auto-advance",
+        "reducedMotionFallback": "no-autoplay"
+      }
+    },
+    {
+      "type": "proof.logo-marquee",
+      "content": {
+        "heading": "Trusted by",
+        "images": [
+          {
+            "assetRole": "customer-logo",
+            "alt": "Halcyon (fictional)",
+            "asset": "assets/art/logos/halcyon.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Brightpath (fictional)",
+            "asset": "assets/art/logos/brightpath.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Corvid Labs (fictional)",
+            "asset": "assets/art/logos/corvid-labs.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Tessellate (fictional)",
+            "asset": "assets/art/logos/tessellate.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Orbitra (fictional)",
+            "asset": "assets/art/logos/orbitra.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Fernway (fictional)",
+            "asset": "assets/art/logos/fernway.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Kestrel (fictional)",
+            "asset": "assets/art/logos/kestrel.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Driftwood (fictional)",
+            "asset": "assets/art/logos/driftwood.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Juniper Bay (fictional)",
+            "asset": "assets/art/logos/juniper-bay.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Arcwell (fictional)",
+            "asset": "assets/art/logos/arcwell.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Pallaso (fictional)",
+            "asset": "assets/art/logos/pallaso.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Quillfield (fictional)",
+            "asset": "assets/art/logos/quillfield.svg",
+            "source": "placeholder"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "marquee-loop",
+        "reducedMotionFallback": "no-autoplay"
+      }
+    },
+    {
+      "type": "intro.statement",
+      "content": {
+        "heading": "Stay current, without any chaos.",
+        "body": [
+          "Paperwork shouldn't set the pace of your business. Northwind reads each new obligation as it appears, gives it an owner and a date, and shows what is done and what comes next in plain, friendly language."
+        ]
+      },
+      "motion": {
+        "pattern": "reveal-on-enter",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "showcase.everything-network",
+      "content": {
+        "heading": "Everything",
+        "images": [
+          {
+            "assetRole": "animation",
+            "alt": "Network of connected filings",
+            "asset": "assets/art/everything/network-desktop.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "visual-loop",
+        "reducedMotionFallback": "static-end-state"
+      }
+    },
+    {
+      "type": "showcase.role-tabs",
+      "content": {
+        "heading": "Whichever seat you happen to sit in today, Northwind keeps you compliant.",
+        "tabs": [
+          {
+            "label": "Founder",
+            "entries": [
+              {
+                "title": "Launch in new states",
+                "body": "Register your company, open payroll accounts and collect every ID you need before your first hire in a new location starts work."
+              },
+              {
+                "title": "Skip the manual forms",
+                "body": "Northwind completes and submits state forms for you, then tracks every confirmation so you know where each request stands."
+              },
+              {
+                "title": "See every deadline coming",
+                "body": "One calendar shows annual reports, renewals and tax filings for every entity you run, with reminders sent well ahead of each due date so nothing is ever late."
+              }
+            ]
+          },
+          {
+            "label": "People Leader",
+            "entries": [
+              {
+                "title": "Hire anywhere with confidence",
+                "body": "Bring on remote teammates in any state without guesswork. Northwind flags the registrations, notices and postings each new location requires before day one."
+              },
+              {
+                "title": "Keep policies up to date",
+                "body": "Handbook sections are flagged the moment a rule shifts where your team works, and suggested edits arrive ready for review with sources linked inline."
+              },
+              {
+                "title": "Answer state notices quickly",
+                "body": "Official letters land in one shared inbox, get summarized in plain language and are routed to the right owner along with clear next steps and a deadline."
+              }
+            ]
+          },
+          {
+            "label": "Finance",
+            "entries": [
+              {
+                "title": "Close books with clarity",
+                "body": "Every account number, rate change and filing receipt sits together in one place, ready for each month-end close."
+              },
+              {
+                "title": "Track every tax account",
+                "body": "See withholding and unemployment accounts for each state, plus current rates and owners."
+              },
+              {
+                "title": "Ship every filing on time",
+                "body": "Automated reminders and status tracking mean filings go out on time, every time, even as you add new entities, states and payroll providers across the business."
+              }
+            ]
+          },
+          {
+            "label": "Legal",
+            "entries": [
+              {
+                "title": "Keep each entity healthy",
+                "body": "Annual reports, registered agent details and foreign qualifications are monitored continuously, so every entity stays in good standing without the spreadsheets."
+              },
+              {
+                "title": "Centralize entity records",
+                "body": "Formation documents, officer lists and filing history live in one secure record that your whole team and outside counsel can reference whenever needed."
+              },
+              {
+                "title": "Review filings in one place",
+                "body": "Approve upcoming submissions, compare them against prior years and keep an audit trail of every change, comment and signature across all of your entities."
+              }
+            ]
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "product-screenshot",
+            "alt": "finance view",
+            "asset": "assets/art/compliance/tab-finance.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "product-screenshot",
+            "alt": "head of people view",
+            "asset": "assets/art/compliance/tab-head-of-people.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "product-screenshot",
+            "alt": "startup view",
+            "asset": "assets/art/compliance/tab-startup.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "product-screenshot",
+            "alt": "legal view",
+            "asset": "assets/art/compliance/tab-legal.svg",
+            "source": "placeholder"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "tab-switch",
+        "reducedMotionFallback": "instant-switch"
+      }
+    },
+    {
+      "type": "conversion.compliance-cta-card",
+      "content": {
+        "heading": "Compliance support that grows right along with you",
+        "body": [
+          "Add new entities, states and teammates whenever you need to. Your plan adapts as your business does."
+        ],
+        "images": [
+          {
+            "assetRole": "animation",
+            "alt": "Stacked status cards",
+            "asset": "assets/art/cta/compliance-cta-visual.svg"
+          },
+          {
+            "assetRole": "background",
+            "alt": "",
+            "asset": "assets/art/cta/bg-desktop.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "reveal-on-enter",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "feature.benefit-cards",
+      "content": {
+        "heading": "Get time back daily.",
+        "subheading": "Compliance work tends to pile up quietly until a notice arrives. Northwind turns it into a short, predictable routine, freeing your team to focus on the work that grows the company.",
+        "items": [
+          {
+            "title": "8 hrs back",
+            "body": "Ops leads reclaim most of a working day each month that used to go to portals."
+          },
+          {
+            "title": "1 timeline",
+            "body": "Every due date, owner and document for every entity lives on a single shared calendar your whole team can see."
+          },
+          {
+            "title": "Zero gaps",
+            "body": "Nothing waits on memory: each obligation is tracked from first notice to receipt."
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "illustration",
+            "alt": "",
+            "asset": "assets/art/benefits/benefit-1.svg"
+          },
+          {
+            "assetRole": "illustration",
+            "alt": "",
+            "asset": "assets/art/benefits/benefit-2.svg"
+          },
+          {
+            "assetRole": "illustration",
+            "alt": "",
+            "asset": "assets/art/benefits/benefit-3.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "reveal-on-enter",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "showcase.roadmap",
+      "content": {
+        "heading": "From first filing to full calm.",
+        "items": [
+          {
+            "title": "Connect your current accounts",
+            "body": "Link payroll and entity details once, and we map every requirement."
+          },
+          {
+            "title": "Review your plan",
+            "body": "We build a tailored checklist of registrations, filings and renewals for each state."
+          },
+          {
+            "title": "Stay ahead, always",
+            "body": "Ongoing monitoring catches changes early and keeps every filing on track."
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "animation",
+            "alt": "Step 1",
+            "asset": "assets/art/roadmap/roadmap-step-1.svg"
+          },
+          {
+            "assetRole": "animation",
+            "alt": "Step 2",
+            "asset": "assets/art/roadmap/roadmap-step-2.svg"
+          },
+          {
+            "assetRole": "animation",
+            "alt": "Step 3",
+            "asset": "assets/art/roadmap/roadmap-step-3.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "pinned-scrub",
+        "reducedMotionFallback": "scroll-driven-retained"
+      }
+    },
+    {
+      "type": "steps.peace-of-mind",
+      "content": {
+        "heading": "Finally, calm",
+        "subheading": "Northwind pairs software with real specialists, so the routine work gets done on time and the unusual work gets handled by someone who knows it well.",
+        "items": [
+          {
+            "title": "A dedicated expert on your side",
+            "body": "Every account is paired with a specialist who knows your footprint, answers questions quickly and reviews anything unusual before it grows."
+          },
+          {
+            "title": "Filings handled ahead of time",
+            "body": "Returns, reports and renewals are prepared well before each due date, so your team only needs to review and approve them instead of chasing paperwork at the last minute."
+          },
+          {
+            "title": "Every notice read and routed",
+            "body": "Government mail is scanned the day it arrives, summarized in plain language and sent to the right owner with a clear next step attached."
+          },
+          {
+            "title": "Clear answers whenever a new question comes up",
+            "body": "Our help center and specialists explain what each rule means for your company in plain terms."
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "animation",
+            "alt": "Step 1",
+            "asset": "assets/art/peace/peace-step-1.svg"
+          },
+          {
+            "assetRole": "animation",
+            "alt": "Step 2",
+            "asset": "assets/art/peace/peace-step-2.svg"
+          },
+          {
+            "assetRole": "animation",
+            "alt": "Step 3",
+            "asset": "assets/art/peace/peace-step-3.svg"
+          },
+          {
+            "assetRole": "animation",
+            "alt": "Step 4",
+            "asset": "assets/art/peace/peace-step-4.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "pinned-scrub",
+        "reducedMotionFallback": "scroll-driven-retained"
+      }
+    },
+    {
+      "type": "proof.testimonials",
+      "content": {
+        "heading": "Teams that switched to calmer compliance",
+        "quotes": [
+          {
+            "quote": "Before Northwind we tracked filings in three spreadsheets. Now every deadline lives in one place and nothing slips past our team.",
+            "support": "We stopped worrying about the calendar.",
+            "name": "Jordan Reyes",
+            "role": "Head of Operations, Example Co."
+          },
+          {
+            "quote": "Opening payroll accounts in new states used to take weeks. Now it takes days.",
+            "support": "Our team grew into four new states in a single quarter. Northwind handled every registration and tax account along the way, kept us informed at each step and flagged a local requirement we had completely missed. That one catch alone was worth the subscription for the year.",
+            "name": "Priya Natarajan",
+            "role": "Chief of Staff"
+          },
+          {
+            "quote": "The notices inbox is my favorite feature. Letters get summarized and routed to the right person immediately.",
+            "support": "We no longer lose track of state mail, and responses go out well before any deadline.",
+            "name": "Casey Morgan",
+            "role": "Controller, Sample Labs"
+          },
+          {
+            "quote": "Annual reports for our six entities used to eat a full week each spring. Now they are prepared for us and we simply approve them.",
+            "support": "The specialists know our structure, catch the edge cases and explain every change in plain language. It feels like having an extra person on the finance team without the extra headcount.",
+            "name": "Taylor Brooks",
+            "role": "VP of Finance"
+          },
+          {
+            "quote": "Setup took one afternoon and the first report was ready the next day.",
+            "support": "Connecting our payroll provider was simple, and the checklist it produced was clear and complete.",
+            "name": "Morgan Ellis",
+            "role": "People Lead, Demo"
+          },
+          {
+            "quote": "Knowing an expert is reviewing everything gives our leadership real confidence.",
+            "support": "We expanded into new markets this year without adding compliance headcount. Northwind kept registrations, renewals and filings moving while our small team focused on hiring and growth.",
+            "name": "Avery Collins",
+            "role": "Director of People, Placeholder Group"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "customer-logo",
+            "alt": "Quillfield (fictional)",
+            "asset": "assets/art/logos/quillfield.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Solenne (fictional)",
+            "asset": "assets/art/logos/solenne.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Marlowe (fictional)",
+            "asset": "assets/art/logos/marlowe.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Orbitra (fictional)",
+            "asset": "assets/art/logos/orbitra.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Halcyon (fictional)",
+            "asset": "assets/art/logos/halcyon.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "alt": "Fernway (fictional)",
+            "asset": "assets/art/logos/fernway.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "avatar",
+            "alt": "",
+            "asset": "assets/art/avatars/avatar-1.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "avatar",
+            "alt": "",
+            "asset": "assets/art/avatars/avatar-2.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "avatar",
+            "alt": "",
+            "asset": "assets/art/avatars/avatar-3.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "avatar",
+            "alt": "",
+            "asset": "assets/art/avatars/avatar-4.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "avatar",
+            "alt": "",
+            "asset": "assets/art/avatars/avatar-5.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "avatar",
+            "alt": "",
+            "asset": "assets/art/avatars/avatar-6.svg",
+            "source": "placeholder"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "carousel",
+        "reducedMotionFallback": "instant-switch"
+      }
+    },
+    {
+      "type": "pricing.plan-cards",
+      "content": {
+        "heading": "Simple pricing that grows with your team",
+        "subheading": "Every plan includes the full Northwind platform, expert support and transparent pricing per entity, so you only pay for the locations you actually operate in today.",
+        "plans": [
+          {
+            "label": "1–49 employees",
+            "title": "Essential",
+            "body": "Everything a young company needs to register in new states, open tax accounts and keep annual filings on track.",
+            "price": "$199",
+            "unit": "per entity / month",
+            "fee": "$500",
+            "feeLabel": "one-time setup fee"
+          },
+          {
+            "label": "50–249 FTE",
+            "title": "Standard",
+            "body": "For growing teams in several states who want a specialist reviewing each filing before it goes out.",
+            "price": "$399",
+            "unit": "per entity / month",
+            "fee": "$500",
+            "feeLabel": "one-time setup fee"
+          },
+          {
+            "label": "250+ employees",
+            "title": "Advanced",
+            "body": "Built for multi-entity organizations that need custom workflows, approvals and a dedicated compliance partner on call.",
+            "price": "$1,299",
+            "unit": "per entity, monthly",
+            "fee": "$1,500",
+            "feeLabel": "one-time setup fee"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "pinned-scrub",
+        "reducedMotionFallback": "scroll-driven-retained"
+      }
+    },
+    {
+      "type": "pricing.comparison-table",
+      "content": {
+        "heading": "Plan details",
+        "rows": [
+          {
+            "label": "Entities",
+            "values": [
+              "Up to 3 entities",
+              "Up to 10 entities",
+              "Unlimited"
+            ]
+          },
+          {
+            "label": "State registrations included",
+            "values": [
+              "Payroll and unemployment accts in up to five operating states",
+              "Payroll and unemployment accts in up to twenty states, any mix",
+              "All states"
+            ]
+          },
+          {
+            "label": "Annual report prep",
+            "values": [
+              "Preparation and filing of each report for every entity you operate in each state you join with reminders before the due date",
+              "Preparation and filing of each report for every entity you operate in each state you join with reminders before the due date",
+              "Preparation, review and filing by a specialist for each entity in every state and county with a sign-off step before any submission"
+            ]
+          },
+          {
+            "label": "Tax accounts",
+            "values": [
+              "Withholding setup, Unemployment insurance, Local tax accounts, Rate change notifications sent",
+              "Withholding setup, Unemployment insurance, Local tax accounts, Rate change notifications sent, Quarterly rate review",
+              "Withholding setup, Unemployment insurance, Local tax accounts, Rate change notifications sent, Quarterly rate review"
+            ]
+          },
+          {
+            "label": "Mail & notice inbox",
+            "values": [
+              true,
+              true,
+              "Same-day scanning and routing"
+            ]
+          },
+          {
+            "label": "Dedicated specialist",
+            "values": [
+              "Shared specialist team, with replies in two business days",
+              "Shared specialist team, with replies in one business day",
+              "Named compliance partner"
+            ]
+          },
+          {
+            "label": "Policy templates",
+            "values": [
+              true,
+              "Included",
+              "Custom"
+            ]
+          },
+          {
+            "label": "Audit trail log",
+            "values": [
+              true,
+              "90 days",
+              true
+            ]
+          },
+          {
+            "label": "Unlimited seats",
+            "values": [
+              true,
+              true,
+              "With SSO"
+            ]
+          },
+          {
+            "label": "Priority support",
+            "values": [
+              true,
+              true,
+              true
+            ]
+          }
+        ],
+        "body": [
+          "* Prices shown are billed annually.",
+          "** State filing fees are passed through at actual cost."
+        ]
+      },
+      "motion": {
+        "pattern": "accordion",
+        "reducedMotionFallback": "none-implemented"
+      }
+    },
+    {
+      "type": "faq.accordion",
+      "content": {
+        "heading": "Common questions, answered.",
+        "items": [
+          {
+            "title": "What exactly does Northwind handle?",
+            "body": "Registrations, tax accounts, annual reports and official notices."
+          },
+          {
+            "title": "How long does it take to get set up and running?",
+            "body": "Most teams are fully set up within a single afternoon. You start by connecting your payroll provider and adding basic details about each entity, such as where it was formed and where you currently have employees. Northwind uses that information to build a complete list of the registrations, accounts and recurring filings that apply to you, then highlights anything that looks overdue or missing. A specialist reviews the plan with you on a short call, answers questions and confirms priorities. From there, open items are worked through in order of urgency, and you can follow progress on each one from your dashboard. Most new customers see their first completed registrations within a few business days, depending on the state."
+          },
+          {
+            "title": "Can Northwind take over filings that our team or another provider started?",
+            "body": "Yes. When you join, we import the status of every registration, account and filing you already have in progress, whether it was started by your own team, an accountant or another service provider. Our specialists confirm the details with each agency, pick up anything that is mid-flight and note any gaps or upcoming deadlines that need attention. You keep a full history of what was done before you joined, alongside everything completed afterwards, so audits, reviews and handoffs to new teammates stay simple and fast. There is no need to restart work that is already underway, re-enter information you have already provided or pay for the same filing twice."
+          },
+          {
+            "title": "Which states and agencies are covered?",
+            "body": "All fifty states, plus the city and county agencies that apply to your teams."
+          },
+          {
+            "title": "Is my company information kept secure at all times?",
+            "body": "Your data is encrypted in transit and at rest, access is limited to the specialists working on your account, and every action is recorded in an audit trail you can review at any time from the dashboard."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "accordion",
+        "reducedMotionFallback": "none-implemented"
+      }
+    },
+    {
+      "type": "conversion.bottom-cta",
+      "content": {
+        "heading": "Start with Northwind.",
+        "images": [
+          {
+            "assetRole": "animation",
+            "alt": "Completed filing card",
+            "asset": "assets/art/cta/bottom-cta-visual.svg"
+          },
+          {
+            "assetRole": "background",
+            "alt": "",
+            "asset": "assets/art/cta/bg-tablet.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "visual-loop",
+        "reducedMotionFallback": "static-end-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "body": [
+          "Compliance software for busy teams.",
+          "© 2026 Northwind Inc"
+        ],
+        "items": [
+          {
+            "title": "Solutions"
+          },
+          {
+            "title": "Company"
+          },
+          {
+            "title": "Stay connected"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Entity Management",
+            "href": "#"
+          },
+          {
+            "label": "Payroll",
+            "href": "#"
+          },
+          {
+            "label": "Annual Report Filing",
+            "href": "#"
+          },
+          {
+            "label": "Registered Agent",
+            "href": "#"
+          },
+          {
+            "label": "Foreign Qualification",
+            "href": "#"
+          },
+          {
+            "label": "About Us",
+            "href": "/about"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Help",
+            "href": "#"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/legal/privacy-policy"
+          },
+          {
+            "label": "Terms and Conditions",
+            "href": "/legal/terms-of-service"
+          },
+          {
+            "label": "Social profile one",
+            "href": "#"
+          },
+          {
+            "label": "Social profile two",
+            "href": "#"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "logo",
+            "alt": "Northwind",
+            "asset": "assets/art/brand/northwind-logo-white.svg",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "illustration",
+            "alt": "",
+            "asset": "assets/art/footer/footer-line-left.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "reveal-on-enter",
+        "reducedMotionFallback": "disable-animation"
+      }
+    }
+  ]
+}

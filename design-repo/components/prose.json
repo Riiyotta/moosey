@@ -1,0 +1,23 @@
+{
+  "id": "prose",
+  "purpose": "`.article-wrapper` prose rules incl. tables.",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "link",
+    "image"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/Prose.jsx",
+        "lines": [
+          12,
+          12
+        ],
+        "anchor": "export default function Prose"
+      }
+    ]
+  }
+}

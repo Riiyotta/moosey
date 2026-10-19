@@ -1,0 +1,39 @@
+{
+  "$description": "Component tokens for header.",
+  "component": "header",
+  "selector": "#header .header-container",
+  "tokens": {
+    "background": {
+      "$value": "{surface.hero}"
+    },
+    "radius": {
+      "$value": "{radius.card}"
+    },
+    "width": {
+      "$value": {
+        "mobile": "304u",
+        "tablet": "704u",
+        "desktop": "1302u"
+      }
+    },
+    "navLinkColor": {
+      "$value": "{text.nav}"
+    },
+    "navLinkHover": {
+      "$value": "{text.primary} on {surface.beige}"
+    },
+    "transition": {
+      "$value": ".4s ease"
+    }
+  },
+  "citations": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": [
+        163,
+        184
+      ],
+      "anchor": "**`.header-container`**"
+    }
+  ]
+}

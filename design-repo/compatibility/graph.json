@@ -1,0 +1,1495 @@
+{
+  "version": "0.1.0",
+  "derivedFrom": "templates/templates.json and sections/*.json (recomputed by verify_all.py)",
+  "rules": [
+    {
+      "id": "ONE_HERO_PER_PAGE",
+      "severity": "error",
+      "kind": "maxCategoryPerPage",
+      "category": "HERO",
+      "max": 1,
+      "exceptions": [],
+      "description": "At most one HERO-category section per page. Templates with no hero (blog post, authors, prose pages) are simply not required to have one."
+    },
+    {
+      "id": "SECTION_PER_PAGE_LIMITS",
+      "severity": "error",
+      "kind": "perPageLimits",
+      "limits": {
+        "banner.announcement": 1,
+        "careers.job-list": 1,
+        "confirmation.thanks": 1,
+        "conversion.bottom-cta": 1,
+        "conversion.checkout-form": 1,
+        "conversion.compliance-cta-card": 1,
+        "conversion.guide-form": 1,
+        "conversion.lead-form": 1,
+        "conversion.request-invite-modal": 1,
+        "editorial.post-body": 1,
+        "editorial.post-header": 1,
+        "editorial.prose-article": 1,
+        "editorial.story-card": 1,
+        "faq.accordion": 1,
+        "feature.accordion-story": 3,
+        "feature.benefit-cards": 1,
+        "feature.card-grid": 1,
+        "feature.checklist-row": 3,
+        "feature.numbered-intro": 1,
+        "feature.numbered-row": 3,
+        "hero.about": 1,
+        "hero.guide": 1,
+        "hero.home-tabs": 1,
+        "hero.page": 1,
+        "hero.static": 1,
+        "hero.title-band": 1,
+        "intro.statement": 1,
+        "intro.title-row": 1,
+        "legacy.band-title": 3,
+        "legacy.customer-logos": 1,
+        "legacy.everything-checklist": 1,
+        "legacy.feature-row": 4,
+        "legacy.hero": 1,
+        "legacy.image-card-pair": 1,
+        "legacy.inset-row": 4,
+        "legacy.pricing-cards": 1,
+        "legacy.testimonial-swiper": 1,
+        "legacy.workflow-row": 1,
+        "listing.author-list": 1,
+        "listing.pagination": 1,
+        "listing.post-rows": 1,
+        "listing.resource-group": 9,
+        "pricing.comparison-table": 1,
+        "pricing.plan-cards": 1,
+        "profile.author-bio": 1,
+        "proof.ecosystem": 1,
+        "proof.logo-marquee": 1,
+        "proof.problem-list": 1,
+        "proof.testimonials": 1,
+        "proof.testimonials-lite": 1,
+        "related.blog-teasers": 1,
+        "related.guide-list": 1,
+        "related.resource-link-grid": 2,
+        "shell.footer": 1,
+        "shell.header": 1,
+        "showcase.everything-network": 1,
+        "showcase.roadmap": 1,
+        "showcase.role-tabs": 1,
+        "showcase.scroll-tabs": 1,
+        "steps.get-started": 1,
+        "steps.peace-of-mind": 1
+      },
+      "description": "No section appears more often on one page than in any template (repeatable maxCount summed across that template's nodes)."
+    },
+    {
+      "id": "CHROME_OPENS_PAGE",
+      "severity": "error",
+      "kind": "firstNodeIn",
+      "sections": [
+        "banner.announcement",
+        "shell.header"
+      ],
+      "description": "Every page opens with the header, or with the announcement banner directly above it (home only)."
+    },
+    {
+      "id": "BANNER_MUST_BE_FIRST",
+      "severity": "error",
+      "kind": "mustBeFirst",
+      "sections": [
+        "banner.announcement"
+      ],
+      "description": "The announcement banner, when present, is the first node."
+    },
+    {
+      "id": "FOOTER_MUST_BE_LAST",
+      "severity": "error",
+      "kind": "mustBeLast",
+      "sections": [
+        "shell.footer"
+      ],
+      "description": "The footer closes every page."
+    },
+    {
+      "id": "MUST_FOLLOW_OBSERVED_PREDECESSOR",
+      "severity": "error",
+      "kind": "mustFollow",
+      "follows": {
+        "banner.announcement": [
+          "^"
+        ],
+        "shell.header": [
+          "^",
+          "banner.announcement"
+        ],
+        "hero.home-tabs": [
+          "shell.header"
+        ],
+        "proof.logo-marquee": [
+          "conversion.guide-form",
+          "conversion.lead-form",
+          "editorial.story-card",
+          "hero.home-tabs",
+          "hero.page",
+          "hero.static",
+          "intro.title-row"
+        ],
+        "intro.statement": [
+          "proof.logo-marquee"
+        ],
+        "showcase.everything-network": [
+          "intro.statement"
+        ],
+        "showcase.role-tabs": [
+          "feature.benefit-cards",
+          "showcase.everything-network"
+        ],
+        "conversion.compliance-cta-card": [
+          "faq.accordion",
+          "feature.accordion-story",
+          "feature.benefit-cards",
+          "feature.checklist-row",
+          "showcase.role-tabs",
+          "showcase.scroll-tabs",
+          "steps.get-started"
+        ],
+        "feature.benefit-cards": [
+          "conversion.compliance-cta-card",
+          "feature.card-grid",
+          "feature.checklist-row",
+          "hero.guide",
+          "hero.static",
+          "proof.logo-marquee",
+          "shell.header",
+          "showcase.roadmap"
+        ],
+        "showcase.roadmap": [
+          "feature.benefit-cards",
+          "proof.ecosystem"
+        ],
+        "steps.peace-of-mind": [
+          "conversion.compliance-cta-card",
+          "showcase.roadmap"
+        ],
+        "proof.testimonials": [
+          "feature.benefit-cards",
+          "steps.get-started",
+          "steps.peace-of-mind"
+        ],
+        "pricing.plan-cards": [
+          "conversion.compliance-cta-card",
+          "proof.testimonials",
+          "shell.header",
+          "steps.get-started"
+        ],
+        "pricing.comparison-table": [
+          "pricing.plan-cards"
+        ],
+        "faq.accordion": [
+          "conversion.guide-form",
+          "feature.accordion-story",
+          "feature.checklist-row",
+          "pricing.comparison-table",
+          "proof.logo-marquee",
+          "steps.get-started"
+        ],
+        "conversion.bottom-cta": [
+          "careers.job-list",
+          "conversion.guide-form",
+          "editorial.post-body",
+          "faq.accordion",
+          "feature.accordion-story",
+          "feature.checklist-row",
+          "feature.numbered-row",
+          "listing.pagination",
+          "listing.resource-group",
+          "pricing.comparison-table",
+          "proof.logo-marquee",
+          "proof.testimonials-lite",
+          "related.blog-teasers"
+        ],
+        "shell.footer": [
+          "confirmation.thanks",
+          "conversion.bottom-cta",
+          "conversion.checkout-form",
+          "conversion.guide-form",
+          "conversion.request-invite-modal",
+          "editorial.prose-article",
+          "faq.accordion",
+          "feature.accordion-story",
+          "legacy.testimonial-swiper",
+          "listing.author-list",
+          "profile.author-bio",
+          "proof.logo-marquee",
+          "steps.peace-of-mind"
+        ],
+        "hero.page": [
+          "shell.header"
+        ],
+        "feature.accordion-story": [
+          "conversion.compliance-cta-card",
+          "conversion.guide-form",
+          "conversion.lead-form",
+          "feature.accordion-story",
+          "feature.benefit-cards",
+          "hero.page",
+          "hero.static",
+          "intro.title-row",
+          "proof.logo-marquee"
+        ],
+        "feature.checklist-row": [
+          "conversion.compliance-cta-card",
+          "feature.accordion-story",
+          "feature.benefit-cards",
+          "feature.checklist-row",
+          "hero.page",
+          "hero.static",
+          "steps.get-started"
+        ],
+        "proof.ecosystem": [
+          "conversion.compliance-cta-card",
+          "feature.benefit-cards"
+        ],
+        "feature.numbered-intro": [
+          "proof.ecosystem"
+        ],
+        "feature.numbered-row": [
+          "feature.numbered-intro",
+          "feature.numbered-row"
+        ],
+        "steps.get-started": [
+          "conversion.compliance-cta-card",
+          "feature.accordion-story",
+          "feature.benefit-cards",
+          "feature.checklist-row",
+          "proof.testimonials",
+          "related.guide-list"
+        ],
+        "hero.static": [
+          "shell.header"
+        ],
+        "showcase.scroll-tabs": [
+          "hero.static",
+          "proof.logo-marquee"
+        ],
+        "proof.problem-list": [
+          "proof.logo-marquee"
+        ],
+        "feature.card-grid": [
+          "proof.problem-list"
+        ],
+        "related.guide-list": [
+          "conversion.compliance-cta-card"
+        ],
+        "conversion.lead-form": [
+          "hero.page",
+          "hero.static",
+          "intro.title-row",
+          "proof.logo-marquee"
+        ],
+        "proof.testimonials-lite": [
+          "feature.checklist-row"
+        ],
+        "hero.about": [
+          "shell.header"
+        ],
+        "intro.title-row": [
+          "hero.about",
+          "hero.static"
+        ],
+        "editorial.story-card": [
+          "intro.title-row"
+        ],
+        "careers.job-list": [
+          "proof.logo-marquee"
+        ],
+        "editorial.prose-article": [
+          "shell.header"
+        ],
+        "hero.title-band": [
+          "shell.header"
+        ],
+        "listing.post-rows": [
+          "hero.title-band"
+        ],
+        "listing.pagination": [
+          "listing.post-rows"
+        ],
+        "editorial.post-header": [
+          "shell.header"
+        ],
+        "editorial.post-body": [
+          "editorial.post-header"
+        ],
+        "listing.author-list": [
+          "shell.header"
+        ],
+        "profile.author-bio": [
+          "hero.title-band"
+        ],
+        "listing.resource-group": [
+          "hero.title-band",
+          "listing.resource-group"
+        ],
+        "related.resource-link-grid": [
+          "editorial.post-body",
+          "related.resource-link-grid"
+        ],
+        "related.blog-teasers": [
+          "editorial.post-body",
+          "related.resource-link-grid"
+        ],
+        "hero.guide": [
+          "shell.header"
+        ],
+        "conversion.guide-form": [
+          "feature.benefit-cards",
+          "hero.guide",
+          "shell.header"
+        ],
+        "confirmation.thanks": [
+          "shell.header"
+        ],
+        "legacy.hero": [
+          "shell.header"
+        ],
+        "legacy.band-title": [
+          "legacy.feature-row",
+          "legacy.hero",
+          "legacy.inset-row"
+        ],
+        "legacy.feature-row": [
+          "legacy.band-title",
+          "legacy.image-card-pair",
+          "legacy.inset-row",
+          "legacy.workflow-row"
+        ],
+        "legacy.workflow-row": [
+          "legacy.feature-row"
+        ],
+        "legacy.inset-row": [
+          "legacy.band-title",
+          "legacy.feature-row",
+          "legacy.inset-row"
+        ],
+        "legacy.image-card-pair": [
+          "legacy.band-title"
+        ],
+        "legacy.everything-checklist": [
+          "legacy.feature-row"
+        ],
+        "legacy.pricing-cards": [
+          "legacy.everything-checklist"
+        ],
+        "legacy.customer-logos": [
+          "legacy.pricing-cards"
+        ],
+        "legacy.testimonial-swiper": [
+          "legacy.customer-logos"
+        ],
+        "conversion.request-invite-modal": [
+          "legacy.everything-checklist"
+        ],
+        "conversion.checkout-form": [
+          "shell.header"
+        ]
+      },
+      "description": "Each section may only follow a section it was observed after ('^' = page start), recomputed from templates (optional nodes skippable, repeatable nodes may follow themselves)."
+    },
+    {
+      "id": "ROUTE_MATCHES_TEMPLATE",
+      "severity": "error",
+      "kind": "routeMatchesTemplate",
+      "description": "spec.route must match one of the declared template's routePatterns (':param' = one path segment; '*' = any). This is what keeps the banner home-only and partner kits under /partners/."
+    },
+    {
+      "id": "NO_CONSECUTIVE_SAME_SECTION",
+      "severity": "warn",
+      "kind": "noConsecutive",
+      "sections": [
+        "banner.announcement",
+        "careers.job-list",
+        "confirmation.thanks",
+        "conversion.bottom-cta",
+        "conversion.checkout-form",
+        "conversion.compliance-cta-card",
+        "conversion.guide-form",
+        "conversion.lead-form",
+        "conversion.request-invite-modal",
+        "editorial.post-body",
+        "editorial.post-header",
+        "editorial.prose-article",
+        "editorial.story-card",
+        "faq.accordion",
+        "feature.benefit-cards",
+        "feature.card-grid",
+        "feature.numbered-intro",
+        "hero.about",
+        "hero.guide",
+        "hero.home-tabs",
+        "hero.page",
+        "hero.static",
+        "hero.title-band",
+        "intro.statement",
+        "intro.title-row",
+        "legacy.band-title",
+        "legacy.customer-logos",
+        "legacy.everything-checklist",
+        "legacy.feature-row",
+        "legacy.hero",
+        "legacy.image-card-pair",
+        "legacy.pricing-cards",
+        "legacy.testimonial-swiper",
+        "legacy.workflow-row",
+        "listing.author-list",
+        "listing.pagination",
+        "listing.post-rows",
+        "pricing.comparison-table",
+        "pricing.plan-cards",
+        "profile.author-bio",
+        "proof.ecosystem",
+        "proof.logo-marquee",
+        "proof.problem-list",
+        "proof.testimonials",
+        "proof.testimonials-lite",
+        "related.blog-teasers",
+        "related.guide-list",
+        "shell.footer",
+        "shell.header",
+        "showcase.everything-network",
+        "showcase.roadmap",
+        "showcase.role-tabs",
+        "showcase.scroll-tabs",
+        "steps.get-started",
+        "steps.peace-of-mind"
+      ],
+      "description": "Non-repeatable sections were never observed back-to-back."
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "kind": "noAdjacentSameCategory",
+      "exceptions": [
+        [
+          "conversion.guide-form",
+          "conversion.bottom-cta"
+        ],
+        [
+          "editorial.post-header",
+          "editorial.post-body"
+        ],
+        [
+          "feature.accordion-story",
+          "feature.checklist-row"
+        ],
+        [
+          "feature.benefit-cards",
+          "feature.accordion-story"
+        ],
+        [
+          "feature.benefit-cards",
+          "feature.checklist-row"
+        ],
+        [
+          "feature.card-grid",
+          "feature.benefit-cards"
+        ],
+        [
+          "feature.checklist-row",
+          "feature.benefit-cards"
+        ],
+        [
+          "feature.numbered-intro",
+          "feature.numbered-row"
+        ],
+        [
+          "legacy.customer-logos",
+          "legacy.testimonial-swiper"
+        ],
+        [
+          "legacy.feature-row",
+          "legacy.everything-checklist"
+        ],
+        [
+          "legacy.feature-row",
+          "legacy.inset-row"
+        ],
+        [
+          "legacy.feature-row",
+          "legacy.workflow-row"
+        ],
+        [
+          "legacy.image-card-pair",
+          "legacy.feature-row"
+        ],
+        [
+          "legacy.inset-row",
+          "legacy.feature-row"
+        ],
+        [
+          "legacy.workflow-row",
+          "legacy.feature-row"
+        ],
+        [
+          "listing.post-rows",
+          "listing.pagination"
+        ],
+        [
+          "pricing.plan-cards",
+          "pricing.comparison-table"
+        ],
+        [
+          "proof.logo-marquee",
+          "proof.problem-list"
+        ],
+        [
+          "related.resource-link-grid",
+          "related.blog-teasers"
+        ],
+        [
+          "showcase.everything-network",
+          "showcase.role-tabs"
+        ]
+      ],
+      "description": "Two different sections of one category should not touch unless that ordered pair was observed (exceptions recomputed from templates)."
+    },
+    {
+      "id": "MOTION_BUDGET",
+      "severity": "warn",
+      "kind": "maxAnimatedSections",
+      "max": 16,
+      "description": "No more animated sections than the most animated template."
+    },
+    {
+      "id": "PINNED_SCRUB_BUDGET",
+      "severity": "warn",
+      "kind": "maxPatternPerPage",
+      "pattern": "pinned-scrub",
+      "max": 4,
+      "description": "No more pinned scroll-scrub sections than any template carries (home: roadmap, peace, pricing; platform: 3 accordion cards)."
+    }
+  ],
+  "compatibility": {
+    "shell.header": {
+      "observedPredecessors": [
+        "^",
+        "banner.announcement"
+      ],
+      "templates": [
+        "template.about",
+        "template.author-detail",
+        "template.authors-index",
+        "template.blog-index",
+        "template.blog-post",
+        "template.guide-landing",
+        "template.home",
+        "template.legal-prose",
+        "template.mail",
+        "template.not-found",
+        "template.partner-legacy",
+        "template.partner-platform",
+        "template.partner-static",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.platform-product-handbooks",
+        "template.pricing",
+        "template.reinstatement",
+        "template.resource-category",
+        "template.resource-guide",
+        "template.resources-index",
+        "template.sales-tax-beta",
+        "template.security",
+        "template.solution-detail",
+        "template.solution-detail-telehealth",
+        "template.solutions-overview",
+        "template.subscribe"
+      ]
+    },
+    "banner.announcement": {
+      "observedPredecessors": [
+        "^"
+      ],
+      "templates": [
+        "template.home"
+      ]
+    },
+    "shell.footer": {
+      "observedPredecessors": [
+        "confirmation.thanks",
+        "conversion.bottom-cta",
+        "conversion.checkout-form",
+        "conversion.guide-form",
+        "conversion.request-invite-modal",
+        "editorial.prose-article",
+        "faq.accordion",
+        "feature.accordion-story",
+        "legacy.testimonial-swiper",
+        "listing.author-list",
+        "profile.author-bio",
+        "proof.logo-marquee",
+        "steps.peace-of-mind"
+      ],
+      "templates": [
+        "template.about",
+        "template.author-detail",
+        "template.authors-index",
+        "template.blog-index",
+        "template.blog-post",
+        "template.guide-landing",
+        "template.home",
+        "template.legal-prose",
+        "template.mail",
+        "template.not-found",
+        "template.partner-legacy",
+        "template.partner-platform",
+        "template.partner-static",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.platform-product-handbooks",
+        "template.pricing",
+        "template.reinstatement",
+        "template.resource-category",
+        "template.resource-guide",
+        "template.resources-index",
+        "template.sales-tax-beta",
+        "template.security",
+        "template.solution-detail",
+        "template.solution-detail-telehealth",
+        "template.solutions-overview",
+        "template.subscribe"
+      ]
+    },
+    "hero.home-tabs": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.home"
+      ]
+    },
+    "hero.page": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-handbooks",
+        "template.solution-detail",
+        "template.solution-detail-telehealth"
+      ]
+    },
+    "hero.static": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.partner-platform",
+        "template.partner-static",
+        "template.platform-product-entity",
+        "template.reinstatement",
+        "template.solutions-overview"
+      ]
+    },
+    "hero.about": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.about"
+      ]
+    },
+    "hero.title-band": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.author-detail",
+        "template.blog-index",
+        "template.resource-category",
+        "template.resources-index"
+      ]
+    },
+    "hero.guide": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.guide-landing"
+      ]
+    },
+    "proof.logo-marquee": {
+      "observedPredecessors": [
+        "conversion.guide-form",
+        "conversion.lead-form",
+        "editorial.story-card",
+        "hero.home-tabs",
+        "hero.page",
+        "hero.static",
+        "intro.title-row"
+      ],
+      "templates": [
+        "template.about",
+        "template.guide-landing",
+        "template.home",
+        "template.partner-platform",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.solution-detail",
+        "template.solution-detail-telehealth"
+      ]
+    },
+    "proof.testimonials": {
+      "observedPredecessors": [
+        "feature.benefit-cards",
+        "steps.get-started",
+        "steps.peace-of-mind"
+      ],
+      "templates": [
+        "template.home",
+        "template.partner-static",
+        "template.solutions-overview"
+      ]
+    },
+    "proof.testimonials-lite": {
+      "observedPredecessors": [
+        "feature.checklist-row"
+      ],
+      "templates": [
+        "template.solution-detail-telehealth"
+      ]
+    },
+    "proof.ecosystem": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "feature.benefit-cards"
+      ],
+      "templates": [
+        "template.platform-overview",
+        "template.solutions-overview"
+      ]
+    },
+    "proof.problem-list": {
+      "observedPredecessors": [
+        "proof.logo-marquee"
+      ],
+      "templates": [
+        "template.solution-detail"
+      ]
+    },
+    "intro.statement": {
+      "observedPredecessors": [
+        "proof.logo-marquee"
+      ],
+      "templates": [
+        "template.home"
+      ]
+    },
+    "intro.title-row": {
+      "observedPredecessors": [
+        "hero.about",
+        "hero.static"
+      ],
+      "templates": [
+        "template.about",
+        "template.partner-platform"
+      ]
+    },
+    "showcase.everything-network": {
+      "observedPredecessors": [
+        "intro.statement"
+      ],
+      "templates": [
+        "template.home"
+      ]
+    },
+    "showcase.role-tabs": {
+      "observedPredecessors": [
+        "feature.benefit-cards",
+        "showcase.everything-network"
+      ],
+      "templates": [
+        "template.home",
+        "template.platform-product-handbooks"
+      ]
+    },
+    "showcase.roadmap": {
+      "observedPredecessors": [
+        "feature.benefit-cards",
+        "proof.ecosystem"
+      ],
+      "templates": [
+        "template.home",
+        "template.solutions-overview"
+      ]
+    },
+    "showcase.scroll-tabs": {
+      "observedPredecessors": [
+        "hero.static",
+        "proof.logo-marquee"
+      ],
+      "templates": [
+        "template.platform-product-entity",
+        "template.solutions-overview"
+      ]
+    },
+    "feature.benefit-cards": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "feature.card-grid",
+        "feature.checklist-row",
+        "hero.guide",
+        "hero.static",
+        "proof.logo-marquee",
+        "shell.header",
+        "showcase.roadmap"
+      ],
+      "templates": [
+        "template.guide-landing",
+        "template.home",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-handbooks",
+        "template.reinstatement",
+        "template.solution-detail",
+        "template.solution-detail-telehealth",
+        "template.solutions-overview"
+      ]
+    },
+    "feature.accordion-story": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "conversion.guide-form",
+        "conversion.lead-form",
+        "feature.accordion-story",
+        "feature.benefit-cards",
+        "hero.page",
+        "hero.static",
+        "intro.title-row",
+        "proof.logo-marquee"
+      ],
+      "templates": [
+        "template.guide-landing",
+        "template.partner-platform",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.solution-detail"
+      ]
+    },
+    "feature.checklist-row": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "feature.accordion-story",
+        "feature.benefit-cards",
+        "feature.checklist-row",
+        "hero.page",
+        "hero.static",
+        "steps.get-started"
+      ],
+      "templates": [
+        "template.partner-static",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.platform-product-handbooks",
+        "template.reinstatement",
+        "template.solution-detail-telehealth"
+      ]
+    },
+    "feature.numbered-intro": {
+      "observedPredecessors": [
+        "proof.ecosystem"
+      ],
+      "templates": [
+        "template.platform-overview"
+      ]
+    },
+    "feature.numbered-row": {
+      "observedPredecessors": [
+        "feature.numbered-intro",
+        "feature.numbered-row"
+      ],
+      "templates": [
+        "template.platform-overview"
+      ]
+    },
+    "feature.card-grid": {
+      "observedPredecessors": [
+        "proof.problem-list"
+      ],
+      "templates": [
+        "template.solution-detail"
+      ]
+    },
+    "steps.peace-of-mind": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "showcase.roadmap"
+      ],
+      "templates": [
+        "template.home",
+        "template.reinstatement"
+      ]
+    },
+    "steps.get-started": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "feature.accordion-story",
+        "feature.benefit-cards",
+        "feature.checklist-row",
+        "proof.testimonials",
+        "related.guide-list"
+      ],
+      "templates": [
+        "template.partner-platform",
+        "template.partner-static",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.platform-product-handbooks",
+        "template.solution-detail",
+        "template.solutions-overview"
+      ]
+    },
+    "pricing.plan-cards": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card",
+        "proof.testimonials",
+        "shell.header",
+        "steps.get-started"
+      ],
+      "templates": [
+        "template.home",
+        "template.partner-platform",
+        "template.partner-static",
+        "template.pricing",
+        "template.solutions-overview"
+      ]
+    },
+    "pricing.comparison-table": {
+      "observedPredecessors": [
+        "pricing.plan-cards"
+      ],
+      "templates": [
+        "template.home",
+        "template.partner-platform",
+        "template.partner-static",
+        "template.pricing",
+        "template.solutions-overview"
+      ]
+    },
+    "faq.accordion": {
+      "observedPredecessors": [
+        "conversion.guide-form",
+        "feature.accordion-story",
+        "feature.checklist-row",
+        "pricing.comparison-table",
+        "proof.logo-marquee",
+        "steps.get-started"
+      ],
+      "templates": [
+        "template.guide-landing",
+        "template.home",
+        "template.partner-platform",
+        "template.platform-product",
+        "template.platform-product-handbooks",
+        "template.pricing",
+        "template.solution-detail",
+        "template.solutions-overview"
+      ]
+    },
+    "conversion.compliance-cta-card": {
+      "observedPredecessors": [
+        "faq.accordion",
+        "feature.accordion-story",
+        "feature.benefit-cards",
+        "feature.checklist-row",
+        "showcase.role-tabs",
+        "showcase.scroll-tabs",
+        "steps.get-started"
+      ],
+      "templates": [
+        "template.home",
+        "template.partner-platform",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.platform-product-handbooks",
+        "template.reinstatement",
+        "template.solution-detail",
+        "template.solution-detail-telehealth",
+        "template.solutions-overview"
+      ]
+    },
+    "conversion.bottom-cta": {
+      "observedPredecessors": [
+        "careers.job-list",
+        "conversion.guide-form",
+        "editorial.post-body",
+        "faq.accordion",
+        "feature.accordion-story",
+        "feature.checklist-row",
+        "feature.numbered-row",
+        "listing.pagination",
+        "listing.resource-group",
+        "pricing.comparison-table",
+        "proof.logo-marquee",
+        "proof.testimonials-lite",
+        "related.blog-teasers"
+      ],
+      "templates": [
+        "template.about",
+        "template.blog-index",
+        "template.blog-post",
+        "template.guide-landing",
+        "template.home",
+        "template.partner-platform",
+        "template.partner-static",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-entity",
+        "template.platform-product-handbooks",
+        "template.pricing",
+        "template.resource-category",
+        "template.resource-guide",
+        "template.resources-index",
+        "template.solution-detail",
+        "template.solution-detail-telehealth",
+        "template.solutions-overview"
+      ]
+    },
+    "conversion.lead-form": {
+      "observedPredecessors": [
+        "hero.page",
+        "hero.static",
+        "intro.title-row",
+        "proof.logo-marquee"
+      ],
+      "templates": [
+        "template.partner-platform",
+        "template.solution-detail-telehealth"
+      ]
+    },
+    "conversion.guide-form": {
+      "observedPredecessors": [
+        "feature.benefit-cards",
+        "hero.guide",
+        "shell.header"
+      ],
+      "templates": [
+        "template.guide-landing"
+      ]
+    },
+    "conversion.request-invite-modal": {
+      "observedPredecessors": [
+        "legacy.everything-checklist"
+      ],
+      "templates": [
+        "template.sales-tax-beta"
+      ]
+    },
+    "conversion.checkout-form": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.mail"
+      ]
+    },
+    "editorial.story-card": {
+      "observedPredecessors": [
+        "intro.title-row"
+      ],
+      "templates": [
+        "template.about"
+      ]
+    },
+    "editorial.prose-article": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.legal-prose",
+        "template.not-found",
+        "template.security"
+      ]
+    },
+    "editorial.post-header": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.blog-post",
+        "template.resource-guide"
+      ]
+    },
+    "editorial.post-body": {
+      "observedPredecessors": [
+        "editorial.post-header"
+      ],
+      "templates": [
+        "template.blog-post",
+        "template.resource-guide"
+      ]
+    },
+    "careers.job-list": {
+      "observedPredecessors": [
+        "proof.logo-marquee"
+      ],
+      "templates": [
+        "template.about"
+      ]
+    },
+    "listing.post-rows": {
+      "observedPredecessors": [
+        "hero.title-band"
+      ],
+      "templates": [
+        "template.blog-index"
+      ]
+    },
+    "listing.pagination": {
+      "observedPredecessors": [
+        "listing.post-rows"
+      ],
+      "templates": [
+        "template.blog-index"
+      ]
+    },
+    "listing.resource-group": {
+      "observedPredecessors": [
+        "hero.title-band",
+        "listing.resource-group"
+      ],
+      "templates": [
+        "template.resource-category",
+        "template.resources-index"
+      ]
+    },
+    "listing.author-list": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.authors-index"
+      ]
+    },
+    "profile.author-bio": {
+      "observedPredecessors": [
+        "hero.title-band"
+      ],
+      "templates": [
+        "template.author-detail"
+      ]
+    },
+    "related.resource-link-grid": {
+      "observedPredecessors": [
+        "editorial.post-body",
+        "related.resource-link-grid"
+      ],
+      "templates": [
+        "template.resource-guide"
+      ]
+    },
+    "related.blog-teasers": {
+      "observedPredecessors": [
+        "editorial.post-body",
+        "related.resource-link-grid"
+      ],
+      "templates": [
+        "template.resource-guide"
+      ]
+    },
+    "related.guide-list": {
+      "observedPredecessors": [
+        "conversion.compliance-cta-card"
+      ],
+      "templates": [
+        "template.solution-detail"
+      ]
+    },
+    "confirmation.thanks": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.subscribe"
+      ]
+    },
+    "legacy.hero": {
+      "observedPredecessors": [
+        "shell.header"
+      ],
+      "templates": [
+        "template.partner-legacy",
+        "template.sales-tax-beta"
+      ]
+    },
+    "legacy.band-title": {
+      "observedPredecessors": [
+        "legacy.feature-row",
+        "legacy.hero",
+        "legacy.inset-row"
+      ],
+      "templates": [
+        "template.partner-legacy",
+        "template.sales-tax-beta"
+      ]
+    },
+    "legacy.feature-row": {
+      "observedPredecessors": [
+        "legacy.band-title",
+        "legacy.image-card-pair",
+        "legacy.inset-row",
+        "legacy.workflow-row"
+      ],
+      "templates": [
+        "template.partner-legacy",
+        "template.sales-tax-beta"
+      ]
+    },
+    "legacy.workflow-row": {
+      "observedPredecessors": [
+        "legacy.feature-row"
+      ],
+      "templates": [
+        "template.partner-legacy"
+      ]
+    },
+    "legacy.inset-row": {
+      "observedPredecessors": [
+        "legacy.band-title",
+        "legacy.feature-row",
+        "legacy.inset-row"
+      ],
+      "templates": [
+        "template.partner-legacy",
+        "template.sales-tax-beta"
+      ]
+    },
+    "legacy.image-card-pair": {
+      "observedPredecessors": [
+        "legacy.band-title"
+      ],
+      "templates": [
+        "template.partner-legacy"
+      ]
+    },
+    "legacy.everything-checklist": {
+      "observedPredecessors": [
+        "legacy.feature-row"
+      ],
+      "templates": [
+        "template.partner-legacy",
+        "template.sales-tax-beta"
+      ]
+    },
+    "legacy.pricing-cards": {
+      "observedPredecessors": [
+        "legacy.everything-checklist"
+      ],
+      "templates": [
+        "template.partner-legacy"
+      ]
+    },
+    "legacy.customer-logos": {
+      "observedPredecessors": [
+        "legacy.pricing-cards"
+      ],
+      "templates": [
+        "template.partner-legacy"
+      ]
+    },
+    "legacy.testimonial-swiper": {
+      "observedPredecessors": [
+        "legacy.customer-logos"
+      ],
+      "templates": [
+        "template.partner-legacy"
+      ]
+    }
+  },
+  "sectionKinds": {
+    "band-title": {
+      "description": "band heading",
+      "observedSections": 1
+    },
+    "banner": {
+      "description": "announcement strip",
+      "observedSections": 1
+    },
+    "blog-carousel": {
+      "description": "blog-carousel",
+      "observedSections": 0,
+      "note": "not present on the measured site: no contract may be invented for this kind (no related-posts/carousel on posts (content §2 'Absent'))"
+    },
+    "canvas": {
+      "description": "canvas",
+      "observedSections": 0,
+      "note": "not present on the measured site: no contract may be invented for this kind (no <canvas> on any measured page)"
+    },
+    "checklist": {
+      "description": "check list",
+      "observedSections": 1
+    },
+    "confirmation": {
+      "description": "confirmation message",
+      "observedSections": 1
+    },
+    "cta": {
+      "description": "conversion prompt",
+      "observedSections": 2
+    },
+    "editorial": {
+      "description": "long-form prose",
+      "observedSections": 3
+    },
+    "faq": {
+      "description": "question accordion",
+      "observedSections": 1
+    },
+    "feature-grid": {
+      "description": "grid of feature cards",
+      "observedSections": 3
+    },
+    "feature-intro": {
+      "description": "feature list intro",
+      "observedSections": 1
+    },
+    "feature-row": {
+      "description": "feature text + list + image row",
+      "observedSections": 5
+    },
+    "feature-story": {
+      "description": "pinned accordion feature card",
+      "observedSections": 1
+    },
+    "footer": {
+      "description": "site footer",
+      "observedSections": 1
+    },
+    "form": {
+      "description": "form",
+      "observedSections": 4
+    },
+    "header": {
+      "description": "site header / navigation",
+      "observedSections": 1
+    },
+    "hero": {
+      "description": "page opener with h1",
+      "observedSections": 7
+    },
+    "job-list": {
+      "description": "job rows",
+      "observedSections": 1
+    },
+    "link-directory": {
+      "description": "link directory",
+      "observedSections": 1
+    },
+    "list": {
+      "description": "content list",
+      "observedSections": 2
+    },
+    "logo-strip": {
+      "description": "logo row/marquee",
+      "observedSections": 3
+    },
+    "pagination": {
+      "description": "page navigation",
+      "observedSections": 1
+    },
+    "post-header": {
+      "description": "article header + byline",
+      "observedSections": 1
+    },
+    "pricing": {
+      "description": "plans / comparison",
+      "observedSections": 3
+    },
+    "problem-list": {
+      "description": "problem statements",
+      "observedSections": 1
+    },
+    "profile": {
+      "description": "person profile",
+      "observedSections": 1
+    },
+    "related": {
+      "description": "related content",
+      "observedSections": 3
+    },
+    "scroll-story": {
+      "description": "pinned scroll story",
+      "observedSections": 1
+    },
+    "showcase": {
+      "description": "headline + animation stage",
+      "observedSections": 1
+    },
+    "statement": {
+      "description": "title + paragraph row",
+      "observedSections": 2
+    },
+    "steps": {
+      "description": "numbered steps",
+      "observedSections": 2
+    },
+    "table-of-contents": {
+      "description": "table-of-contents",
+      "observedSections": 0,
+      "note": "not present on the measured site: no contract may be invented for this kind (no TOC/sticky sidebar on posts (content §2 'Absent'))"
+    },
+    "tabs": {
+      "description": "tabbed product views",
+      "observedSections": 2
+    },
+    "testimonial": {
+      "description": "customer quotes",
+      "observedSections": 3
+    },
+    "video": {
+      "description": "video",
+      "observedSections": 0,
+      "note": "not present on the measured site: no contract may be invented for this kind (no <video> on any measured page (CLONE_SPEC §16, misc §10))"
+    }
+  },
+  "granularityPolicy": {
+    "why": "A section is the retrieval unit: one responsibility, bounded copy/imagery, reusable on its own. Composites in the code (RoleTabs+card, Pricing cards+table, Engine header+rows, legacy bands, AboutBand) are split into separate contracts.",
+    "wordBudgetRule": "maxWords = ceil(measuredChars * 1.25 / 4.5): spec character length at ~4.5 chars/word plus 25% headroom; fields with no measured length say 'inferred'.",
+    "maxContentFields": 7,
+    "maxCopyCapacityWords": 2000,
+    "maxImageCapacity": 15,
+    "maxItemCapacity": 16,
+    "exceptions": {
+      "longform": "Article/prose bodies are long by nature (blog posts measured at ~2,200 words); bounded per block instead.",
+      "content-listing": "Index pages show 10 full, unclamped excerpts per page (content §1: excerpts ~50-750 chars, not clamped).",
+      "link-directory": "Link directories (resources index ~1,745 links, ~73,000u tall) are one responsibility with an unbounded list."
+    },
+    "heightsAreRecordedNotGated": "Measured heights (u at 1440/768/390, incl. pin runways) are recorded per contract for retrieval; they are not an admission gate because many spec heights are for composite blocks.",
+    "genericIdLeaves": [
+      "block",
+      "section",
+      "container",
+      "wrapper",
+      "group",
+      "content",
+      "div",
+      "misc"
+    ]
+  },
+  "retiredSectionIds": {
+    "showcase.role-tabs-with-cta": "RoleTabs/BenefitGroup composite: split into showcase.role-tabs + conversion.compliance-cta-card",
+    "pricing.section": "Pricing.jsx composite: split into pricing.plan-cards + pricing.comparison-table",
+    "feature.engine": "Engine.jsx composite: split into feature.numbered-intro + feature.numbered-row (x3)",
+    "listing.resource-list": "ResourceList composite: split into hero.title-band + listing.resource-group (repeatable)",
+    "legacy.always-current-band": "band 4 composite: legacy.band-title + legacy.inset-row (x3)",
+    "legacy.collaborate-band": "band 5 composite: legacy.band-title + legacy.image-card-pair + legacy.feature-row",
+    "legacy.about-band": "band 8 composite: legacy.customer-logos + legacy.testimonial-swiper",
+    "feature.mail-service": "renamed: feature.accordion-story (one node per card, repeatable)",
+    "hero.hero-section": "too generic: use hero.page / hero.static / hero.guide / hero.home-tabs"
+  },
+  "retiredTemplateIds": {
+    "template.platform-product-tax": "merged into template.platform-product (get-started and FAQ are optional nodes)",
+    "template.solutions-smb": "merged into template.solutions-overview (byte-identical page)"
+  }
+}

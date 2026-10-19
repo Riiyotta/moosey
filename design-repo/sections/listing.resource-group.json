@@ -1,0 +1,113 @@
+{
+  "id": "listing.resource-group",
+  "category": "LISTING",
+  "label": "Resource link group",
+  "purpose": "One list row: title, 1-2 descriptions and a link list ending in ' >>' (link directory; unbounded height by design).",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 17,
+        "budgetBasis": "spec ~61c -> ceil(61*1.25/4.5)"
+      },
+      "body": {
+        "type": "text[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 39,
+        "budgetBasis": "spec ~140c -> ceil(140*1.25/4.5)"
+      },
+      "links": {
+        "type": "link[]",
+        "required": true,
+        "maxItems": 815,
+        "maxWords": 12,
+        "budgetBasis": "spec ~40c -> ceil(40*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          233,
+          260
+        ],
+        "anchor": "## 5. Resources index"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/content/ResourceList.jsx",
+        "lines": [
+          5,
+          21
+        ],
+        "anchor": "export default function ResourceList"
+      },
+      {
+        "path": "src/components/content/ListRows.jsx",
+        "lines": [
+          47,
+          57
+        ],
+        "anchor": "export function LinkList("
+      }
+    ]
+  },
+  "implementedBy": "src/components/content/ResourceList.jsx",
+  "implementedByAll": [
+    "src/components/content/ResourceList.jsx",
+    "src/components/content/ListRows.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {},
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "listing/resource-group",
+    "kind": "link-directory",
+    "summary": "One list row: title, 1-2 descriptions and a link list ending in ' >>' (link directory; unbounded height by design).",
+    "keywords": [
+      "directory",
+      "group",
+      "link",
+      "resource"
+    ],
+    "pageFamilies": [
+      "template.resource-category",
+      "template.resources-index"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Resource link group",
+    "contentFields": 3,
+    "copyCapacityWords": 9875,
+    "imageCapacity": 0,
+    "itemCapacity": 815,
+    "exception": "link-directory"
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "hero.title-band",
+      "listing.resource-group"
+    ]
+  }
+}

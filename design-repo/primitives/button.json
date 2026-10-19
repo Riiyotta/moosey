@@ -1,0 +1,26 @@
+{
+  "id": "button",
+  "purpose": "`.btn` / `.btn-red` red action button (button-large type).",
+  "tokens": "tokens/20-component/button.json",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/styles/blocks.css",
+        "lines": [
+          78,
+          78
+        ],
+        "anchor": ".btn"
+      },
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          52,
+          52
+        ],
+        "anchor": "**Button `.btn`.**"
+      }
+    ]
+  }
+}

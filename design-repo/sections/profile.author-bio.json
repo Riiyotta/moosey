@@ -1,0 +1,120 @@
+{
+  "id": "profile.author-bio",
+  "category": "PROFILE",
+  "label": "Author profile",
+  "purpose": "Square photo, 'Bio' paragraph(s) with an optional external link, 'Articles' list of post links.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "body": {
+        "type": "text[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 66,
+        "budgetBasis": "spec ~235c -> ceil(235*1.25/4.5)"
+      },
+      "links": {
+        "type": "link[]",
+        "required": true,
+        "maxItems": 114,
+        "maxWords": 21,
+        "budgetBasis": "spec ~75c -> ceil(75*1.25/4.5)"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": false,
+        "maxItems": 1,
+        "maxWords": 10,
+        "budgetBasis": "spec ~33c -> ceil(33*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 1,
+        "assetRoles": [
+          "author-photo"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          216,
+          229
+        ],
+        "anchor": "## 4. Author detail"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/pages/AuthorDetail.jsx",
+        "lines": [
+          9,
+          46
+        ],
+        "anchor": "export default function AuthorDetail"
+      }
+    ]
+  },
+  "implementedBy": "src/pages/AuthorDetail.jsx",
+  "implementedByAll": [
+    "src/pages/AuthorDetail.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "author-photo"
+  ],
+  "retrieval": {
+    "semanticLabel": "profile/author-bio",
+    "kind": "profile",
+    "summary": "Square photo, 'Bio' paragraph(s) with an optional external link, 'Articles' list of post links.",
+    "keywords": [
+      "author",
+      "profile"
+    ],
+    "pageFamilies": [
+      "template.author-detail"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Author profile",
+    "contentFields": 4,
+    "copyCapacityWords": 2536,
+    "imageCapacity": 1,
+    "itemCapacity": 114,
+    "exception": "link-directory"
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "hero.title-band"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "author-photo"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

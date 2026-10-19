@@ -1,0 +1,18 @@
+{
+  "id": "chevron",
+  "purpose": "Chevron-down M5.5 7l3 3 3-3, rotates 180deg when open.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/shared.jsx",
+        "lines": [
+          194,
+          194
+        ],
+        "anchor": "export function Chevron("
+      }
+    ]
+  }
+}

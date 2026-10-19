@@ -1,0 +1,107 @@
+{
+  "id": "legacy.customer-logos",
+  "category": "PROOF",
+  "label": "Legacy customer logo row",
+  "purpose": "48/48 w800 title over a wrapped row of customer logos.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 10,
+        "budgetBasis": "spec ~36c -> ceil(36*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 5,
+        "assetRoles": [
+          "customer-logo"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          288,
+          294
+        ],
+        "anchor": "### 2.11 Band 8"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          638,
+          674
+        ],
+        "anchor": "export function AboutBand("
+      }
+    ]
+  },
+  "implementedBy": "src/components/misc/legacy/LegacyKit.jsx",
+  "implementedByAll": [
+    "src/components/misc/legacy/LegacyKit.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "customer-logo"
+  ],
+  "retrieval": {
+    "semanticLabel": "legacy/customer-logos",
+    "kind": "logo-strip",
+    "summary": "48/48 w800 title over a wrapped row of customer logos.",
+    "keywords": [
+      "customer",
+      "legacy",
+      "logo",
+      "row",
+      "strip"
+    ],
+    "pageFamilies": [
+      "template.partner-legacy"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Legacy customer logo row",
+    "contentFields": 2,
+    "copyCapacityWords": 10,
+    "imageCapacity": 5,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "legacy.pricing-cards"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "customer-logo"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1798 948" width="1798" height="948" role="img" aria-label="Guide cover illustration with a route between two buildings"><title>Guide cover illustration with a route between two buildings</title>
+<path d="M520 640 C760 460 1040 820 1280 560" fill="none" stroke="#AEBFBD" stroke-width="4" stroke-dasharray="14 12" stroke-linecap="round"/>
+<g stroke="#516B66" stroke-width="3" fill="#FCFBFA"><rect x="360" y="420" width="220" height="300" rx="10"/><rect x="1220" y="340" width="240" height="380" rx="10"/></g>
+<g fill="#AEBFBD"><rect x="395" y="460" width="40" height="40" rx="4"/><rect x="455" y="460" width="40" height="40" rx="4"/><rect x="515" y="460" width="40" height="40" rx="4" opacity=".5"/><rect x="395" y="530" width="40" height="40" rx="4" opacity=".5"/><rect x="455" y="530" width="40" height="40" rx="4"/><rect x="1260" y="390" width="44" height="44" rx="4"/><rect x="1320" y="390" width="44" height="44" rx="4" opacity=".5"/><rect x="1380" y="390" width="44" height="44" rx="4"/><rect x="1260" y="460" width="44" height="44" rx="4" opacity=".5"/><rect x="1320" y="460" width="44" height="44" rx="4"/><rect x="1380" y="460" width="44" height="44" rx="4"/></g>
+<rect x="440" y="630" width="60" height="90" rx="4" fill="#285D60"/><rect x="1310" y="620" width="60" height="100" rx="4" fill="#285D60"/>
+<circle cx="900" cy="600" r="30" fill="#C74E5C" opacity=".85"/><circle cx="900" cy="600" r="12" fill="#FCFBFA"/>
+<path d="M200 760 H1600" stroke="#D1D9D6" stroke-width="6" stroke-linecap="round"/></svg>

@@ -1,0 +1,114 @@
+{
+  "id": "legacy.image-card-pair",
+  "category": "FEATURE",
+  "label": "Legacy image card pair",
+  "purpose": "Two columns, each a title + lead over a tall cover image card.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 2,
+        "titleMaxWords": 9,
+        "budgetBasis": "spec ~32c -> ceil(32*1.25/4.5)",
+        "bodyMaxWords": 37,
+        "bodyRequired": true,
+        "bodyBudgetBasis": "spec ~130c -> ceil(130*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 2,
+        "assetRoles": [
+          "product-screenshot",
+          "content-image"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          218,
+          222
+        ],
+        "anchor": "### 2.7 Band 5"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          414,
+          422
+        ],
+        "anchor": "function ImageCard("
+      }
+    ]
+  },
+  "implementedBy": "src/components/misc/legacy/LegacyKit.jsx",
+  "implementedByAll": [
+    "src/components/misc/legacy/LegacyKit.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "content-image",
+    "product-screenshot"
+  ],
+  "retrieval": {
+    "semanticLabel": "legacy/image-card-pair",
+    "kind": "feature-grid",
+    "summary": "Two columns, each a title + lead over a tall cover image card.",
+    "keywords": [
+      "card",
+      "feature",
+      "grid",
+      "image",
+      "legacy",
+      "pair"
+    ],
+    "pageFamilies": [
+      "template.partner-legacy"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Legacy image card pair",
+    "contentFields": 2,
+    "copyCapacityWords": 92,
+    "imageCapacity": 2,
+    "itemCapacity": 2
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "legacy.band-title"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "product-screenshot"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

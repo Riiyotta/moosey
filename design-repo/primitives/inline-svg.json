@@ -1,0 +1,18 @@
+{
+  "id": "inline-svg",
+  "purpose": "Inline SVG injector for animatable placeholder art.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/InlineSvg.jsx",
+        "lines": [
+          7,
+          7
+        ],
+        "anchor": "const RAW = import.meta.glob("
+      }
+    ]
+  }
+}

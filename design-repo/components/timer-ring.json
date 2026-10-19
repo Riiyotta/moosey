@@ -1,0 +1,20 @@
+{
+  "id": "timer-ring",
+  "purpose": "Hero tab timer ring (stroke-dashoffset by --percent).",
+  "composedOf": [
+    "inline-svg"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/index.css",
+        "lines": [
+          148,
+          148
+        ],
+        "anchor": ".timer-svg circle {"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ticker-row",
+  "purpose": "Marquee row duplicated into two groups.",
+  "composedOf": [
+    "image"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/LogoMarquee.jsx",
+        "lines": [
+          28,
+          28
+        ],
+        "anchor": "function Row("
+      }
+    ]
+  }
+}

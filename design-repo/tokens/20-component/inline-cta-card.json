@@ -1,0 +1,35 @@
+{
+  "$description": "Component tokens for inline-cta-card.",
+  "component": "inline-cta-card",
+  "selector": "div.card (in-article CTA)",
+  "tokens": {
+    "background": {
+      "$value": "{line-art.stroke}"
+    },
+    "radius": {
+      "$value": "{radius.control}"
+    },
+    "padding": {
+      "$value": {
+        "mobile": "16px",
+        "tablet+": "40px"
+      }
+    },
+    "shadow": {
+      "$value": "{elevation.card-raised}"
+    },
+    "glow": {
+      "$value": "radialGradient(#006265 -> #CAEAEA) fill-opacity .7, masked"
+    }
+  },
+  "citations": [
+    {
+      "path": "specs/content.md",
+      "lines": [
+        171,
+        194
+      ],
+      "anchor": "### Inline CTA card"
+    }
+  ]
+}

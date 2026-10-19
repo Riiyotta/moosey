@@ -1,0 +1,36 @@
+{
+  "$description": "Semantic roles. Values are references to foundation tokens; role NAMES are an inferred vocabulary (basis: inferred).",
+  "inferred": true,
+  "tokens": {
+    "radius.card": {
+      "$type": "dimension",
+      "$value": "{radius.12u}",
+      "basis": "header pill, cards, CTA blocks, avatars",
+      "inferredName": true
+    },
+    "radius.control": {
+      "$type": "dimension",
+      "$value": "{radius.8u}",
+      "basis": "buttons, pricing card, burger, images",
+      "inferredName": true
+    },
+    "radius.nav-link": {
+      "$type": "dimension",
+      "$value": "{radius.6u}",
+      "basis": "header nav links, btn-arrow",
+      "inferredName": true
+    },
+    "radius.menu": {
+      "$type": "dimension",
+      "$value": "{radius.14u}",
+      "basis": "mobile menu panel",
+      "inferredName": true
+    },
+    "radius.indicator": {
+      "$type": "dimension",
+      "$value": "{radius.2u}",
+      "basis": "tab indicator",
+      "inferredName": true
+    }
+  }
+}

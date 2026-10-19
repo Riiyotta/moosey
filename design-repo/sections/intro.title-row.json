@@ -1,0 +1,117 @@
+{
+  "id": "intro.title-row",
+  "category": "INTRO",
+  "label": "Title + description row",
+  "purpose": "Title (green word) and a long description in a row (about TitleWithDesc, partner C1 IntroRow).",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 9,
+        "budgetBasis": "spec ~32c -> ceil(32*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 85,
+        "budgetBasis": "spec ~304c -> ceil(304*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          528,
+          532
+        ],
+        "anchor": "**b. TitleWithDesc (`#title-with-desc`)**"
+      },
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          457,
+          463
+        ],
+        "anchor": "**IntroRow** (C1, between the hero and FeatureGroup)"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/marketing/about/TitleWithDesc.jsx",
+        "lines": [
+          2,
+          17
+        ],
+        "anchor": "export default function"
+      },
+      {
+        "path": "src/components/misc/PlatformPartnerPage.jsx",
+        "lines": [
+          10,
+          23
+        ],
+        "anchor": "function IntroRow("
+      }
+    ]
+  },
+  "implementedBy": "src/components/marketing/about/TitleWithDesc.jsx",
+  "implementedByAll": [
+    "src/components/marketing/about/TitleWithDesc.jsx",
+    "src/components/misc/PlatformPartnerPage.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter",
+      "none"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation",
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "intro/title-row",
+    "kind": "statement",
+    "summary": "Title (green word) and a long description in a row (about TitleWithDesc, partner C1 IntroRow).",
+    "keywords": [
+      "+",
+      "description",
+      "row",
+      "statement",
+      "title"
+    ],
+    "pageFamilies": [
+      "template.about",
+      "template.partner-platform"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Title + description row",
+    "contentFields": 2,
+    "copyCapacityWords": 94,
+    "imageCapacity": 0,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "hero.about",
+      "hero.static"
+    ]
+  }
+}

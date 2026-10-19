@@ -1,0 +1,108 @@
+{
+  "id": "related.resource-link-grid",
+  "category": "RELATED",
+  "label": "Related resource grid",
+  "purpose": "Bordered 3-column grid of chip + truncated link items with a 'See all' link (Tailwind px).",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 13,
+        "budgetBasis": "spec ~44c -> ceil(44*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 19,
+        "budgetBasis": "spec ~65c -> ceil(65*1.25/4.5)"
+      },
+      "links": {
+        "type": "link[]",
+        "required": true,
+        "maxItems": 210,
+        "maxWords": 14,
+        "budgetBasis": "spec ~50c -> ceil(50*1.25/4.5)"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 2,
+        "budgetBasis": "spec ~7c -> ceil(7*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          276,
+          314
+        ],
+        "anchor": "### Related blocks"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/content/ResourceLinkGrid.jsx",
+        "lines": [
+          9,
+          47
+        ],
+        "anchor": "export default function ResourceLinkGrid"
+      }
+    ]
+  },
+  "implementedBy": "src/components/content/ResourceLinkGrid.jsx",
+  "implementedByAll": [
+    "src/components/content/ResourceLinkGrid.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {},
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "related/resource-link-grid",
+    "kind": "related",
+    "summary": "Bordered 3-column grid of chip + truncated link items with a 'See all' link (Tailwind px).",
+    "keywords": [
+      "grid",
+      "related",
+      "resource"
+    ],
+    "pageFamilies": [
+      "template.resource-guide"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Related resource grid",
+    "contentFields": 4,
+    "copyCapacityWords": 2974,
+    "imageCapacity": 0,
+    "itemCapacity": 210,
+    "exception": "link-directory"
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "editorial.post-body",
+      "related.resource-link-grid"
+    ]
+  }
+}

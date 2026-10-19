@@ -1,0 +1,114 @@
+{
+  "id": "showcase.everything-network",
+  "category": "SHOWCASE",
+  "label": "Everything headline + network art",
+  "purpose": "Giant h0 headline over a tab shape, then a lines-then-dots network animation.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "budgetBasis": "spec ~19c -> ceil(19*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 2,
+        "assetRoles": [
+          "animation"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          300,
+          316
+        ],
+        "anchor": "## 6. \"Everything\" headline"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/Everything.jsx",
+        "lines": [
+          4,
+          38
+        ],
+        "anchor": "export default function Everything"
+      },
+      {
+        "path": "src/motion/page.js",
+        "lines": [
+          78,
+          78
+        ],
+        "anchor": "function everything("
+      }
+    ]
+  },
+  "implementedBy": "src/components/Everything.jsx",
+  "implementedByAll": [
+    "src/components/Everything.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "visual-loop",
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "visual-loop",
+    "reducedMotionFallbacks": {
+      "visual-loop": "static-end-state",
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "1179u"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "animation"
+  ],
+  "retrieval": {
+    "semanticLabel": "showcase/everything-network",
+    "kind": "showcase",
+    "summary": "Giant h0 headline over a tab shape, then a lines-then-dots network animation.",
+    "keywords": [
+      "+",
+      "art",
+      "everything",
+      "headline",
+      "network",
+      "showcase"
+    ],
+    "pageFamilies": [
+      "template.home"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Everything headline + network art",
+    "contentFields": 2,
+    "copyCapacityWords": 6,
+    "imageCapacity": 2,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "intro.statement"
+    ]
+  }
+}

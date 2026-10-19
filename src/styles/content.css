@@ -1,0 +1,419 @@
+/*
+ * Content templates (blog, authors, resources, guides, subscribe) — tokens and rules not in
+ * tailwind.config.cjs. Source: specs/content.md. Plain CSS (no @layer): imported from the content pages.
+ * Every class is prefixed `ct-` so nothing collides with the marketing/misc stylesheets
+ * (e.g. their unscoped `.article-wrapper`), since lazily loaded CSS stays in the document.
+ *
+ * Weight axis: computed font-weight stays 450/500 like the original; the Figtree variable axis is
+ * compensated exactly like tailwind.config.cjs (450 -> wght 475, 500 -> wght 600, 400 -> wght 600).
+ */
+
+/* ------------------------------------------------------------------ new type tokens (§1, §11) */
+
+/* text-p1-b: 13/20.8 · 14/22.4 · 17/27.2; ls -0.01em; 450 */
+.text-p1-b {
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: -0.01em;
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+}
+/* text-button-large: 10/16 ls -0.02u · 12/19.2 ls -0.02u · 14/22.4 ls -0.28u; 500 */
+.text-button-large {
+  font-size: calc(var(--u) * 10);
+  line-height: calc(var(--u) * 16);
+  letter-spacing: calc(var(--u) * -0.02);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+}
+@media (min-width: 481px) {
+  .text-p1-b {
+    font-size: calc(var(--u) * 14);
+    line-height: calc(var(--u) * 22.4);
+  }
+  .text-button-large {
+    font-size: calc(var(--u) * 12);
+    line-height: calc(var(--u) * 19.2);
+  }
+}
+@media (min-width: 1025px) {
+  .text-p1-b {
+    font-size: calc(var(--u) * 17);
+    line-height: calc(var(--u) * 27.2);
+  }
+  .text-button-large {
+    font-size: calc(var(--u) * 14);
+    line-height: calc(var(--u) * 22.4);
+    letter-spacing: calc(var(--u) * -0.28);
+  }
+}
+
+/* ------------------------------------------------------------------ buttons (§1, §2, §8.1, §10) */
+
+/* .btn base: padding 5u 9u / 6u 16u (desktop), 1px transparent border, transition all .4s ease */
+.ct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--u) * 5) calc(var(--u) * 9);
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (min-width: 1025px) {
+  .ct-btn {
+    padding: calc(var(--u) * 6) calc(var(--u) * 16);
+  }
+}
+/* btn-red: no hover on the original (its :hover rule is malformed CSS) */
+.ct-btn-red {
+  background: #c74e5c;
+  color: #f3f1ec;
+  border-radius: calc(var(--u) * 8);
+}
+/* btn-arrow: flex, gap 8u, padding 6u 8u at every size, radius 6u; hover bg #E4E4DC */
+.ct-btn-arrow {
+  display: flex;
+  gap: calc(var(--u) * 8);
+  width: max-content;
+  padding: calc(var(--u) * 6) calc(var(--u) * 8);
+  border-radius: calc(var(--u) * 6);
+  color: #203435;
+}
+@media (min-width: 1025px) {
+  .ct-btn-arrow {
+    padding: calc(var(--u) * 6) calc(var(--u) * 8);
+  }
+}
+.ct-btn-arrow:hover {
+  background: #e4e4dc;
+}
+/* btn-circle: 32u / 46u (desktop), round, bg #CFD7D466; enabled hover #CFD7D4; disabled opacity .2 */
+.ct-btn-circle {
+  width: calc(var(--u) * 32);
+  height: calc(var(--u) * 32);
+  border-radius: 50%;
+  background: #cfd7d466;
+}
+@media (min-width: 1025px) {
+  .ct-btn-circle {
+    width: calc(var(--u) * 46);
+    height: calc(var(--u) * 46);
+  }
+}
+a.ct-btn-circle:hover {
+  background: #cfd7d4;
+}
+.ct-btn-circle.is-disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+/* ------------------------------------------------------------------ prose (§2 `.article-wrapper`) */
+
+.ct-prose {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(var(--u) * 272);
+}
+@media (min-width: 481px) {
+  .ct-prose {
+    width: calc(var(--u) * 522);
+  }
+}
+@media (min-width: 1025px) {
+  .ct-prose {
+    width: calc(var(--u) * 596);
+  }
+}
+
+/* p / li / lists share the p font: 13/20.8 · 14/22.4 · 17/27.2, ls -0.01em, 450 */
+.ct-prose p,
+.ct-prose ul,
+.ct-prose ol {
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: -0.01em;
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+  color: #203435b3;
+}
+.ct-prose p {
+  margin-top: calc(var(--u) * 24);
+}
+/* lists: no margin at all (a list after a paragraph sits flush — reproduced quirk) */
+.ct-prose ul,
+.ct-prose ol {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 12);
+  margin: 0;
+}
+.ct-prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+.ct-prose ul:has(li:nth-child(n + 2)) {
+  list-style: disc outside;
+  padding-left: calc(var(--u) * 40);
+}
+.ct-prose ol {
+  list-style: decimal outside;
+  padding-left: calc(var(--u) * 40);
+}
+.ct-prose li {
+  margin: 0;
+}
+.ct-prose h2 {
+  margin-top: calc(var(--u) * 40);
+  font-size: calc(var(--u) * 17);
+  line-height: calc(var(--u) * 22.1);
+  letter-spacing: calc(var(--u) * -0.68);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #203435;
+}
+.ct-prose h3 {
+  margin-top: calc(var(--u) * 24);
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: calc(var(--u) * -0.26);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #203435;
+}
+.ct-prose a {
+  color: #285d60;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ct-prose a:visited {
+  color: #285d60cc;
+}
+.ct-prose a:hover {
+  color: #285d6099;
+}
+.ct-prose strong {
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #203435;
+}
+/* em is smaller than body text on the original (quirk): 12/19.2 · 12/19.2 · 15/24 */
+.ct-prose em,
+.ct-prose i {
+  font-style: italic;
+  font-size: calc(var(--u) * 12);
+  line-height: calc(var(--u) * 19.2);
+  letter-spacing: calc(var(--u) * -0.12);
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+  color: #203435b3;
+}
+.ct-prose blockquote {
+  width: 100%;
+  margin: 0;
+  font-style: italic;
+  font-size: calc(var(--u) * 18);
+  line-height: calc(var(--u) * 28.8);
+  letter-spacing: calc(var(--u) * -0.24);
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+  color: #203435b3;
+}
+.ct-prose hr {
+  margin-top: calc(var(--u) * 24);
+  border: 1px solid #285d6033;
+}
+.ct-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--u) * 8);
+  object-fit: cover;
+}
+@media (min-width: 481px) {
+  .ct-prose p,
+  .ct-prose ul,
+  .ct-prose ol {
+    font-size: calc(var(--u) * 14);
+    line-height: calc(var(--u) * 22.4);
+  }
+  .ct-prose em,
+  .ct-prose i {
+    letter-spacing: calc(var(--u) * -0.24);
+  }
+  .ct-prose blockquote {
+    font-size: calc(var(--u) * 20);
+    line-height: calc(var(--u) * 32);
+  }
+}
+@media (min-width: 1025px) {
+  .ct-prose p,
+  .ct-prose ul,
+  .ct-prose ol {
+    font-size: calc(var(--u) * 17);
+    line-height: calc(var(--u) * 27.2);
+  }
+  .ct-prose h2 {
+    font-size: calc(var(--u) * 24);
+    line-height: calc(var(--u) * 31.2);
+    letter-spacing: calc(var(--u) * -0.96);
+  }
+  .ct-prose h3 {
+    font-size: calc(var(--u) * 18);
+    line-height: calc(var(--u) * 28.8);
+    letter-spacing: calc(var(--u) * -0.36);
+  }
+  .ct-prose em,
+  .ct-prose i {
+    font-size: calc(var(--u) * 15);
+    line-height: calc(var(--u) * 24);
+  }
+  .ct-prose blockquote {
+    font-size: calc(var(--u) * 22);
+    line-height: calc(var(--u) * 35.2);
+  }
+}
+
+/* tables — u values, identical at every breakpoint. DELIBERATE FIX: the original has no wrapper and
+   clips wide tables on mobile; here every table sits in an overflow-x:auto wrapper. */
+.ct-prose .ct-table-scroll {
+  margin-top: calc(var(--u) * 24);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ct-prose table {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #285d6033;
+  border-collapse: collapse;
+  border-radius: calc(var(--u) * 8);
+}
+.ct-prose thead {
+  background: #203435;
+}
+.ct-prose th {
+  padding: calc(var(--u) * 10) calc(var(--u) * 15);
+  border: 1px solid #f3f1ec;
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: calc(var(--u) * -0.26);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #f3f1ec;
+}
+.ct-prose td {
+  padding: calc(var(--u) * 5);
+  border: 1px solid #285d6033;
+  font-size: calc(var(--u) * 12);
+  line-height: calc(var(--u) * 19.2);
+  letter-spacing: calc(var(--u) * -0.12);
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+  color: #203435b3;
+}
+
+/* ------------------------------------------------------------------ in-article CTA card (§2, px) */
+
+.ct-prose .ct-cta-card h2 {
+  margin: 0;
+}
+.ct-prose .ct-cta-card p {
+  color: rgba(243, 241, 236, 0.7);
+}
+.ct-prose .ct-cta-card a.ct-btn,
+.ct-prose .ct-cta-card a.ct-btn:hover,
+.ct-prose .ct-cta-card a.ct-btn:visited {
+  text-decoration: none;
+}
+/* glow: 1024px circle, top edge at the card's vertical midpoint, masked radial falloff */
+.ct-cta-glow {
+  mask-image: radial-gradient(closest-side, white, transparent);
+  -webkit-mask-image: radial-gradient(closest-side, white, transparent);
+}
+
+/* ------------------------------------------------------------------ HubSpot-equivalent form (§10) */
+
+/* base text = p1 sizes, #285D60 */
+.ct-hsform {
+  font-size: calc(var(--u) * 12);
+  line-height: calc(var(--u) * 16.8);
+  letter-spacing: calc(var(--u) * -0.12);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #285d60;
+}
+@media (min-width: 1025px) {
+  .ct-hsform {
+    font-size: calc(var(--u) * 17);
+    line-height: calc(var(--u) * 23.8);
+  }
+}
+.ct-hsform .hs-form-field {
+  margin-bottom: 24px;
+}
+.ct-hsform label {
+  display: block;
+  margin-bottom: 8px;
+}
+.ct-hsform .hs-form-required {
+  color: #c74e5c;
+}
+.ct-hsform .hs-input {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #111827;
+  font: inherit;
+  letter-spacing: inherit;
+  outline: none;
+}
+/* focus: border + ring #DC5868 (ring width not given by the spec: 1px used) */
+.ct-hsform .hs-input:focus {
+  border-color: #dc5868;
+  box-shadow: 0 0 0 1px #dc5868;
+}
+.ct-hsform .hs-error-msg {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-variation-settings: 'wght' 600;
+  letter-spacing: normal;
+  color: #c74e5c;
+}
+.ct-hsform .hs-button {
+  margin-top: 32px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ct-hsform-submitted {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #516b66;
+}
+@media (min-width: 481px) {
+  .ct-hsform-submitted {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@media (min-width: 1025px) {
+  .ct-hsform-submitted {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+/* ------------------------------------------------------------------ guide FeatureGroup accordion (§8.5) */
+
+.ct-fg-button {
+  transition: all 0.5s ease;
+}

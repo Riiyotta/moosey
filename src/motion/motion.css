@@ -1,0 +1,32 @@
+/* Motion-only CSS (layout untouched). */
+
+/* §2 header logo: original logo paths carry `transition: .4s` and switch to #EFEFEF under
+   .mobile-menu__open. One inline SVG, fill/stroke cross-fade over .4s. */
+[data-svg='header-logo'] [data-id='mark'],
+[data-svg='header-logo'] [data-id='wordmark'] path,
+[data-svg='header-logo'] [data-id='wordmark'] circle {
+  transition: fill 0.4s, stroke 0.4s;
+}
+.mobile-menu__open [data-svg='header-logo'] [data-id='mark'],
+.mobile-menu__open [data-svg='header-logo'] [data-id='wordmark'] circle {
+  fill: #efefef;
+}
+.mobile-menu__open [data-svg='header-logo'] [data-id='wordmark'] path {
+  stroke: #efefef;
+}
+
+/* Original header rules are `transition: .4s` (timing = ease); Tailwind's transition-all adds
+   cubic-bezier(.4,0,.2,1). Restore the measured ease. */
+.header .header-container,
+.header .header-nav__link,
+.header .header-burger,
+.header .header-burger span,
+.header .header-logo__wrap {
+  transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-svg='header-logo'] * {
+    transition: none !important;
+  }
+}

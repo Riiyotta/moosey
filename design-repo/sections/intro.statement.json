@@ -1,0 +1,101 @@
+{
+  "id": "intro.statement",
+  "category": "INTRO",
+  "label": "Statement",
+  "purpose": "Two-line title (green lead) beside a low-opacity paragraph.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 10,
+        "budgetBasis": "spec ~33c -> ceil(33*1.25/4.5)"
+      },
+      "body": {
+        "type": "text[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 57,
+        "budgetBasis": "spec ~205c -> ceil(205*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          289,
+          298
+        ],
+        "anchor": "## 5. Statement"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/Statement.jsx",
+        "lines": [
+          2,
+          20
+        ],
+        "anchor": "export default function Statement"
+      },
+      {
+        "path": "src/motion/page.js",
+        "lines": [
+          61,
+          61
+        ],
+        "anchor": "function statement("
+      }
+    ]
+  },
+  "implementedBy": "src/components/Statement.jsx",
+  "implementedByAll": [
+    "src/components/Statement.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "intro/statement",
+    "kind": "statement",
+    "summary": "Two-line title (green lead) beside a low-opacity paragraph.",
+    "keywords": [
+      "statement"
+    ],
+    "pageFamilies": [
+      "template.home"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Statement",
+    "contentFields": 2,
+    "copyCapacityWords": 67,
+    "imageCapacity": 0,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "proof.logo-marquee"
+    ]
+  }
+}

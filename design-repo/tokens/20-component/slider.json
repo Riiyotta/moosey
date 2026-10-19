@@ -1,0 +1,41 @@
+{
+  "$description": "Component tokens for slider.",
+  "component": "slider",
+  "selector": "Splide pagination + arrows",
+  "tokens": {
+    "dotSize": {
+      "$value": "6u"
+    },
+    "dotGap": {
+      "$value": "7u"
+    },
+    "dotColor": {
+      "$value": "{color.green} @ .2 (active 1)"
+    },
+    "arrowSize": {
+      "$value": {
+        "desktop": "46u",
+        "other": "32u"
+      }
+    },
+    "arrowBackground": {
+      "$value": "{color.green5} @ .4"
+    },
+    "disabledOpacity": {
+      "$value": 0.2
+    },
+    "transition": {
+      "$value": "all 375ms ease"
+    }
+  },
+  "citations": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": [
+        140,
+        143
+      ],
+      "anchor": "- **Slider** (Splide 4):"
+    }
+  ]
+}

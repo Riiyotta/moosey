@@ -1,0 +1,18 @@
+{
+  "id": "slider-arrow",
+  "purpose": "Round slider arrow (46u/32u, #CFD7D4@.4).",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/shared.jsx",
+        "lines": [
+          170,
+          170
+        ],
+        "anchor": "export function SliderArrow("
+      }
+    ]
+  }
+}

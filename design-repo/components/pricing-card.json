@@ -1,0 +1,21 @@
+{
+  "id": "pricing-card",
+  "purpose": "Plan card with collapsing desc/fee.",
+  "composedOf": [
+    "heading",
+    "paragraph"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/Pricing.jsx",
+        "lines": [
+          113,
+          113
+        ],
+        "anchor": "data-pricing-card={i}"
+      }
+    ]
+  }
+}

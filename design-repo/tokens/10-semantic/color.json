@@ -1,0 +1,411 @@
+{
+  "$description": "Semantic roles. Values are references to foundation tokens; role NAMES are an inferred vocabulary (basis: inferred).",
+  "inferred": true,
+  "tokens": {
+    "text.primary": {
+      "$type": "color",
+      "$value": "{color.main-green}",
+      "basis": "most-used text colour (CLONE_SPEC §0.5 'Primary text')",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            83,
+            83
+          ],
+          "anchor": "| `main_green` | `#203435`"
+        }
+      ]
+    },
+    "text.muted": {
+      "$type": "color",
+      "$value": "{color.main-green}",
+      "basis": "`main_green/70` body/desc copy",
+      "inferredName": true,
+      "alpha": 0.7,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:"
+        }
+      ]
+    },
+    "text.subtle": {
+      "$type": "color",
+      "$value": "{color.main-green}",
+      "basis": "`main_green/40` eyebrows and hero descriptions",
+      "inferredName": true,
+      "alpha": 0.4,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:"
+        }
+      ]
+    },
+    "text.accent": {
+      "$type": "color",
+      "$value": "{color.green}",
+      "basis": "`span.text-green` accent words",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            84,
+            84
+          ],
+          "anchor": "| `green` | `#285D60`"
+        }
+      ]
+    },
+    "text.on-dark": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "basis": "'white' text on dark (#F3F1EC override)",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            88,
+            88
+          ],
+          "anchor": "| `white` (overridden) | `#F3F1EC`"
+        }
+      ]
+    },
+    "text.on-dark-muted": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "basis": "`white/70` on dark",
+      "inferredName": true,
+      "alpha": 0.7,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:"
+        }
+      ]
+    },
+    "text.on-dark-subtle": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "basis": "`white/40` footer links",
+      "inferredName": true,
+      "alpha": 0.4,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:"
+        }
+      ]
+    },
+    "text.nav": {
+      "$type": "color",
+      "$value": "{color.nav-grey}",
+      "basis": "header nav links",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            92,
+            92
+          ],
+          "anchor": "| nav grey | `#9FA5A3`"
+        }
+      ]
+    },
+    "surface.page": {
+      "$type": "color",
+      "$value": "{color.main-white}",
+      "basis": "default section bg",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            89,
+            89
+          ],
+          "anchor": "| `main_white` | `#FCFBFA`"
+        }
+      ]
+    },
+    "surface.hero": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "basis": "hero/header pill/pricing bg",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            88,
+            88
+          ],
+          "anchor": "| `white` (overridden) | `#F3F1EC`"
+        }
+      ]
+    },
+    "surface.brand": {
+      "$type": "color",
+      "$value": "{color.green}",
+      "basis": "CTA/roadmap/footer bg",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            84,
+            84
+          ],
+          "anchor": "| `green` | `#285D60`"
+        }
+      ]
+    },
+    "surface.banner": {
+      "$type": "color",
+      "$value": "{color.main-green}",
+      "basis": "announcement banner bg",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            83,
+            83
+          ],
+          "anchor": "| `main_green` | `#203435`"
+        }
+      ]
+    },
+    "surface.tint": {
+      "$type": "color",
+      "$value": "{color.green5}",
+      "basis": "popup CTA card, ecosystem band, feature-group card",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            87,
+            87
+          ],
+          "anchor": "| `green5` | `#CFD7D4`"
+        }
+      ]
+    },
+    "surface.beige": {
+      "$type": "color",
+      "$value": "{color.beige}",
+      "basis": "hover bg, image backplate",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": "| `beige` / `orange1` | `#E4E4DC`"
+        }
+      ]
+    },
+    "surface.menu": {
+      "$type": "color",
+      "$value": "{color.menu-dark}",
+      "basis": "mobile menu panel",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            93,
+            93
+          ],
+          "anchor": "| menu dark | `#2E2F2F`"
+        }
+      ]
+    },
+    "border.hairline": {
+      "$type": "color",
+      "$value": "{color.green}",
+      "basis": "1px hairlines at .2 (accordion/table rows)",
+      "inferredName": true,
+      "alpha": 0.2,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            115,
+            115
+          ],
+          "anchor": "- Hairlines are 1px divs with bg `#285D60`, opacity .2"
+        }
+      ]
+    },
+    "border.divider": {
+      "$type": "color",
+      "$value": "{color.beige}",
+      "basis": "compliance/blog list dividers",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            90,
+            90
+          ],
+          "anchor": "| `beige` / `orange1` | `#E4E4DC`"
+        }
+      ]
+    },
+    "border.footer": {
+      "$type": "color",
+      "$value": "{color.footer-border}",
+      "basis": "footer rules",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            98,
+            98
+          ],
+          "anchor": "Alpha usages:"
+        }
+      ]
+    },
+    "action.primary.bg": {
+      "$type": "color",
+      "$value": "{color.nw-btn-red}",
+      "basis": "`.btn-red` background",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "| `btn-red` bg | `#C74E5C`"
+        }
+      ]
+    },
+    "action.primary.text": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "basis": "`.btn-red` text",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "| `btn-red` bg | `#C74E5C`"
+        }
+      ]
+    },
+    "accent.plan-1": {
+      "$type": "color",
+      "$value": "{color.plan1}",
+      "basis": "plan 1 colour",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            95,
+            95
+          ],
+          "anchor": "| plan 1 / 2 / 3 |"
+        }
+      ]
+    },
+    "accent.plan-2": {
+      "$type": "color",
+      "$value": "{color.plan2}",
+      "basis": "plan 2 colour",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            95,
+            95
+          ],
+          "anchor": "| plan 1 / 2 / 3 |"
+        }
+      ]
+    },
+    "accent.plan-3": {
+      "$type": "color",
+      "$value": "{color.plan3}",
+      "basis": "plan 3 colour",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            95,
+            95
+          ],
+          "anchor": "| plan 1 / 2 / 3 |"
+        }
+      ]
+    },
+    "line-art.stroke": {
+      "$type": "color",
+      "$value": "{color.green2}",
+      "basis": "decorative line art",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            85,
+            85
+          ],
+          "anchor": "| `green2` | `#516B66`"
+        }
+      ]
+    },
+    "status.check": {
+      "$type": "color",
+      "$value": "{color.nw-check-green}",
+      "basis": "for-hr / legacy check icons",
+      "inferredName": true,
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            34,
+            34
+          ],
+          "anchor": "| lime check | `#55B559`"
+        }
+      ]
+    }
+  }
+}

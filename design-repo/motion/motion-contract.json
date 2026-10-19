@@ -1,0 +1,616 @@
+{
+  "version": "0.1.0",
+  "libraries": {
+    "gsap": "GSAP 3 + CustomEase + ScrollTrigger (ScrollTrigger.config({ignoreMobileResize:true}))",
+    "lottie": "replaced by inline SVG stand-ins animated with GSAP timelines (src/motion/visuals.js)",
+    "splide": "replaced by a local carousel (src/components/shared.jsx useCarousel + src/motion/carousel.js)",
+    "swiper": "replaced by src/motion/misc.js useLegacySwiper"
+  },
+  "patterns": {
+    "none": {
+      "description": "No animation.",
+      "reducedMotionFallback": "none-needed",
+      "observedSections": 27
+    },
+    "css-transition": {
+      "description": "CSS transition on hover/state (375ms cards/sliders, .4s header/buttons, 150-300ms Tailwind).",
+      "reducedMotionFallback": "none-implemented",
+      "observedSections": 6
+    },
+    "accordion": {
+      "description": "CSS accordion: content opacity/max-height/translateY(-20px) over .5s cubic-bezier(.17,.17,.43,1); chevron rotates 180deg.",
+      "reducedMotionFallback": "none-implemented",
+      "observedSections": 3
+    },
+    "menu-tween": {
+      "description": "Mobile menu GSAP y tween f(40)=.667s, CustomEase(.57,0,.43,1).",
+      "reducedMotionFallback": "instant-switch",
+      "observedSections": 1
+    },
+    "reveal-on-enter": {
+      "description": "GSAP from y/autoAlpha (y 100u default, 30u heroes, 50u FeatureList/FeatureGroup, 10u list rows) once, on ScrollTrigger activation.",
+      "reducedMotionFallback": "disable-animation",
+      "observedSections": 24
+    },
+    "pinned-scrub": {
+      "description": "ScrollTrigger pin + scrub (pinSpacing:false, a spacer supplies the runway).",
+      "reducedMotionFallback": "scroll-driven-retained",
+      "observedSections": 6
+    },
+    "auto-advance": {
+      "description": "Hero tabs auto-advance on each tab visual's duration with a timer ring.",
+      "reducedMotionFallback": "no-autoplay",
+      "observedSections": 1
+    },
+    "tab-switch": {
+      "description": "Click/scroll tab change: out scale .86 + fade, then in (sequential).",
+      "reducedMotionFallback": "instant-switch",
+      "observedSections": 3
+    },
+    "carousel": {
+      "description": "Splide-style slider (400ms cubic-bezier(.25,1,.5,1)); legacy Swiper autoplay 5s, 300ms ease.",
+      "reducedMotionFallback": "instant-switch",
+      "observedSections": 8
+    },
+    "marquee-loop": {
+      "description": "Two ticker rows, xPercent loops, ease none, repeat -1; duration = ticker width / speed (10, mobile 5).",
+      "reducedMotionFallback": "no-autoplay",
+      "observedSections": 1
+    },
+    "visual-loop": {
+      "description": "Lottie stand-in art plays/loops while the section is active, pauses on deactivate.",
+      "reducedMotionFallback": "static-end-state",
+      "observedSections": 4
+    },
+    "modal-transition": {
+      "description": "Request-invite modal: overlay opacity -> .75 and panel translateY(16px)->0 over 300ms.",
+      "reducedMotionFallback": "none-implemented",
+      "observedSections": 1
+    }
+  },
+  "reducedMotionFallbacks": {
+    "none-needed": "nothing animates",
+    "disable-animation": "render the final state; no tween (code: `if (reduce) return` before gsap.set of the start state)",
+    "scroll-driven-retained": "the pin and scrubbed timeline stay (scroll-driven, user-controlled); decorative reveals and art loops are removed",
+    "no-autoplay": "no auto-advance / marquee / autoplay; manual controls remain",
+    "instant-switch": "state changes are applied instantly (gsap.set / 0ms move)",
+    "static-end-state": "art timelines jump to their end frame (loops to frame 0) and pause",
+    "none-implemented": "GAP: no prefers-reduced-motion handling in the clone for this pattern"
+  },
+  "closedFields": [
+    "pattern",
+    "reducedMotionFallback"
+  ],
+  "eases": {
+    "Eas17": [
+      0.17,
+      0.17,
+      0.21,
+      1.0
+    ],
+    "Eas82": [
+      0.82,
+      0.0,
+      0.22,
+      1.0
+    ],
+    "Eas69": [
+      0.69,
+      0.0,
+      0.32,
+      1.27
+    ],
+    "Eas66": [
+      0.66,
+      0.0,
+      0.83,
+      0.83
+    ],
+    "Eas70": [
+      0.7,
+      0.0,
+      0.83,
+      0.83
+    ],
+    "Eas40": [
+      0.4,
+      0.0,
+      0.83,
+      0.83
+    ],
+    "Eas1739": [
+      0.17,
+      0.17,
+      0.39,
+      1.0
+    ],
+    "Eas1754": [
+      0.17,
+      0.17,
+      0.54,
+      1.0
+    ],
+    "Eas7937": [
+      0.79,
+      0.0,
+      0.37,
+      1.0
+    ],
+    "Eas7983": [
+      0.79,
+      0.0,
+      0.83,
+      0.83
+    ],
+    "Eas49": [
+      0.49,
+      0.0,
+      0.83,
+      0.83
+    ],
+    "menu": [
+      0.57,
+      0.0,
+      0.43,
+      1.0
+    ],
+    "accordion": [
+      0.17,
+      0.17,
+      0.43,
+      1
+    ],
+    "tailwind-default": [
+      0.4,
+      0,
+      0.2,
+      1
+    ],
+    "splide": [
+      0.25,
+      1,
+      0.5,
+      1
+    ],
+    "css-ease": [
+      0.25,
+      0.1,
+      0.25,
+      1
+    ],
+    "tab-indicator": "power2.out"
+  },
+  "durations": {
+    "frameRule": "f(n) = n/60 s",
+    "constants": {
+      "duration550": 0.55,
+      "duration567": 0.567,
+      "delay60": 0.06,
+      "delay66": 0.066
+    },
+    "common": {
+      "f20": 0.333,
+      "f30": 0.5,
+      "f32": 0.533,
+      "f35": 0.583,
+      "f40": 0.667,
+      "f90": 1.5
+    },
+    "stagger": "f(5) = .083s"
+  },
+  "triggers": {
+    "sectionActivation": {
+      "start": "top bottom-=25%",
+      "end": "bottom top-=25%",
+      "once": "reveals run once (isActivated flag); lotties/ticker pause on deactivate"
+    },
+    "overrides": {
+      "proof.logo-marquee": "top bottom-=15%",
+      "intro.statement": "top bottom-=30%",
+      "showcase.everything-network": "top bottom-=30%",
+      "conversion.compliance-cta-card": "top bottom-=10% / bottom top-=10%",
+      "hero.page": "top bottom-=30%",
+      "hero.guide": "top bottom-=30%",
+      "feature.checklist-row": "top+=25% bottom (per item, once)",
+      "proof.ecosystem": "top bottom-=30%",
+      "intro.title-row": "top bottom-=30% (about)"
+    },
+    "citations": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          610,
+          613
+        ],
+        "anchor": "**Section activation pattern**"
+      },
+      {
+        "path": "src/motion/core.js",
+        "lines": [
+          67,
+          67
+        ],
+        "anchor": "export function sectionTrigger("
+      }
+    ]
+  },
+  "pins": [
+    {
+      "section": "showcase.roadmap",
+      "breakpoint": "desktop",
+      "trigger": ".desktop-roadmap-steps__images",
+      "start": "center+=20% center",
+      "end": "bottom bottom (endTrigger .desktop-roadmap-steps)",
+      "pin": ".roadmap-pin-container",
+      "pinSpacing": false,
+      "scrub": true,
+      "anticipatePin": 1,
+      "runwayU": 3000,
+      "timeline": "per step: progress fill (100), text y->0 (30), lottie in (15, Eas17); not last: lottie out (15, Eas40), text y->-200u (30)",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            411,
+            421
+          ],
+          "anchor": "- **Motion** (one scrubbed ScrollTrigger):"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            228,
+            228
+          ],
+          "anchor": "start: 'center+=20% center'"
+        }
+      ]
+    },
+    {
+      "section": "steps.peace-of-mind",
+      "breakpoint": "desktop",
+      "trigger": ".peace-image-wrapper",
+      "start": "center center",
+      "end": "bottom center (endTrigger last .peace-step)",
+      "pin": ".peace-image-container",
+      "pinSpacing": false,
+      "scrub": true,
+      "timeline": "per step: step op 1 (15); image in op/scale .95->1 (30); hold 40; not last: image out scale 1.05 (30 @70)",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            447,
+            455
+          ],
+          "anchor": "- **Motion** (scrubbed):"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            299,
+            299
+          ],
+          "anchor": "start: 'center center',"
+        }
+      ]
+    },
+    {
+      "section": "steps.get-started",
+      "breakpoint": "desktop",
+      "same_as": "steps.peace-of-mind with static images",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            383,
+            391
+          ],
+          "anchor": "### 1.11 GetStarted"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            285,
+            285
+          ],
+          "anchor": "export function useGetStartedMotion"
+        }
+      ]
+    },
+    {
+      "section": "pricing.plan-cards",
+      "breakpoint": "desktop",
+      "trigger": "cards wrapper",
+      "start": "top top+=82u",
+      "end": "bottom top+=300u (endTrigger section)",
+      "pin": true,
+      "pinSpacing": false,
+      "scrub": true,
+      "timeline": "second scrub: .plan-desc height 100u->30u + autoAlpha 0; .platform-fee autoAlpha 0 + height 0 (duration .3); ScrollTrigger.refresh() 500ms after accordion click",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            536,
+            542
+          ],
+          "anchor": "**Motion, desktop**"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            370,
+            410
+          ],
+          "anchor": "function pricing("
+        }
+      ]
+    },
+    {
+      "section": "feature.accordion-story",
+      "breakpoint": "desktop",
+      "trigger": ".list-item-wrap",
+      "start": "center-=5% center",
+      "end": "bottom bottom (endTrigger .spacing)",
+      "pin": true,
+      "pinSpacing": false,
+      "scrub": true,
+      "runwayU": 2000,
+      "timeline": "onUpdate index = round(progress x (n-1)) opens accordion item and swaps image (all out f20 Eas66, then target in f20 Eas17)",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            182,
+            185
+          ],
+          "anchor": "- **Desktop pin** (per `li`)"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            131,
+            131
+          ],
+          "anchor": "start: 'center-=5% center',"
+        }
+      ]
+    },
+    {
+      "section": "showcase.scroll-tabs",
+      "breakpoint": "desktop",
+      "trigger": ".tabs-wrap",
+      "start": "top top+=20%",
+      "end": "bottom bottom (endTrigger .spacer)",
+      "pin": ".tabs-wrap",
+      "pinSpacing": false,
+      "scrub": true,
+      "runwayU": 3000,
+      "timeline": "activateIndex(round(progress x 3)); out scale .86 .267s Eas49 then in .3s Eas1739; hash deep-link after 500ms",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            322,
+            332
+          ],
+          "anchor": "**Motion (desktop only; no reveals)**"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            372,
+            372
+          ],
+          "anchor": "start: 'top top+=20%',"
+        }
+      ]
+    }
+  ],
+  "autoAdvance": {
+    "section": "hero.home-tabs",
+    "intervalsSeconds": {
+      "desktop": [
+        16.4,
+        13.967,
+        2.833
+      ],
+      "tabletMobile": [
+        16.4,
+        13.967,
+        2.8
+      ]
+    },
+    "mechanism": "interval = tab visual duration; timer ring --percent 0->100 linear; after the last tab the popup CTA opens (visual y 0->300px 1.0s Eas7937 + fade .5s Eas7983; card +.583s y -200->0 .5s Eas17; lines +.75s x +-200->0 .75s)",
+    "tabSwitch": {
+      "out": "scale 1->.86, autoAlpha 0, .267s Eas49",
+      "in": "scale .86->1, autoAlpha 1, .3s Eas1739"
+    },
+    "citations": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          252,
+          263
+        ],
+        "anchor": "**Hero motion**"
+      },
+      {
+        "path": "src/motion/visuals.js",
+        "lines": [
+          16,
+          16
+        ],
+        "anchor": "heroDesktop: [492 / 30"
+      },
+      {
+        "path": "src/motion/hero.js",
+        "lines": [
+          65,
+          65
+        ],
+        "anchor": "if (reduce) return // no auto-advance"
+      }
+    ]
+  },
+  "marquee": {
+    "section": "proof.logo-marquee",
+    "rows": "row 1 xPercent -100->0 (moves right), row 2 0->-100 (moves left)",
+    "ease": "none",
+    "repeat": -1,
+    "duration": "tickerWidth / speed (speed 10 tablet/desktop, 5 mobile) = 111s at 1440",
+    "citations": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          279,
+          287
+        ],
+        "anchor": "- **Motion** (GSAP, `ease: \"none\"`, `repeat: -1`):"
+      },
+      {
+        "path": "src/motion/page.js",
+        "lines": [
+          54,
+          54
+        ],
+        "anchor": "const speed = isMobile ? 5 : 10"
+      }
+    ]
+  },
+  "carousels": [
+    {
+      "sections": [
+        "proof.testimonials",
+        "proof.testimonials-lite"
+      ],
+      "config": "arrows true, autoWidth, pagination false, perPage 1; counter 0N/0M",
+      "move": "400ms cubic-bezier(.25,1,.5,1)"
+    },
+    {
+      "sections": [
+        "feature.benefit-cards"
+      ],
+      "config": "mobile only: gap 16u, padding 24.5u, autoWidth, perPage 1, pagination"
+    },
+    {
+      "sections": [
+        "steps.peace-of-mind",
+        "steps.get-started"
+      ],
+      "config": "below 1025: arrows false, autoWidth, perPage 1, pagination; inactive slides op .5"
+    },
+    {
+      "sections": [
+        "pricing.plan-cards"
+      ],
+      "config": "below 1025: arrows false, perPage 1, pagination; inactive op .5"
+    },
+    {
+      "sections": [
+        "legacy.pricing-cards"
+      ],
+      "config": "Swiper-style: 3 per view >=1260px else 1, autoplay 5s, no loop (rewinds), 300ms ease"
+    },
+    {
+      "sections": [
+        "legacy.testimonial-swiper"
+      ],
+      "config": "Swiper-style: 1 per view, loop, autoplay 5s, clickable bullets (active #007AFF), 300ms ease"
+    }
+  ],
+  "carouselCitations": [
+    {
+      "path": "src/motion/carousel.js",
+      "lines": [
+        12,
+        12
+      ],
+      "anchor": "export const SPLIDE_TRANSITION"
+    },
+    {
+      "path": "src/motion/misc.js",
+      "lines": [
+        6,
+        6
+      ],
+      "anchor": " *   - testimonials: { autoplay"
+    }
+  ],
+  "reducedMotion": {
+    "mediaQuery": "(prefers-reduced-motion: reduce)",
+    "perPattern": {
+      "none": "none-needed",
+      "css-transition": "none-implemented",
+      "accordion": "none-implemented",
+      "menu-tween": "instant-switch",
+      "reveal-on-enter": "disable-animation",
+      "pinned-scrub": "scroll-driven-retained",
+      "auto-advance": "no-autoplay",
+      "tab-switch": "instant-switch",
+      "carousel": "instant-switch",
+      "marquee-loop": "no-autoplay",
+      "visual-loop": "static-end-state",
+      "modal-transition": "none-implemented"
+    },
+    "gaps": [
+      "accordion and css-transition hovers keep their CSS transitions (only header-logo transitions are disabled in src/motion/motion.css)",
+      "sales-tax modal 300ms transition is not reduced"
+    ],
+    "citations": [
+      {
+        "path": "src/motion/core.js",
+        "lines": [
+          46,
+          46
+        ],
+        "anchor": "reduce: '(prefers-reduced-motion: reduce)',"
+      },
+      {
+        "path": "src/motion/visuals.js",
+        "lines": [
+          102,
+          102
+        ],
+        "anchor": "if (reduced) tl.progress(loop ? 0 : 1).pause()"
+      },
+      {
+        "path": "src/motion/menu.js",
+        "lines": [
+          29,
+          29
+        ],
+        "anchor": "if (prefersReducedMotion()) {"
+      },
+      {
+        "path": "src/motion/page.js",
+        "lines": [
+          53,
+          53
+        ],
+        "anchor": "if (reduce || !row) return"
+      },
+      {
+        "path": "src/motion/motion.css",
+        "lines": [
+          28,
+          28
+        ],
+        "anchor": "@media (prefers-reduced-motion: reduce) {"
+      }
+    ]
+  },
+  "budget": {
+    "maxAnimatedSectionsPerPage": 16,
+    "maxPinnedScrubPerPage": 4,
+    "basis": "most animated template (recomputed by verify_all.py)"
+  },
+  "tokens": {
+    "foundation": "tokens/00-foundation/motion.json",
+    "semantic": "tokens/10-semantic/motion.json"
+  },
+  "discrepancies": [
+    "ASSET_MANIFEST 'Frames' column is inconsistent with its own durations for some files (e.g. roadmap step 3: 420 frames listed, 6.00s); the clone code uses 360/60 = 6.0s and the durations, which agree with the spec, are what this contract records."
+  ]
+}

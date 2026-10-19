@@ -1,0 +1,20 @@
+{
+  "id": "legacy-accent-panel",
+  "purpose": "Legacy tinted accent panel behind a dark screenshot.",
+  "composedOf": [
+    "image"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          350,
+          350
+        ],
+        "anchor": "function AccentPanel("
+      }
+    ]
+  }
+}

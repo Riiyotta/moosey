@@ -1,0 +1,18 @@
+/** Shared marketing block library — see ./README.md for props and variants. */
+import '../../styles/blocks.css'
+
+export { default as PageHero } from './PageHero'
+export { default as HeroStatic } from './HeroStatic'
+export { default as FeatureGroup } from './FeatureGroup'
+export { default as FeatureList } from './FeatureList'
+export { default as GetStarted } from './GetStarted'
+export { default as GenericCta, ComplianceCtaCard } from './GenericCta'
+export { default as BenefitsVariant } from './BenefitsVariant'
+export { default as LogoMarquee } from './LogoMarquee'
+export { default as LeadForm } from './LeadForm'
+export { default as Ecosystem } from './Ecosystem'
+export { default as Engine } from './Engine'
+export { default as ScrollTabs, SideLine } from './ScrollTabs'
+export { default as BenefitGroup } from './BenefitGroup'
+export { default as FaqVariant } from './FaqVariant'
+export { CheckIcon, LineArt, Rich } from './primitives'

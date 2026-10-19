@@ -1,0 +1,21 @@
+{
+  "id": "static-form",
+  "purpose": "HubSpot look-alike form (no script, local validation).",
+  "composedOf": [
+    "input",
+    "button"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/HubspotForm.jsx",
+        "lines": [
+          12,
+          12
+        ],
+        "anchor": "export default function HubspotForm"
+      }
+    ]
+  }
+}

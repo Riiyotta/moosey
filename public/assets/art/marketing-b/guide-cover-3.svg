@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1376 1414" width="1376" height="1414">
+  <title>Northwind guide cover 3 (placeholder)</title>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="28" stdDeviation="30" flood-color="#203435" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <!-- book: inset on a transparent frame, soft drop shadow (as the original cover rasters) -->
+  <g filter="url(#shadow)"><rect x="97" y="70" width="1182" height="1220" fill="#203435"/></g>
+  <path d="M260 70v150c0 50 40 90 90 90h420c50 0 90 40 90 90v220c0 50 40 90 90 90h329" fill="none" stroke="#F3F1EC" stroke-opacity=".35" stroke-width="6"/>
+  <circle cx="380" cy="470" r="64" fill="none" stroke="#F3F1EC" stroke-opacity=".6" stroke-width="6"/>
+  <circle cx="1040" cy="290" r="72" fill="none" stroke="#F3F1EC" stroke-opacity=".6" stroke-width="6"/>
+  <circle cx="900" cy="760" r="86" fill="#889C98" fill-opacity=".3" stroke="#F3F1EC" stroke-opacity=".6" stroke-width="6"/>
+  <path d="M860 760l28 28 56-56" fill="none" stroke="#F3F1EC" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="226" y="910" width="420" height="56" rx="12" fill="#F3F1EC"/>
+  <rect x="226" y="996" width="340" height="56" rx="12" fill="#F3F1EC"/>
+  <rect x="226" y="1082" width="240" height="56" rx="12" fill="#F3F1EC"/>
+</svg>

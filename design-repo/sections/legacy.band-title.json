@@ -1,0 +1,95 @@
+{
+  "id": "legacy.band-title",
+  "category": "INTRO",
+  "label": "Legacy band title",
+  "purpose": "Centered 36/40 w800 band title + 20/28 subtitle (intro strip and the titles of bands 4-5).",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 11,
+        "budgetBasis": "spec ~37c -> ceil(37*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 45,
+        "budgetBasis": "spec ~159c -> ceil(159*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          163,
+          168
+        ],
+        "anchor": "### 2.3 Intro strip"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          106,
+          157
+        ],
+        "anchor": "export function IntroStrip("
+      }
+    ]
+  },
+  "implementedBy": "src/components/misc/legacy/LegacyKit.jsx",
+  "implementedByAll": [
+    "src/components/misc/legacy/LegacyKit.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {},
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "legacy/band-title",
+    "kind": "band-title",
+    "summary": "Centered 36/40 w800 band title + 20/28 subtitle (intro strip and the titles of bands 4-5).",
+    "keywords": [
+      "band",
+      "legacy",
+      "title"
+    ],
+    "pageFamilies": [
+      "template.partner-legacy",
+      "template.sales-tax-beta"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Legacy band title",
+    "contentFields": 2,
+    "copyCapacityWords": 56,
+    "imageCapacity": 0,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "legacy.feature-row",
+      "legacy.hero",
+      "legacy.inset-row"
+    ]
+  }
+}

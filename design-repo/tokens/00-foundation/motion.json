@@ -1,0 +1,1043 @@
+{
+  "$description": "Foundation motion tokens: measured values with code-parity references (`code`) and citations. Generators never reference these directly.",
+  "tokens": {
+    "ease.Eas17": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.17,
+        0.17,
+        0.21,
+        1.0
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas17"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "Eas17: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            623,
+            623
+          ],
+          "anchor": "| Eas17 |"
+        }
+      ]
+    },
+    "ease.Eas82": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.82,
+        0.0,
+        0.22,
+        1.0
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas82"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            21,
+            21
+          ],
+          "anchor": "Eas82: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            624,
+            624
+          ],
+          "anchor": "| Eas82 |"
+        }
+      ]
+    },
+    "ease.Eas69": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.69,
+        0.0,
+        0.32,
+        1.27
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas69"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": "Eas69: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            632,
+            632
+          ],
+          "anchor": "| Eas69 |"
+        }
+      ]
+    },
+    "ease.Eas66": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.66,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas66"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            23,
+            23
+          ],
+          "anchor": "Eas66: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            625,
+            625
+          ],
+          "anchor": "| Eas66 |"
+        }
+      ]
+    },
+    "ease.Eas70": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.7,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas70"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            24,
+            24
+          ],
+          "anchor": "Eas70: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            633,
+            633
+          ],
+          "anchor": "| Eas70 |"
+        }
+      ]
+    },
+    "ease.Eas40": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.4,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas40"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            25,
+            25
+          ],
+          "anchor": "Eas40: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            626,
+            626
+          ],
+          "anchor": "| Eas40 |"
+        }
+      ]
+    },
+    "ease.Eas1739": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.17,
+        0.17,
+        0.39,
+        1.0
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas1739"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "Eas1739: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            627,
+            627
+          ],
+          "anchor": "| Eas1739 |"
+        }
+      ]
+    },
+    "ease.Eas1754": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.17,
+        0.17,
+        0.54,
+        1.0
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas1754"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            27,
+            27
+          ],
+          "anchor": "Eas1754: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            631,
+            631
+          ],
+          "anchor": "| Eas1754 |"
+        }
+      ]
+    },
+    "ease.Eas7937": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.79,
+        0.0,
+        0.37,
+        1.0
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas7937"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            28,
+            28
+          ],
+          "anchor": "Eas7937: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            629,
+            629
+          ],
+          "anchor": "| Eas7937 |"
+        }
+      ]
+    },
+    "ease.Eas7983": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.79,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas7983"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "Eas7983: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            630,
+            630
+          ],
+          "anchor": "| Eas7983 |"
+        }
+      ]
+    },
+    "ease.Eas49": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.49,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "Eas49"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            30,
+            30
+          ],
+          "anchor": "Eas49: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            628,
+            628
+          ],
+          "anchor": "| Eas49 |"
+        }
+      ]
+    },
+    "ease.menu": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.57,
+        0.0,
+        0.43,
+        1.0
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-ease",
+        "key": "menu"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            32,
+            32
+          ],
+          "anchor": "menu: CustomEase.create("
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            634,
+            634
+          ],
+          "anchor": "| menu | (.57, 0, .43, 1)"
+        }
+      ]
+    },
+    "ease.accordion": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.17,
+        0.17,
+        0.43,
+        1
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-ease",
+        "key": "accordion"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            156,
+            156
+          ],
+          "anchor": "accordion: 'cubic-bezier(.17,.17,.43,1)'"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            137,
+            137
+          ],
+          "anchor": "  - Content: `opacity 0; max-height 0;"
+        }
+      ]
+    },
+    "ease.tailwind-default": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.4,
+        0,
+        0.2,
+        1
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/styles/misc.css",
+        "kind": "css-var",
+        "key": "lg-ease"
+      },
+      "citations": [
+        {
+          "path": "src/styles/misc.css",
+          "lines": [
+            37,
+            37
+          ],
+          "anchor": "--lg-ease: cubic-bezier(0.4, 0, 0.2, 1);"
+        },
+        {
+          "path": "src/styles/marketing.css",
+          "lines": [
+            9,
+            9
+          ],
+          "anchor": "--mk-ease-tw: cubic-bezier(0.4, 0, 0.2, 1);"
+        }
+      ]
+    },
+    "ease.splide": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.25,
+        1,
+        0.5,
+        1
+      ],
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/carousel.js",
+        "kind": "js-const",
+        "key": "SPLIDE_TRANSITION"
+      },
+      "citations": [
+        {
+          "path": "src/motion/carousel.js",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "export const SPLIDE_TRANSITION"
+        }
+      ]
+    },
+    "ease.css-ease": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.25,
+        0.1,
+        0.25,
+        1
+      ],
+      "basis": "measured",
+      "note": "CSS `ease`: Swiper wrapper timing and the 375ms card/slider transitions",
+      "citations": [
+        {
+          "path": "src/motion/misc.js",
+          "lines": [
+            18,
+            18
+          ],
+          "anchor": "const CSS_EASE = CustomEase.create('nwCssEase', '.25,.1,.25,1')"
+        }
+      ]
+    },
+    "ease.tab-indicator": {
+      "$type": "named",
+      "$value": "power2.out",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/motion/tabs.js",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "duration: 0.5, ease: 'power2.out'"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            134,
+            134
+          ],
+          "anchor": "  - **Indicator motion:**"
+        }
+      ]
+    },
+    "duration.frame-rule": {
+      "$type": "rule",
+      "$value": "f(n) = n/60 s",
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "js-const",
+        "key": "f"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            39,
+            39
+          ],
+          "anchor": "export const f = (n) => n / 60"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.duration550": {
+      "$type": "duration",
+      "$value": "0.55s",
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-const",
+        "key": "duration550"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "export const T = {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            617,
+            617
+          ],
+          "anchor": "**Shared constants:**"
+        }
+      ]
+    },
+    "duration.duration567": {
+      "$type": "duration",
+      "$value": "0.567s",
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-const",
+        "key": "duration567"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "export const T = {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            617,
+            617
+          ],
+          "anchor": "**Shared constants:**"
+        }
+      ]
+    },
+    "duration.delay60": {
+      "$type": "duration",
+      "$value": "0.06s",
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-const",
+        "key": "delay60"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "export const T = {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            617,
+            617
+          ],
+          "anchor": "**Shared constants:**"
+        }
+      ]
+    },
+    "duration.delay66": {
+      "$type": "duration",
+      "$value": "0.066s",
+      "basis": "measured",
+      "code": {
+        "file": "src/motion/core.js",
+        "kind": "gsap-const",
+        "key": "delay66"
+      },
+      "citations": [
+        {
+          "path": "src/motion/core.js",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "export const T = {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            617,
+            617
+          ],
+          "anchor": "**Shared constants:**"
+        }
+      ]
+    },
+    "duration.f5": {
+      "$type": "duration",
+      "$value": "0.083s",
+      "frames": 5,
+      "basis": "derived",
+      "derivation": "f(5) = 5/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f8": {
+      "$type": "duration",
+      "$value": "0.133s",
+      "frames": 8,
+      "basis": "derived",
+      "derivation": "f(8) = 8/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f10": {
+      "$type": "duration",
+      "$value": "0.167s",
+      "frames": 10,
+      "basis": "derived",
+      "derivation": "f(10) = 10/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f15": {
+      "$type": "duration",
+      "$value": "0.25s",
+      "frames": 15,
+      "basis": "derived",
+      "derivation": "f(15) = 15/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f20": {
+      "$type": "duration",
+      "$value": "0.333s",
+      "frames": 20,
+      "basis": "derived",
+      "derivation": "f(20) = 20/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f28": {
+      "$type": "duration",
+      "$value": "0.467s",
+      "frames": 28,
+      "basis": "derived",
+      "derivation": "f(28) = 28/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f30": {
+      "$type": "duration",
+      "$value": "0.5s",
+      "frames": 30,
+      "basis": "derived",
+      "derivation": "f(30) = 30/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f32": {
+      "$type": "duration",
+      "$value": "0.533s",
+      "frames": 32,
+      "basis": "derived",
+      "derivation": "f(32) = 32/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f35": {
+      "$type": "duration",
+      "$value": "0.583s",
+      "frames": 35,
+      "basis": "derived",
+      "derivation": "f(35) = 35/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f40": {
+      "$type": "duration",
+      "$value": "0.667s",
+      "frames": 40,
+      "basis": "derived",
+      "derivation": "f(40) = 40/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.f90": {
+      "$type": "duration",
+      "$value": "1.5s",
+      "frames": 90,
+      "basis": "derived",
+      "derivation": "f(90) = 90/60",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            615,
+            615
+          ],
+          "anchor": "**Frame-based durations:**"
+        }
+      ]
+    },
+    "duration.transition-375": {
+      "$type": "duration",
+      "$value": "375ms",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-duration",
+        "key": "375"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            154,
+            154
+          ],
+          "anchor": "transitionDuration: {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            636,
+            641
+          ],
+          "anchor": "**CSS transitions**"
+        }
+      ]
+    },
+    "duration.transition-400": {
+      "$type": "duration",
+      "$value": "400ms",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-duration",
+        "key": "400"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            154,
+            154
+          ],
+          "anchor": "transitionDuration: {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            636,
+            641
+          ],
+          "anchor": "**CSS transitions**"
+        }
+      ]
+    },
+    "duration.transition-500": {
+      "$type": "duration",
+      "$value": "500ms",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-duration",
+        "key": "500"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            154,
+            154
+          ],
+          "anchor": "transitionDuration: {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            636,
+            641
+          ],
+          "anchor": "**CSS transitions**"
+        }
+      ]
+    },
+    "duration.transition-667": {
+      "$type": "duration",
+      "$value": "667ms",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-duration",
+        "key": "667"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            154,
+            154
+          ],
+          "anchor": "transitionDuration: {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            636,
+            641
+          ],
+          "anchor": "**CSS transitions**"
+        }
+      ]
+    },
+    "duration.splide-move": {
+      "$type": "duration",
+      "$value": "400ms",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/motion/carousel.js",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "export const SPLIDE_TRANSITION"
+        }
+      ]
+    },
+    "duration.swiper-move": {
+      "$type": "duration",
+      "$value": "300ms",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/motion/misc.js",
+          "lines": [
+            19,
+            19
+          ],
+          "anchor": "const SPEED = 0.3"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            295,
+            295
+          ],
+          "anchor": "Default Swiper speed 300ms"
+        }
+      ]
+    },
+    "duration.tailwind-150": {
+      "$type": "duration",
+      "$value": "150ms",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            641,
+            641
+          ],
+          "anchor": "- 150ms Tailwind default: footer links."
+        }
+      ]
+    },
+    "duration.link-200": {
+      "$type": "duration",
+      "$value": "200ms",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            151,
+            151
+          ],
+          "anchor": "`transition: all .2s cubic-bezier(.4,0,.2,1)` |"
+        }
+      ]
+    }
+  }
+}

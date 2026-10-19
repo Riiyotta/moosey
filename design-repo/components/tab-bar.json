@@ -1,0 +1,21 @@
+{
+  "id": "tab-bar",
+  "purpose": "TabBar: links + 1u track + sliding indicator.",
+  "composedOf": [
+    "button",
+    "pill"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/shared.jsx",
+        "lines": [
+          111,
+          111
+        ],
+        "anchor": "export function TabBar("
+      }
+    ]
+  }
+}

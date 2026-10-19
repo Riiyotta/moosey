@@ -1,0 +1,18 @@
+{
+  "id": "heading",
+  "purpose": "h0-h6 type tokens; accent words in span.text-green.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "tailwind.config.cjs",
+        "lines": [
+          27,
+          27
+        ],
+        "anchor": "const type = {"
+      }
+    ]
+  }
+}

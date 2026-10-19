@@ -1,0 +1,22 @@
+{
+  "id": "flyout-panel",
+  "purpose": "Platform flyout: 768px panel, 4 product items.",
+  "composedOf": [
+    "link",
+    "pill",
+    "image"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/Navbar.jsx",
+        "lines": [
+          177,
+          177
+        ],
+        "anchor": "function Flyout("
+      }
+    ]
+  }
+}

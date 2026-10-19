@@ -1,0 +1,38 @@
+{
+  "$description": "Component tokens for button-arrow.",
+  "component": "button-arrow",
+  "selector": ".btn.btn-arrow",
+  "tokens": {
+    "gap": {
+      "$value": "8u"
+    },
+    "padding": {
+      "$value": "6u 8u"
+    },
+    "radius": {
+      "$value": "{radius.nav-link}"
+    },
+    "typography": {
+      "$value": "{typography.button}"
+    },
+    "iconStroke": {
+      "$value": "{action.primary.bg}"
+    },
+    "hoverBackground": {
+      "$value": "{surface.beige}"
+    },
+    "transition": {
+      "$value": "all .4s ease"
+    }
+  },
+  "citations": [
+    {
+      "path": "specs/content.md",
+      "lines": [
+        83,
+        88
+      ],
+      "anchor": "**\"Read more\" arrow button `.btn.btn-arrow`**"
+    }
+  ]
+}

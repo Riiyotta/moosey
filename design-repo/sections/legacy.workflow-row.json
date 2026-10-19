@@ -1,0 +1,113 @@
+{
+  "id": "legacy.workflow-row",
+  "category": "FEATURE",
+  "label": "Legacy workflow mock row",
+  "purpose": "Feature text beside an HTML mock task-checklist card (redrawn markup, fictional labels).",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 9,
+        "budgetBasis": "spec ~32c -> ceil(32*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 37,
+        "budgetBasis": "spec ~130c -> ceil(130*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 4,
+        "titleMaxWords": 13,
+        "budgetBasis": "spec ~45c -> ceil(45*1.25/4.5)",
+        "bodyMaxWords": 39,
+        "bodyRequired": false,
+        "bodyBudgetBasis": "spec ~139c -> ceil(139*1.25/4.5)"
+      },
+      "body": {
+        "type": "text[]",
+        "required": true,
+        "maxItems": 16,
+        "maxWords": 13,
+        "budgetBasis": "spec ~46c -> ceil(46*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          195,
+          208
+        ],
+        "anchor": "### 2.5 Mock-UI"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          280,
+          368
+        ],
+        "anchor": "export function WorkflowRow("
+      }
+    ]
+  },
+  "implementedBy": "src/components/misc/legacy/LegacyKit.jsx",
+  "implementedByAll": [
+    "src/components/misc/legacy/LegacyKit.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "legacy/workflow-row",
+    "kind": "feature-row",
+    "summary": "Feature text beside an HTML mock task-checklist card (redrawn markup, fictional labels).",
+    "keywords": [
+      "feature",
+      "legacy",
+      "mock",
+      "row",
+      "workflow"
+    ],
+    "pageFamilies": [
+      "template.partner-legacy"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Legacy workflow mock row",
+    "contentFields": 4,
+    "copyCapacityWords": 462,
+    "imageCapacity": 0,
+    "itemCapacity": 4
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "legacy.feature-row"
+    ]
+  }
+}

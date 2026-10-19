@@ -1,0 +1,18 @@
+{
+  "id": "pagination-dots",
+  "purpose": "6u dots, gap 7u, #285D60 @.2 / active 1.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/shared.jsx",
+        "lines": [
+          153,
+          153
+        ],
+        "anchor": "export function Pagination("
+      }
+    ]
+  }
+}

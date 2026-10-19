@@ -1,0 +1,18 @@
+{
+  "id": "line-art",
+  "purpose": "Corner/edge line art (redrawn strokes, #516B66).",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/blocks/primitives.jsx",
+        "lines": [
+          35,
+          35
+        ],
+        "anchor": "export function LineArt("
+      }
+    ]
+  }
+}

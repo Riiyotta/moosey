@@ -1,0 +1,22 @@
+{
+  "id": "benefit-card",
+  "purpose": "Benefits card (bg @.4, hover 1).",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "image"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/Benefits.jsx",
+        "lines": [
+          58,
+          58
+        ],
+        "anchor": "card__value"
+      }
+    ]
+  }
+}

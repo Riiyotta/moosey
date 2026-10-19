@@ -1,0 +1,18 @@
+{
+  "id": "pill",
+  "purpose": "'New' pill: 9999px radius, 12/16px w500.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          177,
+          177
+        ],
+        "anchor": "The 6th item is a pill plus label"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "listing.post-rows",
+  "category": "LISTING",
+  "label": "Post list rows",
+  "purpose": "Up to 10 rows: title column + full excerpt + 'Read more' arrow button, 1u dividers.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 10,
+        "titleMaxWords": 21,
+        "budgetBasis": "spec ~75c -> ceil(75*1.25/4.5)",
+        "bodyMaxWords": 209,
+        "bodyRequired": true,
+        "bodyBudgetBasis": "spec ~750c -> ceil(750*1.25/4.5)"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 3,
+        "budgetBasis": "spec ~9c -> ceil(9*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          64,
+          88
+        ],
+        "anchor": "### Layout (`section#posts-list`"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/content/ListRows.jsx",
+        "lines": [
+          4,
+          46
+        ],
+        "anchor": "export function ListPosts("
+      }
+    ]
+  },
+  "implementedBy": "src/components/content/ListRows.jsx",
+  "implementedByAll": [
+    "src/components/content/ListRows.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "css-transition"
+    ],
+    "primaryPattern": "css-transition",
+    "reducedMotionFallbacks": {
+      "css-transition": "none-implemented"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "listing/post-rows",
+    "kind": "list",
+    "summary": "Up to 10 rows: title column + full excerpt + 'Read more' arrow button, 1u dividers.",
+    "keywords": [
+      "list",
+      "post",
+      "rows"
+    ],
+    "pageFamilies": [
+      "template.blog-index"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Post list rows",
+    "contentFields": 2,
+    "copyCapacityWords": 2303,
+    "imageCapacity": 0,
+    "itemCapacity": 10,
+    "exception": "content-listing"
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "hero.title-band"
+    ]
+  }
+}

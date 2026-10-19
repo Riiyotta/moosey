@@ -1,0 +1,108 @@
+{
+  "$description": "Foundation breakpoint tokens: measured values with code-parity references (`code`) and citations. Generators never reference these directly.",
+  "tokens": {
+    "breakpoint.md": {
+      "$type": "dimension",
+      "$value": "481px",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-screen",
+        "key": "md"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            105,
+            105
+          ],
+          "anchor": "screens: { md: '481px', lg: '1025px' }"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            24,
+            24
+          ],
+          "anchor": "- Tailwind screens:"
+        }
+      ]
+    },
+    "breakpoint.lg": {
+      "$type": "dimension",
+      "$value": "1025px",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-screen",
+        "key": "lg"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            105,
+            105
+          ],
+          "anchor": "screens: { md: '481px', lg: '1025px' }"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            24,
+            24
+          ],
+          "anchor": "- Tailwind screens:"
+        }
+      ]
+    },
+    "breakpoint.sm-inert": {
+      "$type": "rule",
+      "$value": "No `sm`/`xl` screen exists: every sm:/xl: class in the original markup is dead and must not be implemented.",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            25,
+            25
+          ],
+          "anchor": "5. **`sm:` Tailwind variants are inert.**"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            11,
+            11
+          ],
+          "anchor": "**Breakpoint quirk that matters.**"
+        }
+      ]
+    },
+    "breakpoint.legacy-swiper-multi": {
+      "$type": "dimension",
+      "$value": "1260px",
+      "basis": "measured",
+      "note": "Template A pricing Swiper shows 3 per view at >=1260px viewport",
+      "citations": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            245,
+            245
+          ],
+          "anchor": "- **≥1260px viewport**"
+        },
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            576,
+            576
+          ],
+          "anchor": "multiQuery: '(min-width: 1260px)'"
+        }
+      ]
+    }
+  }
+}

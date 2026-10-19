@@ -1,0 +1,20 @@
+{
+  "id": "link-list",
+  "purpose": "LinkList: unstyled 18px links ending in ' >>'.",
+  "composedOf": [
+    "link"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/ListRows.jsx",
+        "lines": [
+          47,
+          47
+        ],
+        "anchor": "export function LinkList("
+      }
+    ]
+  }
+}

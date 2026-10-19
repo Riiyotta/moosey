@@ -1,0 +1,162 @@
+{
+  "$description": "Foundation icon-size tokens: measured values with code-parity references (`code`) and citations. Generators never reference these directly.",
+  "tokens": {
+    "icon.check": {
+      "$type": "dimension",
+      "$value": "17u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            208,
+            208
+          ],
+          "anchor": "- Check icon: SVG 17×17"
+        }
+      ]
+    },
+    "icon.compliance-list": {
+      "$type": "dimension",
+      "$value": "26u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            339,
+            339
+          ],
+          "anchor": "    - Title row (gap 8u): 26u icon"
+        }
+      ]
+    },
+    "icon.social": {
+      "$type": "dimension",
+      "$value": "24u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            584,
+            584
+          ],
+          "anchor": "column 3 has the social icons (24u each"
+        }
+      ]
+    },
+    "icon.footer-arrow": {
+      "$type": "dimension",
+      "$value": "16u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            593,
+            593
+          ],
+          "anchor": "each with a 16u arrow icon at right"
+        }
+      ]
+    },
+    "icon.timer-ring": {
+      "$type": "dimension",
+      "$value": "12u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            247,
+            247
+          ],
+          "anchor": "  - Each link has a **timer ring** SVG after the label: 12u"
+        }
+      ]
+    },
+    "icon.slider-arrow": {
+      "$type": "dimension",
+      "$value": {
+        "desktop": "46u",
+        "other": "32u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            142,
+            142
+          ],
+          "anchor": "  - Arrows: 46u desktop / 32u otherwise"
+        }
+      ]
+    },
+    "icon.pricing-check": {
+      "$type": "dimension",
+      "$value": "20u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            530,
+            530
+          ],
+          "anchor": "a 20u check icon"
+        }
+      ]
+    },
+    "icon.chevron": {
+      "$type": "dimension",
+      "$value": {
+        "pricing": "16u",
+        "faq-desktop": "24u",
+        "faq-other": "16u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            553,
+            553
+          ],
+          "anchor": "  - Chevron: 24u (desktop) / 16u"
+        }
+      ]
+    },
+    "icon.btn-arrow": {
+      "$type": "dimension",
+      "$value": "16x14px",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            86,
+            86
+          ],
+          "anchor": "- Icon: inline SVG, viewBox 0 0 16 14"
+        }
+      ]
+    },
+    "icon.legacy-tile": {
+      "$type": "dimension",
+      "$value": "48px (24px glyph)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            180,
+            180
+          ],
+          "anchor": "    - **Icon tile**: absolute at 0,0, 48×48"
+        }
+      ]
+    }
+  }
+}

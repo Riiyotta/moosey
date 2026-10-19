@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Figtree variable (OFL, self-hosted, license in /public/fonts/Figtree-OFL.txt).
+   ascent/descent overrides = Circular Std's hhea metrics (997 / 268, lineGap 0, UPM 1000) so
+   inline content boxes, mixed-size line boxes and baseline position match the original
+   (Figtree's own 950/250 made every inline box ~5% shorter and sat the baseline 0.0145em high). */
+@font-face {
+  font-family: 'Figtree';
+  src: url('/fonts/figtree-latin-ext-var.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  ascent-override: 99.7%;
+  descent-override: 26.8%;
+  line-gap-override: 0%;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Figtree';
+  src: url('/fonts/figtree-latin-var.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  ascent-override: 99.7%;
+  descent-override: 26.8%;
+  line-gap-override: 0%;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* CLONE_SPEC §0.1 — fluid unit. Desktop 1u = 100vw/1440, tablet 100vw/768, mobile 100vw/320 */
+@layer base {
+  html {
+    --u: 0.3125vw;
+    --banner-height: 0px; /* set by Banner (homepage only) on load/resize */
+    scroll-behavior: smooth;
+  }
+  @media (min-width: 481px) {
+    html {
+      --u: calc(100vw / 768);
+    }
+  }
+  @media (min-width: 1025px) {
+    html {
+      --u: calc(100vw / 1440);
+    }
+  }
+
+  body {
+    @apply font-sans;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* §0 shared container widths (272u / 684u / 1100u) */
+  .medium-container {
+    @apply relative mx-auto w-272u md:w-684u lg:w-1100u;
+  }
+
+  /* §2 burger — spans are fixed px (12x2), offsets in u */
+  .header-burger span {
+    @apply absolute left-1/2 top-1/2 h-[2px] w-[12px] rounded-[2px] bg-menu-dark transition-all duration-400;
+    transform: translate(-50%) translateY(calc(var(--u) * -2.5));
+    transform-origin: left;
+  }
+  .header-burger span:nth-child(2) {
+    transform: translate(-50%) translateY(calc(var(--u) * 2.5)) scaleX(0.58);
+  }
+  @media (min-width: 481px) {
+    .header-burger span {
+      transform: translate(-50%) translateY(calc(var(--u) * -5));
+    }
+    .header-burger span:nth-child(2) {
+      transform: translate(-50%) translateY(calc(var(--u) * 0.5)) scaleX(0.7);
+    }
+  }
+  .header-burger.active span {
+    @apply bg-white;
+    transform: translate(-50%, -50%) scale(1) rotate(45deg);
+    transform-origin: center;
+  }
+  .header-burger.active span:nth-child(2) {
+    transform: translate(-50%, -50%) scale(1) rotate(-45deg);
+  }
+
+  /* §0.7 accordion (FAQ + pricing comparison) */
+  .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-20px);
+    transition: all 0.5s cubic-bezier(0.17, 0.17, 0.43, 1);
+  }
+  .accordion-button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: calc(var(--u) * 800);
+    overflow: auto;
+    transform: none;
+  }
+  .accordion-button .icon {
+    transition: all 0.5s cubic-bezier(0.17, 0.17, 0.43, 1); /* original: `.5s cubic-bezier(...)` = all */
+  }
+  .accordion-button[aria-expanded='true'] .icon {
+    transform: rotate(180deg);
+  }
+  .accordion__line {
+    transition: all 375ms ease;
+  }
+  /* original: only the pricing "Plan details" button carries `transition: .5s` (FAQ buttons stay 0s) */
+  #homepage-pricing .accordion-button {
+    transition: all 0.5s ease;
+  }
+  /* original roadmap/peace pinned images carry `transition: opacity .4s` (its .lazy class), which smooths the
+     scrubbed GSAP opacity — the scrub values themselves are identical to the original */
+  [data-roadmap-image],
+  [data-peace-image] {
+    transition: opacity 0.4s;
+  }
+  /* original Splide pagination dots: `transition: transform .2s linear` */
+  [data-carousel-pagination] button {
+    transition: transform 0.2s linear;
+  }
+  .accordion-button[aria-expanded='true'] .accordion__line {
+    opacity: 1;
+  }
+
+  /* §2 mobile menu: closed state (open/close is a GSAP tween, src/motion/menu.js) */
+  .mobile-menu {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+
+  /* §3 hero timer ring */
+  .timer-svg circle {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+  .timer-svg circle:last-of-type {
+    stroke-dasharray: 380px;
+    stroke-dashoffset: calc(380px - (380px * var(--percent, 0)) / 1000);
+  }
+}

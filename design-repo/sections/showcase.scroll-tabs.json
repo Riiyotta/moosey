@@ -1,0 +1,138 @@
+{
+  "id": "showcase.scroll-tabs",
+  "category": "SHOWCASE",
+  "label": "Scroll-driven tabs",
+  "purpose": "Title row, then 4 vertical tab links driving a screenshot + 3 feature columns via a pinned scrub (desktop); stacked cards below 1025.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "budgetBasis": "spec ~21c -> ceil(21*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 48,
+        "budgetBasis": "spec ~171c -> ceil(171*1.25/4.5)"
+      },
+      "tabs": {
+        "type": "tab[]",
+        "required": true,
+        "maxItems": 4,
+        "labelMaxWords": 6,
+        "maxEntries": 3,
+        "titleMaxWords": 9,
+        "bodyMaxWords": 48,
+        "budgetBasis": "spec labels ~21c, entry titles ~30c, entry desc ~172c"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 8,
+        "assetRoles": [
+          "product-screenshot"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          280,
+          332
+        ],
+        "anchor": "### 1.7 ScrollTabs"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/blocks/ScrollTabs.jsx",
+        "lines": [
+          21,
+          115
+        ],
+        "anchor": "export default function ScrollTabs"
+      },
+      {
+        "path": "src/motion/blocks.js",
+        "lines": [
+          334,
+          334
+        ],
+        "anchor": "export function useScrollTabsMotion"
+      }
+    ]
+  },
+  "implementedBy": "src/components/blocks/ScrollTabs.jsx",
+  "implementedByAll": [
+    "src/components/blocks/ScrollTabs.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "pinned-scrub",
+      "tab-switch"
+    ],
+    "primaryPattern": "pinned-scrub",
+    "reducedMotionFallbacks": {
+      "pinned-scrub": "scroll-driven-retained",
+      "tab-switch": "instant-switch"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "3429u (entity)",
+      "tablet": "2416u",
+      "mobile": "2534u",
+      "pinRunwayU": 3000
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "product-screenshot"
+  ],
+  "retrieval": {
+    "semanticLabel": "showcase/scroll-tabs",
+    "kind": "tabs",
+    "summary": "Title row, then 4 vertical tab links driving a screenshot + 3 feature columns via a pinned scrub (desktop); stacked cards below 1025.",
+    "keywords": [
+      "scroll-driven",
+      "tabs"
+    ],
+    "pageFamilies": [
+      "template.platform-product-entity",
+      "template.solutions-overview"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Scroll-driven tabs",
+    "contentFields": 4,
+    "copyCapacityWords": 762,
+    "imageCapacity": 8,
+    "itemCapacity": 4
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "hero.static",
+      "proof.logo-marquee"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "product-screenshot"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

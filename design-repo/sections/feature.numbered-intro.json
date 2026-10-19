@@ -1,0 +1,95 @@
+{
+  "id": "feature.numbered-intro",
+  "category": "FEATURE",
+  "label": "Numbered list intro",
+  "purpose": "Centered h1 (green middle word) + description with mirrored corner line art; opens the numbered rows.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 7,
+        "budgetBasis": "spec ~22c -> ceil(22*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 30,
+        "budgetBasis": "spec ~106c -> ceil(106*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          247,
+          261
+        ],
+        "anchor": "### 1.6 Engine"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/blocks/Engine.jsx",
+        "lines": [
+          10,
+          26
+        ],
+        "anchor": "export default function Engine"
+      }
+    ]
+  },
+  "implementedBy": "src/components/blocks/Engine.jsx",
+  "implementedByAll": [
+    "src/components/blocks/Engine.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "feature/numbered-intro",
+    "kind": "feature-intro",
+    "summary": "Centered h1 (green middle word) + description with mirrored corner line art; opens the numbered rows.",
+    "keywords": [
+      "feature",
+      "intro",
+      "list",
+      "numbered"
+    ],
+    "pageFamilies": [
+      "template.platform-overview"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Numbered list intro",
+    "contentFields": 2,
+    "copyCapacityWords": 37,
+    "imageCapacity": 0,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "proof.ecosystem"
+    ]
+  }
+}

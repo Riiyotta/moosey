@@ -1,0 +1,145 @@
+{
+  "id": "legacy.hero",
+  "category": "HERO",
+  "label": "Legacy co-brand hero",
+  "purpose": "Teal band: co-brand lockup (own wordmark + partner logo; none on A'), h1, sub-paragraph, one red CTA.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "lockup": {
+        "type": "enum",
+        "required": true,
+        "enum": [
+          "A1",
+          "A2",
+          "A3",
+          "none"
+        ]
+      },
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 13,
+        "budgetBasis": "spec ~45c -> ceil(45*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 35,
+        "budgetBasis": "spec ~126c -> ceil(126*1.25/4.5)"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 6,
+        "budgetBasis": "spec ~21c -> ceil(21*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 2,
+        "assetRoles": [
+          "logo",
+          "partner-logo"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          144,
+          161
+        ],
+        "anchor": "### 2.2 Hero (band 1)"
+      },
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          304,
+          306
+        ],
+        "anchor": "### 2.12 Variant table"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          53,
+          104
+        ],
+        "anchor": "export function LegacyHero("
+      }
+    ]
+  },
+  "implementedBy": "src/components/misc/legacy/LegacyKit.jsx",
+  "implementedByAll": [
+    "src/components/misc/legacy/LegacyKit.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "724px",
+      "tablet": "623px",
+      "mobile": "682px"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "logo",
+    "partner-logo"
+  ],
+  "retrieval": {
+    "semanticLabel": "legacy/hero",
+    "kind": "hero",
+    "summary": "Teal band: co-brand lockup (own wordmark + partner logo; none on A'), h1, sub-paragraph, one red CTA.",
+    "keywords": [
+      "co-brand",
+      "hero",
+      "legacy"
+    ],
+    "pageFamilies": [
+      "template.partner-legacy",
+      "template.sales-tax-beta"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Legacy co-brand hero",
+    "contentFields": 5,
+    "copyCapacityWords": 54,
+    "imageCapacity": 2,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "shell.header"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "logo",
+      "partner-logo"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

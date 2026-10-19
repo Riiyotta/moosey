@@ -1,0 +1,146 @@
+/*
+ * Shared marketing block styles (specs/marketing.md §0.1, §1).
+ * Imported once by src/components/blocks/index.js — every block module imports that barrel or this file.
+ * New tokens live here as CSS variables + utility classes; tailwind.config.cjs is intentionally untouched.
+ * All `u` values are calc(var(--u) * N), the same fluid unit as the Tailwind `Nu` spacing keys.
+ */
+
+:root {
+  /* §0.1 new tokens */
+  --nw-btn-red: #c74e5c;
+  /* not in spec: the original's btn-red has no working hover (malformed CSS). Chosen hover = btn-red darkened ~8%. */
+  --nw-btn-red-hover: #b5444f;
+  --nw-check-green: #55b559;
+  --nw-icon-tile: #285d6010;
+  --nw-accent-1: #285d60;
+  --nw-accent-2: #a5b287;
+  --nw-accent-3: #c1ba95;
+  --nw-accent-4: #889c98;
+  --nw-accent-5: #d1d9d6;
+  --nw-gray-100: #f3f4f6;
+  --nw-gray-200: #e5e7eb;
+  --nw-input-bg: #f9fafb;
+  --nw-input-border: #d1d5db;
+  --nw-input-focus: rgb(220, 88, 104);
+  --nw-card-glass: rgba(255, 255, 255, 0.5);
+  --nw-line-art: #516b66;
+}
+
+/* ---------------------------------------------------------------- token classes */
+.text-btn-red { color: var(--nw-btn-red); }
+.bg-btn-red { background-color: var(--nw-btn-red); }
+.text-check-green { color: var(--nw-check-green); }
+.bg-icon-tile { background-color: var(--nw-icon-tile); }
+.text-accent-1 { color: var(--nw-accent-1); }
+.text-accent-2 { color: var(--nw-accent-2); }
+.text-accent-3 { color: var(--nw-accent-3); }
+.text-accent-4 { color: var(--nw-accent-4); }
+.text-accent-5 { color: var(--nw-accent-5); }
+.border-gray-100 { border-color: var(--nw-gray-100); }
+.ring-gray-200 { box-shadow: 0 0 0 1px var(--nw-gray-200); }
+.bg-input { background-color: var(--nw-input-bg); }
+.border-input { border-color: var(--nw-input-border); }
+.bg-card-glass { background-color: var(--nw-card-glass); }
+.stroke-line-art { stroke: var(--nw-line-art); }
+.fill-line-art { fill: var(--nw-line-art); }
+/* §0.1 bg-mask-gradient-orange (ticker fades on #F3F1EC pages) */
+.bg-mask-gradient-orange { background-image: linear-gradient(90deg, #f3f1ec, #f3f1ec00); }
+
+/* ---------------------------------------------------------------- containers */
+/* .small-container 272u / 688u / 1020u (§1.4 A) */
+.small-container { position: relative; margin-left: auto; margin-right: auto; width: calc(var(--u) * 272); }
+/* .base-container 272u / 688u / 1232u (§1.3) */
+.base-container { position: relative; margin-left: auto; margin-right: auto; width: calc(var(--u) * 272); }
+@media (min-width: 481px) {
+  .small-container, .base-container { width: calc(var(--u) * 688); }
+}
+@media (min-width: 1025px) {
+  .small-container { width: calc(var(--u) * 1020); }
+  .base-container { width: calc(var(--u) * 1232); }
+}
+
+/* ---------------------------------------------------------------- type: button-large (§0.1) */
+/* weight 500 renders Figtree wght 600, the project's Circular Medium compensation (tailwind.config.cjs WGHT) */
+.type-button-large {
+  font-size: calc(var(--u) * 10);
+  line-height: calc(var(--u) * 16);
+  letter-spacing: calc(var(--u) * -0.02);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+}
+@media (min-width: 481px) {
+  .type-button-large { font-size: calc(var(--u) * 12); line-height: calc(var(--u) * 19.2); }
+}
+@media (min-width: 1025px) {
+  .type-button-large { font-size: calc(var(--u) * 14); line-height: calc(var(--u) * 22.4); letter-spacing: calc(var(--u) * -0.28); }
+}
+
+/* ---------------------------------------------------------------- .btn / .btn-red (§0.1) */
+.btn {
+  display: inline-block;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: calc(var(--u) * 8);
+  text-align: center;
+  padding: calc(var(--u) * 5) calc(var(--u) * 9);
+  transition: 0.4s;
+  cursor: pointer;
+}
+@media (min-width: 1025px) {
+  .btn { padding: calc(var(--u) * 6) calc(var(--u) * 16); }
+}
+.btn-red { background-color: var(--nw-btn-red); color: #f3f1ec; }
+/* hover/focus are clone additions (original hover is broken CSS) */
+.btn-red:hover { background-color: var(--nw-btn-red-hover); }
+.btn:focus-visible { outline: 2px solid #285d60; outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled='true'] { opacity: 0.5; cursor: default; pointer-events: none; }
+
+/* ---------------------------------------------------------------- FeatureGroup accordion (§1.3) */
+.fg-accordion-button { transition: none; }
+.fg-accordion-button.active { transition: 0.5s; }
+.fg-accordion-content {
+  height: 0;
+  max-height: none;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s cubic-bezier(0.17, 0.17, 0.43, 1);
+}
+.fg-accordion-button[aria-expanded='true'] + .fg-accordion-content {
+  height: calc(var(--u) * 80);
+  opacity: 1;
+  transform: none;
+}
+@media (min-width: 1025px) {
+  .fg-accordion-button[aria-expanded='true'] + .fg-accordion-content { height: calc(var(--u) * 100); }
+}
+
+/* ---------------------------------------------------------------- BenefitsVariant icon hover (§1.9) */
+.bv-card__icon img {
+  opacity: 0.4;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bv-card:hover .bv-card__icon img { opacity: 1; }
+
+/* ---------------------------------------------------------------- LeadForm look-alike (§1.15, fixed px) */
+.lead-form .lead-field { margin-bottom: 1.5rem; }
+.lead-form label { display: block; margin-bottom: 0.5rem; }
+.lead-form .lead-required { color: var(--nw-btn-red); }
+.lead-form input {
+  display: block;
+  width: 100%;
+  height: 57.8px;
+  padding: 16px;
+  background-color: var(--nw-input-bg);
+  border: 1px solid var(--nw-input-border);
+  border-radius: 8px;
+  outline: none;
+  color: #203435;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+.lead-form input:focus { border-color: var(--nw-input-focus); }
+.lead-form .lead-submit { margin-top: 2rem; }
+
+/* GetStarted pinned images carry the original `.lazy` `transition: opacity .4s` (same as homepage peace) */
+[data-gs-image] { transition: opacity 0.4s; }

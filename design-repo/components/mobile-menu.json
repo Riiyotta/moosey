@@ -1,0 +1,21 @@
+{
+  "id": "mobile-menu",
+  "purpose": "Mobile/tablet menu panel tweened from the header.",
+  "composedOf": [
+    "link",
+    "pill"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/Navbar.jsx",
+        "lines": [
+          133,
+          133
+        ],
+        "anchor": "id=\"mobile-menu\""
+      }
+    ]
+  }
+}

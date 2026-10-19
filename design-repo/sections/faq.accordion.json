@@ -1,0 +1,132 @@
+{
+  "id": "faq.accordion",
+  "category": "FAQ",
+  "label": "FAQ accordion",
+  "purpose": "Title (green span) beside up to 8 single-open accordion items with chevrons.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 9,
+        "budgetBasis": "spec ~31c -> ceil(31*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 8,
+        "titleMaxWords": 22,
+        "budgetBasis": "spec ~76c -> ceil(76*1.25/4.5)",
+        "bodyMaxWords": 205,
+        "bodyRequired": true,
+        "bodyBudgetBasis": "spec ~735c -> ceil(735*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          545,
+          556
+        ],
+        "anchor": "## 13. FAQ"
+      },
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          631,
+          635
+        ],
+        "anchor": "- **`/platform/handbooks/`**: a **variant**."
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/Faq.jsx",
+        "lines": [
+          28,
+          66
+        ],
+        "anchor": "export default function Faq"
+      },
+      {
+        "path": "src/components/blocks/FaqVariant.jsx",
+        "lines": [
+          12,
+          50
+        ],
+        "anchor": "export default function"
+      }
+    ]
+  },
+  "implementedBy": "src/components/Faq.jsx",
+  "implementedByAll": [
+    "src/components/Faq.jsx",
+    "src/components/blocks/FaqVariant.jsx",
+    "src/components/content/GuideFaq.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "accordion"
+    ],
+    "primaryPattern": "accordion",
+    "reducedMotionFallbacks": {
+      "accordion": "none-implemented"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "560-893u",
+      "tablet": "505-726u",
+      "mobile": "584-852u"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "faq/accordion",
+    "kind": "faq",
+    "summary": "Title (green span) beside up to 8 single-open accordion items with chevrons.",
+    "keywords": [
+      "accordion",
+      "faq"
+    ],
+    "pageFamilies": [
+      "template.guide-landing",
+      "template.home",
+      "template.partner-platform",
+      "template.platform-product",
+      "template.platform-product-handbooks",
+      "template.pricing",
+      "template.solution-detail",
+      "template.solutions-overview"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "FAQ accordion",
+    "contentFields": 2,
+    "copyCapacityWords": 1825,
+    "imageCapacity": 0,
+    "itemCapacity": 8
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "conversion.guide-form",
+      "feature.accordion-story",
+      "feature.checklist-row",
+      "pricing.comparison-table",
+      "proof.logo-marquee",
+      "steps.get-started"
+    ]
+  }
+}

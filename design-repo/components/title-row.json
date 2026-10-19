@@ -1,0 +1,22 @@
+{
+  "id": "title-row",
+  "purpose": "§0.7 section title + description row.",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "rich-text"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          126,
+          126
+        ],
+        "anchor": "- **Section title + description row**"
+      }
+    ]
+  }
+}

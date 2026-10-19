@@ -1,0 +1,442 @@
+{
+  "id": "light",
+  "mode": "light",
+  "$description": "The only theme measured. Every semantic token resolved to its foundation value (alpha folded into 8-digit hex).",
+  "resolves": {
+    "text.primary": "#203435",
+    "text.muted": "#203435B3",
+    "text.subtle": "#20343566",
+    "text.accent": "#285D60",
+    "text.on-dark": "#F3F1EC",
+    "text.on-dark-muted": "#F3F1ECB3",
+    "text.on-dark-subtle": "#F3F1EC66",
+    "text.nav": "#9FA5A3",
+    "surface.page": "#FCFBFA",
+    "surface.hero": "#F3F1EC",
+    "surface.brand": "#285D60",
+    "surface.banner": "#203435",
+    "surface.tint": "#CFD7D4",
+    "surface.beige": "#E4E4DC",
+    "surface.menu": "#2E2F2F",
+    "border.hairline": "#285D6033",
+    "border.divider": "#E4E4DC",
+    "border.footer": "rgba(252,251,250,.2)",
+    "action.primary.bg": "#C74E5C",
+    "action.primary.text": "#F3F1EC",
+    "accent.plan-1": "#A5B287",
+    "accent.plan-2": "#C1BA95",
+    "accent.plan-3": "#889C98",
+    "line-art.stroke": "#516B66",
+    "status.check": "#55B559",
+    "typography.display": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "55u",
+        "lineHeight": "70u",
+        "letterSpacing": "-2.2u",
+        "fontWeight": 450
+      },
+      "tablet": {
+        "fontSize": "75u",
+        "lineHeight": "90u",
+        "letterSpacing": "-3.6u",
+        "fontWeight": 450
+      },
+      "desktop": {
+        "fontSize": "130u",
+        "lineHeight": "156u",
+        "letterSpacing": "-5.2u",
+        "fontWeight": 450
+      }
+    },
+    "typography.heading.page": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "24u",
+        "lineHeight": "26u",
+        "letterSpacing": "-0.72u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "28u",
+        "lineHeight": "33.6u",
+        "letterSpacing": "-0.84u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "38u",
+        "lineHeight": "45.6u",
+        "letterSpacing": "-1.14u",
+        "fontWeight": 500
+      }
+    },
+    "typography.heading.story": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "24u",
+        "lineHeight": "28.8u",
+        "letterSpacing": "-0.72u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "38u",
+        "lineHeight": "45.6u",
+        "letterSpacing": "-1.14u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "55u",
+        "lineHeight": "66u",
+        "letterSpacing": "-1.65u",
+        "fontWeight": 500
+      }
+    },
+    "typography.heading.card": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "17u",
+        "lineHeight": "22.1u",
+        "letterSpacing": "-0.68u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "17u",
+        "lineHeight": "22.1u",
+        "letterSpacing": "-0.68u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "24u",
+        "lineHeight": "31.2u",
+        "letterSpacing": "-0.96u",
+        "fontWeight": 500
+      }
+    },
+    "typography.heading.list": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "13u",
+        "lineHeight": "20.8u",
+        "letterSpacing": "-0.26u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "13u",
+        "lineHeight": "20.8u",
+        "letterSpacing": "-0.26u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "18u",
+        "lineHeight": "28.8u",
+        "letterSpacing": "-0.36u",
+        "fontWeight": 500
+      }
+    },
+    "typography.stat": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "32u",
+        "lineHeight": "38.4u",
+        "letterSpacing": "-0.64u",
+        "fontWeight": 450
+      },
+      "tablet": {
+        "fontSize": "32u",
+        "lineHeight": "38.4u",
+        "letterSpacing": "-0.64u",
+        "fontWeight": 450
+      },
+      "desktop": {
+        "fontSize": "42u",
+        "lineHeight": "50.4u",
+        "letterSpacing": "-0.84u",
+        "fontWeight": 450
+      }
+    },
+    "typography.body": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 450
+      },
+      "tablet": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 450
+      },
+      "desktop": {
+        "fontSize": "15u",
+        "lineHeight": "24u",
+        "letterSpacing": "-0.3u",
+        "fontWeight": 450
+      }
+    },
+    "typography.body-small": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 450
+      },
+      "tablet": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.2u",
+        "fontWeight": 450
+      },
+      "desktop": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.26u",
+        "fontWeight": 450
+      }
+    },
+    "typography.caption": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "tablet": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "desktop": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      }
+    },
+    "typography.label": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "17u",
+        "lineHeight": "23.8u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      }
+    },
+    "typography.nav": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "14u",
+        "lineHeight": "15.4u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      }
+    },
+    "typography.tab": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "10u",
+        "lineHeight": "14u",
+        "letterSpacing": "-0.02u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.024u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "14u",
+        "lineHeight": "19.6u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      }
+    },
+    "typography.price": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "38u",
+        "lineHeight": "44u",
+        "letterSpacing": "-0.14u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "38u",
+        "lineHeight": "44u",
+        "letterSpacing": "-0.14u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "38u",
+        "lineHeight": "44u",
+        "letterSpacing": "-0.14u",
+        "fontWeight": 500
+      }
+    },
+    "typography.button": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "10u",
+        "lineHeight": "16u",
+        "letterSpacing": "-0.02u",
+        "fontWeight": 500
+      },
+      "tablet": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.02u",
+        "fontWeight": 500
+      },
+      "desktop": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      }
+    },
+    "typography.prose": {
+      "fontFamily": "Figtree, ui-sans-serif, system-ui, sans-serif",
+      "mobile": {
+        "fontSize": "13u",
+        "lineHeight": "20.8u",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 450
+      },
+      "tablet": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 450
+      },
+      "desktop": {
+        "fontSize": "17u",
+        "lineHeight": "27.2u",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 450
+      }
+    },
+    "radius.card": "12u",
+    "radius.control": "8u",
+    "radius.nav-link": "6u",
+    "radius.menu": "14u",
+    "radius.indicator": "2u",
+    "elevation.overlay": "0 0 0 1px rgba(17,24,39,.05), 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1)",
+    "elevation.card-raised": "0 25px 50px -12px rgba(0,0,0,.25)",
+    "motion.reveal": {
+      "ease": [
+        0.17,
+        0.17,
+        0.21,
+        1.0
+      ],
+      "duration": "0.567s",
+      "from": {
+        "y": "100u",
+        "autoAlpha": 0
+      }
+    },
+    "motion.reveal-hero": {
+      "ease": [
+        0.17,
+        0.17,
+        0.21,
+        1.0
+      ],
+      "duration": "0.533s",
+      "from": {
+        "y": "30u",
+        "autoAlpha": 0
+      }
+    },
+    "motion.tab-out": {
+      "ease": [
+        0.49,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "duration": "0.267s",
+      "to": {
+        "scale": 0.86,
+        "autoAlpha": 0
+      }
+    },
+    "motion.tab-in": {
+      "ease": [
+        0.17,
+        0.17,
+        0.39,
+        1.0
+      ],
+      "duration": "0.3s",
+      "from": {
+        "scale": 0.86,
+        "autoAlpha": 0
+      }
+    },
+    "motion.image-swap-out": {
+      "ease": [
+        0.66,
+        0.0,
+        0.83,
+        0.83
+      ],
+      "duration": "0.333s"
+    },
+    "motion.image-swap-in": {
+      "ease": [
+        0.17,
+        0.17,
+        0.21,
+        1.0
+      ],
+      "duration": "0.333s"
+    },
+    "motion.accordion": {
+      "ease": [
+        0.17,
+        0.17,
+        0.43,
+        1
+      ],
+      "duration": "500ms"
+    },
+    "motion.hover": {
+      "ease": [
+        0.25,
+        0.1,
+        0.25,
+        1
+      ],
+      "duration": "375ms"
+    }
+  }
+}

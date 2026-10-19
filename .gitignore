@@ -1,0 +1,12 @@
+# dependencies / build output
+node_modules/
+dist/
+
+# third-party material from the measured original site — never publish
+reference/
+.playwright-mcp/
+
+# OS / editor
+.DS_Store
+__MACOSX/
+*.log

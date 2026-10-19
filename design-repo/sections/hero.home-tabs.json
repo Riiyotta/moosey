@@ -1,0 +1,143 @@
+{
+  "id": "hero.home-tabs",
+  "category": "HERO",
+  "label": "Home hero with auto-advancing product tabs",
+  "purpose": "h1 + bordered description row over three auto-advancing tab visuals with timer rings; the last tab opens a popup CTA card.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 9,
+        "budgetBasis": "spec ~30c -> ceil(30*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 27,
+        "budgetBasis": "spec ~94c -> ceil(94*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 4,
+        "budgetBasis": "spec ~13c -> ceil(13*1.25/4.5)"
+      },
+      "body": {
+        "type": "text[]",
+        "required": false,
+        "maxItems": 1,
+        "maxWords": 10,
+        "budgetBasis": "spec ~36c -> ceil(36*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 4,
+        "assetRoles": [
+          "product-screenshot"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          214,
+          263
+        ],
+        "anchor": "## 3. Hero"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/Hero.jsx",
+        "lines": [
+          9,
+          184
+        ],
+        "anchor": "export default function Hero"
+      },
+      {
+        "path": "src/motion/hero.js",
+        "lines": [
+          15,
+          15
+        ],
+        "anchor": "export function useHeroMotion"
+      }
+    ]
+  },
+  "implementedBy": "src/components/Hero.jsx",
+  "implementedByAll": [
+    "src/components/Hero.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "auto-advance",
+      "tab-switch"
+    ],
+    "primaryPattern": "auto-advance",
+    "reducedMotionFallbacks": {
+      "auto-advance": "no-autoplay",
+      "tab-switch": "instant-switch"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "779u",
+      "tablet": "965u",
+      "mobile": "480u"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "product-screenshot"
+  ],
+  "retrieval": {
+    "semanticLabel": "hero/home-tabs",
+    "kind": "hero",
+    "summary": "h1 + bordered description row over three auto-advancing tab visuals with timer rings; the last tab opens a popup CTA card.",
+    "keywords": [
+      "auto-advancing",
+      "hero",
+      "home",
+      "product",
+      "tabs",
+      "with"
+    ],
+    "pageFamilies": [
+      "template.home"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Home hero with auto-advancing product tabs",
+    "contentFields": 5,
+    "copyCapacityWords": 58,
+    "imageCapacity": 4,
+    "itemCapacity": 3
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "shell.header"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "product-screenshot"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

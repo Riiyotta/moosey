@@ -1,0 +1,18 @@
+{
+  "id": "link",
+  "purpose": "Inline/prose link: #285D60 underline, hover /60, 200ms.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/styles/content.css",
+        "lines": [
+          186,
+          186
+        ],
+        "anchor": ".ct-prose a {"
+      }
+    ]
+  }
+}

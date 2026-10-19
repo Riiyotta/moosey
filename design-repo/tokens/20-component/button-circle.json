@@ -1,0 +1,35 @@
+{
+  "$description": "Component tokens for button-circle.",
+  "component": "button-circle",
+  "selector": ".btn.btn-circle",
+  "tokens": {
+    "size": {
+      "$value": {
+        "desktop": "46u",
+        "other": "32u"
+      }
+    },
+    "radius": {
+      "$value": "50%"
+    },
+    "background": {
+      "$value": "#CFD7D466"
+    },
+    "hoverBackground": {
+      "$value": "{surface.tint}"
+    },
+    "disabledOpacity": {
+      "$value": 0.2
+    }
+  },
+  "citations": [
+    {
+      "path": "specs/content.md",
+      "lines": [
+        92,
+        92
+      ],
+      "anchor": "- Right: `.pagination` flex, gap 10u"
+    }
+  ]
+}

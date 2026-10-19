@@ -1,0 +1,32 @@
+{
+  "$description": "Component tokens for pricing-card.",
+  "component": "pricing-card",
+  "selector": "#homepage-pricing card",
+  "tokens": {
+    "background": {
+      "$value": "{surface.page}"
+    },
+    "radius": {
+      "$value": "{radius.control}"
+    },
+    "border": {
+      "$value": "2px solid plan colour, top 8px"
+    },
+    "padding": {
+      "$value": "34u 24u 27u"
+    },
+    "priceTypography": {
+      "$value": "{typography.price}"
+    }
+  },
+  "citations": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": [
+        513,
+        522
+      ],
+      "anchor": "**Card**"
+    }
+  ]
+}

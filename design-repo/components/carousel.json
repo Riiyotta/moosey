@@ -1,0 +1,21 @@
+{
+  "id": "carousel",
+  "purpose": "useCarousel: Splide stand-in (perPage 1, autoWidth, trimSpace).",
+  "composedOf": [
+    "slider-arrow",
+    "pagination-dots"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/shared.jsx",
+        "lines": [
+          30,
+          30
+        ],
+        "anchor": "export function useCarousel("
+      }
+    ]
+  }
+}

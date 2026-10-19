@@ -1,0 +1,218 @@
+{
+  "$description": "Layout measurements (u unless px). Container widths are mobile/tablet/desktop.",
+  "tokens": {
+    "layout.container.medium": {
+      "$value": {
+        "mobile": "272u",
+        "tablet": "684u",
+        "desktop": "1100u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/index.css",
+          "lines": [
+            70,
+            72
+          ],
+          "anchor": ".medium-container {"
+        }
+      ]
+    },
+    "layout.container.base": {
+      "$value": {
+        "mobile": "272u",
+        "tablet": "688u",
+        "desktop": "1232u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            53,
+            53
+          ],
+          "anchor": ".base-container { position"
+        }
+      ]
+    },
+    "layout.container.small": {
+      "$value": {
+        "mobile": "272u",
+        "tablet": "688u",
+        "desktop": "1020u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/blocks.css",
+          "lines": [
+            51,
+            51
+          ],
+          "anchor": ".small-container { position"
+        }
+      ]
+    },
+    "layout.container.list-posts": {
+      "$value": {
+        "mobile": "272u",
+        "tablet": "704u",
+        "desktop": "1101u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "| List `.list-posts` width |"
+        }
+      ]
+    },
+    "layout.container.article": {
+      "$value": {
+        "mobile": "272u",
+        "tablet": "522u",
+        "desktop": "596u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            126,
+            126
+          ],
+          "anchor": "| `.article-wrapper` width (centered) |"
+        }
+      ]
+    },
+    "layout.container.post-title": {
+      "$value": {
+        "mobile": "272u",
+        "tablet": "464u",
+        "desktop": "1020u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            121,
+            121
+          ],
+          "anchor": "| `.title-wrap` width (centered, text-center) |"
+        }
+      ]
+    },
+    "layout.container.header": {
+      "$value": {
+        "mobile": "304u",
+        "tablet": "704u",
+        "desktop": "1302u"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            167,
+            167
+          ],
+          "anchor": "| Width | 304u | 704u | 1302u |"
+        }
+      ]
+    },
+    "layout.container.legacy": {
+      "$value": "max-w-7xl 1280px (content 1216px at lg)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            123,
+            123
+          ],
+          "anchor": "- `max-w-7xl` (1280px) with `px-8` at lg"
+        }
+      ]
+    },
+    "layout.pin-runway.feature-group": {
+      "$value": "2000u (desktop .spacing padding-bottom)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            164,
+            164
+          ],
+          "anchor": "- Each `li` ends with `.spacing` of padding-bottom **2000u**"
+        }
+      ]
+    },
+    "layout.pin-runway.scroll-tabs": {
+      "$value": "3000u (desktop .spacer)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            302,
+            302
+          ],
+          "anchor": "- `.spacer`: padding-bottom **3000u** (desktop only)."
+        }
+      ]
+    },
+    "layout.pin-runway.roadmap": {
+      "$value": "3000u (.desktop-roadmap-steps height)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            402,
+            402
+          ],
+          "anchor": "- `.desktop-roadmap-steps` is 3000u tall."
+        }
+      ]
+    },
+    "layout.header.top": {
+      "$value": {
+        "mobile": "calc(5u + var(--banner-height))",
+        "md+": "calc(24u + var(--banner-height))"
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            160,
+            160
+          ],
+          "anchor": "- `top`: mobile `calc(5u + var(--banner-height))`"
+        }
+      ]
+    },
+    "layout.section-title-row": {
+      "$value": "§0.7: h3 + desc row; desc 424u (desktop) / 332u (tablet); stacked on mobile with h3 mb 24u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            126,
+            129
+          ],
+          "anchor": "- **Section title + description row**"
+        }
+      ]
+    }
+  }
+}

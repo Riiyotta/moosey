@@ -1,0 +1,35 @@
+{
+  "$description": "Component tokens for form-input.",
+  "component": "form-input",
+  "selector": ".hs-input (static look-alike)",
+  "tokens": {
+    "background": {
+      "$value": "{color.nw-input-bg}"
+    },
+    "border": {
+      "$value": "1px {color.nw-input-border}"
+    },
+    "focusBorder": {
+      "$value": "{color.nw-input-focus}"
+    },
+    "radius": {
+      "$value": "8px"
+    },
+    "padding": {
+      "$value": "16px"
+    },
+    "labelColor": {
+      "$value": "{text.accent}"
+    }
+  },
+  "citations": [
+    {
+      "path": "specs/content.md",
+      "lines": [
+        487,
+        491
+      ],
+      "anchor": "**Input `.hs-input`:**"
+    }
+  ]
+}

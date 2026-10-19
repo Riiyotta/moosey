@@ -1,0 +1,2819 @@
+{
+  "version": "0.1.0",
+  "sourceProject": {
+    "name": "mosey (Northwind clone)",
+    "framework": "React 18 + Vite + Tailwind CSS v3 + GSAP 3",
+    "snapshotFolder": ".",
+    "snapshotFolderNote": "Citations are paths relative to the package root (the folder that contains design-repo/): CLONE_SPEC.md, specs/*.md, src/**, tailwind.config.cjs.",
+    "measuredSite": "a third-party live marketing site, measured with Playwright 2026-10-16/19 (identified on CLONE_SPEC.md line 1); brand, copy and art in the clone are placeholders"
+  },
+  "viewport": {
+    "desktop": "1440x900 (and 1280 verified as x0.8889)",
+    "tablet": "768",
+    "mobile": "390"
+  },
+  "unit": "u: 1u = 100vw/1440 (>=1025px), 100vw/768 (481-1024px), 100vw/320 (<=480px)",
+  "note": "Citation ledger. Each citation is {path, lines:[a,b], anchor}; verify_all.py resolves every citation object found anywhere in the repo (range in bounds, anchor text inside the range) and degrades to warnings when the source tree is absent.",
+  "sections": {
+    "shell.header": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            156,
+            212
+          ],
+          "anchor": "## 2. Header"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Navbar.jsx",
+          "lines": [
+            18,
+            217
+          ],
+          "anchor": "export default function Navbar"
+        }
+      ]
+    },
+    "banner.announcement": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            146,
+            154
+          ],
+          "anchor": "## 1. Announcement banner"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            21,
+            21
+          ],
+          "anchor": "1. **No announcement banner on any inner page.**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Banner.jsx",
+          "lines": [
+            4,
+            34
+          ],
+          "anchor": "export default function Banner"
+        }
+      ]
+    },
+    "shell.footer": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            570,
+            595
+          ],
+          "anchor": "## 15. Footer"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": [
+            14,
+            110
+          ],
+          "anchor": "export default function Footer"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            455,
+            455
+          ],
+          "anchor": "function footer("
+        }
+      ]
+    },
+    "hero.home-tabs": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            214,
+            263
+          ],
+          "anchor": "## 3. Hero"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Hero.jsx",
+          "lines": [
+            9,
+            184
+          ],
+          "anchor": "export default function Hero"
+        },
+        {
+          "path": "src/motion/hero.js",
+          "lines": [
+            15,
+            15
+          ],
+          "anchor": "export function useHeroMotion"
+        }
+      ]
+    },
+    "hero.page": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            66,
+            114
+          ],
+          "anchor": "### 1.1 PageHero"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/PageHero.jsx",
+          "lines": [
+            14,
+            85
+          ],
+          "anchor": "export default function PageHero"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            66,
+            66
+          ],
+          "anchor": "export function usePageHeroMotion"
+        }
+      ]
+    },
+    "hero.static": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            116,
+            134
+          ],
+          "anchor": "### 1.2 HeroStatic"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            342,
+            359
+          ],
+          "anchor": "### 3.1 HeroStatic"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            449,
+            455
+          ],
+          "anchor": "**HeroStatic differences**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/HeroStatic.jsx",
+          "lines": [
+            15,
+            62
+          ],
+          "anchor": "export default function HeroStatic"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            106,
+            106
+          ],
+          "anchor": "export function useHeroStaticMotion"
+        }
+      ]
+    },
+    "hero.about": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            514,
+            526
+          ],
+          "anchor": "**a. AboutHero (`#about-hero`)**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/about/AboutHero.jsx",
+          "lines": [
+            2,
+            26
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/motion/marketing.js",
+          "lines": [
+            49,
+            49
+          ],
+          "anchor": "function aboutHero("
+        }
+      ]
+    },
+    "hero.title-band": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            64,
+            81
+          ],
+          "anchor": "### Layout (`section#posts-list`"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            233,
+            235
+          ],
+          "anchor": "## 5. Resources index"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/PageTitleBand.jsx",
+          "lines": [
+            2,
+            9
+          ],
+          "anchor": "export default function PageTitleBand"
+        }
+      ]
+    },
+    "hero.guide": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            357,
+            380
+          ],
+          "anchor": "### 8.1 Hero"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/GuideHero.jsx",
+          "lines": [
+            8,
+            48
+          ],
+          "anchor": "export default function GuideHero"
+        },
+        {
+          "path": "src/motion/content.js",
+          "lines": [
+            92,
+            92
+          ],
+          "anchor": "export function useGuideHeroMotion"
+        }
+      ]
+    },
+    "proof.logo-marquee": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            267,
+            287
+          ],
+          "anchor": "## 4. Trusted-by logo marquee"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            544,
+            547
+          ],
+          "anchor": "**d. Trusted marquee.**"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            524,
+            530
+          ],
+          "anchor": "### 4.5 C2 Trusted strip"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/LogoMarquee.jsx",
+          "lines": [
+            7,
+            48
+          ],
+          "anchor": "export default function LogoMarquee"
+        },
+        {
+          "path": "src/components/blocks/LogoMarquee.jsx",
+          "lines": [
+            25,
+            76
+          ],
+          "anchor": "export default function LogoMarquee"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            47,
+            47
+          ],
+          "anchor": "function trusted("
+        }
+      ]
+    },
+    "proof.testimonials": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            467,
+            493
+          ],
+          "anchor": "## 11. Testimonials"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Testimonials.jsx",
+          "lines": [
+            46,
+            105
+          ],
+          "anchor": "export default function Testimonials"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            345,
+            345
+          ],
+          "anchor": "function testimonials("
+        }
+      ]
+    },
+    "proof.testimonials-lite": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            485,
+            508
+          ],
+          "anchor": "### 1.16 TestimonialsLite"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/TestimonialsLite.jsx",
+          "lines": [
+            14,
+            74
+          ],
+          "anchor": "export default function TestimonialsLite"
+        },
+        {
+          "path": "src/motion/marketing.js",
+          "lines": [
+            122,
+            122
+          ],
+          "anchor": "export function useTestimonialsLiteMotion"
+        }
+      ]
+    },
+    "proof.ecosystem": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            226,
+            245
+          ],
+          "anchor": "### 1.5 Ecosystem"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/Ecosystem.jsx",
+          "lines": [
+            10,
+            42
+          ],
+          "anchor": "export default function Ecosystem"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            203,
+            203
+          ],
+          "anchor": "export function useEcosystemMotion"
+        }
+      ]
+    },
+    "proof.problem-list": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            393,
+            411
+          ],
+          "anchor": "### 1.12 ProblemList"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/ProblemList.jsx",
+          "lines": [
+            4,
+            45
+          ],
+          "anchor": "export default function ProblemList"
+        }
+      ]
+    },
+    "intro.statement": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            289,
+            298
+          ],
+          "anchor": "## 5. Statement"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Statement.jsx",
+          "lines": [
+            2,
+            20
+          ],
+          "anchor": "export default function Statement"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            61,
+            61
+          ],
+          "anchor": "function statement("
+        }
+      ]
+    },
+    "intro.title-row": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            528,
+            532
+          ],
+          "anchor": "**b. TitleWithDesc (`#title-with-desc`)**"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            457,
+            463
+          ],
+          "anchor": "**IntroRow** (C1, between the hero and FeatureGroup)"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/about/TitleWithDesc.jsx",
+          "lines": [
+            2,
+            17
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/components/misc/PlatformPartnerPage.jsx",
+          "lines": [
+            10,
+            23
+          ],
+          "anchor": "function IntroRow("
+        }
+      ]
+    },
+    "showcase.everything-network": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            300,
+            316
+          ],
+          "anchor": "## 6. \"Everything\" headline"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Everything.jsx",
+          "lines": [
+            4,
+            38
+          ],
+          "anchor": "export default function Everything"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            78,
+            78
+          ],
+          "anchor": "function everything("
+        }
+      ]
+    },
+    "showcase.role-tabs": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            318,
+            341
+          ],
+          "anchor": "## 7. Compliance by role"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            370,
+            381
+          ],
+          "anchor": "### 1.10 BenefitGroup"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/RoleTabs.jsx",
+          "lines": [
+            50,
+            137
+          ],
+          "anchor": "export default function RoleTabs"
+        },
+        {
+          "path": "src/components/blocks/BenefitGroup.jsx",
+          "lines": [
+            19,
+            89
+          ],
+          "anchor": "export default function BenefitGroup"
+        },
+        {
+          "path": "src/motion/compliance.js",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "export function useComplianceMotion"
+        }
+      ]
+    },
+    "showcase.roadmap": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            389,
+            431
+          ],
+          "anchor": "## 9. Roadmap"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Roadmap.jsx",
+          "lines": [
+            25,
+            143
+          ],
+          "anchor": "export default function Roadmap"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            188,
+            188
+          ],
+          "anchor": "function roadmap("
+        }
+      ]
+    },
+    "showcase.scroll-tabs": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            280,
+            332
+          ],
+          "anchor": "### 1.7 ScrollTabs"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/ScrollTabs.jsx",
+          "lines": [
+            21,
+            115
+          ],
+          "anchor": "export default function ScrollTabs"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            334,
+            334
+          ],
+          "anchor": "export function useScrollTabsMotion"
+        }
+      ]
+    },
+    "feature.benefit-cards": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            367,
+            387
+          ],
+          "anchor": "## 8. Benefits stats"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            354,
+            368
+          ],
+          "anchor": "### 1.9 BenefitsLanding"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            382,
+            390
+          ],
+          "anchor": "### 8.2 Benefits"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            570,
+            580
+          ],
+          "anchor": "### 5.2 Benefits variant"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Benefits.jsx",
+          "lines": [
+            14,
+            75
+          ],
+          "anchor": "export default function Benefits"
+        },
+        {
+          "path": "src/components/blocks/BenefitsVariant.jsx",
+          "lines": [
+            18,
+            69
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            151,
+            151
+          ],
+          "anchor": "function benefits("
+        }
+      ]
+    },
+    "feature.accordion-story": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            136,
+            191
+          ],
+          "anchor": "### 1.3 FeatureGroup"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            427,
+            457
+          ],
+          "anchor": "### 8.5 FeatureGroup"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            465,
+            502
+          ],
+          "anchor": "### 4.2 FeatureGroup"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/FeatureGroup.jsx",
+          "lines": [
+            16,
+            104
+          ],
+          "anchor": "export default function FeatureGroup"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            118,
+            118
+          ],
+          "anchor": "export function useFeatureGroupMotion"
+        },
+        {
+          "path": "src/motion/content.js",
+          "lines": [
+            163,
+            163
+          ],
+          "anchor": "export function useFeatureGroupMotion"
+        }
+      ]
+    },
+    "feature.checklist-row": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            193,
+            224
+          ],
+          "anchor": "### 1.4 FeatureList"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            361,
+            386
+          ],
+          "anchor": "### 3.2 FeatureList"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            582,
+            587
+          ],
+          "anchor": "### 5.3 FeatureList variant"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/FeatureList.jsx",
+          "lines": [
+            23,
+            109
+          ],
+          "anchor": "export default function FeatureList"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            192,
+            192
+          ],
+          "anchor": "export function useFeatureListMotion"
+        }
+      ]
+    },
+    "feature.numbered-intro": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            247,
+            261
+          ],
+          "anchor": "### 1.6 Engine"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/Engine.jsx",
+          "lines": [
+            10,
+            26
+          ],
+          "anchor": "export default function Engine"
+        }
+      ]
+    },
+    "feature.numbered-row": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            263,
+            278
+          ],
+          "anchor": "**Items** (`ul.features-list`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/Engine.jsx",
+          "lines": [
+            27,
+            66
+          ],
+          "anchor": "<ul className=\"features-list"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            178,
+            178
+          ],
+          "anchor": "function itemTimeline("
+        }
+      ]
+    },
+    "feature.card-grid": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            413,
+            435
+          ],
+          "anchor": "### 1.13 FeatureCardGrid"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/FeatureCardGrid.jsx",
+          "lines": [
+            11,
+            38
+          ],
+          "anchor": "export default function FeatureCardGrid"
+        }
+      ]
+    },
+    "steps.peace-of-mind": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            433,
+            465
+          ],
+          "anchor": "## 10. Peace of mind"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/PeaceOfMind.jsx",
+          "lines": [
+            24,
+            107
+          ],
+          "anchor": "export default function PeaceOfMind"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            272,
+            272
+          ],
+          "anchor": "function peace("
+        }
+      ]
+    },
+    "steps.get-started": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            383,
+            391
+          ],
+          "anchor": "### 1.11 GetStarted"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            388,
+            415
+          ],
+          "anchor": "### 3.3 GetStarted"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/GetStarted.jsx",
+          "lines": [
+            15,
+            95
+          ],
+          "anchor": "export default function GetStarted"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            285,
+            285
+          ],
+          "anchor": "export function useGetStartedMotion"
+        }
+      ]
+    },
+    "pricing.plan-cards": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            495,
+            522
+          ],
+          "anchor": "## 12. Pricing"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            691,
+            694
+          ],
+          "anchor": "**Number formats**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Pricing.jsx",
+          "lines": [
+            75,
+            145
+          ],
+          "anchor": "export default function Pricing"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            370,
+            370
+          ],
+          "anchor": "function pricing("
+        }
+      ]
+    },
+    "pricing.comparison-table": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            524,
+            543
+          ],
+          "anchor": "**Comparison accordion**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Pricing.jsx",
+          "lines": [
+            146,
+            229
+          ],
+          "anchor": "<div className={`accordion flex"
+        }
+      ]
+    },
+    "faq.accordion": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            545,
+            556
+          ],
+          "anchor": "## 13. FAQ"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            631,
+            635
+          ],
+          "anchor": "- **`/platform/handbooks/`**: a **variant**."
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/Faq.jsx",
+          "lines": [
+            28,
+            66
+          ],
+          "anchor": "export default function Faq"
+        },
+        {
+          "path": "src/components/blocks/FaqVariant.jsx",
+          "lines": [
+            12,
+            50
+          ],
+          "anchor": "export default function"
+        }
+      ]
+    },
+    "conversion.compliance-cta-card": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            342,
+            350
+          ],
+          "anchor": "- **Compliance CTA card**"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            334,
+            352
+          ],
+          "anchor": "### 1.8 GenericCta"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            508,
+            522
+          ],
+          "anchor": "### 4.4 Generic CTA wrapper"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/GenericCta.jsx",
+          "lines": [
+            15,
+            59
+          ],
+          "anchor": "export default function GenericCta"
+        },
+        {
+          "path": "src/components/RoleTabs.jsx",
+          "lines": [
+            159,
+            195
+          ],
+          "anchor": "function ComplianceCta()"
+        },
+        {
+          "path": "src/motion/blocks.js",
+          "lines": [
+            220,
+            220
+          ],
+          "anchor": "export function useGenericCtaMotion"
+        }
+      ]
+    },
+    "conversion.bottom-cta": {
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            558,
+            568
+          ],
+          "anchor": "## 14. Bottom CTA"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/BottomCta.jsx",
+          "lines": [
+            4,
+            27
+          ],
+          "anchor": "export default function BottomCta"
+        },
+        {
+          "path": "src/motion/page.js",
+          "lines": [
+            437,
+            437
+          ],
+          "anchor": "function bottomCta("
+        }
+      ]
+    },
+    "conversion.lead-form": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            459,
+            483
+          ],
+          "anchor": "### 1.15 LeadForm"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            532,
+            550
+          ],
+          "anchor": "### 4.6 C2 HubSpot form section"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/blocks/LeadForm.jsx",
+          "lines": [
+            23,
+            84
+          ],
+          "anchor": "export default function LeadForm"
+        }
+      ]
+    },
+    "conversion.guide-form": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            392,
+            422
+          ],
+          "anchor": "### 8.3 Form section"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            478,
+            504
+          ],
+          "anchor": "## 10. HubSpot form styling"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/GuideFormSection.jsx",
+          "lines": [
+            8,
+            47
+          ],
+          "anchor": "export default function GuideFormSection"
+        },
+        {
+          "path": "src/components/content/HubspotForm.jsx",
+          "lines": [
+            12,
+            97
+          ],
+          "anchor": "export default function HubspotForm"
+        }
+      ]
+    },
+    "conversion.request-invite-modal": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            273,
+            286
+          ],
+          "anchor": "**Request-invite modal**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/RequestInviteModal.jsx",
+          "lines": [
+            16,
+            213
+          ],
+          "anchor": "export default function"
+        }
+      ]
+    },
+    "conversion.checkout-form": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            595,
+            610
+          ],
+          "anchor": "## 6. Template E"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/MailPage.jsx",
+          "lines": [
+            22,
+            114
+          ],
+          "anchor": "export default function MailPage"
+        }
+      ]
+    },
+    "editorial.story-card": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            534,
+            542
+          ],
+          "anchor": "**c. OurStory (`#our-story`)**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/about/OurStory.jsx",
+          "lines": [
+            4,
+            32
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/motion/marketing.js",
+          "lines": [
+            78,
+            78
+          ],
+          "anchor": "function ourStory("
+        }
+      ]
+    },
+    "editorial.prose-article": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            571,
+            591
+          ],
+          "anchor": "### 1.18 InnerPost"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            614,
+            646
+          ],
+          "anchor": "## 7. Template F"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/InnerPost.jsx",
+          "lines": [
+            9,
+            100
+          ],
+          "anchor": "export default function InnerPost"
+        },
+        {
+          "path": "src/pages/Legal.jsx",
+          "lines": [
+            77,
+            101
+          ],
+          "anchor": "export default function Legal"
+        }
+      ]
+    },
+    "editorial.post-header": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            116,
+            134
+          ],
+          "anchor": "### Layout (`section#inner-post`"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            266,
+            274
+          ],
+          "anchor": "### Top: the post template"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/PostHeader.jsx",
+          "lines": [
+            5,
+            37
+          ],
+          "anchor": "export function Byline("
+        }
+      ]
+    },
+    "editorial.post-body": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            136,
+            194
+          ],
+          "anchor": "### Prose typography"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/Prose.jsx",
+          "lines": [
+            12,
+            41
+          ],
+          "anchor": "export default function Prose"
+        },
+        {
+          "path": "src/components/content/InlineCtaCard.jsx",
+          "lines": [
+            9,
+            41
+          ],
+          "anchor": "export default function InlineCtaCard"
+        }
+      ]
+    },
+    "careers.job-list": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            549,
+            565
+          ],
+          "anchor": "**e. Careers (`#careers`)**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/about/Careers.jsx",
+          "lines": [
+            4,
+            53
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/motion/marketing.js",
+          "lines": [
+            94,
+            94
+          ],
+          "anchor": "function careers("
+        }
+      ]
+    },
+    "listing.post-rows": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            64,
+            88
+          ],
+          "anchor": "### Layout (`section#posts-list`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/ListRows.jsx",
+          "lines": [
+            4,
+            46
+          ],
+          "anchor": "export function ListPosts("
+        }
+      ]
+    },
+    "listing.pagination": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            90,
+            99
+          ],
+          "anchor": "**Pagination**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/Pagination.jsx",
+          "lines": [
+            6,
+            37
+          ],
+          "anchor": "export default function Pagination"
+        }
+      ]
+    },
+    "listing.resource-group": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            233,
+            260
+          ],
+          "anchor": "## 5. Resources index"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/ResourceList.jsx",
+          "lines": [
+            5,
+            21
+          ],
+          "anchor": "export default function ResourceList"
+        },
+        {
+          "path": "src/components/content/ListRows.jsx",
+          "lines": [
+            47,
+            57
+          ],
+          "anchor": "export function LinkList("
+        }
+      ]
+    },
+    "listing.author-list": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            205,
+            214
+          ],
+          "anchor": "## 3. Authors index"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Authors.jsx",
+          "lines": [
+            9,
+            27
+          ],
+          "anchor": "export default function Authors"
+        }
+      ]
+    },
+    "profile.author-bio": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            216,
+            229
+          ],
+          "anchor": "## 4. Author detail"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/AuthorDetail.jsx",
+          "lines": [
+            9,
+            46
+          ],
+          "anchor": "export default function AuthorDetail"
+        }
+      ]
+    },
+    "related.resource-link-grid": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            276,
+            314
+          ],
+          "anchor": "### Related blocks"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/ResourceLinkGrid.jsx",
+          "lines": [
+            9,
+            47
+          ],
+          "anchor": "export default function ResourceLinkGrid"
+        }
+      ]
+    },
+    "related.blog-teasers": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            316,
+            340
+          ],
+          "anchor": "### \"More from the blog\""
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/content/BlogTeaserList.jsx",
+          "lines": [
+            7,
+            44
+          ],
+          "anchor": "export default function BlogTeaserList"
+        }
+      ]
+    },
+    "related.guide-list": {
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            437,
+            457
+          ],
+          "anchor": "### 1.14 ResourceList"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/marketing/ResourceList.jsx",
+          "lines": [
+            9,
+            39
+          ],
+          "anchor": "export default function ResourceList"
+        }
+      ]
+    },
+    "confirmation.thanks": {
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            466,
+            474
+          ],
+          "anchor": "## 9. `/subscribe/`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Subscribe.jsx",
+          "lines": [
+            5,
+            18
+          ],
+          "anchor": "export default function Subscribe"
+        }
+      ]
+    },
+    "legacy.hero": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            144,
+            161
+          ],
+          "anchor": "### 2.2 Hero (band 1)"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            304,
+            306
+          ],
+          "anchor": "### 2.12 Variant table"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            53,
+            104
+          ],
+          "anchor": "export function LegacyHero("
+        }
+      ]
+    },
+    "legacy.band-title": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            163,
+            168
+          ],
+          "anchor": "### 2.3 Intro strip"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            106,
+            157
+          ],
+          "anchor": "export function IntroStrip("
+        }
+      ]
+    },
+    "legacy.feature-row": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            170,
+            193
+          ],
+          "anchor": "### 2.4 Feature row"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            158,
+            185
+          ],
+          "anchor": "export function ShotRow("
+        }
+      ]
+    },
+    "legacy.workflow-row": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            195,
+            208
+          ],
+          "anchor": "### 2.5 Mock-UI"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            280,
+            368
+          ],
+          "anchor": "export function WorkflowRow("
+        }
+      ]
+    },
+    "legacy.inset-row": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            210,
+            216
+          ],
+          "anchor": "### 2.6 Band 4 rows"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            186,
+            278
+          ],
+          "anchor": "export function InsetRow("
+        },
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            370,
+            412
+          ],
+          "anchor": "export function AlwaysCurrentBand("
+        }
+      ]
+    },
+    "legacy.image-card-pair": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            218,
+            222
+          ],
+          "anchor": "### 2.7 Band 5"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            414,
+            422
+          ],
+          "anchor": "function ImageCard("
+        }
+      ]
+    },
+    "legacy.everything-checklist": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            224,
+            234
+          ],
+          "anchor": "### 2.8 Band 6"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            460,
+            491
+          ],
+          "anchor": "export function EverythingBand("
+        }
+      ]
+    },
+    "legacy.pricing-cards": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            236,
+            261
+          ],
+          "anchor": "### 2.9 Band 7"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            575,
+            611
+          ],
+          "anchor": "export function PricingBand("
+        }
+      ]
+    },
+    "legacy.customer-logos": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            288,
+            294
+          ],
+          "anchor": "### 2.11 Band 8"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            638,
+            674
+          ],
+          "anchor": "export function AboutBand("
+        }
+      ]
+    },
+    "legacy.testimonial-swiper": {
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            295,
+            302
+          ],
+          "anchor": "- **Testimonial Swiper**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/legacy/LegacyKit.jsx",
+          "lines": [
+            613,
+            636
+          ],
+          "anchor": "function TestimonialSlide("
+        }
+      ]
+    }
+  },
+  "templates": {
+    "template.home": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            3,
+            3
+          ],
+          "anchor": "# Mosey homepage: clone build spec"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": [
+            15,
+            34
+          ],
+          "anchor": "export default function"
+        }
+      ]
+    },
+    "template.platform-overview": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            599,
+            609
+          ],
+          "anchor": "### 2.1 `/platform/`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Platform.jsx",
+          "lines": [
+            8,
+            22
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            7,
+            7
+          ],
+          "anchor": "{ path: 'platform', page: 'Platform' }"
+        }
+      ]
+    },
+    "template.platform-product": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            611,
+            630
+          ],
+          "anchor": "### 2.2 PlatformProduct template"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/PlatformProduct.jsx",
+          "lines": [
+            42,
+            56
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "{ path: 'platform/:product'"
+        }
+      ]
+    },
+    "template.platform-product-handbooks": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            631,
+            635
+          ],
+          "anchor": "- **`/platform/handbooks/`**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/PlatformProduct.jsx",
+          "lines": [
+            42,
+            56
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "{ path: 'platform/:product'"
+        }
+      ]
+    },
+    "template.platform-product-entity": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            636,
+            638
+          ],
+          "anchor": "- **`/platform/entity-compliance/`**"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/PlatformProduct.jsx",
+          "lines": [
+            42,
+            56
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            8,
+            8
+          ],
+          "anchor": "{ path: 'platform/:product'"
+        }
+      ]
+    },
+    "template.solutions-overview": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            640,
+            653
+          ],
+          "anchor": "### 2.3 `/solutions/`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Solutions.jsx",
+          "lines": [
+            16,
+            33
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            9,
+            9
+          ],
+          "anchor": "{ path: 'solutions', page: 'Solutions' }"
+        }
+      ]
+    },
+    "template.solution-detail": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            655,
+            669
+          ],
+          "anchor": "### 2.4 SolutionDetail template"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/SolutionDetail.jsx",
+          "lines": [
+            45,
+            60
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            10,
+            10
+          ],
+          "anchor": "{ path: 'solutions/:solution'"
+        }
+      ]
+    },
+    "template.solution-detail-telehealth": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            673,
+            675
+          ],
+          "anchor": "- **`/solutions/for-telehealth/`**: a **variant**."
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/SolutionDetail.jsx",
+          "lines": [
+            45,
+            60
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            10,
+            10
+          ],
+          "anchor": "{ path: 'solutions/:solution'"
+        }
+      ]
+    },
+    "template.pricing": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            677,
+            695
+          ],
+          "anchor": "### 2.5 `/pricing/`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/PricingPage.jsx",
+          "lines": [
+            10,
+            19
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            11,
+            11
+          ],
+          "anchor": "{ path: 'pricing'"
+        }
+      ]
+    },
+    "template.about": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            697,
+            699
+          ],
+          "anchor": "### 2.6 `/about/`"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            510,
+            569
+          ],
+          "anchor": "### 1.17 About blocks"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/About.jsx",
+          "lines": [
+            15,
+            36
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            12,
+            12
+          ],
+          "anchor": "{ path: 'about'"
+        }
+      ]
+    },
+    "template.security": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            701,
+            703
+          ],
+          "anchor": "### 2.7 `/security/`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Security.jsx",
+          "lines": [
+            5,
+            7
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            13,
+            13
+          ],
+          "anchor": "{ path: 'security'"
+        }
+      ]
+    },
+    "template.blog-index": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            57,
+            103
+          ],
+          "anchor": "## 1. Blog index"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/BlogIndex.jsx",
+          "lines": [
+            19,
+            56
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            16,
+            16
+          ],
+          "anchor": "{ path: 'blog/page/:page'"
+        }
+      ]
+    },
+    "template.blog-post": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            105,
+            203
+          ],
+          "anchor": "## 2. Blog post"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/BlogPost.jsx",
+          "lines": [
+            14,
+            34
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            17,
+            17
+          ],
+          "anchor": "{ path: 'blog/:slug'"
+        }
+      ]
+    },
+    "template.authors-index": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            205,
+            214
+          ],
+          "anchor": "## 3. Authors index"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Authors.jsx",
+          "lines": [
+            9,
+            27
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            18,
+            18
+          ],
+          "anchor": "{ path: 'authors', page"
+        }
+      ]
+    },
+    "template.author-detail": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            216,
+            229
+          ],
+          "anchor": "## 4. Author detail"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/AuthorDetail.jsx",
+          "lines": [
+            9,
+            46
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            19,
+            19
+          ],
+          "anchor": "{ path: 'authors/:author'"
+        }
+      ]
+    },
+    "template.resources-index": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            233,
+            245
+          ],
+          "anchor": "## 5. Resources index"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Resources.jsx",
+          "lines": [
+            8,
+            18
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            20,
+            20
+          ],
+          "anchor": "{ path: 'resources', page"
+        }
+      ]
+    },
+    "template.resource-category": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            247,
+            258
+          ],
+          "anchor": "## 6. Resource category hub"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/ResourceCategory.jsx",
+          "lines": [
+            10,
+            24
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            21,
+            21
+          ],
+          "anchor": "{ path: 'resources/us/:category', page"
+        }
+      ]
+    },
+    "template.resource-guide": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            262,
+            280
+          ],
+          "anchor": "## 7. Resource guide article"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/ResourceGuide.jsx",
+          "lines": [
+            19,
+            107
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": "{ path: 'resources/us/:category/:leaf'"
+        }
+      ]
+    },
+    "template.guide-landing": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            342,
+            355
+          ],
+          "anchor": "## 8. Gated guide landing"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/GuideLanding.jsx",
+          "lines": [
+            26,
+            41
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            23,
+            23
+          ],
+          "anchor": "{ path: 'p/:guide'"
+        }
+      ]
+    },
+    "template.subscribe": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            466,
+            474
+          ],
+          "anchor": "## 9. `/subscribe/`"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Subscribe.jsx",
+          "lines": [
+            5,
+            18
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            24,
+            24
+          ],
+          "anchor": "{ path: 'subscribe'"
+        }
+      ]
+    },
+    "template.partner-legacy": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            126,
+            142
+          ],
+          "anchor": "### 2.1 Page skeleton"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/LegacyPartnerPage.jsx",
+          "lines": [
+            16,
+            37
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "{ path: 'partners/:partner'"
+        }
+      ]
+    },
+    "template.sales-tax-beta": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            263,
+            286
+          ],
+          "anchor": "### 2.10 A′"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/SalesTaxBeta.jsx",
+          "lines": [
+            11,
+            31
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            30,
+            30
+          ],
+          "anchor": "{ path: 'sales-tax-beta'"
+        }
+      ]
+    },
+    "template.partner-static": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            321,
+            340
+          ],
+          "anchor": "## 3. Template B"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/StaticPartnerPage.jsx",
+          "lines": [
+            23,
+            37
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "{ path: 'partners/:partner'"
+        }
+      ]
+    },
+    "template.partner-platform": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            426,
+            445
+          ],
+          "anchor": "## 4. Template C"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/components/misc/PlatformPartnerPage.jsx",
+          "lines": [
+            30,
+            66
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            26,
+            26
+          ],
+          "anchor": "{ path: 'partners/:partner'"
+        }
+      ]
+    },
+    "template.reinstatement": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            554,
+            564
+          ],
+          "anchor": "## 5. Template D"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Reinstatement.jsx",
+          "lines": [
+            12,
+            29
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "{ path: 'reinstatement'"
+        }
+      ]
+    },
+    "template.mail": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            595,
+            610
+          ],
+          "anchor": "## 6. Template E"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/MailPage.jsx",
+          "lines": [
+            22,
+            114
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            31,
+            31
+          ],
+          "anchor": "{ path: 'mail'"
+        }
+      ]
+    },
+    "template.legal-prose": {
+      "level": "measured",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            614,
+            646
+          ],
+          "anchor": "## 7. Template F"
+        },
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            648,
+            655
+          ],
+          "anchor": "## 8. Template G"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/Legal.jsx",
+          "lines": [
+            77,
+            101
+          ],
+          "anchor": "export default function"
+        },
+        {
+          "path": "src/routes.js",
+          "lines": [
+            27,
+            27
+          ],
+          "anchor": "{ path: 'legal/:doc'"
+        }
+      ]
+    },
+    "template.not-found": {
+      "level": "inferred",
+      "spec": [
+        {
+          "path": "specs/misc.md",
+          "lines": [
+            657,
+            666
+          ],
+          "anchor": "## 9. Skipped and broken routes"
+        }
+      ],
+      "code": [
+        {
+          "path": "src/pages/NotFound.jsx",
+          "lines": [
+            8,
+            26
+          ],
+          "anchor": "export default function"
+        }
+      ]
+    }
+  },
+  "routeInventory": {
+    "source": "src/routes.js + src/data/** (evaluated with node, 2026-10-19)",
+    "posts": 30,
+    "resourceLeaves": {
+      "total": 1736,
+      "payroll": 51,
+      "employee-handbook": 51,
+      "secretary-of-state": 102,
+      "sales-tax": 46,
+      "agencies": 671,
+      "local-payroll": 815
+    },
+    "citations": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          42,
+          49
+        ],
+        "anchor": "| Category slug | Leaf slug pattern | Count | Coverage |"
+      },
+      {
+        "path": "src/data/content/resourceLeaves.js",
+        "lines": [
+          409,
+          409
+        ],
+        "anchor": "export const LEAVES = ["
+      }
+    ]
+  },
+  "deviations": [
+    {
+      "what": "Routes renamed: partner pages live under /partners/:partner, /texas-reinstatement -> /reinstatement, /agency-mail -> /mail, legal PDFs -> /legal/:doc prose",
+      "citation": {
+        "path": "src/routes.js",
+        "lines": [
+          26,
+          26
+        ],
+        "anchor": "{ path: 'partners/:partner'"
+      }
+    },
+    {
+      "what": "Lead/guide forms and the C2 form stack on mobile (stackOnMobile) — intentional fix of the original's cramped 2-column mobile grid",
+      "citation": {
+        "path": "src/components/misc/PlatformPartnerPage.jsx",
+        "lines": [
+          55,
+          55
+        ],
+        "anchor": "stackOnMobile"
+      }
+    },
+    {
+      "what": "btn-red hover #B5444F is a clone addition (original hover CSS is broken)",
+      "citation": {
+        "path": "src/styles/blocks.css",
+        "lines": [
+          12,
+          12
+        ],
+        "anchor": "--nw-btn-red-hover"
+      }
+    },
+    {
+      "what": "Figtree weight axis compensation 450->475, 500->600 (visual match to Circular)",
+      "citation": {
+        "path": "tailwind.config.cjs",
+        "lines": [
+          54,
+          54
+        ],
+        "anchor": "const WGHT = {"
+      }
+    }
+  ],
+  "unresolved": [
+    "ASSET_MANIFEST frames column vs durations (roadmap step 3, dots) — durations used (motion contract discrepancies).",
+    "/p/hr-compliance-audit features-section and leave-your-peo extra section were never measured (content §13); the guide-landing template omits them.",
+    "Heights for split composites (pricing cards vs table, engine intro vs rows, legacy bands) are only measured for the composite block.",
+    "Comparison-row value and form-label word budgets are derived/inferred, not measured.",
+    "Resource leaf count (1,736) comes from evaluating src/data with node; verify_all.py (stdlib only) does not re-derive it."
+  ]
+}

@@ -1,0 +1,5438 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PageSpec",
+  "description": "A page composition for the Northwind clone design system. Styling is owned by section/component contracts; a PageSpec carries no style or token-override field.",
+  "type": "object",
+  "required": [
+    "pageSpecVersion",
+    "template",
+    "route",
+    "nodes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "pageSpecVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "template": {
+      "type": "string",
+      "enum": [
+        "template.home",
+        "template.platform-overview",
+        "template.platform-product",
+        "template.platform-product-handbooks",
+        "template.platform-product-entity",
+        "template.solutions-overview",
+        "template.solution-detail",
+        "template.solution-detail-telehealth",
+        "template.pricing",
+        "template.about",
+        "template.security",
+        "template.blog-index",
+        "template.blog-post",
+        "template.authors-index",
+        "template.author-detail",
+        "template.resources-index",
+        "template.resource-category",
+        "template.resource-guide",
+        "template.guide-landing",
+        "template.subscribe",
+        "template.partner-legacy",
+        "template.sales-tax-beta",
+        "template.partner-static",
+        "template.partner-platform",
+        "template.reinstatement",
+        "template.mail",
+        "template.legal-prose",
+        "template.not-found"
+      ]
+    },
+    "route": {
+      "type": "string",
+      "pattern": "^(/[a-z0-9/_-]*|\\*)$"
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/node"
+      }
+    }
+  },
+  "definitions": {
+    "assetRole": {
+      "type": "string",
+      "enum": [
+        "logo",
+        "customer-logo",
+        "partner-logo",
+        "avatar",
+        "author-photo",
+        "team-photo",
+        "product-screenshot",
+        "font",
+        "icon",
+        "illustration",
+        "background",
+        "animation",
+        "content-image",
+        "editorial-illustration"
+      ]
+    },
+    "assetRoleSource": {
+      "type": "string",
+      "enum": [
+        "placeholder",
+        "supplied"
+      ],
+      "description": "Required for protected roles (logos, people, screenshots): 'placeholder' = an explicit placeholder; 'supplied' = a real file the user provided. A generator may not fabricate either."
+    },
+    "motion": {
+      "type": "object",
+      "required": [
+        "pattern",
+        "reducedMotionFallback"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "enum": [
+            "none",
+            "css-transition",
+            "accordion",
+            "menu-tween",
+            "reveal-on-enter",
+            "pinned-scrub",
+            "auto-advance",
+            "tab-switch",
+            "carousel",
+            "marquee-loop",
+            "visual-loop",
+            "modal-transition"
+          ]
+        },
+        "reducedMotionFallback": {
+          "type": "string",
+          "enum": [
+            "disable-animation",
+            "instant-switch",
+            "no-autoplay",
+            "none-implemented",
+            "none-needed",
+            "scroll-driven-retained",
+            "static-end-state"
+          ]
+        }
+      }
+    },
+    "content.shell.header": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 3
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 50
+        },
+        "items": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 6
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 20
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "ctas"
+      ]
+    },
+    "content.banner.announcement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 25
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 7
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "body",
+        "ctas"
+      ]
+    },
+    "content.shell.footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 10
+          }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 14,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 7
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "body",
+        "ctas"
+      ]
+    },
+    "content.hero.home-tabs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 27
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "body": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 10
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.hero.page": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "platform",
+            "landing"
+          ]
+        },
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 5
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 14
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 30
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "variant",
+        "eyebrow",
+        "heading",
+        "subheading",
+        "images"
+      ]
+    },
+    "content.hero.static": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 16
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 36
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "images"
+      ]
+    },
+    "content.hero.about": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 10
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "eyebrow",
+        "heading",
+        "images"
+      ]
+    },
+    "content.hero.title-band": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 17
+        }
+      },
+      "required": [
+        "eyebrow"
+      ]
+    },
+    "content.hero.guide": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 6
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 24
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "eyebrow",
+        "heading",
+        "subheading",
+        "ctas",
+        "images"
+      ]
+    },
+    "content.proof.logo-marquee": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "images"
+      ]
+    },
+    "content.proof.testimonials": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12
+        },
+        "quotes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 37
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 10
+              },
+              "support": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 78
+              }
+            },
+            "required": [
+              "quote",
+              "name"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "quotes",
+        "images"
+      ]
+    },
+    "content.proof.testimonials-lite": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 16
+        },
+        "quotes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 60
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 10
+              }
+            },
+            "required": [
+              "quote",
+              "name"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "quotes",
+        "images"
+      ]
+    },
+    "content.proof.ecosystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 10
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 25
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 3
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.proof.problem-list": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 28
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 11
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 41
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items"
+      ]
+    },
+    "content.intro.statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 10
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 57
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "body"
+      ]
+    },
+    "content.intro.title-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 85
+        }
+      },
+      "required": [
+        "heading",
+        "subheading"
+      ]
+    },
+    "content.showcase.everything-network": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 6
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "images"
+      ]
+    },
+    "content.showcase.role-tabs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 20
+        },
+        "tabs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "entries": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 9
+                    },
+                    "body": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 44
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "body"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "label",
+              "entries"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 15,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "tabs",
+        "images"
+      ]
+    },
+    "content.showcase.roadmap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 9
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 23
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "items",
+        "images"
+      ]
+    },
+    "content.showcase.scroll-tabs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 6
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 48
+        },
+        "tabs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 6
+              },
+              "entries": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 9
+                    },
+                    "body": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 48
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "body"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "label",
+              "entries"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "tabs",
+        "images"
+      ]
+    },
+    "content.feature.benefit-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 7
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 48
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 7
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 36
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "items"
+      ]
+    },
+    "content.feature.accordion-story": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 49
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 11
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 32
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.feature.checklist-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "A",
+            "B"
+          ]
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 50
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 8
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 34
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 6
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "variant",
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.feature.numbered-intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 7
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 30
+        }
+      },
+      "required": [
+        "heading",
+        "subheading"
+      ]
+    },
+    "content.feature.numbered-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 34
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 20
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.feature.card-grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 48
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 8
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 34
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items"
+      ]
+    },
+    "content.steps.peace-of-mind": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 34
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 13
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 47
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "items",
+        "images"
+      ]
+    },
+    "content.steps.get-started": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 6
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 20
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 9
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 34
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "items",
+        "images"
+      ]
+    },
+    "content.pricing.plan-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 11
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 42
+        },
+        "plans": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              },
+              "price": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              },
+              "fee": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              },
+              "feeLabel": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 26
+              }
+            },
+            "required": [
+              "title",
+              "price"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "plans"
+      ]
+    },
+    "content.pricing.comparison-table": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 8
+              },
+              "values": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 56
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "label",
+              "values"
+            ]
+          }
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 15
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "rows",
+        "body"
+      ]
+    },
+    "content.faq.accordion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 205
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "items"
+      ]
+    },
+    "content.conversion.compliance-cta-card": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 16
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 29
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "body",
+        "images"
+      ]
+    },
+    "content.conversion.bottom-cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 6
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "images"
+      ]
+    },
+    "content.conversion.lead-form": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 20
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 27
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9_/-]+$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "email",
+                  "number",
+                  "tel",
+                  "hidden"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 9
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "items",
+        "fields",
+        "ctas"
+      ]
+    },
+    "content.conversion.guide-form": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "layout": {
+          "type": "string",
+          "enum": [
+            "two-column",
+            "centered"
+          ]
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 19
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 33
+        },
+        "items": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 12
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9_/-]+$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "email",
+                  "number",
+                  "tel",
+                  "hidden"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "layout",
+        "heading",
+        "fields",
+        "ctas"
+      ]
+    },
+    "content.conversion.request-invite-modal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 5
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9_/-]+$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "email",
+                  "number",
+                  "tel",
+                  "hidden"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 2
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "fields",
+        "ctas"
+      ]
+    },
+    "content.conversion.checkout-form": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 2
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 50
+          }
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9_/-]+$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "email",
+                  "number",
+                  "tel",
+                  "hidden"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "eyebrow",
+        "heading",
+        "body",
+        "fields",
+        "ctas"
+      ]
+    },
+    "content.editorial.story-card": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 84
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "body"
+      ]
+    },
+    "content.editorial.prose-article": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 5
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 80,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "p",
+                  "h2",
+                  "h3",
+                  "ul",
+                  "ol",
+                  "table",
+                  "hr",
+                  "img",
+                  "blockquote"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 120
+              },
+              "items": {
+                "type": "array",
+                "maxItems": 60,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxWords": 120
+                }
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "blocks"
+      ]
+    },
+    "content.editorial.post-header": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "author",
+            "date-only"
+          ]
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 21
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 5
+        },
+        "date": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "variant",
+        "heading",
+        "date"
+      ]
+    },
+    "content.editorial.post-body": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 160,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "p",
+                  "h2",
+                  "h3",
+                  "ul",
+                  "ol",
+                  "table",
+                  "hr",
+                  "img",
+                  "blockquote"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 120
+              },
+              "items": {
+                "type": "array",
+                "maxItems": 60,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxWords": 120
+                }
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          }
+        },
+        "ctaCards": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 12
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 37
+              },
+              "buttonLabel": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "buttonHref": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)"
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "blocks"
+      ]
+    },
+    "content.careers.job-list": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 2
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 30
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 10
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 17
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "ctas"
+      ]
+    },
+    "content.listing.post-rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 21
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 209
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 3
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "items",
+        "ctas"
+      ]
+    },
+    "content.listing.pagination": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 1
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 1
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "body",
+        "ctas"
+      ]
+    },
+    "content.listing.resource-group": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 17
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 39
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 815,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 12
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "body",
+        "links"
+      ]
+    },
+    "content.listing.author-list": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 2
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "links"
+      ]
+    },
+    "content.profile.author-bio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 66
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 114,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 21
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 10
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "body",
+        "links",
+        "images"
+      ]
+    },
+    "content.related.resource-link-grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 13
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 19
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 210,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 14
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 2
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "links",
+        "ctas"
+      ]
+    },
+    "content.related.blog-teasers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 5
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 30
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 17
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 167
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.related.guide-list": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 34
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 12
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 45
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 8
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "ctas",
+        "images"
+      ]
+    },
+    "content.confirmation.thanks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 2
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8
+        }
+      },
+      "required": [
+        "heading",
+        "subheading"
+      ]
+    },
+    "content.legacy.hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lockup": {
+          "type": "string",
+          "enum": [
+            "A1",
+            "A2",
+            "A3",
+            "none"
+          ]
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 13
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 35
+        },
+        "ctas": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 6
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#|mailto:[^@\\s]+@example\\.(com|org)$|https://example\\.(com|org)/)",
+                "description": "Relative path, #anchor or an example.com placeholder: generated pages must not link to the measured site's live URLs."
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "lockup",
+        "heading",
+        "subheading",
+        "ctas"
+      ]
+    },
+    "content.legacy.band-title": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 11
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 45
+        }
+      },
+      "required": [
+        "heading",
+        "subheading"
+      ]
+    },
+    "content.legacy.feature-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 37
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 13
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 39
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "images"
+      ]
+    },
+    "content.legacy.workflow-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 37
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 13
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 39
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 13
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items",
+        "body"
+      ]
+    },
+    "content.legacy.inset-row": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 37
+        },
+        "items": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 13
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 39
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "images"
+      ]
+    },
+    "content.legacy.image-card-pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 9
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 37
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "items",
+        "images"
+      ]
+    },
+    "content.legacy.everything-checklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 6
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 11
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 22
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 7
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 24
+              }
+            },
+            "required": [
+              "title",
+              "body"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "subheading",
+        "items"
+      ]
+    },
+    "content.legacy.pricing-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 42
+        },
+        "plans": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "price": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "fee": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "feeLabel": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 22
+              },
+              "features": {
+                "type": "array",
+                "maxItems": 24,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxWords": 20
+                }
+              }
+            },
+            "required": [
+              "title",
+              "price"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "eyebrow",
+        "heading",
+        "subheading",
+        "plans"
+      ]
+    },
+    "content.legacy.customer-logos": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 10
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "images"
+      ]
+    },
+    "content.legacy.testimonial-swiper": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quotes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 81
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 11
+              }
+            },
+            "required": [
+              "quote",
+              "name"
+            ]
+          }
+        },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "assetRole": {
+                "$ref": "#/definitions/assetRole"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 0,
+                "maxWords": 16
+              },
+              "source": {
+                "$ref": "#/definitions/assetRoleSource"
+              },
+              "asset": {
+                "type": "string",
+                "pattern": "^(assets/art/|fonts/|favicon\\.svg$)",
+                "description": "Optional: a path from assets/asset-roles.json (relative to public/)."
+              }
+            },
+            "required": [
+              "assetRole"
+            ]
+          }
+        }
+      },
+      "required": [
+        "quotes",
+        "images"
+      ]
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "banner.announcement",
+            "careers.job-list",
+            "confirmation.thanks",
+            "conversion.bottom-cta",
+            "conversion.checkout-form",
+            "conversion.compliance-cta-card",
+            "conversion.guide-form",
+            "conversion.lead-form",
+            "conversion.request-invite-modal",
+            "editorial.post-body",
+            "editorial.post-header",
+            "editorial.prose-article",
+            "editorial.story-card",
+            "faq.accordion",
+            "feature.accordion-story",
+            "feature.benefit-cards",
+            "feature.card-grid",
+            "feature.checklist-row",
+            "feature.numbered-intro",
+            "feature.numbered-row",
+            "hero.about",
+            "hero.guide",
+            "hero.home-tabs",
+            "hero.page",
+            "hero.static",
+            "hero.title-band",
+            "intro.statement",
+            "intro.title-row",
+            "legacy.band-title",
+            "legacy.customer-logos",
+            "legacy.everything-checklist",
+            "legacy.feature-row",
+            "legacy.hero",
+            "legacy.image-card-pair",
+            "legacy.inset-row",
+            "legacy.pricing-cards",
+            "legacy.testimonial-swiper",
+            "legacy.workflow-row",
+            "listing.author-list",
+            "listing.pagination",
+            "listing.post-rows",
+            "listing.resource-group",
+            "pricing.comparison-table",
+            "pricing.plan-cards",
+            "profile.author-bio",
+            "proof.ecosystem",
+            "proof.logo-marquee",
+            "proof.problem-list",
+            "proof.testimonials",
+            "proof.testimonials-lite",
+            "related.blog-teasers",
+            "related.guide-list",
+            "related.resource-link-grid",
+            "shell.footer",
+            "shell.header",
+            "showcase.everything-network",
+            "showcase.roadmap",
+            "showcase.role-tabs",
+            "showcase.scroll-tabs",
+            "steps.get-started",
+            "steps.peace-of-mind"
+          ]
+        },
+        "content": {
+          "type": "object"
+        },
+        "motion": {
+          "$ref": "#/definitions/motion"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shell.header"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.header"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "banner.announcement"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.banner.announcement"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shell.footer"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.footer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.home-tabs"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.home-tabs"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.page"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.page"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.static"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.static"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.about"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.about"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.title-band"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.title-band"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.guide"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.guide"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.logo-marquee"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.logo-marquee"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.testimonials"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.testimonials"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.testimonials-lite"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.testimonials-lite"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.ecosystem"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.ecosystem"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.problem-list"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.problem-list"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "intro.statement"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.intro.statement"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "intro.title-row"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.intro.title-row"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "showcase.everything-network"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.showcase.everything-network"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "showcase.role-tabs"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.showcase.role-tabs"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "showcase.roadmap"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.showcase.roadmap"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "showcase.scroll-tabs"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.showcase.scroll-tabs"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "feature.benefit-cards"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.feature.benefit-cards"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "feature.accordion-story"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.feature.accordion-story"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "feature.checklist-row"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.feature.checklist-row"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "feature.numbered-intro"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.feature.numbered-intro"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "feature.numbered-row"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.feature.numbered-row"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "feature.card-grid"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.feature.card-grid"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "steps.peace-of-mind"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.steps.peace-of-mind"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "steps.get-started"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.steps.get-started"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "pricing.plan-cards"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.pricing.plan-cards"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "pricing.comparison-table"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.pricing.comparison-table"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "faq.accordion"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.faq.accordion"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conversion.compliance-cta-card"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.conversion.compliance-cta-card"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conversion.bottom-cta"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.conversion.bottom-cta"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conversion.lead-form"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.conversion.lead-form"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conversion.guide-form"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.conversion.guide-form"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conversion.request-invite-modal"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.conversion.request-invite-modal"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conversion.checkout-form"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.conversion.checkout-form"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "editorial.story-card"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.editorial.story-card"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "editorial.prose-article"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.editorial.prose-article"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "editorial.post-header"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.editorial.post-header"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "editorial.post-body"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.editorial.post-body"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "careers.job-list"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.careers.job-list"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "listing.post-rows"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.listing.post-rows"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "listing.pagination"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.listing.pagination"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "listing.resource-group"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.listing.resource-group"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "listing.author-list"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.listing.author-list"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "profile.author-bio"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.profile.author-bio"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "related.resource-link-grid"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.related.resource-link-grid"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "related.blog-teasers"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.related.blog-teasers"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "related.guide-list"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.related.guide-list"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "confirmation.thanks"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.confirmation.thanks"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.hero"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.hero"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.band-title"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.band-title"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.feature-row"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.feature-row"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.workflow-row"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.workflow-row"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.inset-row"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.inset-row"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.image-card-pair"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.image-card-pair"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.everything-checklist"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.everything-checklist"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.pricing-cards"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.pricing-cards"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.customer-logos"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.customer-logos"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "legacy.testimonial-swiper"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.legacy.testimonial-swiper"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

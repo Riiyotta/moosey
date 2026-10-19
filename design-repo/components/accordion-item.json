@@ -1,0 +1,21 @@
+{
+  "id": "accordion-item",
+  "purpose": "Accordion button + content (single-open lists).",
+  "composedOf": [
+    "chevron",
+    "paragraph"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/index.css",
+        "lines": [
+          101,
+          101
+        ],
+        "anchor": ".accordion-content {"
+      }
+    ]
+  }
+}

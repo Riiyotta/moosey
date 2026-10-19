@@ -1,0 +1,22 @@
+{
+  "id": "list-row",
+  "purpose": "ListRow: title column + summary column + divider.",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "button-arrow"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/ListRows.jsx",
+        "lines": [
+          16,
+          16
+        ],
+        "anchor": "export function ListRow("
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "id": "feature.accordion-story",
+  "category": "FEATURE",
+  "label": "Pinned accordion story card",
+  "purpose": "One card: title + description, a 3-item accordion that drives an image swap; pinned through a 2000u runway on desktop. Repeat the node for more cards.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 12,
+        "budgetBasis": "spec ~42c -> ceil(42*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 49,
+        "budgetBasis": "spec ~173c -> ceil(173*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 11,
+        "budgetBasis": "spec ~39c -> ceil(39*1.25/4.5)",
+        "bodyMaxWords": 32,
+        "bodyRequired": true,
+        "bodyBudgetBasis": "spec ~113c -> ceil(113*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 3,
+        "assetRoles": [
+          "product-screenshot"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          136,
+          191
+        ],
+        "anchor": "### 1.3 FeatureGroup"
+      },
+      {
+        "path": "specs/content.md",
+        "lines": [
+          427,
+          457
+        ],
+        "anchor": "### 8.5 FeatureGroup"
+      },
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          465,
+          502
+        ],
+        "anchor": "### 4.2 FeatureGroup"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/blocks/FeatureGroup.jsx",
+        "lines": [
+          16,
+          104
+        ],
+        "anchor": "export default function FeatureGroup"
+      },
+      {
+        "path": "src/motion/blocks.js",
+        "lines": [
+          118,
+          118
+        ],
+        "anchor": "export function useFeatureGroupMotion"
+      },
+      {
+        "path": "src/motion/content.js",
+        "lines": [
+          163,
+          163
+        ],
+        "anchor": "export function useFeatureGroupMotion"
+      }
+    ]
+  },
+  "implementedBy": "src/components/blocks/FeatureGroup.jsx",
+  "implementedByAll": [
+    "src/components/blocks/FeatureGroup.jsx",
+    "src/components/content/FeatureGroup.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "pinned-scrub",
+      "accordion",
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "pinned-scrub",
+    "reducedMotionFallbacks": {
+      "pinned-scrub": "scroll-driven-retained",
+      "accordion": "none-implemented",
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "2813u (1 card)",
+      "tablet": "655u",
+      "mobile": "824u",
+      "pinRunwayU": 2000
+    }
+  },
+  "constraints": {},
+  "assetRoles": [
+    "product-screenshot"
+  ],
+  "retrieval": {
+    "semanticLabel": "feature/accordion-story",
+    "kind": "feature-story",
+    "summary": "One card: title + description, a 3-item accordion that drives an image swap; pinned through a 2000u runway on desktop. Repeat the node for more cards.",
+    "keywords": [
+      "accordion",
+      "card",
+      "feature",
+      "pinned",
+      "story"
+    ],
+    "pageFamilies": [
+      "template.guide-landing",
+      "template.partner-platform",
+      "template.platform-overview",
+      "template.platform-product",
+      "template.solution-detail"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Pinned accordion story card",
+    "contentFields": 4,
+    "copyCapacityWords": 190,
+    "imageCapacity": 3,
+    "itemCapacity": 3
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "conversion.compliance-cta-card",
+      "conversion.guide-form",
+      "conversion.lead-form",
+      "feature.accordion-story",
+      "feature.benefit-cards",
+      "hero.page",
+      "hero.static",
+      "intro.title-row",
+      "proof.logo-marquee"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "product-screenshot"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

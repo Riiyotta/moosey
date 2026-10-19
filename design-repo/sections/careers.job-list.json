@@ -1,0 +1,121 @@
+{
+  "id": "careers.job-list",
+  "category": "CAREERS",
+  "label": "Careers list",
+  "purpose": "Title + description row, up to 2 job rows (title + truncated tags) and a red button.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 2,
+        "budgetBasis": "spec ~7c -> ceil(7*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 30,
+        "budgetBasis": "spec ~105c -> ceil(105*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 2,
+        "titleMaxWords": 10,
+        "budgetBasis": "spec ~35c -> ceil(35*1.25/4.5)",
+        "bodyMaxWords": 17,
+        "bodyRequired": false,
+        "bodyBudgetBasis": "spec ~61c -> ceil(61*1.25/4.5)"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 4,
+        "budgetBasis": "spec ~14c -> ceil(14*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          549,
+          565
+        ],
+        "anchor": "**e. Careers (`#careers`)**"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/marketing/about/Careers.jsx",
+        "lines": [
+          4,
+          53
+        ],
+        "anchor": "export default function"
+      },
+      {
+        "path": "src/motion/marketing.js",
+        "lines": [
+          94,
+          94
+        ],
+        "anchor": "function careers("
+      }
+    ]
+  },
+  "implementedBy": "src/components/marketing/about/Careers.jsx",
+  "implementedByAll": [
+    "src/components/marketing/about/Careers.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter",
+      "css-transition"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation",
+      "css-transition": "none-implemented"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "careers/job-list",
+    "kind": "job-list",
+    "summary": "Title + description row, up to 2 job rows (title + truncated tags) and a red button.",
+    "keywords": [
+      "careers",
+      "job",
+      "list"
+    ],
+    "pageFamilies": [
+      "template.about"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Careers list",
+    "contentFields": 4,
+    "copyCapacityWords": 90,
+    "imageCapacity": 0,
+    "itemCapacity": 2
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "proof.logo-marquee"
+    ]
+  }
+}

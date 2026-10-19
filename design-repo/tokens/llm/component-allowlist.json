@@ -1,0 +1,445 @@
+{
+  "version": "1",
+  "sections": [
+    "banner.announcement",
+    "careers.job-list",
+    "confirmation.thanks",
+    "conversion.bottom-cta",
+    "conversion.checkout-form",
+    "conversion.compliance-cta-card",
+    "conversion.guide-form",
+    "conversion.lead-form",
+    "conversion.request-invite-modal",
+    "editorial.post-body",
+    "editorial.post-header",
+    "editorial.prose-article",
+    "editorial.story-card",
+    "faq.accordion",
+    "feature.accordion-story",
+    "feature.benefit-cards",
+    "feature.card-grid",
+    "feature.checklist-row",
+    "feature.numbered-intro",
+    "feature.numbered-row",
+    "hero.about",
+    "hero.guide",
+    "hero.home-tabs",
+    "hero.page",
+    "hero.static",
+    "hero.title-band",
+    "intro.statement",
+    "intro.title-row",
+    "legacy.band-title",
+    "legacy.customer-logos",
+    "legacy.everything-checklist",
+    "legacy.feature-row",
+    "legacy.hero",
+    "legacy.image-card-pair",
+    "legacy.inset-row",
+    "legacy.pricing-cards",
+    "legacy.testimonial-swiper",
+    "legacy.workflow-row",
+    "listing.author-list",
+    "listing.pagination",
+    "listing.post-rows",
+    "listing.resource-group",
+    "pricing.comparison-table",
+    "pricing.plan-cards",
+    "profile.author-bio",
+    "proof.ecosystem",
+    "proof.logo-marquee",
+    "proof.problem-list",
+    "proof.testimonials",
+    "proof.testimonials-lite",
+    "related.blog-teasers",
+    "related.guide-list",
+    "related.resource-link-grid",
+    "shell.footer",
+    "shell.header",
+    "showcase.everything-network",
+    "showcase.roadmap",
+    "showcase.role-tabs",
+    "showcase.scroll-tabs",
+    "steps.get-started",
+    "steps.peace-of-mind"
+  ],
+  "components": [
+    "accordion-item",
+    "benefit-card",
+    "byline",
+    "carousel",
+    "compliance-cta-card",
+    "flyout-panel",
+    "inline-cta-card",
+    "legacy-accent-panel",
+    "legacy-lockup",
+    "legacy-plan-card",
+    "legacy-slider",
+    "legacy-text-block",
+    "link-list",
+    "list-row",
+    "mobile-menu",
+    "pricing-card",
+    "prose",
+    "static-form",
+    "tab-bar",
+    "ticker-row",
+    "timer-ring",
+    "title-row"
+  ],
+  "primitives": [
+    "button",
+    "button-arrow",
+    "button-circle",
+    "check-icon",
+    "chevron",
+    "heading",
+    "image",
+    "inline-svg",
+    "input",
+    "line-art",
+    "link",
+    "pagination-dots",
+    "paragraph",
+    "pill",
+    "rich-text",
+    "slider-arrow"
+  ],
+  "nodeProperties": [
+    "type",
+    "content",
+    "motion"
+  ],
+  "contentFields": {
+    "banner.announcement": [
+      "body",
+      "ctas"
+    ],
+    "careers.job-list": [
+      "ctas",
+      "heading",
+      "items",
+      "subheading"
+    ],
+    "confirmation.thanks": [
+      "heading",
+      "subheading"
+    ],
+    "conversion.bottom-cta": [
+      "heading",
+      "images"
+    ],
+    "conversion.checkout-form": [
+      "body",
+      "ctas",
+      "eyebrow",
+      "fields",
+      "heading"
+    ],
+    "conversion.compliance-cta-card": [
+      "body",
+      "heading",
+      "images"
+    ],
+    "conversion.guide-form": [
+      "ctas",
+      "fields",
+      "heading",
+      "items",
+      "layout",
+      "subheading"
+    ],
+    "conversion.lead-form": [
+      "ctas",
+      "fields",
+      "heading",
+      "items"
+    ],
+    "conversion.request-invite-modal": [
+      "ctas",
+      "fields",
+      "heading"
+    ],
+    "editorial.post-body": [
+      "blocks",
+      "ctaCards",
+      "images"
+    ],
+    "editorial.post-header": [
+      "author",
+      "date",
+      "heading",
+      "images",
+      "variant"
+    ],
+    "editorial.prose-article": [
+      "blocks",
+      "heading"
+    ],
+    "editorial.story-card": [
+      "body",
+      "heading"
+    ],
+    "faq.accordion": [
+      "heading",
+      "items"
+    ],
+    "feature.accordion-story": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "feature.benefit-cards": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "feature.card-grid": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "feature.checklist-row": [
+      "ctas",
+      "heading",
+      "images",
+      "items",
+      "subheading",
+      "variant"
+    ],
+    "feature.numbered-intro": [
+      "heading",
+      "subheading"
+    ],
+    "feature.numbered-row": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "hero.about": [
+      "eyebrow",
+      "heading",
+      "images"
+    ],
+    "hero.guide": [
+      "ctas",
+      "eyebrow",
+      "heading",
+      "images",
+      "subheading"
+    ],
+    "hero.home-tabs": [
+      "body",
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "hero.page": [
+      "eyebrow",
+      "heading",
+      "images",
+      "subheading",
+      "variant"
+    ],
+    "hero.static": [
+      "ctas",
+      "eyebrow",
+      "heading",
+      "images",
+      "subheading"
+    ],
+    "hero.title-band": [
+      "eyebrow",
+      "heading"
+    ],
+    "intro.statement": [
+      "body",
+      "heading"
+    ],
+    "intro.title-row": [
+      "heading",
+      "subheading"
+    ],
+    "legacy.band-title": [
+      "heading",
+      "subheading"
+    ],
+    "legacy.customer-logos": [
+      "heading",
+      "images"
+    ],
+    "legacy.everything-checklist": [
+      "eyebrow",
+      "heading",
+      "items",
+      "subheading"
+    ],
+    "legacy.feature-row": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "legacy.hero": [
+      "ctas",
+      "heading",
+      "images",
+      "lockup",
+      "subheading"
+    ],
+    "legacy.image-card-pair": [
+      "images",
+      "items"
+    ],
+    "legacy.inset-row": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "legacy.pricing-cards": [
+      "eyebrow",
+      "heading",
+      "images",
+      "plans",
+      "subheading"
+    ],
+    "legacy.testimonial-swiper": [
+      "images",
+      "quotes"
+    ],
+    "legacy.workflow-row": [
+      "body",
+      "heading",
+      "items",
+      "subheading"
+    ],
+    "listing.author-list": [
+      "heading",
+      "links"
+    ],
+    "listing.pagination": [
+      "body",
+      "ctas"
+    ],
+    "listing.post-rows": [
+      "ctas",
+      "items"
+    ],
+    "listing.resource-group": [
+      "body",
+      "heading",
+      "links"
+    ],
+    "pricing.comparison-table": [
+      "body",
+      "heading",
+      "rows"
+    ],
+    "pricing.plan-cards": [
+      "heading",
+      "plans",
+      "subheading"
+    ],
+    "profile.author-bio": [
+      "body",
+      "ctas",
+      "images",
+      "links"
+    ],
+    "proof.ecosystem": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "proof.logo-marquee": [
+      "heading",
+      "images"
+    ],
+    "proof.problem-list": [
+      "heading",
+      "items",
+      "subheading"
+    ],
+    "proof.testimonials": [
+      "heading",
+      "images",
+      "quotes"
+    ],
+    "proof.testimonials-lite": [
+      "heading",
+      "images",
+      "quotes"
+    ],
+    "related.blog-teasers": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "related.guide-list": [
+      "ctas",
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "related.resource-link-grid": [
+      "ctas",
+      "heading",
+      "links",
+      "subheading"
+    ],
+    "shell.footer": [
+      "body",
+      "ctas",
+      "images",
+      "items"
+    ],
+    "shell.header": [
+      "ctas",
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "showcase.everything-network": [
+      "heading",
+      "images"
+    ],
+    "showcase.roadmap": [
+      "heading",
+      "images",
+      "items"
+    ],
+    "showcase.role-tabs": [
+      "heading",
+      "images",
+      "tabs"
+    ],
+    "showcase.scroll-tabs": [
+      "heading",
+      "images",
+      "subheading",
+      "tabs"
+    ],
+    "steps.get-started": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ],
+    "steps.peace-of-mind": [
+      "heading",
+      "images",
+      "items",
+      "subheading"
+    ]
+  }
+}

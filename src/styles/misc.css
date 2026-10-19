@@ -1,0 +1,331 @@
+/*
+ * specs/misc.md — partner landing pages, one-offs and legal pages.
+ * Template A (legacy partner kit) is fixed px on standard Tailwind spacing/type; its overridden
+ * Tailwind palette (§2 "Legacy palette") lives here as CSS variables, used through arbitrary values
+ * (e.g. `bg-[color:var(--lg-teal-800)]`) because tailwind.config.cjs replaces the default palette.
+ */
+:root {
+  --lg-teal-800: #006265; /* hero bg */
+  --lg-teal-100: #f7fbfb; /* intro strip, feature block, team block */
+  --lg-teal-300: #eff7f7; /* pricing section */
+  --lg-teal-500: #b0d3d4; /* hero sub-paragraph */
+  --lg-teal-600: #20bcc2; /* pricing card 1 */
+  --lg-teal-700: #008489; /* pricing card 2, mock-UI accents */
+  --lg-teal-400: #caeaea; /* highlighted note in pricing card 2 */
+  --lg-teal-200: #f4fbf9; /* pricing pill (op .6) */
+  --lg-rose-700: #dc5868; /* icon tiles, pricing card 3, buttons */
+  --lg-rose-800: #da4052; /* pricing eyebrow; button hover */
+  --lg-rose-500: #dc918f; /* accent panel (op .2) */
+  --lg-lime-500: #55b559; /* check icons */
+  --lg-white: #f3f1ec; /* site override of white */
+  --lg-zinc-800: #292a2d;
+  --lg-zinc-600: #787986;
+  --lg-zinc-900: #18181b; /* pricing pill text (Tailwind default zinc-900) */
+  --lg-gray-900: #111827;
+  --lg-gray-800: #1f2937;
+  --lg-gray-600: #4b5563;
+  --lg-gray-500: #6b7280;
+  --lg-gray-400: #9ca3af;
+  --lg-gray-300: #d1d5db;
+  --lg-gray-200: #e5e7eb;
+  --lg-gray-100: #f3f4f6;
+  --lg-gray-50: #f9fafb;
+  --lg-red-100: #fee2e2;
+  --lg-red-200: #fecaca;
+  --lg-red-700: #b91c1c;
+  --lg-swiper-blue: #007aff; /* Swiper default bullet colour (not themed on the original) */
+  --lg-ease: cubic-bezier(0.4, 0, 0.2, 1); /* Tailwind default transition */
+}
+
+/*
+ * Legacy weights (§2 "Font weights"): the original only ships Circular Book/Medium, so weight 400/500 render
+ * Circular Medium, 300 renders Book and 600–800 render Medium + synthetic bold. Mapped onto the Figtree axis
+ * with the project's calibration (Book ≈ wght 475, Medium ≈ wght 600, tailwind.config.cjs WGHT); the synthetic
+ * bold runs all render alike, at one heavier axis value.
+ */
+.legacy {
+  font-variation-settings: 'wght' 600;
+}
+.legacy .font-light {
+  font-variation-settings: 'wght' 475;
+}
+.legacy .font-semibold,
+.legacy .font-bold,
+.legacy .font-extrabold {
+  font-variation-settings: 'wght' 760;
+}
+
+/* Tailwind default `ring-1 ring-black/5 shadow-xl` (rounded-xl screenshots, §2.4) */
+.lg-shot {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* §2.9 pricing button: hover bg/border #DA4052, Tailwind default 150ms transition */
+.lg-plan-btn {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: var(--lg-ease);
+  transition-duration: 150ms;
+}
+.lg-plan-btn:hover {
+  background-color: var(--lg-rose-800);
+  border-color: var(--lg-rose-800);
+}
+.lg-plan-btn:focus-visible,
+.lg-modal-submit:focus-visible,
+.lg-mail-submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--lg-rose-700);
+}
+
+/* Swiper 8 default pagination (§2.11): 8px bullets, m 0 4px, #000 op .2, active #007AFF op 1, bottom 10px */
+.lg-pagination {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
+.lg-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.2;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+}
+.lg-bullet.is-active {
+  background: var(--lg-swiper-blue);
+  opacity: 1;
+}
+
+/* §2.10 request-invite modal + §6 mail form inputs */
+.lg-input {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--lg-gray-300);
+  color: var(--lg-gray-900);
+  appearance: none;
+}
+.lg-input::placeholder {
+  color: var(--lg-gray-500);
+  opacity: 1;
+}
+.lg-mail-input::placeholder {
+  color: var(--lg-gray-400);
+}
+.lg-input:focus {
+  outline: none;
+  border-color: var(--lg-rose-700);
+  box-shadow: 0 0 0 1px var(--lg-rose-700);
+}
+.lg-modal-submit,
+.lg-mail-submit {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: var(--lg-ease);
+  transition-duration: 150ms;
+}
+.lg-modal-submit:hover:not(:disabled),
+.lg-mail-submit:hover:not(:disabled) {
+  background-color: var(--lg-rose-800);
+  border-color: var(--lg-rose-800);
+}
+.lg-mail-submit {
+  transition-duration: 0.4s; /* `.btn` transition .4s (§6) */
+}
+.lg-mail-submit:disabled {
+  background-color: var(--lg-gray-200);
+  border-color: transparent;
+  color: var(--lg-gray-500);
+}
+.lg-modal-close {
+  color: var(--lg-zinc-600);
+  transition: color 0.15s var(--lg-ease);
+}
+.lg-modal-close:hover {
+  color: var(--lg-zinc-800);
+}
+
+/* ------------------------------------------------------------------ */
+/* §7 Template F — inner-post prose (all u-based)                       */
+/* ------------------------------------------------------------------ */
+.misc-prose {
+  color: rgba(32, 52, 53, 0.7);
+}
+.misc-prose p,
+.misc-prose ul,
+.misc-prose ol {
+  margin-top: calc(var(--u) * 24);
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: -0.01em;
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+  color: rgba(32, 52, 53, 0.7);
+}
+.misc-prose ul,
+.misc-prose ol {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 12);
+}
+.misc-prose ol {
+  list-style: decimal;
+  padding-left: calc(var(--u) * 40);
+}
+.misc-prose ul.is-list {
+  list-style: disc outside;
+  padding-left: calc(var(--u) * 40);
+}
+.misc-prose h2 {
+  margin-top: calc(var(--u) * 40);
+  font-size: calc(var(--u) * 17);
+  line-height: calc(var(--u) * 22.1);
+  letter-spacing: calc(var(--u) * -0.68);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #203435;
+}
+.misc-prose h3 {
+  margin-top: calc(var(--u) * 24);
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: calc(var(--u) * -0.26);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #203435;
+}
+.misc-prose a {
+  color: #285d60;
+  text-decoration: underline;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.misc-prose a:visited {
+  color: #285d60cc;
+}
+.misc-prose a:hover {
+  color: #285d6099;
+}
+.misc-prose strong {
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+  color: #203435;
+}
+.misc-prose em {
+  font-style: italic;
+  font-size: calc(var(--u) * 12);
+  line-height: calc(var(--u) * 19.2);
+  letter-spacing: calc(var(--u) * -0.12);
+  color: rgba(32, 52, 53, 0.7);
+}
+.misc-prose hr {
+  margin-top: calc(var(--u) * 24);
+  border: 0;
+  border-top: 1px solid #285d6033;
+}
+.misc-prose table {
+  width: 100%;
+  margin: calc(var(--u) * 24) auto 0;
+  border: 1px solid #285d6033;
+  border-radius: calc(var(--u) * 8); /* does not clip: preflight collapses borders (as on the original) */
+}
+.misc-prose thead {
+  background: #203435;
+}
+.misc-prose th {
+  padding: calc(var(--u) * 10) calc(var(--u) * 15);
+  border: 1px solid #f3f1ec;
+  text-align: center;
+  color: #f3f1ec;
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 20.8);
+  letter-spacing: calc(var(--u) * -0.26);
+  font-weight: 500;
+  font-variation-settings: 'wght' 600;
+}
+.misc-prose td {
+  padding: calc(var(--u) * 5);
+  border: 1px solid #285d6033;
+  text-align: left;
+  color: rgba(32, 52, 53, 0.7);
+  font-size: calc(var(--u) * 12);
+  line-height: calc(var(--u) * 19.2);
+  letter-spacing: calc(var(--u) * -0.12);
+  font-weight: 450;
+  font-variation-settings: 'wght' 475;
+}
+@media (min-width: 481px) {
+  .misc-prose p,
+  .misc-prose ul,
+  .misc-prose ol {
+    font-size: calc(var(--u) * 14);
+    line-height: calc(var(--u) * 22.4);
+  }
+  .misc-prose em {
+    letter-spacing: calc(var(--u) * -0.24);
+  }
+}
+@media (min-width: 1025px) {
+  .misc-prose p,
+  .misc-prose ul,
+  .misc-prose ol {
+    font-size: calc(var(--u) * 17);
+    line-height: calc(var(--u) * 27.2);
+  }
+  .misc-prose h2 {
+    font-size: calc(var(--u) * 24);
+    line-height: calc(var(--u) * 31.2);
+    letter-spacing: calc(var(--u) * -0.96);
+  }
+  .misc-prose h3 {
+    font-size: calc(var(--u) * 18);
+    line-height: calc(var(--u) * 28.8);
+    letter-spacing: calc(var(--u) * -0.36);
+  }
+  .misc-prose em {
+    font-size: calc(var(--u) * 15);
+    line-height: calc(var(--u) * 24);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Legacy palette shorthands (text / bg / border), Template A + E       */
+/* ------------------------------------------------------------------ */
+.lgc-white { color: var(--lg-white); }
+.lgc-teal-500 { color: var(--lg-teal-500); }
+.lgc-teal-700 { color: var(--lg-teal-700); }
+.lgc-rose-800 { color: var(--lg-rose-800); }
+.lgc-zinc-900 { color: var(--lg-zinc-900); }
+.lgc-zinc-800 { color: var(--lg-zinc-800); }
+.lgc-zinc-600 { color: var(--lg-zinc-600); }
+.lgc-gray-900 { color: var(--lg-gray-900); }
+.lgc-gray-600 { color: var(--lg-gray-600); }
+.lgc-gray-500 { color: var(--lg-gray-500); }
+.lgc-gray-400 { color: var(--lg-gray-400); }
+.lgc-gray-300 { color: var(--lg-gray-300); }
+.lgc-gray-200 { color: var(--lg-gray-200); }
+.lgc-black { color: #000; }
+.lgbg-teal-800 { background-color: var(--lg-teal-800); }
+.lgbg-teal-700 { background-color: var(--lg-teal-700); }
+.lgbg-teal-600 { background-color: var(--lg-teal-600); }
+.lgbg-teal-400 { background-color: var(--lg-teal-400); }
+.lgbg-teal-300 { background-color: var(--lg-teal-300); }
+.lgbg-teal-200 { background-color: var(--lg-teal-200); }
+.lgbg-teal-100 { background-color: var(--lg-teal-100); }
+.lgbg-rose-700 { background-color: var(--lg-rose-700); }
+.lgbg-rose-500 { background-color: var(--lg-rose-500); }
+.lgbg-white { background-color: var(--lg-white); }
+.lgbg-gray-800 { background-color: var(--lg-gray-800); }
+.lgbg-gray-100 { background-color: var(--lg-gray-100); }
+.lgbg-gray-50 { background-color: var(--lg-gray-50); }
+.lgbg-pure-white { background-color: #fff; }
+.lgb-teal-700 { border-color: var(--lg-teal-700); }
+.lgb-teal-600 { border-color: var(--lg-teal-600); }
+.lgb-rose-700 { border-color: var(--lg-rose-700); }
+.lgb-gray-300 { border-color: var(--lg-gray-300); }
+.lgb-gray-200 { border-color: var(--lg-gray-200); }
+

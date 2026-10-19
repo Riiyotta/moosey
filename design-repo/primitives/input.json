@@ -1,0 +1,18 @@
+{
+  "id": "input",
+  "purpose": "Static form input (HubSpot look-alike).",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          487,
+          487
+        ],
+        "anchor": "**Input `.hs-input`:**"
+      }
+    ]
+  }
+}

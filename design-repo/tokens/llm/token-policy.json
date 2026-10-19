@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "rawValuesAllowed": false,
+  "rawValueRestrictions": {
+    "color": "forbidden",
+    "typography": "forbidden",
+    "radius": "forbidden",
+    "elevation": "forbidden",
+    "motion": "forbidden",
+    "component": "forbidden",
+    "layout": "forbidden"
+  },
+  "overrides": {
+    "perInstance": "none",
+    "note": "PageSpec has no per-instance style or token-override field; styling is owned by section/component contracts. Drift is tested at the catalog/policy layer (verify_all.py)."
+  },
+  "enforcement": {
+    "catalogPolicyParity": "machine-checked by extraction/verify_all.py",
+    "foundationCodeParity": "machine-checked against tailwind.config.cjs + CSS variables + src/motion/core.js when src/ is present"
+  }
+}

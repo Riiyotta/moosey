@@ -1,0 +1,38 @@
+{
+  "$description": "Component tokens for tab-bar.",
+  "component": "tab-bar",
+  "selector": "ul.tab-links + indicator",
+  "tokens": {
+    "inactiveOpacity": {
+      "$value": 0.4
+    },
+    "track": {
+      "$value": "1u {color.green} @ .2"
+    },
+    "indicatorColor": {
+      "$value": "{color.green}"
+    },
+    "indicatorRadius": {
+      "$value": "{radius.indicator}"
+    },
+    "indicatorHeight": {
+      "$value": {
+        "desktop": "4u",
+        "mobile": "2u"
+      }
+    },
+    "indicatorMotion": {
+      "$value": ".5s power2.out"
+    }
+  },
+  "citations": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": [
+        130,
+        134
+      ],
+      "anchor": "- **Tab bar** (hero, compliance):"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "listing.author-list",
+  "category": "LISTING",
+  "label": "Author list",
+  "purpose": "h1 then a prose bullet list of author links; no gap under the h1 (quirk).",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 2,
+        "budgetBasis": "spec ~7c -> ceil(7*1.25/4.5)"
+      },
+      "links": {
+        "type": "link[]",
+        "required": true,
+        "maxItems": 8,
+        "maxWords": 5,
+        "budgetBasis": "spec ~18c -> ceil(18*1.25/4.5)"
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          205,
+          214
+        ],
+        "anchor": "## 3. Authors index"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/pages/Authors.jsx",
+        "lines": [
+          9,
+          27
+        ],
+        "anchor": "export default function Authors"
+      }
+    ]
+  },
+  "implementedBy": "src/pages/Authors.jsx",
+  "implementedByAll": [
+    "src/pages/Authors.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "primaryPattern": "none",
+    "reducedMotionFallbacks": {
+      "none": "none-needed"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [],
+  "retrieval": {
+    "semanticLabel": "listing/author-list",
+    "kind": "list",
+    "summary": "h1 then a prose bullet list of author links; no gap under the h1 (quirk).",
+    "keywords": [
+      "author",
+      "list"
+    ],
+    "pageFamilies": [
+      "template.authors-index"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Author list",
+    "contentFields": 2,
+    "copyCapacityWords": 42,
+    "imageCapacity": 0,
+    "itemCapacity": 8
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "shell.header"
+    ]
+  }
+}

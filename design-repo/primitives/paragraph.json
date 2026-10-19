@@ -1,0 +1,18 @@
+{
+  "id": "paragraph",
+  "purpose": "p1-p4 / cp body tokens.",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "tailwind.config.cjs",
+        "lines": [
+          37,
+          37
+        ],
+        "anchor": "p2: { m:"
+      }
+    ]
+  }
+}

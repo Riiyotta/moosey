@@ -1,0 +1,23 @@
+{
+  "id": "legacy-plan-card",
+  "purpose": "Legacy pricing card.",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "button",
+    "check-icon"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          501,
+          501
+        ],
+        "anchor": "function PlanCard("
+      }
+    ]
+  }
+}

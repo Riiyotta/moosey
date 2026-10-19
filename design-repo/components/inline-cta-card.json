@@ -1,0 +1,22 @@
+{
+  "id": "inline-cta-card",
+  "purpose": "In-article green2 CTA card with radial glow.",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "button"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/InlineCtaCard.jsx",
+        "lines": [
+          9,
+          9
+        ],
+        "anchor": "export default function InlineCtaCard"
+      }
+    ]
+  }
+}

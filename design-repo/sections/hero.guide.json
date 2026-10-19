@@ -1,0 +1,130 @@
+{
+  "id": "hero.guide",
+  "category": "HERO",
+  "label": "Gated guide hero",
+  "purpose": "Eyebrow, h1, description, red button jumping to the form anchor, guide-cover visual partly covered by the next section.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "budgetBasis": "spec ~8c -> ceil(8*1.25/4.5)"
+      },
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "budgetBasis": "spec ~19c -> ceil(19*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 24,
+        "budgetBasis": "spec ~85c -> ceil(85*1.25/4.5)"
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 4,
+        "budgetBasis": "spec ~12c -> ceil(12*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 1,
+        "assetRoles": [
+          "editorial-illustration"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/content.md",
+        "lines": [
+          357,
+          380
+        ],
+        "anchor": "### 8.1 Hero"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/content/GuideHero.jsx",
+        "lines": [
+          8,
+          48
+        ],
+        "anchor": "export default function GuideHero"
+      },
+      {
+        "path": "src/motion/content.js",
+        "lines": [
+          92,
+          92
+        ],
+        "anchor": "export function useGuideHeroMotion"
+      }
+    ]
+  },
+  "implementedBy": "src/components/content/GuideHero.jsx",
+  "implementedByAll": [
+    "src/components/content/GuideHero.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "782u",
+      "tablet": "774u",
+      "mobile": "452u"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "editorial-illustration"
+  ],
+  "retrieval": {
+    "semanticLabel": "hero/guide",
+    "kind": "hero",
+    "summary": "Eyebrow, h1, description, red button jumping to the form anchor, guide-cover visual partly covered by the next section.",
+    "keywords": [
+      "gated",
+      "guide",
+      "hero"
+    ],
+    "pageFamilies": [
+      "template.guide-landing"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Gated guide hero",
+    "contentFields": 5,
+    "copyCapacityWords": 37,
+    "imageCapacity": 1,
+    "itemCapacity": 0
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "shell.header"
+    ]
+  }
+}

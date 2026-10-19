@@ -1,0 +1,18 @@
+{
+  "id": "button-arrow",
+  "purpose": "`.btn-arrow` 'Read more' button with a red hook arrow.",
+  "tokens": "tokens/20-component/button-arrow.json",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/ListRows.jsx",
+        "lines": [
+          37,
+          37
+        ],
+        "anchor": "export function ArrowLinkButton("
+      }
+    ]
+  }
+}

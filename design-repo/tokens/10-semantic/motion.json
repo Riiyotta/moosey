@@ -1,0 +1,94 @@
+{
+  "$description": "Semantic roles. Values are references to foundation tokens; role NAMES are an inferred vocabulary (basis: inferred).",
+  "inferred": true,
+  "tokens": {
+    "motion.reveal": {
+      "$type": "motionPreset",
+      "$value": {
+        "ease": "{ease.Eas17}",
+        "duration": "{duration.duration567}",
+        "from": {
+          "y": "100u",
+          "autoAlpha": 0
+        }
+      },
+      "basis": "default section reveal (title/desc y 100u, .567s Eas17)",
+      "inferredName": true
+    },
+    "motion.reveal-hero": {
+      "$type": "motionPreset",
+      "$value": {
+        "ease": "{ease.Eas17}",
+        "duration": "{duration.f32}",
+        "from": {
+          "y": "30u",
+          "autoAlpha": 0
+        }
+      },
+      "basis": "PageHero/GuideHero text reveal",
+      "inferredName": true
+    },
+    "motion.tab-out": {
+      "$type": "motionPreset",
+      "$value": {
+        "ease": "{ease.Eas49}",
+        "duration": "0.267s",
+        "to": {
+          "scale": 0.86,
+          "autoAlpha": 0
+        }
+      },
+      "basis": "hero/ScrollTabs outgoing tab",
+      "inferredName": true
+    },
+    "motion.tab-in": {
+      "$type": "motionPreset",
+      "$value": {
+        "ease": "{ease.Eas1739}",
+        "duration": "0.3s",
+        "from": {
+          "scale": 0.86,
+          "autoAlpha": 0
+        }
+      },
+      "basis": "hero/ScrollTabs incoming tab",
+      "inferredName": true
+    },
+    "motion.image-swap-out": {
+      "$type": "motionPreset",
+      "$value": {
+        "ease": "{ease.Eas66}",
+        "duration": "{duration.f20}"
+      },
+      "basis": "FeatureGroup images out",
+      "inferredName": true
+    },
+    "motion.image-swap-in": {
+      "$type": "motionPreset",
+      "$value": {
+        "ease": "{ease.Eas17}",
+        "duration": "{duration.f20}"
+      },
+      "basis": "FeatureGroup target image in",
+      "inferredName": true
+    },
+    "motion.accordion": {
+      "$type": "transition",
+      "$value": {
+        "ease": "{ease.accordion}",
+        "duration": "{duration.transition-500}"
+      },
+      "basis": "accordion content + icon",
+      "inferredName": true
+    },
+    "motion.hover": {
+      "$type": "transition",
+      "$value": {
+        "ease": "{ease.css-ease}",
+        "duration": "{duration.transition-375}"
+      },
+      "basis": "card bg/icon, slider arrows, pricing rows",
+      "inferredName": true
+    }
+  }
+}

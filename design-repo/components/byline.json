@@ -1,0 +1,21 @@
+{
+  "id": "byline",
+  "purpose": "Byline figure: avatar, author, '|', date.",
+  "composedOf": [
+    "image",
+    "link"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/content/PostHeader.jsx",
+        "lines": [
+          5,
+          5
+        ],
+        "anchor": "export function Byline("
+      }
+    ]
+  }
+}

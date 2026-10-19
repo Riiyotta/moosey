@@ -1,0 +1,60 @@
+{
+  "repositoryId": "mosey-northwind-design-repo",
+  "site": "mosey (Northwind clone)",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "repositoryVersion": "0.1.0",
+  "pageSpecVersion": "0.1.0",
+  "allowlistVersion": "1",
+  "versionFieldNote": "allowlistVersion is machine-checked (verify_all.py fails if it differs from tokens/llm/component-allowlist.json). pageSpecVersion is pinned as a const in the schema and checked against it. repositoryVersion is a documentation-only marker.",
+  "defaultTheme": "light",
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "theme": {
+    "id": "light",
+    "file": "tokens/themes/light.json"
+  },
+  "sourceProject": {
+    "framework": "React 18 + Vite + Tailwind CSS v3 + GSAP 3",
+    "measuredFrom": "a third-party live marketing site (see CLONE_SPEC.md line 1); brand 'Northwind', copy and art are placeholders",
+    "measuredAt": "2026-10-16 / 2026-10-19",
+    "builtAt": "2026-10-19"
+  },
+  "generatedBy": "design-repo-extraction (specs + code citations; see README)",
+  "counts": {
+    "sections": 61,
+    "templates": 28,
+    "routes": 1824,
+    "routePatterns": 25,
+    "primitives": 16,
+    "components": 22,
+    "assets": 154,
+    "tokens": {
+      "foundation": 215,
+      "semantic": 55,
+      "component": 68,
+      "layout": 13
+    },
+    "themes": 1,
+    "rules": 11
+  },
+  "entryPoints": {
+    "tokenCatalog": "tokens/llm/token-catalog.json",
+    "tokenPolicy": "tokens/llm/token-policy.json",
+    "componentAllowlist": "tokens/llm/component-allowlist.json",
+    "compatibilityGraph": "compatibility/graph.json",
+    "assetContract": "assets/asset-roles.json",
+    "motionContract": "motion/motion-contract.json",
+    "templates": "templates/templates.json",
+    "pagespecSchema": "schema/pagespec.schema.json",
+    "examplePageSpec": "schema/example.pagespec.json",
+    "semanticValidate": "schema/semantic_validate.py",
+    "draft7Fallback": "schema/_draft7.py",
+    "adversarialSuite": "schema/tests/adversarial_test.py",
+    "admission": "extraction/verify_all.py",
+    "driftProof": "extraction/prove_drift.py",
+    "measuredValues": "extraction/measured-values.json",
+    "defaultTheme": "tokens/themes/light.json"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "legacy-text-block",
+  "purpose": "Legacy row title/lead/feature list.",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "check-icon"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/misc/legacy/LegacyKit.jsx",
+        "lines": [
+          334,
+          334
+        ],
+        "anchor": "function TextBlock("
+      }
+    ]
+  }
+}

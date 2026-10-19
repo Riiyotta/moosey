@@ -1,0 +1,22 @@
+{
+  "id": "compliance-cta-card",
+  "purpose": "ComplianceCtaCard (inline use).",
+  "composedOf": [
+    "heading",
+    "paragraph",
+    "inline-svg"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/components/blocks/GenericCta.jsx",
+        "lines": [
+          23,
+          23
+        ],
+        "anchor": "export function ComplianceCtaCard("
+      }
+    ]
+  }
+}

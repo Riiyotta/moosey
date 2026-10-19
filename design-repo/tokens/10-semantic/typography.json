@@ -1,0 +1,96 @@
+{
+  "$description": "Semantic roles. Values are references to foundation tokens; role NAMES are an inferred vocabulary (basis: inferred).",
+  "inferred": true,
+  "tokens": {
+    "typography.display": {
+      "$type": "typography",
+      "$value": "{type.h0}",
+      "basis": "\"Everything\" giant headline (h0)",
+      "inferredName": true
+    },
+    "typography.heading.page": {
+      "$type": "typography",
+      "$value": "{type.h3}",
+      "basis": "hero h1 and every section title use the h3 token",
+      "inferredName": true
+    },
+    "typography.heading.story": {
+      "$type": "typography",
+      "$value": "{type.h1}",
+      "basis": "roadmap title (h1 token)",
+      "inferredName": true
+    },
+    "typography.heading.card": {
+      "$type": "typography",
+      "$value": "{type.h5}",
+      "basis": "step titles, quotes, card titles",
+      "inferredName": true
+    },
+    "typography.heading.list": {
+      "$type": "typography",
+      "$value": "{type.h6}",
+      "basis": "list titles, FAQ questions",
+      "inferredName": true
+    },
+    "typography.stat": {
+      "$type": "typography",
+      "$value": "{type.h2}",
+      "basis": "benefits card values",
+      "inferredName": true
+    },
+    "typography.body": {
+      "$type": "typography",
+      "$value": "{type.p2}",
+      "basis": "body copy",
+      "inferredName": true
+    },
+    "typography.body-small": {
+      "$type": "typography",
+      "$value": "{type.p3}",
+      "basis": "hero desc, card desc",
+      "inferredName": true
+    },
+    "typography.caption": {
+      "$type": "typography",
+      "$value": "{type.p4}",
+      "basis": "list desc, plan desc",
+      "inferredName": true
+    },
+    "typography.label": {
+      "$type": "typography",
+      "$value": "{type.p1}",
+      "basis": "eyebrows, author name",
+      "inferredName": true
+    },
+    "typography.nav": {
+      "$type": "typography",
+      "$value": "{type.nav}",
+      "basis": "header/footer/menu links",
+      "inferredName": true
+    },
+    "typography.tab": {
+      "$type": "typography",
+      "$value": "{type.segment}",
+      "basis": "tab labels",
+      "inferredName": true
+    },
+    "typography.price": {
+      "$type": "typography",
+      "$value": "{type.ch1}",
+      "basis": "plan price",
+      "inferredName": true
+    },
+    "typography.button": {
+      "$type": "typography",
+      "$value": "{type.button-large}",
+      "basis": "`.btn` label",
+      "inferredName": true
+    },
+    "typography.prose": {
+      "$type": "typography",
+      "$value": "{type.p1-b}",
+      "basis": "article/excerpt body",
+      "inferredName": true
+    }
+  }
+}

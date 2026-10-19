@@ -1,0 +1,20 @@
+{
+  "id": "legacy-slider",
+  "purpose": "useLegacySwiper (autoplay 5s, 300ms ease).",
+  "composedOf": [
+    "pagination-dots"
+  ],
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "src/motion/misc.js",
+        "lines": [
+          43,
+          43
+        ],
+        "anchor": "export function useLegacySwiper("
+      }
+    ]
+  }
+}

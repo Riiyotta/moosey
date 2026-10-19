@@ -1,0 +1,125 @@
+{
+  "id": "feature.numbered-row",
+  "category": "FEATURE",
+  "label": "Numbered feature row",
+  "purpose": "Number + title + description, a 3-row check list and a product image.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 8,
+        "budgetBasis": "spec ~28c -> ceil(28*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 34,
+        "budgetBasis": "spec ~119c -> ceil(119*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 20,
+        "budgetBasis": "spec ~69c -> ceil(69*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 1,
+        "assetRoles": [
+          "product-screenshot"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          263,
+          278
+        ],
+        "anchor": "**Items** (`ul.features-list`"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/blocks/Engine.jsx",
+        "lines": [
+          27,
+          66
+        ],
+        "anchor": "<ul className=\"features-list"
+      },
+      {
+        "path": "src/motion/blocks.js",
+        "lines": [
+          178,
+          178
+        ],
+        "anchor": "function itemTimeline("
+      }
+    ]
+  },
+  "implementedBy": "src/components/blocks/Engine.jsx",
+  "implementedByAll": [
+    "src/components/blocks/Engine.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json"
+  },
+  "constraints": {},
+  "assetRoles": [
+    "product-screenshot"
+  ],
+  "retrieval": {
+    "semanticLabel": "feature/numbered-row",
+    "kind": "feature-row",
+    "summary": "Number + title + description, a 3-row check list and a product image.",
+    "keywords": [
+      "feature",
+      "numbered",
+      "row"
+    ],
+    "pageFamilies": [
+      "template.platform-overview"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Numbered feature row",
+    "contentFields": 4,
+    "copyCapacityWords": 102,
+    "imageCapacity": 1,
+    "itemCapacity": 3
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "feature.numbered-intro",
+      "feature.numbered-row"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "product-screenshot"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

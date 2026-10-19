@@ -1,0 +1,164 @@
+{
+  "id": "shell.header",
+  "category": "SHELL",
+  "label": "Fixed pill header",
+  "purpose": "Brand wordmark, 6 desktop nav links (last with a 'New' pill), click-open Platform flyout, burger + mobile menu below 1025px.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 7,
+        "maxWords": 3,
+        "budgetBasis": "spec ~9c -> ceil(9*1.25/4.5)"
+      },
+      "heading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 12,
+        "budgetBasis": "spec ~43c -> ceil(43*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 50,
+        "budgetBasis": "spec ~180c -> ceil(180*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": false,
+        "maxItems": 4,
+        "titleMaxWords": 6,
+        "budgetBasis": "spec ~20c -> ceil(20*1.25/4.5)",
+        "bodyMaxWords": 20,
+        "bodyRequired": false,
+        "bodyBudgetBasis": "spec ~70c -> ceil(70*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 5,
+        "assetRoles": [
+          "logo",
+          "icon"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          156,
+          212
+        ],
+        "anchor": "## 2. Header"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/Navbar.jsx",
+        "lines": [
+          18,
+          217
+        ],
+        "anchor": "export default function Navbar"
+      }
+    ]
+  },
+  "implementedBy": "src/components/Navbar.jsx",
+  "implementedByAll": [
+    "src/components/Navbar.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "menu-tween"
+    ],
+    "primaryPattern": "css-transition",
+    "reducedMotionFallbacks": {
+      "css-transition": "none-implemented",
+      "menu-tween": "instant-switch"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "52u pill",
+      "note": "fixed; no scroll-state change"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "icon",
+    "logo"
+  ],
+  "retrieval": {
+    "semanticLabel": "shell/header",
+    "kind": "header",
+    "summary": "Brand wordmark, 6 desktop nav links (last with a 'New' pill), click-open Platform flyout, burger + mobile menu below 1025px.",
+    "keywords": [
+      "fixed",
+      "header",
+      "pill"
+    ],
+    "pageFamilies": [
+      "template.about",
+      "template.author-detail",
+      "template.authors-index",
+      "template.blog-index",
+      "template.blog-post",
+      "template.guide-landing",
+      "template.home",
+      "template.legal-prose",
+      "template.mail",
+      "template.not-found",
+      "template.partner-legacy",
+      "template.partner-platform",
+      "template.partner-static",
+      "template.platform-overview",
+      "template.platform-product",
+      "template.platform-product-entity",
+      "template.platform-product-handbooks",
+      "template.pricing",
+      "template.reinstatement",
+      "template.resource-category",
+      "template.resource-guide",
+      "template.resources-index",
+      "template.sales-tax-beta",
+      "template.security",
+      "template.solution-detail",
+      "template.solution-detail-telehealth",
+      "template.solutions-overview",
+      "template.subscribe"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Fixed pill header",
+    "contentFields": 5,
+    "copyCapacityWords": 187,
+    "imageCapacity": 5,
+    "itemCapacity": 4
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "^",
+      "banner.announcement"
+    ]
+  },
+  "protectedContent": {
+    "must-not-fabricate": true,
+    "roles": [
+      "logo"
+    ],
+    "rule": "Protected images must carry source: placeholder|supplied in a PageSpec; a generator may not draw, recolour or invent them."
+  }
+}

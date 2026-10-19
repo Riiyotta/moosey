@@ -1,0 +1,1094 @@
+{
+  "$comment": "IA of the Northwind clone (React + Vite + Tailwind v3) whose design was measured from mosey.com. Derived from src/routes.js, src/pages/*, src/data/** compositions. Brand, copy and art are placeholders. Hand-edit this file only; IA.md and matrix.csv are generated.",
+  "meta": {
+    "source": "/Users/riyaghosh/V3/mosey (src/routes.js + page compositions); original structure from mosey.com sitemap (2,220 URLs)",
+    "status": "measured-from-codebase",
+    "productionApproved": false,
+    "totalRoutes": 1825,
+    "totalTemplates": 34,
+    "generatedBy": "ia-builder skill; compositions read from code"
+  },
+  "categories": {
+    "SHELL": "Site chrome rendered by the shared Layout around every route: announcement banner, fixed header, footer.",
+    "HERO": "The page-opening block that states what the route is about.",
+    "PROOF": "Social proof: customer logo tickers, testimonials, stat cards.",
+    "FEATURES": "Product explanation modules that are NOT scroll-pinned.",
+    "NARRATIVE": "Scroll-pinned or scroll-scrubbed storytelling sections (GSAP ScrollTrigger pins).",
+    "COMMERCE": "Plans, prices and plan comparison.",
+    "CONVERSION": "Calls to action, FAQs and forms that move a visitor to sign up or contact.",
+    "CONTENT": "Long-form body content: prose, legal text, company story, confirmations.",
+    "DIRECTORY": "Index and navigation lists over a collection: post lists, resource link lists, related links, pagination.",
+    "LEGACY": "Blocks from the older px-based partner page kit (its own palette and slider), used only by partner template A and its cut-down variant."
+  },
+  "sections": {
+    "shell.announcement-banner": {
+      "category": "SHELL",
+      "description": "Full-width dark-green strip above the header with one linked announcement sentence; scrolls away; sets --banner-height.",
+      "scope": "Homepage only (1 route).",
+      "implementedBy": "src/components/Banner.jsx"
+    },
+    "shell.header": {
+      "category": "SHELL",
+      "description": "Fixed pill header: wordmark, primary nav, click-open Platform flyout, burger-driven mobile/tablet menu.",
+      "scope": "Every route (all 1825).",
+      "implementedBy": "src/components/Navbar.jsx"
+    },
+    "shell.footer": {
+      "category": "SHELL",
+      "description": "Dark-green footer: wordmark, two link columns, legal links, social icons, desktop edge line art.",
+      "scope": "Every route (all 1825).",
+      "implementedBy": "src/components/Footer.jsx"
+    },
+    "hero.home-tabs": {
+      "category": "HERO",
+      "description": "Homepage hero: headline + side description over three auto-advancing illustrated tabs with timer rings and a popup CTA after the last tab.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Hero.jsx"
+    },
+    "hero.page-platform": {
+      "category": "HERO",
+      "description": "PageHero platform variant: eyebrow, black h1, description, large absolutely positioned product visual with corner line art; staggered reveal.",
+      "scope": "Platform overview only.",
+      "implementedBy": "src/components/blocks/PageHero.jsx (variant platform)"
+    },
+    "hero.page-landing": {
+      "category": "HERO",
+      "description": "PageHero landing variant: eyebrow, h1 with green span, description, in-flow 1080u visual that scales in.",
+      "scope": "Payroll, tax and handbooks product pages plus the for-hr and for-telehealth solution pages (5 routes).",
+      "implementedBy": "src/components/blocks/PageHero.jsx (variant landing)"
+    },
+    "hero.static": {
+      "category": "HERO",
+      "description": "HeroStatic: centered eyebrow/h1/description over a looping line-art illustration with edge line art; optional red button row; no text reveal.",
+      "scope": "Entity product, solutions overview (+smb), reinstatement, and every static and platform partner page (12 routes).",
+      "implementedBy": "src/components/blocks/HeroStatic.jsx"
+    },
+    "hero.about": {
+      "category": "HERO",
+      "description": "About hero: eyebrow and title rising in, wide team illustration scaling from .95.",
+      "scope": "About page only.",
+      "implementedBy": "src/components/marketing/about/AboutHero.jsx"
+    },
+    "hero.guide": {
+      "category": "HERO",
+      "description": "Gated-guide hero: eyebrow, title, description, CTA button and a book-cover image partly overlapped by the next section; staggered reveal.",
+      "scope": "Every guide landing except the form-only newsletter guide (7 routes).",
+      "implementedBy": "src/components/content/GuideHero.jsx"
+    },
+    "hero.title-band": {
+      "category": "HERO",
+      "description": "Plain title band: small eyebrow over an h1/h2 on a light background, no image, no motion.",
+      "scope": "Blog index pages and author detail pages (9 routes).",
+      "implementedBy": "src/components/content/PageTitleBand.jsx"
+    },
+    "hero.post-header": {
+      "category": "HERO",
+      "description": "Article header: h1, avatar + author + date byline (date-only on resource guides), featured image.",
+      "scope": "Blog posts and resource guide leaves (1766 routes).",
+      "implementedBy": "src/components/content/PostHeader.jsx"
+    },
+    "hero.legacy-cobrand": {
+      "category": "LEGACY",
+      "description": "Old-style partner hero: optional co-brand lockup (partner wordmark × Northwind), title, two subtitles, signup CTA.",
+      "scope": "Legacy partner pages and the sales-tax beta page (4 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > LegacyHero"
+    },
+    "proof.logo-ticker-home": {
+      "category": "PROOF",
+      "description": "Homepage 'Trusted by' block: title and two opposite-direction logo rows that run from page load and never stop; 80/260 padding.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/LogoMarquee.jsx"
+    },
+    "proof.logo-ticker": {
+      "category": "PROOF",
+      "description": "Configurable logo ticker (110u padding; one or two rows; white or orange edge fades) with an optional title.",
+      "scope": "Payroll, tax and entity products, for-hr, telehealth, about, the lead-form platform partner page, and every guide that includes a trusted strip (13 routes).",
+      "implementedBy": "src/components/blocks/LogoMarquee.jsx; guides use a copy in content/GuideTrusted.jsx"
+    },
+    "proof.benefit-stats": {
+      "category": "PROOF",
+      "description": "Three stat cards (large figure + one-sentence description) with a middle-first reveal.",
+      "scope": "Homepage, platform overview and solutions overview (+smb) (4 routes).",
+      "implementedBy": "src/components/Benefits.jsx"
+    },
+    "proof.benefit-cards": {
+      "category": "PROOF",
+      "description": "BenefitsVariant: title row and three cards with image icons that go from 40% to full opacity on hover; 110u padding.",
+      "scope": "Payroll, tax and handbooks products, for-hr, telehealth, reinstatement and the full-stack guides (10 routes).",
+      "implementedBy": "src/components/blocks/BenefitsVariant.jsx; guides use a copy in content/GuideBenefits.jsx"
+    },
+    "proof.testimonials": {
+      "category": "PROOF",
+      "description": "Testimonial carousel with counter and prev/next arrows (Splide-style 400ms easing).",
+      "scope": "Homepage, solutions overview (+smb) and the static partner pages (9 routes).",
+      "implementedBy": "src/components/Testimonials.jsx"
+    },
+    "proof.testimonials-lite": {
+      "category": "PROOF",
+      "description": "Lighter single-row testimonial block with its own reveal.",
+      "scope": "Telehealth solution page only.",
+      "implementedBy": "src/components/marketing/TestimonialsLite.jsx"
+    },
+    "features.statement": {
+      "category": "FEATURES",
+      "description": "Short two-column statement: large heading with green span and a muted paragraph; text slides up with stagger.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Statement.jsx"
+    },
+    "features.everything": {
+      "category": "FEATURES",
+      "description": "Giant masked 'Everything' headline over a network illustration whose lines draw on once and whose dots then loop.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/Everything.jsx"
+    },
+    "features.role-tabs": {
+      "category": "FEATURES",
+      "description": "Four role tabs (sliding indicator, out/in text + image swap) beside a list of benefits, plus an inline green CTA card.",
+      "scope": "Homepage only.",
+      "implementedBy": "src/components/RoleTabs.jsx"
+    },
+    "features.benefit-group": {
+      "category": "FEATURES",
+      "description": "Three-tab variant of the role tabs without the gradient, with the compliance CTA card inline.",
+      "scope": "Handbooks product only.",
+      "implementedBy": "src/components/blocks/BenefitGroup.jsx"
+    },
+    "features.feature-list-animated": {
+      "category": "FEATURES",
+      "description": "FeatureList variant A: alternating text/list + image rows; text slides up, list rows stagger 5f, image scales from .98.",
+      "scope": "Platform overview, handbooks product, reinstatement and the static partner pages (9 routes).",
+      "implementedBy": "src/components/blocks/FeatureList.jsx (variant A)"
+    },
+    "features.feature-list-static": {
+      "category": "FEATURES",
+      "description": "FeatureList variant B: the same alternating rows rendered static (no reveal); optional red button.",
+      "scope": "Payroll, tax and entity products and telehealth (4 routes).",
+      "implementedBy": "src/components/blocks/FeatureList.jsx (variant B)"
+    },
+    "features.ecosystem": {
+      "category": "FEATURES",
+      "description": "Ecosystem diagram block showing how the product connects to payroll and HR tools.",
+      "scope": "Platform overview and solutions overview (+smb) (3 routes).",
+      "implementedBy": "src/components/blocks/Ecosystem.jsx"
+    },
+    "features.engine": {
+      "category": "FEATURES",
+      "description": "Engine block: headline and grid of capability items describing the rules engine.",
+      "scope": "Platform overview only.",
+      "implementedBy": "src/components/blocks/Engine.jsx"
+    },
+    "features.problem-list": {
+      "category": "FEATURES",
+      "description": "Problem list: title and numbered list of pain points; static.",
+      "scope": "For-hr solution page only.",
+      "implementedBy": "src/components/marketing/ProblemList.jsx"
+    },
+    "features.card-grid": {
+      "category": "FEATURES",
+      "description": "Six-card feature grid with tinted icon tiles; static.",
+      "scope": "For-hr solution page only.",
+      "implementedBy": "src/components/marketing/FeatureCardGrid.jsx"
+    },
+    "features.guide-covers": {
+      "category": "FEATURES",
+      "description": "Row of downloadable-guide cards (book-cover art, title, arrow link).",
+      "scope": "For-hr solution page only.",
+      "implementedBy": "src/components/marketing/ResourceList.jsx"
+    },
+    "features.intro-row": {
+      "category": "FEATURES",
+      "description": "Title + description intro row, side by side on md+, stacked on mobile; static.",
+      "scope": "Platform partner C1 only.",
+      "implementedBy": "src/components/misc/PlatformPartnerPage.jsx > IntroRow"
+    },
+    "narrative.roadmap": {
+      "category": "NARRATIVE",
+      "description": "Three-step roadmap pinned and scrubbed by scroll: progress bar, 01–03 counter, step text and image swap.",
+      "scope": "Homepage and solutions overview (+smb) (3 routes).",
+      "implementedBy": "src/components/Roadmap.jsx"
+    },
+    "narrative.peace-steps": {
+      "category": "NARRATIVE",
+      "description": "Homepage 'peace of mind' four-step section: sticky animated image on desktop, carousel below lg.",
+      "scope": "Homepage and reinstatement (2 routes).",
+      "implementedBy": "src/components/PeaceOfMind.jsx"
+    },
+    "narrative.get-started": {
+      "category": "NARRATIVE",
+      "description": "GetStarted: 3–4 step variant of the peace-of-mind section with static images; desktop scrubbed pin, carousel below lg.",
+      "scope": "Payroll, handbooks and entity products, solutions overview (+smb), for-hr and all static and platform partner pages (14 routes).",
+      "implementedBy": "src/components/blocks/GetStarted.jsx"
+    },
+    "narrative.feature-group": {
+      "category": "NARRATIVE",
+      "description": "FeatureGroup: card(s) pinned near viewport centre over a 2000u runway; scroll progress opens accordion items and swaps the image.",
+      "scope": "Platform overview, payroll and tax products, for-hr, both platform partner pages and the full-stack guides (10 routes).",
+      "implementedBy": "src/components/blocks/FeatureGroup.jsx; guides use a copy in content/FeatureGroup.jsx"
+    },
+    "narrative.scroll-tabs": {
+      "category": "NARRATIVE",
+      "description": "ScrollTabs: four tabs pinned 20% from the top over a 3000u runway; scroll progress picks the tab; hash opens a tab; stacked cards below lg.",
+      "scope": "Entity product and solutions overview (+smb) (3 routes).",
+      "implementedBy": "src/components/blocks/ScrollTabs.jsx"
+    },
+    "commerce.pricing": {
+      "category": "COMMERCE",
+      "description": "Three plan cards that pin and collapse over a plan-comparison accordion table.",
+      "scope": "Homepage, pricing, solutions overview (+smb), and every static and platform partner page (12 routes).",
+      "implementedBy": "src/components/Pricing.jsx"
+    },
+    "commerce.legacy-pricing": {
+      "category": "LEGACY",
+      "description": "Old-style pricing band: partner logo, three plan cards in an autoplay slider (3-up ≥1260px).",
+      "scope": "Legacy partner pages only (3 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > PricingBand"
+    },
+    "conversion.faq-home": {
+      "category": "CONVERSION",
+      "description": "Homepage FAQ accordion with the site's fixed question set (one open at a time).",
+      "scope": "Homepage, pricing, solutions overview (+smb) and payroll product (5 routes).",
+      "implementedBy": "src/components/Faq.jsx"
+    },
+    "conversion.faq": {
+      "category": "CONVERSION",
+      "description": "Prop-driven FAQ accordion (title + items, selectable background); same geometry as the homepage FAQ.",
+      "scope": "Handbooks product, for-hr and both platform partner pages (4 routes).",
+      "implementedBy": "src/components/blocks/FaqVariant.jsx; guides use a copy in content/GuideFaq.jsx"
+    },
+    "conversion.faq-guide": {
+      "category": "CONVERSION",
+      "description": "Guide FAQ: data-driven FAQ with a three-part title (before / green / after).",
+      "scope": "Full-stack guides and the report guide (5 routes).",
+      "implementedBy": "src/components/content/GuideFaq.jsx"
+    },
+    "conversion.bottom-cta": {
+      "category": "CONVERSION",
+      "description": "Closing green CTA band with looping illustration and sign-up button.",
+      "scope": "Most routes; absent only on security, legal/status, subscribe, authors, mail, sales-tax beta, legacy partner pages and the two short guides.",
+      "implementedBy": "src/components/BottomCta.jsx"
+    },
+    "conversion.cta-card": {
+      "category": "CONVERSION",
+      "description": "Standalone compliance CTA card that rises 100px on enter and loops its art.",
+      "scope": "Payroll, tax and entity products, for-hr, telehealth, reinstatement and both platform partner pages (8 routes).",
+      "implementedBy": "src/components/blocks/GenericCta.jsx"
+    },
+    "conversion.lead-form": {
+      "category": "CONVERSION",
+      "description": "Two-column lead capture (pitch list + local static form; stacks on mobile when stackOnMobile).",
+      "scope": "Telehealth and platform partner C2 (2 routes).",
+      "implementedBy": "src/components/blocks/LeadForm.jsx"
+    },
+    "conversion.guide-form": {
+      "category": "CONVERSION",
+      "description": "Guide download form section (split or centered newsletter variant), local-only validation and success state.",
+      "scope": "All 8 guide landings.",
+      "implementedBy": "src/components/content/GuideFormSection.jsx"
+    },
+    "conversion.inline-cta": {
+      "category": "CONVERSION",
+      "description": "Inline CTA card with glow placed inside or after an article body.",
+      "scope": "Resource guide leaves (1736 routes).",
+      "implementedBy": "src/components/content/InlineCtaCard.jsx"
+    },
+    "conversion.invite-modal": {
+      "category": "LEGACY",
+      "description": "Request-invite modal form (Esc to close, consumer-domain check, local success state).",
+      "scope": "Sales-tax beta page only.",
+      "implementedBy": "src/components/misc/RequestInviteModal.jsx"
+    },
+    "conversion.mail-signup": {
+      "category": "CONVERSION",
+      "description": "Checkout-style mail-handling sign-up: form beside an info panel; local validation.",
+      "scope": "Mail page only.",
+      "implementedBy": "src/pages/MailPage.jsx"
+    },
+    "content.prose": {
+      "category": "CONTENT",
+      "description": "Article body with full prose typography (h2–h4, lists, tables in a scroll wrapper, blockquotes) and optional inline CTA/form blocks.",
+      "scope": "Blog posts and resource guide leaves (1766 routes).",
+      "implementedBy": "src/components/content/Prose.jsx"
+    },
+    "content.inner-post": {
+      "category": "CONTENT",
+      "description": "Rich-text page body (h2, p, ul, hr, inline links) in a narrow column; no CTA.",
+      "scope": "Security page only.",
+      "implementedBy": "src/components/marketing/InnerPost.jsx"
+    },
+    "content.legal-prose": {
+      "category": "CONTENT",
+      "description": "Prose + table template for legal and status documents (sample text).",
+      "scope": "Four legal documents and status (5 routes).",
+      "implementedBy": "src/pages/Legal.jsx"
+    },
+    "content.not-found": {
+      "category": "CONTENT",
+      "description": "404 message in the prose shell with a link home.",
+      "scope": "Catch-all route for unknown URLs (1 route).",
+      "implementedBy": "src/pages/NotFound.jsx"
+    },
+    "content.about-intro": {
+      "category": "CONTENT",
+      "description": "Two-column title + description with text slide-up.",
+      "scope": "About page only.",
+      "implementedBy": "src/components/marketing/about/TitleWithDesc.jsx"
+    },
+    "content.our-story": {
+      "category": "CONTENT",
+      "description": "Company story block with background fade and staggered text.",
+      "scope": "About page only.",
+      "implementedBy": "src/components/marketing/about/OurStory.jsx"
+    },
+    "content.careers": {
+      "category": "CONTENT",
+      "description": "Careers block: title, description, list of open roles with tags, CTA button.",
+      "scope": "About page only.",
+      "implementedBy": "src/components/marketing/about/Careers.jsx"
+    },
+    "content.thanks": {
+      "category": "CONTENT",
+      "description": "Short centered 'thanks' confirmation (heading + sentence); footer pinned to viewport bottom.",
+      "scope": "Subscribe page only.",
+      "implementedBy": "src/pages/Subscribe.jsx"
+    },
+    "content.author-profile": {
+      "category": "CONTENT",
+      "description": "Author photo, bio and list of that author's articles.",
+      "scope": "Author detail pages (6 routes).",
+      "implementedBy": "src/pages/AuthorDetail.jsx"
+    },
+    "directory.post-list": {
+      "category": "DIRECTORY",
+      "description": "List of post rows (title, excerpt, arrow button) ten per page.",
+      "scope": "Blog index pages (3 routes).",
+      "implementedBy": "src/components/content/ListRows.jsx > ListPosts"
+    },
+    "directory.pagination": {
+      "category": "DIRECTORY",
+      "description": "NN/TT counter with previous/next circle buttons.",
+      "scope": "Blog index pages (3 routes).",
+      "implementedBy": "src/components/content/Pagination.jsx"
+    },
+    "directory.author-list": {
+      "category": "DIRECTORY",
+      "description": "Author index: title and one row per author linking to their page.",
+      "scope": "Authors index only.",
+      "implementedBy": "src/pages/Authors.jsx"
+    },
+    "directory.resource-links": {
+      "category": "DIRECTORY",
+      "description": "Grouped resource link rows with arrow buttons (category groups on the index; per-state leaves on a hub).",
+      "scope": "Resources index and every category hub (7 routes).",
+      "implementedBy": "src/components/content/ResourceList.jsx"
+    },
+    "directory.related-links": {
+      "category": "DIRECTORY",
+      "description": "Related-resource link grids below an article (same category, same state agencies, localities).",
+      "scope": "Resource guide leaves (1736 routes).",
+      "implementedBy": "src/components/content/ResourceLinkGrid.jsx"
+    },
+    "directory.blog-teasers": {
+      "category": "DIRECTORY",
+      "description": "Three 'More from the blog' teaser cards.",
+      "scope": "Resource guide leaves (1736 routes).",
+      "implementedBy": "src/components/content/BlogTeaserList.jsx"
+    },
+    "legacy.intro-strip": {
+      "category": "LEGACY",
+      "description": "Centered band title + subtitle introducing the feature rows.",
+      "scope": "Legacy partner pages and sales-tax beta (4 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > IntroStrip"
+    },
+    "legacy.shot-row": {
+      "category": "LEGACY",
+      "description": "Text + product screenshot row with the screenshot bleeding off the right edge.",
+      "scope": "Legacy partner pages and sales-tax beta (4 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > ShotRow"
+    },
+    "legacy.workflow": {
+      "category": "LEGACY",
+      "description": "HTML mock-UI workflow card beside explanatory text.",
+      "scope": "Legacy partner pages only (3 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > WorkflowRow"
+    },
+    "legacy.inset-row": {
+      "category": "LEGACY",
+      "description": "Text row with an inset screenshot card.",
+      "scope": "Legacy partner pages and sales-tax beta (4 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > InsetRow"
+    },
+    "legacy.always-current": {
+      "category": "LEGACY",
+      "description": "Accent-panel band explaining always-current rules.",
+      "scope": "Legacy partner pages only (3 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > AlwaysCurrentBand"
+    },
+    "legacy.collaborate": {
+      "category": "LEGACY",
+      "description": "Image-card band about team collaboration.",
+      "scope": "Legacy partner pages only (3 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > CollaborateBand"
+    },
+    "legacy.everything-band": {
+      "category": "LEGACY",
+      "description": "Checklist band of everything included.",
+      "scope": "Legacy partner pages and sales-tax beta (4 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > EverythingBand"
+    },
+    "legacy.about": {
+      "category": "LEGACY",
+      "description": "About band: logo groups plus an autoplay testimonial slider (5s).",
+      "scope": "Legacy partner pages only (3 routes).",
+      "implementedBy": "src/components/misc/legacy/LegacyKit.jsx > AboutBand"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home",
+      "routeCount": 1,
+      "chrome": "home",
+      "routes": [
+        "/"
+      ],
+      "sections": [
+        "shell.header",
+        "shell.announcement-banner",
+        "hero.home-tabs",
+        "proof.logo-ticker-home",
+        "features.statement",
+        "features.everything",
+        "features.role-tabs",
+        "proof.benefit-stats",
+        "narrative.roadmap",
+        "narrative.peace-steps",
+        "proof.testimonials",
+        "commerce.pricing",
+        "conversion.faq-home",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.platform",
+      "name": "Platform overview",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/platform"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.page-platform",
+        "narrative.feature-group",
+        "features.feature-list-animated",
+        "proof.benefit-stats",
+        "features.ecosystem",
+        "features.engine",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.product-payroll",
+      "name": "Product page — payroll",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/platform/payroll-compliance"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.page-landing",
+        "proof.logo-ticker",
+        "proof.benefit-cards",
+        "narrative.get-started",
+        "conversion.cta-card",
+        "narrative.feature-group",
+        "features.feature-list-static",
+        "conversion.faq-home",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.product-tax",
+      "name": "Product page — tax",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/platform/tax-compliance"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.page-landing",
+        "proof.logo-ticker",
+        "proof.benefit-cards",
+        "conversion.cta-card",
+        "narrative.feature-group",
+        "features.feature-list-static",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.product-handbooks",
+      "name": "Product page — handbooks",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/platform/handbooks"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.page-landing",
+        "features.feature-list-animated",
+        "proof.benefit-cards",
+        "features.benefit-group",
+        "narrative.get-started",
+        "conversion.faq",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.product-entity",
+      "name": "Product page — entity",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/platform/entity-compliance"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.static",
+        "proof.logo-ticker",
+        "narrative.scroll-tabs",
+        "conversion.cta-card",
+        "narrative.get-started",
+        "features.feature-list-static",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solutions",
+      "name": "Solutions overview",
+      "routeCount": 2,
+      "chrome": "inner",
+      "routes": [
+        "/solutions",
+        "/solutions/smb"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.static",
+        "narrative.scroll-tabs",
+        "features.ecosystem",
+        "narrative.roadmap",
+        "proof.benefit-stats",
+        "proof.testimonials",
+        "narrative.get-started",
+        "commerce.pricing",
+        "conversion.faq-home",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-for-hr",
+      "name": "Solution detail — HR",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/solutions/for-hr"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.page-landing",
+        "proof.logo-ticker",
+        "features.problem-list",
+        "features.card-grid",
+        "proof.benefit-cards",
+        "narrative.feature-group",
+        "conversion.cta-card",
+        "features.guide-covers",
+        "narrative.get-started",
+        "conversion.faq",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.solution-telehealth",
+      "name": "Solution detail — telehealth",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/solutions/for-telehealth"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.page-landing",
+        "conversion.lead-form",
+        "proof.logo-ticker",
+        "proof.benefit-cards",
+        "conversion.cta-card",
+        "features.feature-list-static",
+        "proof.testimonials-lite",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.pricing",
+      "name": "Pricing",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/pricing"
+      ],
+      "sections": [
+        "shell.header",
+        "commerce.pricing",
+        "conversion.faq-home",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.about",
+      "name": "About",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/about"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.about",
+        "content.about-intro",
+        "content.our-story",
+        "proof.logo-ticker",
+        "content.careers",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.security",
+      "name": "Security",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/security"
+      ],
+      "sections": [
+        "shell.header",
+        "content.inner-post",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.blog-index",
+      "name": "Blog index",
+      "routeCount": 3,
+      "chrome": "inner",
+      "routes": [
+        "/blog",
+        "/blog/page/2",
+        "/blog/page/3"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.title-band",
+        "directory.post-list",
+        "directory.pagination",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.blog-post",
+      "name": "Blog post",
+      "routeCount": 30,
+      "chrome": "inner",
+      "routes": [
+        "/blog/{slug}"
+      ],
+      "routesTruncated": true,
+      "routePattern": "/blog/{slug}",
+      "sections": [
+        "shell.header",
+        "hero.post-header",
+        "content.prose",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.authors",
+      "name": "Authors index",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/authors"
+      ],
+      "sections": [
+        "shell.header",
+        "directory.author-list",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.author-detail",
+      "name": "Author detail",
+      "routeCount": 6,
+      "chrome": "inner",
+      "routes": [
+        "/authors/{author}"
+      ],
+      "routesTruncated": true,
+      "routePattern": "/authors/{author}",
+      "sections": [
+        "shell.header",
+        "hero.title-band",
+        "content.author-profile",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.resources",
+      "name": "Resources index",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/resources"
+      ],
+      "sections": [
+        "shell.header",
+        "directory.resource-links",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.resource-category",
+      "name": "Resource category hub",
+      "routeCount": 6,
+      "chrome": "inner",
+      "routes": [
+        "/resources/us/payroll",
+        "/resources/us/employee-handbook",
+        "/resources/us/secretary-of-state",
+        "/resources/us/sales-tax",
+        "/resources/us/agencies",
+        "/resources/us/local-payroll"
+      ],
+      "sections": [
+        "shell.header",
+        "directory.resource-links",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.resource-guide",
+      "name": "Resource guide leaf",
+      "routeCount": 1736,
+      "chrome": "inner",
+      "routes": [
+        "/resources/us/payroll/{state}",
+        "/resources/us/agencies/{agency}",
+        "/resources/us/local-payroll/{locality}"
+      ],
+      "routesTruncated": true,
+      "routePattern": "/resources/us/{category}/{leaf}",
+      "sections": [
+        "shell.header",
+        "hero.post-header",
+        "content.prose",
+        "conversion.inline-cta",
+        "directory.related-links",
+        "directory.blog-teasers",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.guide-full",
+      "name": "Guide landing — full stack",
+      "routeCount": 4,
+      "chrome": "inner",
+      "routes": [
+        "/p/multi-state-hiring-guide",
+        "/p/payroll-setup-playbook",
+        "/p/remote-team-handbook-guide",
+        "/p/entity-upkeep-guide"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.guide",
+        "proof.benefit-cards",
+        "conversion.guide-form",
+        "proof.logo-ticker",
+        "narrative.feature-group",
+        "conversion.faq-guide",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.guide-report",
+      "name": "Guide landing — report",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/p/state-compliance-outlook"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.guide",
+        "conversion.guide-form",
+        "proof.logo-ticker",
+        "conversion.faq-guide",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.guide-trusted",
+      "name": "Guide landing — hero, form, logos",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/p/registration-health-check"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.guide",
+        "conversion.guide-form",
+        "proof.logo-ticker",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.guide-short",
+      "name": "Guide landing — hero and form",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/p/switching-payroll-providers-guide"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.guide",
+        "conversion.guide-form",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.guide-newsletter",
+      "name": "Guide landing — newsletter form only",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/p/compliance-newsletter"
+      ],
+      "sections": [
+        "shell.header",
+        "conversion.guide-form",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.subscribe",
+      "name": "Subscribe confirmation",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/subscribe"
+      ],
+      "sections": [
+        "shell.header",
+        "content.thanks",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.partner-legacy",
+      "name": "Partner landing A — legacy kit",
+      "routeCount": 3,
+      "chrome": "inner",
+      "routes": [
+        "/partners/brightpath-payroll",
+        "/partners/tidewater-hr",
+        "/partners/kitebird-people"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.legacy-cobrand",
+        "legacy.intro-strip",
+        "legacy.shot-row",
+        "legacy.workflow",
+        "legacy.inset-row",
+        "legacy.always-current",
+        "legacy.collaborate",
+        "legacy.everything-band",
+        "commerce.legacy-pricing",
+        "legacy.about",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.partner-static",
+      "name": "Partner landing B — static",
+      "routeCount": 6,
+      "chrome": "inner",
+      "routes": [
+        "/partners/halcyon-hr",
+        "/partners/larkspur-legal",
+        "/partners/ashgrove-equity",
+        "/partners/meadowbrook-fractional",
+        "/partners/thistle-learning",
+        "/partners/copperleaf-benefits"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.static",
+        "features.feature-list-animated",
+        "narrative.get-started",
+        "proof.testimonials",
+        "commerce.pricing",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.partner-platform-intro",
+      "name": "Partner landing C1 — platform partner with intro row",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/partners/juniper-launch"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.static",
+        "features.intro-row",
+        "narrative.feature-group",
+        "narrative.get-started",
+        "conversion.faq",
+        "conversion.cta-card",
+        "commerce.pricing",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.partner-platform-form",
+      "name": "Partner landing C2 — platform partner with lead form",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/partners/juniper-startups"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.static",
+        "proof.logo-ticker",
+        "conversion.lead-form",
+        "narrative.feature-group",
+        "narrative.get-started",
+        "conversion.faq",
+        "conversion.cta-card",
+        "commerce.pricing",
+        "conversion.bottom-cta",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.sales-tax-beta",
+      "name": "Sales-tax beta (cut-down legacy)",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/sales-tax-beta"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.legacy-cobrand",
+        "legacy.intro-strip",
+        "legacy.shot-row",
+        "legacy.inset-row",
+        "legacy.everything-band",
+        "conversion.invite-modal",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.mail",
+      "name": "Mail handling sign-up",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/mail"
+      ],
+      "sections": [
+        "shell.header",
+        "conversion.mail-signup",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.reinstatement",
+      "name": "Reinstatement landing",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/reinstatement"
+      ],
+      "sections": [
+        "shell.header",
+        "hero.static",
+        "proof.benefit-cards",
+        "features.feature-list-animated",
+        "conversion.cta-card",
+        "narrative.peace-steps",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.legal",
+      "name": "Legal / status prose",
+      "routeCount": 5,
+      "chrome": "inner",
+      "routes": [
+        "/legal/privacy-policy",
+        "/legal/terms-of-service",
+        "/legal/data-processing-agreement",
+        "/legal/gdpr-subprocessors",
+        "/status"
+      ],
+      "sections": [
+        "shell.header",
+        "content.legal-prose",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.not-found",
+      "name": "404",
+      "routeCount": 1,
+      "chrome": "inner",
+      "routes": [
+        "/*"
+      ],
+      "sections": [
+        "shell.header",
+        "content.not-found",
+        "shell.footer"
+      ]
+    }
+  ]
+}

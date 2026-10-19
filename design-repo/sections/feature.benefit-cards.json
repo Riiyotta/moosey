@@ -1,0 +1,183 @@
+{
+  "id": "feature.benefit-cards",
+  "category": "FEATURE",
+  "label": "Benefit cards",
+  "purpose": "Optional title row over 3 cards (pictogram, value/title, description); a slider on mobile.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 7,
+        "budgetBasis": "spec ~22c -> ceil(22*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 48,
+        "budgetBasis": "spec ~171c -> ceil(171*1.25/4.5)"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 7,
+        "budgetBasis": "spec ~25c -> ceil(25*1.25/4.5)",
+        "bodyMaxWords": 36,
+        "bodyRequired": true,
+        "bodyBudgetBasis": "spec ~127c -> ceil(127*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 3,
+        "assetRoles": [
+          "illustration",
+          "icon"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          367,
+          387
+        ],
+        "anchor": "## 8. Benefits stats"
+      },
+      {
+        "path": "specs/marketing.md",
+        "lines": [
+          354,
+          368
+        ],
+        "anchor": "### 1.9 BenefitsLanding"
+      },
+      {
+        "path": "specs/content.md",
+        "lines": [
+          382,
+          390
+        ],
+        "anchor": "### 8.2 Benefits"
+      },
+      {
+        "path": "specs/misc.md",
+        "lines": [
+          570,
+          580
+        ],
+        "anchor": "### 5.2 Benefits variant"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/Benefits.jsx",
+        "lines": [
+          14,
+          75
+        ],
+        "anchor": "export default function Benefits"
+      },
+      {
+        "path": "src/components/blocks/BenefitsVariant.jsx",
+        "lines": [
+          18,
+          69
+        ],
+        "anchor": "export default function"
+      },
+      {
+        "path": "src/motion/page.js",
+        "lines": [
+          151,
+          151
+        ],
+        "anchor": "function benefits("
+      }
+    ]
+  },
+  "implementedBy": "src/components/Benefits.jsx",
+  "implementedByAll": [
+    "src/components/Benefits.jsx",
+    "src/components/blocks/BenefitsVariant.jsx",
+    "src/components/content/GuideBenefits.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "reveal-on-enter",
+      "carousel",
+      "css-transition"
+    ],
+    "primaryPattern": "reveal-on-enter",
+    "reducedMotionFallbacks": {
+      "reveal-on-enter": "disable-animation",
+      "carousel": "instant-switch",
+      "css-transition": "none-implemented"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "812-1083u",
+      "tablet": "768-821u",
+      "mobile": "787-879u"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "icon",
+    "illustration"
+  ],
+  "retrieval": {
+    "semanticLabel": "feature/benefit-cards",
+    "kind": "feature-grid",
+    "summary": "Optional title row over 3 cards (pictogram, value/title, description); a slider on mobile.",
+    "keywords": [
+      "benefit",
+      "cards",
+      "feature",
+      "grid"
+    ],
+    "pageFamilies": [
+      "template.guide-landing",
+      "template.home",
+      "template.platform-overview",
+      "template.platform-product",
+      "template.platform-product-handbooks",
+      "template.reinstatement",
+      "template.solution-detail",
+      "template.solution-detail-telehealth",
+      "template.solutions-overview"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Benefit cards",
+    "contentFields": 4,
+    "copyCapacityWords": 184,
+    "imageCapacity": 3,
+    "itemCapacity": 3
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "conversion.compliance-cta-card",
+      "feature.card-grid",
+      "feature.checklist-row",
+      "hero.guide",
+      "hero.static",
+      "proof.logo-marquee",
+      "shell.header",
+      "showcase.roadmap"
+    ]
+  }
+}

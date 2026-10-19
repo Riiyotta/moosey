@@ -1,0 +1,2220 @@
+{
+  "$description": "Foundation typography tokens: measured values with code-parity references (`code`) and citations. Generators never reference these directly.",
+  "tokens": {
+    "font.family.sans": {
+      "$type": "fontFamily",
+      "$value": [
+        "Figtree",
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif"
+      ],
+      "basis": "measured",
+      "note": "Original face is Lineto Circular Std (commercial, DO NOT SHIP); Figtree (OFL) is the measured substitute with Circular's hhea metrics as ascent/descent overrides.",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-font",
+        "key": "sans"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            129,
+            129
+          ],
+          "anchor": "sans: ['Figtree'"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            36,
+            48
+          ],
+          "anchor": "### 0.3 Fonts"
+        },
+        {
+          "path": "src/index.css",
+          "lines": [
+            15,
+            15
+          ],
+          "anchor": "ascent-override: 99.7%;"
+        }
+      ]
+    },
+    "font.weight.book": {
+      "$type": "fontWeight",
+      "$value": 450,
+      "axis": 475,
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-wght",
+        "key": "450"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            54,
+            54
+          ],
+          "anchor": "const WGHT = {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            48,
+            48
+          ],
+          "anchor": "- Only two weights are used:"
+        }
+      ]
+    },
+    "font.weight.medium": {
+      "$type": "fontWeight",
+      "$value": 500,
+      "axis": 600,
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-wght",
+        "key": "500"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            54,
+            54
+          ],
+          "anchor": "const WGHT = {"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            48,
+            48
+          ],
+          "anchor": "- Only two weights are used:"
+        }
+      ]
+    },
+    "font.weight.banner": {
+      "$type": "fontWeight",
+      "$value": 400,
+      "axis": 600,
+      "basis": "measured",
+      "note": "400 renders the Circular *Medium* file on the original",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-wght",
+        "key": "400"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            54,
+            54
+          ],
+          "anchor": "const WGHT = {"
+        }
+      ]
+    },
+    "type.h0.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "55u",
+        "lineHeight": "70u",
+        "letterSpacing": "-2.2u",
+        "fontWeight": 450
+      },
+      "use": "\"Everything\" giant headline",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h0",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            28,
+            28
+          ],
+          "anchor": "h0:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            56,
+            56
+          ],
+          "anchor": "| h0 |"
+        }
+      ]
+    },
+    "type.h0.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "75u",
+        "lineHeight": "90u",
+        "letterSpacing": "-3.6u",
+        "fontWeight": 450
+      },
+      "use": "\"Everything\" giant headline",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h0",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            28,
+            28
+          ],
+          "anchor": "h0:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            56,
+            56
+          ],
+          "anchor": "| h0 |"
+        }
+      ]
+    },
+    "type.h0.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "130u",
+        "lineHeight": "156u",
+        "letterSpacing": "-5.2u",
+        "fontWeight": 450
+      },
+      "use": "\"Everything\" giant headline",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h0",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            28,
+            28
+          ],
+          "anchor": "h0:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            56,
+            56
+          ],
+          "anchor": "| h0 |"
+        }
+      ]
+    },
+    "type.h1.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "24u",
+        "lineHeight": "28.8u",
+        "letterSpacing": "-0.72u",
+        "fontWeight": 500
+      },
+      "use": "Roadmap title",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h1",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "h1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            57,
+            57
+          ],
+          "anchor": "| h1 |"
+        }
+      ]
+    },
+    "type.h1.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "38u",
+        "lineHeight": "45.6u",
+        "letterSpacing": "-1.14u",
+        "fontWeight": 500
+      },
+      "use": "Roadmap title",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h1",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "h1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            57,
+            57
+          ],
+          "anchor": "| h1 |"
+        }
+      ]
+    },
+    "type.h1.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "55u",
+        "lineHeight": "66u",
+        "letterSpacing": "-1.65u",
+        "fontWeight": 500
+      },
+      "use": "Roadmap title",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h1",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            29,
+            29
+          ],
+          "anchor": "h1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            57,
+            57
+          ],
+          "anchor": "| h1 |"
+        }
+      ]
+    },
+    "type.h2.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "32u",
+        "lineHeight": "38.4u",
+        "letterSpacing": "-0.64u",
+        "fontWeight": 450
+      },
+      "use": "Benefits card values",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h2",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            31,
+            31
+          ],
+          "anchor": "h2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            58,
+            58
+          ],
+          "anchor": "| h2 |"
+        }
+      ]
+    },
+    "type.h2.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "32u",
+        "lineHeight": "38.4u",
+        "letterSpacing": "-0.64u",
+        "fontWeight": 450
+      },
+      "use": "Benefits card values",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h2",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            31,
+            31
+          ],
+          "anchor": "h2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            58,
+            58
+          ],
+          "anchor": "| h2 |"
+        }
+      ]
+    },
+    "type.h2.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "42u",
+        "lineHeight": "50.4u",
+        "letterSpacing": "-0.84u",
+        "fontWeight": 450
+      },
+      "use": "Benefits card values",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h2",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            31,
+            31
+          ],
+          "anchor": "h2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            58,
+            58
+          ],
+          "anchor": "| h2 |"
+        }
+      ]
+    },
+    "type.h3.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "24u",
+        "lineHeight": "26u",
+        "letterSpacing": "-0.72u",
+        "fontWeight": 500
+      },
+      "use": "Hero H1 and all section titles",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h3",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            32,
+            32
+          ],
+          "anchor": "h3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            59,
+            59
+          ],
+          "anchor": "| h3 |"
+        }
+      ]
+    },
+    "type.h3.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "28u",
+        "lineHeight": "33.6u",
+        "letterSpacing": "-0.84u",
+        "fontWeight": 500
+      },
+      "use": "Hero H1 and all section titles",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h3",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            32,
+            32
+          ],
+          "anchor": "h3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            59,
+            59
+          ],
+          "anchor": "| h3 |"
+        }
+      ]
+    },
+    "type.h3.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "38u",
+        "lineHeight": "45.6u",
+        "letterSpacing": "-1.14u",
+        "fontWeight": 500
+      },
+      "use": "Hero H1 and all section titles",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h3",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            32,
+            32
+          ],
+          "anchor": "h3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            59,
+            59
+          ],
+          "anchor": "| h3 |"
+        }
+      ]
+    },
+    "type.h4.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "20u",
+        "lineHeight": "24u",
+        "letterSpacing": "-0.04u",
+        "fontWeight": 500
+      },
+      "use": "Compliance CTA title, pricing fee",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h4",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "h4:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            60,
+            60
+          ],
+          "anchor": "| h4 |"
+        }
+      ]
+    },
+    "type.h4.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "20u",
+        "lineHeight": "24u",
+        "letterSpacing": "-0.04u",
+        "fontWeight": 500
+      },
+      "use": "Compliance CTA title, pricing fee",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h4",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "h4:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            60,
+            60
+          ],
+          "anchor": "| h4 |"
+        }
+      ]
+    },
+    "type.h4.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "28u",
+        "lineHeight": "33.6u",
+        "letterSpacing": "-0.64u",
+        "fontWeight": 500
+      },
+      "use": "Compliance CTA title, pricing fee",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h4",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            33,
+            33
+          ],
+          "anchor": "h4:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            60,
+            60
+          ],
+          "anchor": "| h4 |"
+        }
+      ]
+    },
+    "type.h5.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "17u",
+        "lineHeight": "22.1u",
+        "letterSpacing": "-0.68u",
+        "fontWeight": 500
+      },
+      "use": "Step titles, quotes, counter",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h5",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            34,
+            34
+          ],
+          "anchor": "h5:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            61,
+            61
+          ],
+          "anchor": "| h5 |"
+        }
+      ]
+    },
+    "type.h5.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "17u",
+        "lineHeight": "22.1u",
+        "letterSpacing": "-0.68u",
+        "fontWeight": 500
+      },
+      "use": "Step titles, quotes, counter",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h5",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            34,
+            34
+          ],
+          "anchor": "h5:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            61,
+            61
+          ],
+          "anchor": "| h5 |"
+        }
+      ]
+    },
+    "type.h5.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "24u",
+        "lineHeight": "31.2u",
+        "letterSpacing": "-0.96u",
+        "fontWeight": 500
+      },
+      "use": "Step titles, quotes, counter",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h5",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            34,
+            34
+          ],
+          "anchor": "h5:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            61,
+            61
+          ],
+          "anchor": "| h5 |"
+        }
+      ]
+    },
+    "type.h6.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "13u",
+        "lineHeight": "20.8u",
+        "letterSpacing": "-0.26u",
+        "fontWeight": 500
+      },
+      "use": "List titles, FAQ questions",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h6",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            35,
+            35
+          ],
+          "anchor": "h6:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            62,
+            62
+          ],
+          "anchor": "| h6 |"
+        }
+      ]
+    },
+    "type.h6.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "13u",
+        "lineHeight": "20.8u",
+        "letterSpacing": "-0.26u",
+        "fontWeight": 500
+      },
+      "use": "List titles, FAQ questions",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h6",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            35,
+            35
+          ],
+          "anchor": "h6:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            62,
+            62
+          ],
+          "anchor": "| h6 |"
+        }
+      ]
+    },
+    "type.h6.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18u",
+        "lineHeight": "28.8u",
+        "letterSpacing": "-0.36u",
+        "fontWeight": 500
+      },
+      "use": "List titles, FAQ questions",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "h6",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            35,
+            35
+          ],
+          "anchor": "h6:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            62,
+            62
+          ],
+          "anchor": "| h6 |"
+        }
+      ]
+    },
+    "type.p1.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "use": "Compliance eyebrow, author name",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p1",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "p1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            63,
+            63
+          ],
+          "anchor": "| p1 |"
+        }
+      ]
+    },
+    "type.p1.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "use": "Compliance eyebrow, author name",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p1",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "p1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            63,
+            63
+          ],
+          "anchor": "| p1 |"
+        }
+      ]
+    },
+    "type.p1.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "17u",
+        "lineHeight": "23.8u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "use": "Compliance eyebrow, author name",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p1",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            36,
+            36
+          ],
+          "anchor": "p1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            63,
+            63
+          ],
+          "anchor": "| p1 |"
+        }
+      ]
+    },
+    "type.p2.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 450
+      },
+      "use": "Body copy",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p2",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            37,
+            37
+          ],
+          "anchor": "p2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            64,
+            64
+          ],
+          "anchor": "| p2 |"
+        }
+      ]
+    },
+    "type.p2.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 450
+      },
+      "use": "Body copy",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p2",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            37,
+            37
+          ],
+          "anchor": "p2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            64,
+            64
+          ],
+          "anchor": "| p2 |"
+        }
+      ]
+    },
+    "type.p2.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "15u",
+        "lineHeight": "24u",
+        "letterSpacing": "-0.3u",
+        "fontWeight": 450
+      },
+      "use": "Body copy",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p2",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            37,
+            37
+          ],
+          "anchor": "p2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            64,
+            64
+          ],
+          "anchor": "| p2 |"
+        }
+      ]
+    },
+    "type.p3.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 450
+      },
+      "use": "Hero desc, card desc, author role",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p3",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            38,
+            38
+          ],
+          "anchor": "p3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            65,
+            65
+          ],
+          "anchor": "| p3 |"
+        }
+      ]
+    },
+    "type.p3.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.2u",
+        "fontWeight": 450
+      },
+      "use": "Hero desc, card desc, author role",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p3",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            38,
+            38
+          ],
+          "anchor": "p3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            65,
+            65
+          ],
+          "anchor": "| p3 |"
+        }
+      ]
+    },
+    "type.p3.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.26u",
+        "fontWeight": 450
+      },
+      "use": "Hero desc, card desc, author role",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p3",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            38,
+            38
+          ],
+          "anchor": "p3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            65,
+            65
+          ],
+          "anchor": "| p3 |"
+        }
+      ]
+    },
+    "type.p4.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "use": "Compliance list desc, plan desc",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p4",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            39,
+            39
+          ],
+          "anchor": "p4:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            66,
+            66
+          ],
+          "anchor": "| p4 |"
+        }
+      ]
+    },
+    "type.p4.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "use": "Compliance list desc, plan desc",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p4",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            39,
+            39
+          ],
+          "anchor": "p4:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            66,
+            66
+          ],
+          "anchor": "| p4 |"
+        }
+      ]
+    },
+    "type.p4.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "use": "Compliance list desc, plan desc",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "p4",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            39,
+            39
+          ],
+          "anchor": "p4:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            66,
+            66
+          ],
+          "anchor": "| p4 |"
+        }
+      ]
+    },
+    "type.cp1.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.42u",
+        "fontWeight": 500
+      },
+      "use": "Plan title, pricing accordion title",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp1",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            40,
+            40
+          ],
+          "anchor": "cp1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            67,
+            67
+          ],
+          "anchor": "| cp1 |"
+        }
+      ]
+    },
+    "type.cp1.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.42u",
+        "fontWeight": 500
+      },
+      "use": "Plan title, pricing accordion title",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp1",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            40,
+            40
+          ],
+          "anchor": "cp1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            67,
+            67
+          ],
+          "anchor": "| cp1 |"
+        }
+      ]
+    },
+    "type.cp1.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18u",
+        "lineHeight": "28.8u",
+        "letterSpacing": "-0.54u",
+        "fontWeight": 500
+      },
+      "use": "Plan title, pricing accordion title",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp1",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            40,
+            40
+          ],
+          "anchor": "cp1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            67,
+            67
+          ],
+          "anchor": "| cp1 |"
+        }
+      ]
+    },
+    "type.cp2.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "use": "Plan employee/per-month labels",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp2",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            41,
+            41
+          ],
+          "anchor": "cp2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            68,
+            68
+          ],
+          "anchor": "| cp2 |"
+        }
+      ]
+    },
+    "type.cp2.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "use": "Plan employee/per-month labels",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp2",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            41,
+            41
+          ],
+          "anchor": "cp2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            68,
+            68
+          ],
+          "anchor": "| cp2 |"
+        }
+      ]
+    },
+    "type.cp2.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.12u",
+        "fontWeight": 500
+      },
+      "use": "Plan employee/per-month labels",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp2",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            41,
+            41
+          ],
+          "anchor": "cp2:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            68,
+            68
+          ],
+          "anchor": "| cp2 |"
+        }
+      ]
+    },
+    "type.cp3.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "use": "Pricing table rows, footnotes",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp3",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            42,
+            42
+          ],
+          "anchor": "cp3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            69,
+            69
+          ],
+          "anchor": "| cp3 |"
+        }
+      ]
+    },
+    "type.cp3.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 450
+      },
+      "use": "Pricing table rows, footnotes",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp3",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            42,
+            42
+          ],
+          "anchor": "cp3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            69,
+            69
+          ],
+          "anchor": "| cp3 |"
+        }
+      ]
+    },
+    "type.cp3.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "19.6u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 450
+      },
+      "use": "Pricing table rows, footnotes",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "cp3",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            42,
+            42
+          ],
+          "anchor": "cp3:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            69,
+            69
+          ],
+          "anchor": "| cp3 |"
+        }
+      ]
+    },
+    "type.ch1.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "38u",
+        "lineHeight": "44u",
+        "letterSpacing": "-0.14u",
+        "fontWeight": 500
+      },
+      "use": "Plan price",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "ch1",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            43,
+            43
+          ],
+          "anchor": "ch1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "| ch1 |"
+        }
+      ]
+    },
+    "type.ch1.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "38u",
+        "lineHeight": "44u",
+        "letterSpacing": "-0.14u",
+        "fontWeight": 500
+      },
+      "use": "Plan price",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "ch1",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            43,
+            43
+          ],
+          "anchor": "ch1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "| ch1 |"
+        }
+      ]
+    },
+    "type.ch1.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "38u",
+        "lineHeight": "44u",
+        "letterSpacing": "-0.14u",
+        "fontWeight": 500
+      },
+      "use": "Plan price",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "ch1",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            43,
+            43
+          ],
+          "anchor": "ch1:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            70,
+            70
+          ],
+          "anchor": "| ch1 |"
+        }
+      ]
+    },
+    "type.segment.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "10u",
+        "lineHeight": "14u",
+        "letterSpacing": "-0.02u",
+        "fontWeight": 500
+      },
+      "use": "Tab labels",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "segment",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            44,
+            44
+          ],
+          "anchor": "segment:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            71,
+            71
+          ],
+          "anchor": "| segment |"
+        }
+      ]
+    },
+    "type.segment.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "16.8u",
+        "letterSpacing": "-0.024u",
+        "fontWeight": 500
+      },
+      "use": "Tab labels",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "segment",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            44,
+            44
+          ],
+          "anchor": "segment:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            71,
+            71
+          ],
+          "anchor": "| segment |"
+        }
+      ]
+    },
+    "type.segment.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "19.6u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      },
+      "use": "Tab labels",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "segment",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            44,
+            44
+          ],
+          "anchor": "segment:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            71,
+            71
+          ],
+          "anchor": "| segment |"
+        }
+      ]
+    },
+    "type.nav.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.24u",
+        "fontWeight": 500
+      },
+      "use": "Header, footer and menu links",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "nav",
+        "bp": "m"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            45,
+            45
+          ],
+          "anchor": "nav:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            72,
+            72
+          ],
+          "anchor": "| nav |"
+        }
+      ]
+    },
+    "type.nav.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      },
+      "use": "Header, footer and menu links",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "nav",
+        "bp": "t"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            45,
+            45
+          ],
+          "anchor": "nav:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            72,
+            72
+          ],
+          "anchor": "| nav |"
+        }
+      ]
+    },
+    "type.nav.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "15.4u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      },
+      "use": "Header, footer and menu links",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "nav",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            45,
+            45
+          ],
+          "anchor": "nav:"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            72,
+            72
+          ],
+          "anchor": "| nav |"
+        }
+      ]
+    },
+    "type.nav-large.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "18u",
+        "lineHeight": "28.8u",
+        "letterSpacing": "-0.18u",
+        "fontWeight": 500
+      },
+      "use": "Footer column headings",
+      "basis": "measured",
+      "code": {
+        "file": "tailwind.config.cjs",
+        "kind": "tw-type",
+        "key": "nav-large",
+        "bp": "d"
+      },
+      "citations": [
+        {
+          "path": "tailwind.config.cjs",
+          "lines": [
+            46,
+            46
+          ],
+          "anchor": "'nav-large':"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": [
+            73,
+            73
+          ],
+          "anchor": "| nav-large |"
+        }
+      ]
+    },
+    "type.p1-b.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "13u",
+        "lineHeight": "20.8u",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 450
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            14,
+            14
+          ],
+          "anchor": ".text-p1-b {"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            77,
+            77
+          ],
+          "anchor": "Excerpt p (`text-p1-b`, **new token**)"
+        }
+      ]
+    },
+    "type.p1-b.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 450
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            14,
+            14
+          ],
+          "anchor": ".text-p1-b {"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            77,
+            77
+          ],
+          "anchor": "Excerpt p (`text-p1-b`, **new token**)"
+        }
+      ]
+    },
+    "type.p1-b.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "17u",
+        "lineHeight": "27.2u",
+        "letterSpacing": "-0.01em",
+        "fontWeight": 450
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            14,
+            14
+          ],
+          "anchor": ".text-p1-b {"
+        },
+        {
+          "path": "specs/content.md",
+          "lines": [
+            77,
+            77
+          ],
+          "anchor": "Excerpt p (`text-p1-b`, **new token**)"
+        }
+      ]
+    },
+    "type.button-large.mobile": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "10u",
+        "lineHeight": "16u",
+        "letterSpacing": "-0.02u",
+        "fontWeight": 500
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": ".text-button-large {"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            46,
+            46
+          ],
+          "anchor": "| `button-large` |"
+        }
+      ]
+    },
+    "type.button-large.tablet": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "12u",
+        "lineHeight": "19.2u",
+        "letterSpacing": "-0.02u",
+        "fontWeight": 500
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": ".text-button-large {"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            46,
+            46
+          ],
+          "anchor": "| `button-large` |"
+        }
+      ]
+    },
+    "type.button-large.desktop": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": "14u",
+        "lineHeight": "22.4u",
+        "letterSpacing": "-0.28u",
+        "fontWeight": 500
+      },
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "src/styles/content.css",
+          "lines": [
+            22,
+            22
+          ],
+          "anchor": ".text-button-large {"
+        },
+        {
+          "path": "specs/marketing.md",
+          "lines": [
+            46,
+            46
+          ],
+          "anchor": "| `button-large` |"
+        }
+      ]
+    },
+    "type.prose.p": {
+      "$type": "typographyRule",
+      "$value": "13/20.8 · 14/22.4 · 17/27.2u, ls -0.01em, 450, #203435B3, mt 24u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            142,
+            142
+          ],
+          "anchor": "| `p` | 13/20.8"
+        }
+      ]
+    },
+    "type.prose.h2": {
+      "$type": "typographyRule",
+      "$value": "17/22.1 · 17/22.1 · 24/31.2u, ls -0.68/-0.96u, 500, mt 40u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            143,
+            143
+          ],
+          "anchor": "| `h2` | 17/22.1"
+        }
+      ]
+    },
+    "type.prose.h3": {
+      "$type": "typographyRule",
+      "$value": "13/20.8 · 13/20.8 · 18/28.8u, ls -0.26/-0.36u, 500, mt 24u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            144,
+            144
+          ],
+          "anchor": "| `h3` | 13/20.8"
+        }
+      ]
+    },
+    "type.prose.em": {
+      "$type": "typographyRule",
+      "$value": "12/19.2 · 12/19.2 · 15/24u italic 450 (smaller than body: a quirk)",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            153,
+            153
+          ],
+          "anchor": "| `em`, `i` |"
+        }
+      ]
+    },
+    "type.prose.blockquote": {
+      "$type": "typographyRule",
+      "$value": "18/28.8 · 20/32 · 22/35.2u italic 450",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            154,
+            154
+          ],
+          "anchor": "| `blockquote` |"
+        }
+      ]
+    },
+    "type.prose.th": {
+      "$type": "typographyRule",
+      "$value": "13/20.8u, ls -0.26u, 500, #F3F1EC on #203435, padding 10u 15u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            164,
+            164
+          ],
+          "anchor": "- `th`: 13/20.8"
+        }
+      ]
+    },
+    "type.prose.td": {
+      "$type": "typographyRule",
+      "$value": "12/19.2u, ls -0.12u, 450, #203435B3, padding 5u",
+      "basis": "measured",
+      "citations": [
+        {
+          "path": "specs/content.md",
+          "lines": [
+            165,
+            165
+          ],
+          "anchor": "- `td`: 12/19.2"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$description": "Component tokens for accordion.",
+  "component": "accordion",
+  "selector": ".accordion-button + .accordion-content",
+  "tokens": {
+    "contentTransition": {
+      "$value": "{motion.accordion}"
+    },
+    "contentOpenMaxHeight": {
+      "$value": "800u"
+    },
+    "contentClosedTransform": {
+      "$value": "translateY(-20px)"
+    },
+    "iconStroke": {
+      "$value": "{text.accent}"
+    },
+    "iconRotateOpen": {
+      "$value": "180deg"
+    },
+    "line": {
+      "$value": "{border.hairline}"
+    }
+  },
+  "citations": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": [
+        135,
+        139
+      ],
+      "anchor": "- **Accordion:**"
+    },
+    {
+      "path": "src/index.css",
+      "lines": [
+        101,
+        113
+      ],
+      "anchor": ".accordion-content {"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "steps.peace-of-mind",
+  "category": "STEPS",
+  "label": "Sticky numbered steps (illustrated)",
+  "purpose": "Title row, 4 numbered steps beside a pinned illustration stage (desktop scrub); slider below 1025.",
+  "purposeIsInferred": false,
+  "nameSource": "inferred (component boundary + spec heading)",
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "budgetBasis": "spec ~13c -> ceil(13*1.25/4.5)"
+      },
+      "subheading": {
+        "type": "text",
+        "required": false,
+        "maxWords": 34,
+        "budgetBasis": "inferred: spec gives no length; clone copy is 27 words"
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 4,
+        "titleMaxWords": 13,
+        "budgetBasis": "spec ~45c -> ceil(45*1.25/4.5)",
+        "bodyMaxWords": 47,
+        "bodyRequired": true,
+        "bodyBudgetBasis": "spec ~166c -> ceil(166*1.25/4.5)"
+      },
+      "images": {
+        "type": "image[]",
+        "required": true,
+        "maxItems": 4,
+        "assetRoles": [
+          "animation"
+        ]
+      }
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "spec": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          433,
+          465
+        ],
+        "anchor": "## 10. Peace of mind"
+      }
+    ],
+    "code": [
+      {
+        "path": "src/components/PeaceOfMind.jsx",
+        "lines": [
+          24,
+          107
+        ],
+        "anchor": "export default function PeaceOfMind"
+      },
+      {
+        "path": "src/motion/page.js",
+        "lines": [
+          272,
+          272
+        ],
+        "anchor": "function peace("
+      }
+    ]
+  },
+  "implementedBy": "src/components/PeaceOfMind.jsx",
+  "implementedByAll": [
+    "src/components/PeaceOfMind.jsx"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "pinned-scrub",
+      "carousel",
+      "reveal-on-enter"
+    ],
+    "primaryPattern": "pinned-scrub",
+    "reducedMotionFallbacks": {
+      "pinned-scrub": "scroll-driven-retained",
+      "carousel": "instant-switch",
+      "reveal-on-enter": "disable-animation"
+    }
+  },
+  "responsive": {
+    "unit": "u (1u = 100vw/1440 >=1025px, /768 481-1024px, /320 <=480px) unless px",
+    "breakpoints": "tokens/00-foundation/breakpoint.json",
+    "measuredHeights": {
+      "desktop": "2326u"
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "assetRoles": [
+    "animation"
+  ],
+  "retrieval": {
+    "semanticLabel": "steps/peace-of-mind",
+    "kind": "steps",
+    "summary": "Title row, 4 numbered steps beside a pinned illustration stage (desktop scrub); slider below 1025.",
+    "keywords": [
+      "illustrated",
+      "numbered",
+      "steps",
+      "sticky"
+    ],
+    "pageFamilies": [
+      "template.home",
+      "template.reinstatement"
+    ]
+  },
+  "granularity": {
+    "singleResponsibility": "Sticky numbered steps (illustrated)",
+    "contentFields": 4,
+    "copyCapacityWords": 278,
+    "imageCapacity": 4,
+    "itemCapacity": 4
+  },
+  "compatibility": {
+    "observedPredecessors": [
+      "conversion.compliance-cta-card",
+      "showcase.roadmap"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "image",
+  "purpose": "img with object-fit; lazy images fade in (opacity .4s).",
+  "tokens": "tokens/20-component/(none)",
+  "evidence": {
+    "level": "measured",
+    "citations": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": [
+          640,
+          640
+        ],
+        "anchor": "- 0.4s opacity: lazy images"
+      }
+    ]
+  }
+}

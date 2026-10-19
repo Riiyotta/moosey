@@ -1,0 +1,2227 @@
+{
+  "version": "0.1.0",
+  "sourceIsLiveSite": false,
+  "measuredFromThirdPartySite": true,
+  "defaultPolicy": "Every file in public/ is ORIGINAL placeholder art for the fictional 'Northwind' brand (public/assets/art/ART_MANIFEST.md). Logo, people and screenshot roles are still protected: the measured third-party site's real logos, photos, Lottie art and UI must never be reproduced, and a generator may not fabricate identity assets.",
+  "roles": {
+    "logo": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": true,
+      "description": "The clone's own placeholder brand mark ('Northwind' wordmark, header/footer/menu/favicon). Not the measured site's brand.",
+      "licensing": "Reuse the exact supplied file. Never redraw it, and never substitute the measured third-party site's real logo.",
+      "observed": 5,
+      "genericRetrieval": false
+    },
+    "customer-logo": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Customer logo tiles (marquee, testimonials, legacy about row). In this clone they are FICTIONAL wordmarks.",
+      "licensing": "Treat as identity assets: a PageSpec must say source placeholder|supplied. A generator must never draw or reproduce a real company's logo, even though these tiles are fictional.",
+      "observed": 20,
+      "genericRetrieval": false
+    },
+    "partner-logo": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Partner wordmarks (ecosystem tiles, legacy co-brand lockups, legacy pricing logo). FICTIONAL in this clone.",
+      "licensing": "Never create or reproduce a real partner's mark; use an explicit placeholder or a supplied file.",
+      "observed": 8,
+      "genericRetrieval": false
+    },
+    "avatar": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Testimonial headshots (placeholder SVG portraits here).",
+      "licensing": "Never generate or reuse a real person's likeness; neutral placeholder only.",
+      "observed": 6,
+      "genericRetrieval": false
+    },
+    "author-photo": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Blog author avatar (byline) and profile photo (placeholder SVG portraits here).",
+      "licensing": "Never generate a real author's photo; neutral placeholder only.",
+      "observed": 0,
+      "genericRetrieval": false
+    },
+    "team-photo": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "About-page team/office image (the measured site used a real photo; this clone uses original art).",
+      "licensing": "Never generate or reuse photos of real people or offices.",
+      "observed": 1,
+      "genericRetrieval": false
+    },
+    "product-screenshot": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Product UI visuals: hero tab art, compliance tab images, feature/engine/scroll-tab screenshots, legacy app screenshots (original placeholder UI here).",
+      "licensing": "Never present invented UI as a real product's screenshot and never copy the measured site's UI; use a placeholder or a supplied file.",
+      "observed": 52,
+      "genericRetrieval": false
+    },
+    "font": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": true,
+      "description": "Figtree variable woff2 + OFL licence (substitute for the commercial Circular Std).",
+      "licensing": "Ship only the OFL Figtree files; never ship Circular Std.",
+      "observed": 3,
+      "genericRetrieval": false
+    },
+    "icon": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Small generic UI glyphs/pictograms (flyout icons, compliance list icons).",
+      "licensing": "Generic glyphs may be generated; never a brand mark.",
+      "observed": 15,
+      "genericRetrieval": true
+    },
+    "illustration": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Generic decorative vector art (benefit pictograms, get-started illustrations, footer line art, hero-static art).",
+      "licensing": "May be regenerated in the same style.",
+      "observed": 15,
+      "genericRetrieval": true
+    },
+    "background": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Soft CTA background glows.",
+      "licensing": "May be regenerated.",
+      "observed": 2,
+      "genericRetrieval": true
+    },
+    "animation": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Static/animated stand-ins for the original Lottie files (network, roadmap, peace, CTA visuals).",
+      "licensing": "May be regenerated; keep the original durations (motion contract).",
+      "observed": 11,
+      "genericRetrieval": true
+    },
+    "content-image": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Generic in-page imagery that is none of the protected kinds.",
+      "licensing": "May be regenerated; no real customer data or proprietary UI.",
+      "observed": 0,
+      "genericRetrieval": true
+    },
+    "editorial-illustration": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Blog featured images and guide covers (original art here).",
+      "licensing": "May be regenerated; never a real photo of a person.",
+      "observed": 16,
+      "genericRetrieval": true
+    }
+  },
+  "generationPolicies": [
+    "may-generate-new",
+    "must-reuse-exact",
+    "must-not-fabricate"
+  ],
+  "protectedRoles": [
+    "logo",
+    "customer-logo",
+    "partner-logo",
+    "avatar",
+    "author-photo",
+    "team-photo",
+    "product-screenshot"
+  ],
+  "genericDecorativeRoles": [
+    "icon",
+    "illustration",
+    "background",
+    "animation",
+    "content-image",
+    "editorial-illustration"
+  ],
+  "retrievalRule": "Generic decorative roles may be retrieved as decoration. Protected roles are identity assets: only in a section whose contract names them, always with source: placeholder|supplied, never satisfied by a generic asset.",
+  "embeds": [],
+  "thirdPartyReplaced": "HubSpot forms (lead form, guide form, in-article form) and Swiper (CDN) are replaced by static/local look-alikes; no third-party endpoint is loaded.",
+  "citations": [
+    {
+      "path": "public/assets/art/ART_MANIFEST.md",
+      "lines": [
+        1,
+        1
+      ],
+      "anchor": "# Northwind art manifest"
+    },
+    {
+      "path": "ASSET_MANIFEST.md",
+      "lines": [
+        7,
+        11
+      ],
+      "anchor": "**How to read the treatment column**"
+    },
+    {
+      "path": "specs/misc.md",
+      "lines": [
+        670,
+        691
+      ],
+      "anchor": "## 10. Assets (all PLACEHOLDER"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/art/avatars/avatar-1.svg",
+      "bytes": 385,
+      "role": "avatar",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/authors.js"
+        ]
+      },
+      "alsoServes": [
+        "author-photo"
+      ]
+    },
+    {
+      "path": "assets/art/avatars/avatar-2.svg",
+      "bytes": 394,
+      "role": "avatar",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/authors.js",
+          "src/data/misc/legacyContent.js"
+        ]
+      },
+      "alsoServes": [
+        "author-photo"
+      ]
+    },
+    {
+      "path": "assets/art/avatars/avatar-3.svg",
+      "bytes": 384,
+      "role": "avatar",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/authors.js"
+        ]
+      },
+      "alsoServes": [
+        "author-photo"
+      ]
+    },
+    {
+      "path": "assets/art/avatars/avatar-4.svg",
+      "bytes": 421,
+      "role": "avatar",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/authors.js",
+          "src/data/misc/legacyContent.js"
+        ]
+      },
+      "alsoServes": [
+        "author-photo"
+      ]
+    },
+    {
+      "path": "assets/art/avatars/avatar-5.svg",
+      "bytes": 388,
+      "role": "avatar",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/authors.js",
+          "src/data/misc/legacyContent.js"
+        ]
+      },
+      "alsoServes": [
+        "author-photo"
+      ]
+    },
+    {
+      "path": "assets/art/avatars/avatar-6.svg",
+      "bytes": 441,
+      "role": "avatar",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/authors.js"
+        ]
+      },
+      "alsoServes": [
+        "author-photo"
+      ]
+    },
+    {
+      "path": "assets/art/benefits/benefit-1.svg",
+      "bytes": 779,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/benefits/benefit-2.svg",
+      "bytes": 1002,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/benefits/benefit-3.svg",
+      "bytes": 941,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/brand/favicon.svg",
+      "bytes": 460,
+      "role": "logo",
+      "source": "placeholder",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/brand/northwind-logo-menu.svg",
+      "bytes": 1160,
+      "role": "logo",
+      "source": "placeholder",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/brand/northwind-logo-white.svg",
+      "bytes": 1160,
+      "role": "logo",
+      "source": "placeholder",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Footer.jsx",
+          "src/components/misc/legacy/LegacyKit.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/brand/northwind-logo.svg",
+      "bytes": 1160,
+      "role": "logo",
+      "source": "placeholder",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Footer.jsx",
+          "src/components/InlineSvg.jsx",
+          "src/components/Navbar.jsx",
+          "src/components/misc/legacy/LegacyKit.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/compliance/tab-finance.svg",
+      "bytes": 3424,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/compliance/tab-head-of-people.svg",
+      "bytes": 5418,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js",
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/compliance/tab-legal.svg",
+      "bytes": 4090,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/compliance/tab-startup.svg",
+      "bytes": 3488,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-1.svg",
+      "bytes": 1704,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-10.svg",
+      "bytes": 861,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-2.svg",
+      "bytes": 1875,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-3.svg",
+      "bytes": 794,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-4.svg",
+      "bytes": 1149,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-5.svg",
+      "bytes": 913,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-6.svg",
+      "bytes": 870,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-7.svg",
+      "bytes": 1070,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-8.svg",
+      "bytes": 980,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/blog/post-9.svg",
+      "bytes": 930,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/guide/benefit-1.svg",
+      "bytes": 577,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/content/guide/benefit-2.svg",
+      "bytes": 605,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/content/guide/benefit-3.svg",
+      "bytes": 697,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/content/guide/hero-cover-2.svg",
+      "bytes": 1499,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/guide/hero-cover-3.svg",
+      "bytes": 1566,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ],
+        "note": "dynamic path (template literal)"
+      }
+    },
+    {
+      "path": "assets/art/content/guide/hero-cover.svg",
+      "bytes": 2658,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/cta/bg-desktop.svg",
+      "bytes": 1028,
+      "role": "background",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/components/blocks/GenericCta.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/cta/bg-tablet.svg",
+      "bytes": 1014,
+      "role": "background",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/BottomCta.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/blocks/GenericCta.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/cta/bottom-cta-visual.svg",
+      "bytes": 3441,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/BottomCta.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/cta/compliance-cta-visual.svg",
+      "bytes": 2052,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/components/blocks/GenericCta.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/everything/network-desktop.svg",
+      "bytes": 8052,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Everything.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/everything/network-mobile.svg",
+      "bytes": 5338,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Everything.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/footer/footer-line-left.svg",
+      "bytes": 494,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Footer.jsx",
+          "src/motion/page.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/footer/footer-line-right.svg",
+      "bytes": 496,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Footer.jsx",
+          "src/motion/page.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/header/flyout-entities.svg",
+      "bytes": 648,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/header/flyout-mail.svg",
+      "bytes": 575,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/header/flyout-payroll.svg",
+      "bytes": 704,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/header/flyout-tax.svg",
+      "bytes": 625,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-popup-visual.svg",
+      "bytes": 3345,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Hero.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-tab-1-mobile.svg",
+      "bytes": 3939,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-tab-1.svg",
+      "bytes": 4367,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-tab-2-mobile.svg",
+      "bytes": 4899,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-tab-2.svg",
+      "bytes": 5327,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-tab-3-mobile.svg",
+      "bytes": 2791,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/hero/hero-tab-3.svg",
+      "bytes": 3219,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/icons/automate.svg",
+      "bytes": 702,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/content/guides.js",
+          "src/data/marketing/products.js",
+          "src/data/misc/legacyContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/avoid.svg",
+      "bytes": 618,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/content/blogPosts.js",
+          "src/data/marketing-b/security.js",
+          "src/data/misc/legacyContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/compliance.svg",
+      "bytes": 740,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Hero.jsx",
+          "src/components/InlineSvg.jsx",
+          "src/components/Navbar.jsx",
+          "src/components/Pricing.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/Testimonials.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/consolidate.svg",
+      "bytes": 637,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/eliminate.svg",
+      "bytes": 533,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/founding.svg",
+      "bytes": 528,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/misc/legacyContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/identify.svg",
+      "bytes": 663,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/letter.svg",
+      "bytes": 563,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/components/content/GuideFormSection.jsx",
+          "src/components/content/ResourceLinkGrid.jsx",
+          "src/components/marketing/InnerPost.jsx",
+          "src/data/content/blogPosts.js",
+          "src/data/content/guides.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/modern.svg",
+      "bytes": 615,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/monitor.svg",
+      "bytes": 708,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Roadmap.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/misc/legacy/icons.jsx",
+          "src/data/content/guides.js",
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/icons/offload.svg",
+      "bytes": 573,
+      "role": "icon",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/RoleTabs.jsx",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/arcwell.svg",
+      "bytes": 599,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/brightpath.svg",
+      "bytes": 530,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/corvid-labs.svg",
+      "bytes": 526,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/driftwood.svg",
+      "bytes": 761,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/fernway.svg",
+      "bytes": 688,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/halcyon.svg",
+      "bytes": 513,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/juniper-bay.svg",
+      "bytes": 635,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/kestrel.svg",
+      "bytes": 535,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/marlowe.svg",
+      "bytes": 420,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Testimonials.jsx",
+          "src/data/misc/platformPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/orbitra.svg",
+      "bytes": 523,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/pallaso.svg",
+      "bytes": 509,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/quillfield.svg",
+      "bytes": 620,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/solenne.svg",
+      "bytes": 370,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Testimonials.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/logos/tessellate.svg",
+      "bytes": 668,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing-b/about-hero.svg",
+      "bytes": 2420,
+      "role": "team-photo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/marketing/about/AboutHero.jsx",
+          "src/data/marketing-b/about.js",
+          "src/motion/marketing.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing-b/guide-cover-1.svg",
+      "bytes": 1381,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/for-hr.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing-b/guide-cover-2.svg",
+      "bytes": 1381,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/for-hr.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing-b/guide-cover-3.svg",
+      "bytes": 1381,
+      "role": "editorial-illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/for-hr.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/benefit-pictogram-1.svg",
+      "bytes": 835,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/reinstatement.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/benefit-pictogram-2.svg",
+      "bytes": 812,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/reinstatement.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/benefit-pictogram-3.svg",
+      "bytes": 763,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/reinstatement.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/engine-1.svg",
+      "bytes": 5541,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/engine-2.svg",
+      "bytes": 6266,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/engine-3.svg",
+      "bytes": 4664,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/feature-consolidate.svg",
+      "bytes": 4938,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/feature-handbook.svg",
+      "bytes": 4914,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/feature-payroll-feature.svg",
+      "bytes": 5940,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js",
+          "src/data/misc/reinstatement.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/feature-reduce.svg",
+      "bytes": 4789,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/platform.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/feature-streamline.svg",
+      "bytes": 5696,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js",
+          "src/data/misc/platformPartnerContent.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/handbook-pictogram-1.svg",
+      "bytes": 1077,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/marketing/handbook-pictogram-2.svg",
+      "bytes": 1110,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/marketing/handbook-pictogram-3.svg",
+      "bytes": 1102,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/marketing/hero-handbook-res.svg",
+      "bytes": 5717,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/hero-handbook.svg",
+      "bytes": 5698,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/hero-static.svg",
+      "bytes": 3201,
+      "role": "illustration",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/components/blocks/HeroStatic.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/hero-tax-res.svg",
+      "bytes": 6939,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/hero-visual-res.svg",
+      "bytes": 6991,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/hero-visual.svg",
+      "bytes": 9565,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Hero.jsx",
+          "src/components/blocks/PageHero.jsx",
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js",
+          "src/motion/blocks.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/partner-ledgerly.svg",
+      "bytes": 377,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/partner-paycrest.svg",
+      "bytes": 508,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/partner-summit.svg",
+      "bytes": 423,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-import-1.svg",
+      "bytes": 4892,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-import-2.svg",
+      "bytes": 5821,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-import-3.svg",
+      "bytes": 4985,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-mail-1.svg",
+      "bytes": 6020,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-mail-2.svg",
+      "bytes": 4981,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js",
+          "src/data/misc/platformPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-mail-3.svg",
+      "bytes": 4868,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js",
+          "src/data/misc/platformPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-secure-1.svg",
+      "bytes": 5841,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-secure-2.svg",
+      "bytes": 6348,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/platform-secure-3.svg",
+      "bytes": 6069,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/platform.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-1-m.svg",
+      "bytes": 5584,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-1.svg",
+      "bytes": 5425,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-2-m.svg",
+      "bytes": 5902,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-2.svg",
+      "bytes": 5765,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-3-m.svg",
+      "bytes": 6286,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-3.svg",
+      "bytes": 6240,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-4-m.svg",
+      "bytes": 4790,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/marketing/scrolltab-4.svg",
+      "bytes": 4639,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/arcwell.svg",
+      "bytes": 455,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/brightpath-light.svg",
+      "bytes": 503,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/partners.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/brightpath-rose.svg",
+      "bytes": 503,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/partners.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/fernway.svg",
+      "bytes": 477,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/kestrel.svg",
+      "bytes": 402,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/solutionDetails.js",
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/kitebird-light.svg",
+      "bytes": 560,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/partners.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/orbitra.svg",
+      "bytes": 476,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/solenne.svg",
+      "bytes": 498,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Testimonials.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/tessellate.svg",
+      "bytes": 418,
+      "role": "customer-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/LogoMarquee.jsx",
+          "src/components/blocks/LogoMarquee.jsx",
+          "src/components/content/GuideTrusted.jsx",
+          "src/data/marketing-b/about.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/marketing-b/solutionDetails.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/tidewater-light.svg",
+      "bytes": 503,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/partners.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/logos/tidewater-rose.svg",
+      "bytes": 503,
+      "role": "partner-logo",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/partners.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/accounts.svg",
+      "bytes": 3746,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Faq.jsx",
+          "src/components/Navbar.jsx",
+          "src/components/Pricing.jsx",
+          "src/components/Roadmap.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/Testimonials.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/alerts.svg",
+      "bytes": 2520,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing-b/for-hr.js",
+          "src/data/misc/legacyContent.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/assign.svg",
+      "bytes": 2298,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/blogPosts.js",
+          "src/data/content/resourceLeaves.js",
+          "src/data/marketing-b/for-hr.js",
+          "src/data/marketing-b/for-telehealth.js",
+          "src/data/misc/legacyContent.js",
+          "src/data/misc/platformPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/calendar.svg",
+      "bytes": 7852,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Banner.jsx",
+          "src/components/Benefits.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/marketing/icons.jsx",
+          "src/components/misc/legacy/icons.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/inbox.svg",
+      "bytes": 5877,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Pricing.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/content/HubspotForm.jsx",
+          "src/components/misc/legacy/icons.jsx",
+          "src/data/content/blogPosts.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/integrations.svg",
+      "bytes": 2719,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/misc/legacy/LegacyKit.jsx",
+          "src/data/misc/legacyContent.js",
+          "src/data/misc/salesTaxBeta.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/legislation.svg",
+      "bytes": 3916,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/legacyContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/notices.svg",
+      "bytes": 2177,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Faq.jsx",
+          "src/components/Navbar.jsx",
+          "src/components/RoleTabs.jsx",
+          "src/components/Testimonials.jsx",
+          "src/components/misc/LegacyPartnerPage.jsx",
+          "src/data/content/blogPosts.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/payroll-setup.svg",
+      "bytes": 5815,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/content/guides.js",
+          "src/data/content/resources.js",
+          "src/data/misc/legacyContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/sales-tax-form.svg",
+      "bytes": 1878,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/data/misc/salesTaxBeta.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/misc/screens/team.svg",
+      "bytes": 2633,
+      "role": "product-screenshot",
+      "source": "placeholder",
+      "generationPolicy": "must-not-fabricate",
+      "evidence": {
+        "referencedBy": [
+          "src/components/Benefits.jsx",
+          "src/components/Faq.jsx",
+          "src/components/Footer.jsx",
+          "src/components/Navbar.jsx",
+          "src/components/PeaceOfMind.jsx",
+          "src/components/Pricing.jsx"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/peace/peace-step-1.svg",
+      "bytes": 1811,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/peace/peace-step-2.svg",
+      "bytes": 1837,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/peace/peace-step-3.svg",
+      "bytes": 1361,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js",
+          "src/data/misc/staticPartnerContent.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/peace/peace-step-4.svg",
+      "bytes": 2855,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [
+          "src/data/marketing/products.js"
+        ]
+      }
+    },
+    {
+      "path": "assets/art/roadmap/roadmap-step-1.svg",
+      "bytes": 4010,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/roadmap/roadmap-step-2.svg",
+      "bytes": 2703,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "assets/art/roadmap/roadmap-step-3.svg",
+      "bytes": 5323,
+      "role": "animation",
+      "source": "placeholder",
+      "generationPolicy": "may-generate-new",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 165,
+      "role": "logo",
+      "source": "placeholder",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [],
+        "note": "no reference found in src/ (kept as spare art)"
+      }
+    },
+    {
+      "path": "fonts/Figtree-OFL.txt",
+      "bytes": 4388,
+      "role": "font",
+      "source": "supplied",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [
+          "src/index.css"
+        ]
+      }
+    },
+    {
+      "path": "fonts/figtree-latin-ext-var.woff2",
+      "bytes": 10228,
+      "role": "font",
+      "source": "supplied",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [
+          "src/index.css"
+        ]
+      }
+    },
+    {
+      "path": "fonts/figtree-latin-var.woff2",
+      "bytes": 20184,
+      "role": "font",
+      "source": "supplied",
+      "generationPolicy": "must-reuse-exact",
+      "evidence": {
+        "referencedBy": [
+          "src/index.css"
+        ]
+      }
+    }
+  ]
+}
