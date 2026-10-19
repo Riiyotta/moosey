@@ -2,6 +2,12 @@
 
 React 18 + Vite + Tailwind v3 site whose design system was measured from mosey.com and rebuilt with a placeholder brand ("Northwind"), original copy and original art. Run it with `npm install && npm run dev` (port 5200).
 
+## About this repository
+
+This is an independent front-end build. Its layout, spacing, type scale and motion timings were measured from a third-party marketing site; its brand ("Northwind"), copy, illustrations, logos, partner names and authors are all original placeholders. It is not affiliated with, endorsed by, or a copy of that site's content, and it should not be deployed in a way that suggests otherwise. Forms are local-only and send nothing. The Figtree font is bundled under the SIL Open Font License (see `public/fonts/`).
+
+Quick start: `npm install && npm run dev` (port 5200), `npm run build` for a production build. A production host must serve `index.html` for unknown paths and should return HTTP 404 for URLs that match no route.
+
 ## IA files
 
 | File | Edit? | What it is |
